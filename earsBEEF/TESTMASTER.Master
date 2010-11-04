@@ -24,7 +24,7 @@
      <br /></center>
  
        <center>  
-           <div style="background-color: #FFFFFF; height: 1200px; width: 800px;" 
+           <div style="background-color: #FFFFFF; height: 700px; width: 800px;" 
             align="center">    <form id="form1" runat="server" align="center">  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder> </form> </div></center> 
