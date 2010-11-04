@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedOut.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="EARS.LoginPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TESTMASTER.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="EARS.LoginPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" align="right">
     <br />
-    <br />
-    <br />
-    <br /><br />
+    <div style="height: 489px; width: 497px; align: RIGHT">
     <asp:Panel ID="Panel1" runat="server" Height="197px" Width="236px" Wrap="False" 
-        BorderStyle="Groove" BackColor="#FFCCFF">
+        BorderStyle="Groove" BackColor="#FFCCFF" style="margin-left: 0px" >
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -46,4 +44,8 @@
         Login ID is your admin number (eg. 1234567E)<br />
         <br />
         <b>For Staff:</b><br /> Login ID is your staff email..</asp:Panel>
-</asp:Content>
+    </div>
+    <br />
+    <br />
+    <br /><br />
+    </asp:Content>
