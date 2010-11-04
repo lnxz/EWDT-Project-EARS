@@ -159,6 +159,13 @@
     </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="TESTMASTER.Master.cs">
+      <DependentUpon>TESTMASTER.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TESTMASTER.Master.designer.cs">
+      <DependentUpon>TESTMASTER.Master</DependentUpon>
+    </Compile>
     <Compile Include="TESTPAGE.aspx.cs">
       <DependentUpon>TESTPAGE.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,6 +184,9 @@
   <ItemGroup>
     <Content Include="LoggedIn.Master" />
     <Content Include="LoggedOut.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TESTMASTER.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
