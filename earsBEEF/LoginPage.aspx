@@ -6,8 +6,8 @@
     <br />
     <br />
     <br /><br />
-    <asp:Panel ID="Panel1" runat="server" Height="212px" Width="236px" Wrap="False" 
-        BorderStyle="Groove">
+    <asp:Panel ID="Panel1" runat="server" Height="197px" Width="236px" Wrap="False" 
+        BorderStyle="Groove" BackColor="#FFCCFF">
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
