@@ -58,7 +58,7 @@
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\TopBanner.png" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="Styles\menu.css" />
+    <Content Include="Styles\MainMenu.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -129,18 +130,21 @@
     </Compile>
     <Compile Include="LoggedIn.Master.cs">
       <DependentUpon>LoggedIn.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoggedIn.Master.designer.cs">
       <DependentUpon>LoggedIn.Master</DependentUpon>
     </Compile>
     <Compile Include="LoggedOut.Master.cs">
       <DependentUpon>LoggedOut.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoggedOut.Master.designer.cs">
       <DependentUpon>LoggedOut.Master</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
@@ -157,6 +161,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="TESTPAGE.aspx.cs">
       <DependentUpon>TESTPAGE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TESTPAGE.aspx.designer.cs">
       <DependentUpon>TESTPAGE.aspx</DependentUpon>
