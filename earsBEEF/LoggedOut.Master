@@ -35,7 +35,7 @@
     <form id="form1" runat="server">
     <table style="width: 100%; height: 715px;">
         <tr>
-            <td class="style2" colspan="2">
+            <td class="style2" colspan="2" align="center">
                 <img alt="Top Banner" class="style6" src="Images/TopBanner.png" /><hr />
             </td>
         </tr>
