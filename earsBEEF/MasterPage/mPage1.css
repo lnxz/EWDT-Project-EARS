@@ -11,10 +11,8 @@ body
 }
 *
 {
-	margin: 0 auto 0 auto;
-	text-align: left;
-	height: 23px;
-	width: 736px;
+  margin: 0 auto 0 auto;
+ text-align:left;}
 }
 
 #page
