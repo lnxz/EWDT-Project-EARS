@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoggedOut2.Master.cs" Inherits="earsBEEF.LoggedOut" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="MasterPage/mPage1.css">
+    <title></title>
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 1002px;
+            height: 99px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mainPicture">
+        <div class="picture" align="center">
+            <img alt="" class="style1" src="MasterPage/BannerTransparent.png" /></div>
+    </div>
+        <div class ="announcementBox2" ID="announcements">
+        <div class ="innerBox2" 
+                style="font-family: 'Copperplate Gothic Light'; font-size: 55px; color: #6699FF; font-weight: normal;" >
+            Welcome to e.a.r.s</div>
+        </div>
+    <div class="contentBox2">
+        <div class="innerBox2">
+            <div class="contentTitle">
+                </div>
+            <div class="contentText">
+          
+                    <form id="form1" runat="server" align="center">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    </form>
+     
+              
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+</html>
