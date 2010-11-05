@@ -59,28 +59,23 @@ background-image: url(tab.png);
 
 #mainPicture
 {
-width:670px;
-height:345px;
-background-color:#FFFFFF;
+width:640px;
+height:250px;
 }
 
 #mainPicture
-{
-	width:770px;
-	height:145px;
-	background-color:#FFFFFF;
+{   
+	width:1020px;
+	height:85px;
 }
 
 #mainPicture .picture
 {
 	position:relative;
-	width:750px;
+	width:1000px;
 	height:125px;
 	top:10px;
-	/* [disabled]background-image:url(anoceanofsky.jpg); */
-	/* [disabled]background-repeat:no-repeat; */
 	margin-left:10px;
-	background-color: #000;
 }
 
 #headerTitle
@@ -103,23 +98,39 @@ color:#A9C8FA;
 font-family:"Adobe Garamond Pro Bold", Georgia, "Times New Roman", Times, serif;
 }
 
+.announcementBox
+{
+	width:1020px;
+	height:80px;
+	background-color:#FFFFFF;
+	margin-top:-100px;
+}
+.announcementBox .innerBox
+{
+	position:relative;
+	width:1000px;
+	height:60px;
+	top:10px;
+	margin-left:10px;
+	background-image:url(content_back.png);
+	background-repeat:repeat-x;
+}
+
 .contentBox
 {
-	width:770px;
-	height:auto;
+	width:1020px;
+	height:800px;
 	background-color:#FFFFFF;
-	margin-top:10px;
+	margin-top:0px;
 }
 
 .contentBox .innerBox
 {
 	position:relative;
-	width:750px;
+	width:1000px;
 	height:auto;
 	top:10px;
 	margin-left:10px;
-	background-image:url(content_back.png);
-	background-repeat:repeat-x;
 	padding-bottom:35px;
 }
 
@@ -141,9 +152,9 @@ margin-right:13px;
 }
 
 #footer {
-	width: 770px;
+	width:1020px;
 	height:16px;
-	background: url(footer.png) no-repeat;
+	background: url(footer.png);
 	text-align:center;
 	font-size:9px;
 	font-family:Arial, Helvetica, sans-serif;
