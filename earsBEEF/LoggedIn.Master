@@ -1,79 +1,56 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoggedIn.master.cs" Inherits="EARS.LoggedIn" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoggedIn.Master.cs" Inherits="earsBEEF.Site1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="MasterPage/mPage1.css">
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .style1
         {
-        }
-        .style2
-        {
-            height: 59px;
-        }
-        .style5
-        {
-            height: 612px;
-        }
-        .style6
-        {
-            width: 882px;
-            height: 87px;
-        }
-        .style8
-        {
-            width: 76px;
+            width: 1002px;
+            height: 99px;
         }
     </style>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="Styles/MainMenu.css" type="text/css" />
 </head>
-<body bgcolor="#ef8a85" align=center; style="height: 752px">
-    <form id="form1" runat="server" align=center>
-    <table style="width: 33%; height: 742px;" align =center border="0.5 px">
-        <tr>
-            <td class="style2" colspan="2" bgcolor="#ef8a85">
-                <img alt="Top Banner" class="style6" src="Images/TopBanner.png" /><hr />
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" bgcolor="efb7b4" class="style8">
-                <br />
-                <br />
-                <ul id="css3menu" class="topmenu">
-                    <li class="topfirst"><a href="#" title="Events"><span>Events</span></a>
-                        <ul>
-                            <li class="subfirst"><a href="#" title="Add a Event">Add a Event</a></li>
-                            <li><a href="#" title="View Organized Events">View Organized Events</a></li>
-                            <li><a href="#" title="View Registered Events">View Registered Events</a></li>
-                            <li><a href="#" title="View Past Events">View Past Events</a></li>
-                        </ul>
-                    </li>
-                    <li class="topmenu"><a href="#" title="Announcements"><span>Announcements</span></a>
-                        <ul>
-                            <li class="subfirst"><a href="#" title="Add Announcement">Add Announcement</a></li>
-                            <li><a href="#" title="View Announcements">View Announcements</a></li>
-                        </ul>
-                    </li>
-                    <li class="topmenu"><a href="#" title="Profile Setting">Profile Setting</a></li>
-                    <li class="topmenu"><a href="#" title="Log out">Log out</a></li>
-                </ul>
-            </td>
-            <td class="style5" valign="top" bgcolor="efb7b4">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </td>
-        </tr>
-        <tr>
-            <td class="style1" align="right" colspan="2">
-                <hr style="width: 872px; margin-right: 0px" />
-                Copyright 2010 B.E.E.F. All Rights Reserved
-            </td>
-        </tr>
-    </table>
-    </form>
+<body>
+
+    <div id="mainPicture">
+        <div class="picture" align=center>
+            <img alt="" class="style1" src="MasterPage/BannerTransparent.png" /></div>
+    </div>
+    <div id="sideMenu" 
+        style="position: relative; top: 200px; width: 150px; right: 576px;">
+        <img src="Images/Stub.png" />
+        <img src="Images/Stub.png" />
+        <img src="Images/Stub.png" /></div>
+        <div class ="announcementBox" name="announcements">
+        <div class ="innerBox">
+        </div>
+        </div>
+    <div class="contentBox">
+        <div class="innerBox">
+            <div class="contentTitle">
+                </div>
+            <div class="contentText">
+          
+                    <form id="form1" runat="server" align="center">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    </form>
+     
+              
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+
+    </div>
 </body>
 </html>
