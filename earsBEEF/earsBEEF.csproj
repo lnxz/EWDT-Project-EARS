@@ -58,11 +58,11 @@
     <Content Include="MasterPage\background.png" />
     <Content Include="MasterPage\content_back.png" />
     <Content Include="MasterPage\footer.png" />
+    <Content Include="MasterPage\mPage1.css" />
     <Content Include="MasterPage\tab.png" />
     <Content Include="Images\TopBanner.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Styles\MainMenu.css" />
-    <Content Include="MasterPage\mPage1.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />

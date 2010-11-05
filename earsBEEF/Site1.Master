@@ -11,13 +11,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div id="page">
-        <!--        <div class="topNaviagationLink"><a href="http://www.quackit.com/html/templates/download/bryantsmith/anoceanofsky/index.html">Home</a></div>
-        <div class="topNaviagationLink"><a href="http://www.quackit.com/html/templates/download/bryantsmith/anoceanofsky/index.html">About</a></div>
-        <div class="topNaviagationLink"><a href="http://www.quackit.com/html/templates/download/bryantsmith/anoceanofsky/index.html">Portfolio</a></div>
-        <div class="topNaviagationLink"><a href="http://www.quackit.com/html/templates/download/bryantsmith/anoceanofsky/index.html">Services</a></div>
-	    <div class="topNaviagationLink"><a href="http://www.quackit.com/html/templates/download/bryantsmith/anoceanofsky/index.html">Contact</a></div>-->
-    </div>
+
     <div id="mainPicture">
         <div class="picture">
         </div>
@@ -27,14 +21,14 @@
             <div class="contentTitle">
                 The Title of an Article</div>
             <div class="contentText">
-                <p>
+          
                     <form id="form1" runat="server" align="center">
                     <div>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
                     </form>
-                </p>
+     
                 <br>
                 <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit
@@ -69,7 +63,7 @@
                     Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</p>
                 <br>
                 <p>
-                    Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque
+                    Vestibulum augue quam, interdum id, congue semper, convallins non, velit. Quisque
                     augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce
                     velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget
                     elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer
