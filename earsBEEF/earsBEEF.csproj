@@ -158,10 +158,10 @@
     <Content Include="Account\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LoggedOut.Master" />
+    <Content Include="LoggedIn.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LoggedIn.Master" />
+    <Content Include="LoggedOut.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
