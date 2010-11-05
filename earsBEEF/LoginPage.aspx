@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TESTMASTER.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="EARS.LoginPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedOut.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="EARS.LoginPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" align="right">
     <br />
-    <div style="height: 489px; width: 497px; align: RIGHT">
+    <div style="height: 350px; width: 5px; align: RIGHT; left: 100px; position: relative;">
     <asp:Panel ID="Panel1" runat="server" Height="197px" Width="236px" Wrap="False" 
-        BorderStyle="Groove" BackColor="#FFCCFF" style="margin-left: 0px" >
-        <br />
+        BorderStyle="Groove" BackColor="#AEC9FF" style="margin-left: 0px" >
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblLoginId" runat="server" Text="Login ID"></asp:Label>
