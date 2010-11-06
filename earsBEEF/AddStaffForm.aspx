@@ -234,34 +234,22 @@
             <td class="style4">
                 &nbsp;</td>
         </tr>
+        </table>
+    <table style="width:100%;">
         <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style10">
+            <td style="text-align: right">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style5" colspan="2" align="right">
-                <asp:Button ID="Button1" runat="server" style="text-align: right" 
+            <td style="text-align: right">
+                <asp:Button ID="Button1" runat="server" 
                     Text="Confirm" />
             </td>
-            <td class="style10" colspan="2">
+            <td>
                 <asp:Button ID="Button2" runat="server" Text="Cancel" />
             </td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style10">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>

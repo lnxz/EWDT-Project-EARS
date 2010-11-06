@@ -20,8 +20,8 @@
         }
         .style17
         {
-            width: 508px;
-            height: 36px;
+            width: 428px;
+            height: 31px;
             text-align: right;
         }
         .style19
@@ -163,11 +163,7 @@
         {
             height: 32px;
         }
-        .style52
-        {
-            height: 36px;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <table style="width: 99%;">
@@ -419,7 +415,7 @@
                 <asp:Button ID="btnConfirm" runat="server" Text="Confirm" 
                     style="text-align: right" />
             </td>
-            <td align="left" style="text-align: left" class="style52">
+            <td align="left" style="text-align: left" class="style30">
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
         </tr>
