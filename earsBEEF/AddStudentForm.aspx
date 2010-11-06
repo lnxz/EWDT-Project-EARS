@@ -21,7 +21,7 @@
         .style17
         {
             width: 508px;
-            height: 63px;
+            height: 36px;
             text-align: right;
         }
         .style19
@@ -162,6 +162,10 @@
         .style51
         {
             height: 32px;
+        }
+        .style52
+        {
+            height: 36px;
         }
     </style>
 </asp:Content>
@@ -415,7 +419,7 @@
                 <asp:Button ID="btnConfirm" runat="server" Text="Confirm" 
                     style="text-align: right" />
             </td>
-            <td align="left" style="text-align: left">
+            <td align="left" style="text-align: left" class="style52">
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
         </tr>
