@@ -25,8 +25,8 @@
     </div>
     <div id="sideMenu" 
         style="position: relative; top: 200px; width: 150px; right: 576px;">
-        <img src="Images/Stub.png" />
-        <img src="Images/Stub.png" />
+        <img src="Images/Stub1.png" />
+        <img src="Images/Stub2.png" />
         <img src="Images/Stub.png" /></div>
         <div class ="announcementBox" name="announcements">
         <div class ="innerBox">
