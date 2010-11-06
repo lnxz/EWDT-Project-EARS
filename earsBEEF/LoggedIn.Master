@@ -27,7 +27,8 @@
         style="position: relative; top: 200px; width: 150px; right: 576px;">
         <img src="Images/Stub1.png" />
         <img src="Images/Stub2.png" />
-        <img src="Images/Stub.png" /></div>
+        <img src="Images/Stub3.png" />
+         <img src="Images/Stub4.png" /></div>
         <div class ="announcementBox" name="announcements">
         <div class ="innerBox">
         </div>

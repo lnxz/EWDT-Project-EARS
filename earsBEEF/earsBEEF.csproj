@@ -56,6 +56,8 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\Stub1.png" />
+    <Content Include="Images\Stub3.png" />
+    <Content Include="Images\Stub4.png" />
     <Content Include="MasterPage\BannerTransparent.png" />
     <Content Include="MasterPage\Banner.png" />
     <Content Include="Images\Stub.png" />
