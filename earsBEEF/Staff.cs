@@ -19,6 +19,21 @@ namespace EARS
         private string department;
         private string admin;
 
+        public Staff(int staffID, string name, string staffEmail, string password, string gender, string school, int contactNo, string personalEmail, string position, string department, string admin)
+        {
+            this.staffID = staffID;
+            this.name = name;
+            this.staffEmail = staffEmail;
+            this.password = password;
+            this.gender = gender;
+            this.school = school;
+            this.contactNo = contactNo;
+            this.personalEmail = personalEmail;
+            this.position = position;
+            this.department = department;
+            this.admin = admin;
+        }
+
         public int StaffID
         {
             get { return staffID; }
