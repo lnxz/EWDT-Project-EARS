@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddStudentForm.aspx.cs" Inherits="earsBEEF.AddStudentForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
-        .style3
-        {
-            height: 12px;
-        }
         .style4
         {
             height: 11px;
@@ -22,21 +18,11 @@
         {
             height: 44px;
         }
-        .style14
-        {
-            width: 1002px;
-            height: 76px;
-        }
         .style17
         {
             width: 508px;
             height: 63px;
             text-align: right;
-        }
-        .style18
-        {
-            width: 1002px;
-            height: 61px;
         }
         .style19
         {
@@ -168,16 +154,25 @@
             width: 1002px;
             height: 20px;
         }
+        .style50
+        {
+            width: 1002px;
+            height: 32px;
+        }
+        .style51
+        {
+            height: 32px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <table style="width: 99%;">
         <tr>
-            <td class="style18" colspan="2">
+            <td class="style50" colspan="2">
                 <strong style="text-align: left">Admin Controls</strong></td>
-            <td class="style14">
-                &nbsp;</td>
-            <td class="style3" align="right">
+            <td class="style50">
+                </td>
+            <td class="style51" align="right">
                 <asp:Button ID="btnPreview" runat="server" style="text-align: right" 
                     Text="Preview" />
             </td>
