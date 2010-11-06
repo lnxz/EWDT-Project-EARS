@@ -1,5 +1,56 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddEventForm.aspx.cs" Inherits="earsBEEF.AddEventForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <style type="text/css">
+        .style2
+        {
+            width: 440px;
+        }
+        .style3
+        {
+            width: 439px;
+        }
+        .style4
+        {
+            width: 438px;
+        }
+        .style5
+        {
+            width: 434px;
+        }
+        .style6
+        {
+            width: 433px;
+        }
+        .style7
+        {
+            width: 431px;
+        }
+        .style8
+        {
+            width: 427px;
+        }
+        .style9
+        {
+            width: 421px;
+        }
+        .style10
+        {
+            width: 415px;
+        }
+        .style11
+        {
+            width: 409px;
+        }
+        .style12
+        {
+            width: 404px;
+        }
+        .style13
+        {
+            width: 291px;
+            text-align: right;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <table style="width:100%;">
@@ -135,8 +186,15 @@
     </table>
     <table style="width:100%;">
         <tr>
-            <td align="right" class="style13">
-                <asp:Button ID="btnConfirm" runat="server" Text="Confirm" Width="61px" />
+            <td class="style13">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style13">
+                <asp:Button ID="btnConfirm" runat="server" style="text-align: right" 
+                    Text="Confirm" />
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
