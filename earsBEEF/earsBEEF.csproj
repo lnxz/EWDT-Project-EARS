@@ -54,6 +54,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="AddStudentForm.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\Stub1.png" />
     <Content Include="Images\Stub10.png" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentForm.aspx.cs">
+      <DependentUpon>AddStudentForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddStudentForm.aspx.designer.cs">
+      <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Annoucement.cs" />
     <Compile Include="DBManager.cs" />
