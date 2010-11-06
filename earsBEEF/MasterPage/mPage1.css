@@ -101,20 +101,21 @@ body
 
 .announcementBox
 {
-	width: 1020px;
+	width: 930px;
 	height: 80px;
 	background-color: #FFFFFF;
-	margin-top: -100px;
+	margin-top: -500px;
 }
 .announcementBox .innerBox
 {
 	position: relative;
-	width: 1000px;
+	width: 910px;
 	height: 60px;
-	top: 10px;
+	top: 9px;
 	margin-left: 10px;
-	background-image: url(content_back.png);
+	background-image: url('content_back.png');
 	background-repeat: repeat-x;
+	left: -1px;
 }
 .announcementBox2
 {
@@ -136,7 +137,7 @@ body
 
 .contentBox
 {
-	width: 1020px;
+	width: 930px;
 	height: 800px;
 	background-color: #FFFFFF;
 	margin-top: 0px;
@@ -145,7 +146,7 @@ body
 .contentBox .innerBox
 {
 	position: relative;
-	width: 1000px;
+	width: 910px;
 	height: auto;
 	top: 10px;
 	margin-left: 10px;
