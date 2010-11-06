@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedOut.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="EARS.LoginPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style2
+        {
+            font-size: medium;
+        }
+    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" align="right">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
     <br />
     <div style="height: 350px; width: 5px; align: RIGHT; left: 100px; position: relative;">
     <asp:Panel ID="Panel1" runat="server" Height="197px" Width="236px" Wrap="False" 
@@ -35,14 +41,15 @@
         <asp:Label ID="lblText" runat="server"></asp:Label>
         <br />
         <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="False" 
-            ForeColor="Black" NavigateUrl="ForgotPassword.aspx" style="font-size: small">Forgot your password ?</asp:HyperLink>
+            ForeColor="Black" NavigateUrl="ForgotPassword.aspx" style="font-size: medium">Forgot your password ?</asp:HyperLink>
         <br />
         <br />
-        <b>For Students: </b>
+        <b><span class="style2">For Students: </span> </b>
+        <span class="style2">
         <br />
         Login ID is your admin number (eg. 1234567E)<br />
         <br />
-        <b>For Staff:</b><br /> Login ID is your staff email..</asp:Panel>
+        <b>For Staff:</b><br /> Login ID is your staff email..</span></asp:Panel>
     </div>
     <br />
     <br />
