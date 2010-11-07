@@ -147,6 +147,7 @@
     </Compile>
     <Compile Include="Annoucement.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
