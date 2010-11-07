@@ -7,114 +7,57 @@ namespace earsBEEF
 {
     public class Annoucement
     {
-        private int eventID;
-        private string name;
-        private string venue;
-        private double regCost;
-        private string category;
-        private string descrip;
-        private string eventDate;
-        private DateTime regStart;
-        private DateTime regEnd;
-        private int quota;
-        private int ccaID;
-        private int orgStudID;
-        private int orgStaffID;
+        private int announceID;
+        private string title;
+        private string content;
+        private DateTime date;
+        private int createStaffID;
+        private int createStudID;
 
-        public Annoucement(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID)
+        public Annoucement(int announceID, string title, string content, DateTime date, int createStaffID, int createStudID)
         {
-            this.eventID = eventID;
-            this.name = name;
-            this.venue = venue;
-            this.regCost = regcost;
-            this.category = category;
-            this.descrip = descrip;
-            this.eventDate = eventdate;
-            this.regStart = regstart;
-            this.regEnd = regend;
-            this.quota = quota;
-            this.ccaID = ccaID;
-            this.orgStaffID = orgstaffID;
-            this.orgStudID = orgstudID;
-        }
-      
-        public int EventID
-        {
-            get { return eventID; }
-            set { eventID = value; }
+            this.announceID = announceID;
+            this.title = title;
+            this.content = content;
+            this.date = date;
+            this.createStaffID = createStaffID;
+            this.createStudID = createStudID;
         }
 
-        public string Name
+        public int AnnounceID
         {
-            get { return name; }
-            set { name = value; }
+            get { return announceID; }
+            set { announceID = value; }
         }
 
-        public string Venue
+        public string Title
         {
-            get { return venue; }
-            set { venue = value; }
+            get { return title; }
+            set { title = value; }
         }
 
-        public double RegCost
+        public string Content
         {
-            get { return regCost; }
-            set { regCost = value; }
+            get { return content; }
+            set { content = value; }
         }
 
-        public string Category
+        public DateTime Date
         {
-            get { return category; }
-            set { category = value; }
+            get { return date; }
+            set { date = value; }
         }
 
-        public string Descrip
+        public int CreateStaffID
         {
-            get { return descrip; }
-            set { descrip = value; }
+            get { return createStaffID; }
+            set { createStaffID = value; }
         }
 
-        public string EventDate
+        public int CreateStudID
         {
-            get { return eventDate; }
-            set { eventDate = value; }
+            get { return createStudID; }
+            set { createStudID = value; }
         }
-
-        public DateTime RegStart
-        {
-            get { return regStart; }
-            set { regStart = value; }
-        }
-
-        public DateTime RegEnd
-        {
-            get { return regEnd; }
-            set { regEnd = value; }
-        }
-
-        public int Quota
-        {
-            get { return quota; }
-            set { quota = value; }
-        }
-
-        public int CcaID
-        {
-            get { return ccaID; }
-            set { ccaID = value; }
-        }
-
-        public int OrgStudID
-        {
-            get { return orgStudID; }
-            set { orgStudID = value; }
-        }
-
-        public int OrgStaffID
-        {
-            get { return orgStaffID; }
-            set { orgStaffID = value; }
-        }
-
     }
 }
