@@ -146,6 +146,7 @@
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Annoucement.cs" />
+    <Compile Include="cca.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="ForgotPassword.aspx.cs">
