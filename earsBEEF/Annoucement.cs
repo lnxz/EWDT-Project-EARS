@@ -10,18 +10,20 @@ namespace earsBEEF
         private int announceID;
         private string title;
         private string content;
-        private DateTime date;
+        private DateTime dateCreated;
         private int createStaffID;
         private int createStudID;
+        private DateTime dateOfAnn;
 
-        public Annoucement(int announceID, string title, string content, DateTime date, int createStaffID, int createStudID)
+        public Annoucement(int announceID, string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
             this.announceID = announceID;
             this.title = title;
             this.content = content;
-            this.date = date;
+            this.dateCreated = date;
             this.createStaffID = createStaffID;
             this.createStudID = createStudID;
+            this.dateOfAnn = dateOfAnn;
         }
 
         public int AnnounceID
@@ -44,8 +46,8 @@ namespace earsBEEF
 
         public DateTime Date
         {
-            get { return date; }
-            set { date = value; }
+            get { return dateCreated; }
+            set { dateCreated = value; }
         }
 
         public int CreateStaffID
@@ -59,5 +61,12 @@ namespace earsBEEF
             get { return createStudID; }
             set { createStudID = value; }
         }
+
+        public DateTime DateOfAnn
+        {
+            get { return dateOfAnn; }
+            set { dateOfAnn = value; }
+        }
+
     }
 }
