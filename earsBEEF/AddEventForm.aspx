@@ -75,16 +75,6 @@
                     </tr>
                     <tr>
                         <td class="style4">
-                            Request Staff:</td>
-                        <td class="style5">
-                            <asp:DropDownList ID="ddlRequest" runat="server" Height="22px" Width="196px">
-                            </asp:DropDownList>
-                        </td>
-                        <td>
-                            &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="style4">
                             &nbsp;</td>
                         <td class="style5">
                             &nbsp;</td>
@@ -113,16 +103,21 @@
                     <tr>
                         <td class="style9">
                             Venue:</td>
-                        <td class="style5">
-                            <asp:DropDownList ID="ddlVenue" runat="server" Height="22px" Width="196px">
-                            </asp:DropDownList>
+                        <td class="style5" rowspan="2">
+                            <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="219px"></asp:TextBox>
                         </td>
                         <td>
                             &nbsp;</td>
                     </tr>
                     <tr>
+                        <td class="style9">
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
                         <td class="style9" valign="top">
-                            Descriptions:</td>
+                            Description:</td>
                         <td class="style5">
                             <asp:TextBox ID="tbxDes" runat="server" Height="112px" TextMode="MultiLine" 
                                 Width="350px"></asp:TextBox>
@@ -131,11 +126,19 @@
                             &nbsp;</td>
                     </tr>
                     <tr>
+                        <td class="style9" valign="top">
+                            Event Dates:</td>
+                        <td class="style5">
+                            <asp:TextBox ID="tbxEventDates" runat="server" Width="274px"></asp:TextBox>
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
                         <td class="style10">
                             Quota:</td>
                         <td class="style11">
-                            <asp:DropDownList ID="ddlQouta" runat="server" Height="22px" Width="123px">
-                            </asp:DropDownList>
+                            <asp:TextBox ID="tbxQuota" runat="server"></asp:TextBox>
                         </td>
                         <td class="style12">
                         </td>

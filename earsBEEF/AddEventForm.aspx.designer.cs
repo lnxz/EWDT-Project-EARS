@@ -13,15 +13,6 @@ namespace earsBEEF {
     public partial class AddEventForm {
         
         /// <summary>
-        /// ddlRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlRequest;
-        
-        /// <summary>
         /// tbxName control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList ddlCate;
         
         /// <summary>
-        /// ddlVenue control.
+        /// tbxVenue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlVenue;
+        protected global::System.Web.UI.WebControls.TextBox tbxVenue;
         
         /// <summary>
         /// tbxDes control.
@@ -58,13 +49,22 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.TextBox tbxDes;
         
         /// <summary>
-        /// ddlQouta control.
+        /// tbxEventDates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlQouta;
+        protected global::System.Web.UI.WebControls.TextBox tbxEventDates;
+        
+        /// <summary>
+        /// tbxQuota control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxQuota;
         
         /// <summary>
         /// ddlStarts control.
