@@ -24,8 +24,9 @@ namespace EARS
         private string tShirtSize;
         private string nationality;
         private string studentType;
+        private DateTime dateOfBirth;
 
-        public Student(int studentID, string name,string adminNo, string password, char gender, string school, int yearOfStudy, string courseCode, int age, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string nationality, string studentType)
+        public Student(int studentID, string name,string adminNo, string password, char gender, string school, int yearOfStudy, string courseCode, int age, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string nationality, string studentType, DateTime dateOfBirth)
         {
             // TODO: Complete member initialization
             this.studentID = studentID;
@@ -44,6 +45,7 @@ namespace EARS
             this.tShirtSize = tShirtSize;
             this.nationality = nationality;
             this.studentType = studentType;
+            this.dateOfBirth = dateOfBirth;
         }
         public string StudentType
         {
@@ -124,6 +126,12 @@ namespace EARS
         {
             get { return isStudentLeader; }
             set { isStudentLeader = value; }
+        }
+
+        public DateTime DateOfBirth
+        {
+            get { return dateOfBirth; }
+            set { dateOfBirth = value; }
         }
 
     }
