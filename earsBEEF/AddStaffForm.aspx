@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table style="width:100%;">
+    <table style="width:100%;">
         <tr>
             <td class="style3" colspan="3">
                 <strong>Admin Controls</strong></td>
