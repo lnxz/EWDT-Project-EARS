@@ -13,24 +13,6 @@ namespace earsBEEF {
     public partial class AddStaffForm {
         
         /// <summary>
-        /// btnPreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPreview;
-        
-        /// <summary>
-        /// tbxID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxID;
-        
-        /// <summary>
         /// tbxPw control.
         /// </summary>
         /// <remarks>
@@ -58,6 +40,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlSch;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// tbxOffic control.
         /// </summary>
         /// <remarks>
@@ -76,13 +67,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlDept;
         
         /// <summary>
-        /// tbxWorkEmail control.
+        /// tbxPersonalEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxWorkEmail;
+        protected global::System.Web.UI.WebControls.TextBox tbxPersonalEmail;
         
         /// <summary>
         /// DdlPosit control.
@@ -92,6 +83,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlPosit;
+        
+        /// <summary>
+        /// tbxWorkEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbxWorkEmail;
         
         /// <summary>
         /// tbxName control.
@@ -148,31 +148,22 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlMarSta;
         
         /// <summary>
-        /// DdlGender control.
+        /// rbMale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlGender;
+        protected global::System.Web.UI.WebControls.RadioButton rbMale;
         
         /// <summary>
-        /// DdlCitiz control.
+        /// rbFemale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlCitiz;
-        
-        /// <summary>
-        /// DdlRelig control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlRelig;
+        protected global::System.Web.UI.WebControls.RadioButton rbFemale;
         
         /// <summary>
         /// DdlNation control.
@@ -200,15 +191,6 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxTele;
-        
-        /// <summary>
-        /// tbxEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxEmail;
         
         /// <summary>
         /// Button1 control.

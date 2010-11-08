@@ -7,24 +7,12 @@
             <td class="style3" colspan="3">
                 <strong>Admin Controls</strong></td>
             <td class="style3" align="right">
-                <asp:Button ID="btnPreview" runat="server" Text="Preview" />
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style3" colspan="3">
                 &nbsp;</td>
             <td class="style3">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style5">
-                Staff ID:</td>
-            <td class="style2">
-                <asp:TextBox ID="tbxID" runat="server" Width="143px"></asp:TextBox>
-            </td>
-            <td class="style10">
-                &nbsp;</td>
-            <td>
                 &nbsp;</td>
         </tr>
         <tr>
@@ -62,39 +50,48 @@
             <td class="style5">
                 School:</td>
             <td class="style2">
-                <asp:DropDownList ID="DdlSch" runat="server" Height="22px" Width="163px">
+                <asp:DropDownList ID="DdlSch" runat="server" Height="22px" Width="248px">
+                    <asp:ListItem Value="AS">Applied Science</asp:ListItem>
+                    <asp:ListItem Value="BS">Business </asp:ListItem>
+                    <asp:ListItem Value="DS">Design</asp:ListItem>
+                    <asp:ListItem Value="EN">Engine</asp:ListItem>
+                    <asp:ListItem Value="HSS">Humanities &amp; Social Science</asp:ListItem>
+                    <asp:ListItem Value="IIT">Informatics &amp; IT </asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style11">
                 Office No:</td>
             <td>
-                <asp:TextBox ID="tbxOffic" runat="server" Height="21px" Width="180px"></asp:TextBox>
+                <asp:Label ID="Label1" runat="server" Text="6780"></asp:Label>
+&nbsp;<asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="style5">
                 Department:</td>
             <td class="style2">
-                <asp:DropDownList ID="DdlDept" runat="server" Height="22px" Width="163px">
+                <asp:DropDownList ID="DdlDept" runat="server" Height="21px" Width="247px">
                 </asp:DropDownList>
             </td>
             <td class="style11">
+                Personal
                 Email:</td>
             <td>
-                <asp:TextBox ID="tbxWorkEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
+                <asp:TextBox ID="tbxPersonalEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="style5">
                 Position:</td>
             <td class="style2">
-                <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="163px">
+                <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="247px">
                 </asp:DropDownList>
             </td>
             <td class="style10">
-                &nbsp;</td>
+                Staff Email:</td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="tbxWorkEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="style5">
@@ -128,7 +125,10 @@
                 Race:</td>
             <td class="style4">
                 <asp:DropDownList ID="DdlRace" runat="server" Height="22px" Width="161px">
-                    <asp:ListItem>Racist</asp:ListItem>
+                    <asp:ListItem>Chinese</asp:ListItem>
+                    <asp:ListItem>Malay</asp:ListItem>
+                    <asp:ListItem>Indian</asp:ListItem>
+                    <asp:ListItem>Others</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -150,6 +150,10 @@
                 Marital Status:</td>
             <td class="style4">
                 <asp:DropDownList ID="DdlMarSta" runat="server" Height="22px" Width="162px">
+                    <asp:ListItem>Single</asp:ListItem>
+                    <asp:ListItem>Married</asp:ListItem>
+                    <asp:ListItem>Divorced</asp:ListItem>
+                    <asp:ListItem>Widowed</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -157,26 +161,12 @@
             <td class="style9">
                 Gender:</td>
             <td class="style2">
-                <asp:DropDownList ID="DdlGender" runat="server" Height="22px" Width="163px">
-                </asp:DropDownList>
+                <asp:RadioButton ID="rbMale" runat="server" Text="Male" />
+                <asp:RadioButton ID="rbFemale" runat="server" Text="Female" />
             </td>
             <td class="style11">
-                Citizenship :</td>
-            <td class="style4">
-                <asp:DropDownList ID="DdlCitiz" runat="server" Height="22px" Width="162px">
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td class="style9">
-                Religion:</td>
-            <td class="style2">
-                <asp:DropDownList ID="DdlRelig" runat="server" Height="22px" Width="163px">
-                </asp:DropDownList>
-            </td>
-            <td class="style10">
                 &nbsp;</td>
-            <td>
+            <td class="style4">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -184,6 +174,8 @@
                 Nationality: </td>
             <td class="style2">
                 <asp:DropDownList ID="DdlNation" runat="server" Height="22px" Width="162px">
+                    <asp:ListItem Value="SG">Singaporean</asp:ListItem>
+                    <asp:ListItem Value="PR">Permanent Residents</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style10">
@@ -202,18 +194,8 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-                Contact:</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
             <td class="style8">
-                Moblie No:</td>
+                Contact No:</td>
             <td class="style2">
                 <asp:TextBox ID="tbxMoblie" runat="server" Width="205px"></asp:TextBox>
             </td>
@@ -222,17 +204,6 @@
             <td class="style4">
                 <asp:TextBox ID="tbxTele" runat="server" Width="205px"></asp:TextBox>
             </td>
-        </tr>
-        <tr>
-            <td class="style8">
-                Email:</td>
-            <td class="style2">
-                <asp:TextBox ID="tbxEmail" runat="server" Width="205px"></asp:TextBox>
-            </td>
-            <td class="style11">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
         </tr>
         </table>
     <table style="width:100%;">
