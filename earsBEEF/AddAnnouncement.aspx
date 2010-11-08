@@ -12,7 +12,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table style="width:100%;">
+    <table style="width:100%;">
         <tr>
             <td class="style2">
                 <strong>Create an Announcement</strong></td>
