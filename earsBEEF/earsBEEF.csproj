@@ -54,6 +54,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="AddAnnouncement.aspx" />
     <Content Include="AddEventForm.aspx" />
     <Content Include="AddStaffForm.aspx" />
     <Content Include="AddStudentForm.aspx" />
@@ -123,6 +124,12 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAnnouncement.aspx.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAnnouncement.aspx.designer.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddEventForm.aspx.cs">
       <DependentUpon>AddEventForm.aspx</DependentUpon>
