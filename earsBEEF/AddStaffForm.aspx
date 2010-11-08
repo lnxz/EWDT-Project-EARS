@@ -175,7 +175,8 @@
             <td class="style2">
                 <asp:DropDownList ID="DdlNation" runat="server" Height="22px" Width="162px">
                     <asp:ListItem Value="SG">Singaporean</asp:ListItem>
-                    <asp:ListItem Value="PR">Permanent Residents</asp:ListItem>
+                    <asp:ListItem Value="PR">Permanent Resident</asp:ListItem>
+                    <asp:ListItem Value="OT">Other</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style10">
