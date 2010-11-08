@@ -20,14 +20,17 @@
         .style6
         {
             width: 433px;
+            height: 110px;
         }
         .style7
         {
             width: 431px;
+            height: 110px;
         }
         .style8
         {
             width: 427px;
+            height: 110px;
         }
         .style9
         {
@@ -75,14 +78,6 @@
                     </tr>
                     <tr>
                         <td class="style4">
-                            &nbsp;</td>
-                        <td class="style5">
-                            &nbsp;</td>
-                        <td>
-                            &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="style9">
                             Event Name:</td>
                         <td class="style5">
                             <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
@@ -92,9 +87,19 @@
                     </tr>
                     <tr>
                         <td class="style9">
+                            CCA involved:</td>
+                        <td class="style5">
+                            <asp:DropDownList ID="DropDownList1" runat="server" Height="17px" Width="218px">
+                            </asp:DropDownList>
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style9">
                             Category:</td>
                         <td class="style5">
-                            <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="196px">
+                            <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px">
                             </asp:DropDownList>
                         </td>
                         <td>
