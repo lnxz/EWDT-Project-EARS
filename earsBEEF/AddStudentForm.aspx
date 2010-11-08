@@ -324,18 +324,6 @@
             </td>
         </tr>
         <tr>
-            <td class="style39">
-                Religion:</td>
-            <td class="style39">
-                <asp:DropDownList ID="DdlRelig" runat="server" Height="22px" Width="176px">
-                </asp:DropDownList>
-            </td>
-            <td class="style39">
-                </td>
-            <td class="style40">
-                </td>
-        </tr>
-        <tr>
             <td class="style41">
                 Nationality: </td>
             <td class="style41">
