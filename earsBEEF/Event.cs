@@ -5,7 +5,7 @@ using System.Web;
 
 namespace earsBEEF
 {
-    public class Events
+    public class Event
     {
         private int eventID;
         private string name;
@@ -20,8 +20,9 @@ namespace earsBEEF
         private int ccaID;
         private int orgStudID;
         private int orgStaffID;
+        private DateTime dateCreated;
 
-        public Events(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID)
+        public Event(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
         {
             this.eventID = eventID;
             this.name = name;
@@ -36,6 +37,7 @@ namespace earsBEEF
             this.ccaID = ccaID;
             this.orgStaffID = orgstaffID;
             this.orgStudID = orgstudID;
+            this.dateCreated = dateCreated;
         }
       
         public int EventID
@@ -114,6 +116,12 @@ namespace earsBEEF
         {
             get { return orgStaffID; }
             set { orgStaffID = value; }
+        }
+
+        public DateTime DateCreated
+        {
+            get { return dateCreated; }
+            set { dateCreated = value; }
         }
 
     }

@@ -15,35 +15,28 @@ namespace EARS
         private string password;
         private char gender;
         private string school;
-        private int yearOfStudy;
         private string courseCode;
-        private int age;
-        private int contactNo;
-        private int emergCont;
+        private string contactNo;
+        private string emergCont;
         private string email;
         private string tShirtSize;
-        private string nationality;
         private string studentType;
         private DateTime dateOfBirth;
 
-        public Student(int studentID, string name,string adminNo, string password, char gender, string school, int yearOfStudy, string courseCode, int age, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string nationality, string studentType, DateTime dateOfBirth)
+        public Student(string name,string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
         {
             // TODO: Complete member initialization
-            this.studentID = studentID;
             this.name = name;
             this.adminNo = adminNo;
             this.password = password;
             this.gender = gender;
             this.school = school;
-            this.yearOfStudy = yearOfStudy;
             this.courseCode = courseCode;
-            this.age = age;
             this.contactNo = contactNo;
             this.emergCont = emergCont;
             this.email = email;
             this.isStudentLeader = isStudentLeader;
             this.tShirtSize = tShirtSize;
-            this.nationality = nationality;
             this.studentType = studentType;
             this.dateOfBirth = dateOfBirth;
         }
@@ -51,11 +44,6 @@ namespace EARS
         {
             get { return studentType; }
             set { studentType = value; }
-        }
-        public string Nationality
-        {
-            get { return nationality; }
-            set { nationality = value; }
         }
         public string TShirtSize
         {
@@ -67,30 +55,20 @@ namespace EARS
             get { return email; }
             set { email = value; }
         }
-        public int EmergCont
+        public string EmergCont
         {
             get { return emergCont; }
             set { emergCont = value; }
         }
-        public int ContactNo
+        public string ContactNo
         {
             get { return contactNo; }
             set { contactNo = value; }
-        }
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
         }
         public string CourseCode
         {
             get { return courseCode; }
             set { courseCode = value; }
-        }
-        public int YearOfStudy
-        {
-            get { return yearOfStudy; }
-            set { yearOfStudy = value; }
         }
         public string School
         {
@@ -127,7 +105,6 @@ namespace EARS
             get { return isStudentLeader; }
             set { isStudentLeader = value; }
         }
-
         public DateTime DateOfBirth
         {
             get { return dateOfBirth; }
