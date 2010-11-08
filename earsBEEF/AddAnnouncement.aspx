@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <td class="style9">
-                            Announcement Title:</td>
+                            &nbsp;Title:</td>
                         <td class="style5">
                             <asp:TextBox ID="tbxTitle" runat="server" Width="224px"></asp:TextBox>
                         </td>
@@ -49,7 +49,7 @@
                         <td class="style9">
                             Date</td>
                         <td class="style5">
-                            <asp:DropDownList ID="DropDate" runat="server" Height="22px" Width="196px">
+                            <asp:DropDownList ID="DropDate" runat="server" Height="27px" Width="271px">
                             </asp:DropDownList>
                             Today&#39;s Date:<asp:Label ID="lblDate" runat="server"></asp:Label>
                         </td>
