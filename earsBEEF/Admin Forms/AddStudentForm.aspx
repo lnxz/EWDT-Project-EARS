@@ -9,6 +9,7 @@
         {
             width: 1002px;
             height: 21px;
+            text-align: right;
         }
         .style7
         {
@@ -28,6 +29,7 @@
         {
             width: 1002px;
             height: 44px;
+            text-align: right;
         }
         .style20
         {
@@ -41,6 +43,7 @@
         .style23
         {
             height: 41px;
+            width: 358px;
         }
         .style24
         {
@@ -55,6 +58,7 @@
         .style26
         {
             height: 27px;
+            width: 358px;
         }
         .style27
         {
@@ -64,6 +68,7 @@
         .style28
         {
             height: 23px;
+            width: 358px;
         }
         .style30
         {
@@ -90,10 +95,12 @@
         .style35
         {
             height: 35px;
+            width: 358px;
         }
         .style36
         {
             height: 26px;
+            width: 358px;
         }
         .style37
         {
@@ -103,6 +110,7 @@
         .style38
         {
             height: 28px;
+            width: 358px;
         }
         .style41
         {
@@ -112,6 +120,7 @@
         .style42
         {
             height: 30px;
+            width: 358px;
         }
         .style45
         {
@@ -121,6 +130,7 @@
         .style46
         {
             height: 24px;
+            width: 358px;
         }
         .style47
         {
@@ -130,6 +140,7 @@
         .style48
         {
             height: 34px;
+            width: 358px;
         }
         .style49
         {
@@ -144,10 +155,109 @@
         .style51
         {
             height: 32px;
+            width: 358px;
+        }
+        .style52
+        {
+            width: 1002px;
+            height: 34px;
+            text-align: right;
+        }
+        .style53
+        {
+            height: 27px;
+            text-align: right;
+        }
+        .style54
+        {
+            width: 1002px;
+            height: 24px;
+            text-align: right;
+        }
+        .style55
+        {
+            width: 1002px;
+            height: 30px;
+            text-align: right;
+        }
+        .style56
+        {
+            width: 1002px;
+            height: 28px;
+            text-align: right;
+        }
+        .style57
+        {
+            width: 1002px;
+            height: 26px;
+            text-align: right;
+        }
+        .style58
+        {
+            width: 1002px;
+            height: 35px;
+            text-align: right;
+        }
+        .style59
+        {
+            width: 1002px;
+            height: 31px;
+            text-align: right;
+        }
+        .style60
+        {
+            width: 1002px;
+            height: 23px;
+            text-align: right;
+        }
+        .style61
+        {
+            width: 1002px;
+            height: 41px;
+            text-align: right;
+        }
+        .style62
+        {
+            height: 11px;
+            width: 358px;
+        }
+        .style63
+        {
+            height: 21px;
+            width: 358px;
+        }
+        .style64
+        {
+            height: 44px;
+            width: 358px;
+        }
+        .style65
+        {
+            height: 31px;
+            width: 358px;
+        }
+        .style66
+        {
+            height: 18px;
+            width: 358px;
         }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <table style="width: 99%;">
         <tr>
             <td class="style50" colspan="2">
@@ -162,7 +272,7 @@
                 </td>
             <td class="style4">
                 </td>
-            <td class="style4">
+            <td class="style62">
                 </td>
         </tr>
         <tr>
@@ -171,10 +281,12 @@
             <td class="style7">
                 <asp:TextBox ID="tbxAdminNum" runat="server" style="margin-left: 0px" 
                     Width="178px"></asp:TextBox>
-            &nbsp;</td>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="tbxAdminNum" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td class="style7">
                 </td>
-            <td class="style7">
+            <td class="style63">
                 </td>
         </tr>
         <tr>
@@ -182,10 +294,12 @@
                 Matric Card Number:</td>
             <td class="style13">
                 <asp:TextBox ID="tbxAdminPw" runat="server" Width="178px"></asp:TextBox>
-            &nbsp;</td>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="tbxAdminPw" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td class="style13">
                 </td>
-            <td class="style13">
+            <td class="style64">
                 </td>
         </tr>
         <tr>
@@ -197,7 +311,7 @@
                 <strong>Acadamic&nbsp;Information</strong></td>
         </tr>
         <tr>
-            <td class="style24">
+            <td class="style61">
                 Student Type:</td>
             <td class="style24">
                 <asp:DropDownList ID="DdlStudType" runat="server" Height="22px" Width="229px">
@@ -211,7 +325,7 @@
                 </td>
         </tr>
         <tr>
-            <td class="style27">
+            <td class="style60">
                 School:</td>
             <td class="style27">
                 <asp:DropDownList ID="DdlStage0" runat="server" Height="22px" Width="230px">
@@ -229,7 +343,7 @@
                 </td>
         </tr>
         <tr>
-            <td class="style31">
+            <td class="style59">
                 Course:</td>
             <td class="style31">
                 <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="229px">
@@ -237,28 +351,17 @@
             </td>
             <td class="style31">
                 </td>
-            <td class="style30">
+            <td class="style65">
                 </td>
         </tr>
         <tr>
             <td class="style32">
-                Year of Study</td>
-            <td class="style32">
-                <asp:TextBox ID="tbxYearOfStudy" runat="server" Width="205px"></asp:TextBox>
-                </td>
-            <td class="style32">
-                &nbsp;</td>
-            <td class="style32">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style32">
                 &nbsp;</td>
             <td class="style32">
                 &nbsp;</td>
             <td class="style32">
                 &nbsp;</td>
-            <td class="style32">
+            <td class="style66">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -266,10 +369,13 @@
                 <strong>Student Paticulars</strong></td>
         </tr>
         <tr>
-            <td class="style34">
+            <td class="style58">
                 Name:</td>
             <td class="style34">
                 <asp:TextBox ID="tbxName" runat="server" Width="203px"></asp:TextBox>
+            &nbsp;
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td class="style34">
                 T-Shirt Size:</td>
@@ -285,7 +391,7 @@
             </td>
         </tr>
         <tr>
-            <td class="style21">
+            <td class="style57">
                 Date Of Birth:</td>
             <td class="style21">
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
@@ -304,7 +410,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style37">
+            <td class="style56">
                 Gender:</td>
             <td class="style37">
                 <asp:RadioButton ID="rbMale" runat="server" Text="Male" />
@@ -316,7 +422,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style41">
+            <td class="style55">
                 Nationality: </td>
             <td class="style41">
                 <asp:DropDownList ID="DdlNation" runat="server" Height="22px" Width="176px">
@@ -331,7 +437,7 @@
                 </td>
         </tr>
         <tr>
-            <td class="style45">
+            <td class="style54">
                 Is Student leader:</td>
             <td class="style45">
                 <asp:RadioButton ID="rbSlYes" runat="server" Text="Yes" />
@@ -343,22 +449,32 @@
                 </td>
         </tr>
         <tr>
-            <td class="style26">
+            <td class="style53">
                 Contact:</td>
             <td class="style25">
                 <asp:TextBox ID="tbxContact" runat="server" Width="205px"></asp:TextBox>
+                &nbsp;
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="tbxContact" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             <td class="style25">
                 Emergency Contact:</td>
             <td class="style26">
                 <asp:TextBox ID="tbxEmergContact" runat="server" Width="205px"></asp:TextBox>
+                &nbsp;
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="tbxEmergContact" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
         </tr>
         <tr>
-            <td class="style47">
+            <td class="style52">
+                TP
                 Email:</td>
             <td class="style47">
                 <asp:TextBox ID="tbxEmail" runat="server" Width="205px"></asp:TextBox>
+            &nbsp;
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="tbxEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td class="style47">
                 </td>
