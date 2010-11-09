@@ -24,6 +24,13 @@ namespace EARS
                 {
                     loginSuccess = true;
                     FormsAuthentication.SetAuthCookie(s.Name, false);
+                    Session["loginUserName"] = tbxLoginId.Text;
+                    if(FormsAuthentication.GetRedirectUrl(s.Name,false) == "/LoginPage.aspx")
+                    {   Response.Redirect("TESTPAGE.aspx");
+                    }
+                    else{
+                        FormsAuthentication.RedirectFromLoginPage(s.Name, false);
+                    }
                 }
             }
 
