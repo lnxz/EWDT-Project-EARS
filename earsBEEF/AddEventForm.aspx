@@ -20,17 +20,17 @@
         .style6
         {
             width: 433px;
-            height: 110px;
+            height: 30px;
         }
         .style7
         {
             width: 431px;
-            height: 110px;
+            height: 30px;
         }
         .style8
         {
             width: 427px;
-            height: 110px;
+            height: 30px;
         }
         .style9
         {
@@ -171,14 +171,15 @@
                     <tr>
                         <td class="style6" valign="top">
                             Registration Cost:</td>
-                        <td class="style7" align="left">
-&nbsp;<asp:RadioButtonList ID="RblOptions" runat="server">
-                                <asp:ListItem>Free</asp:ListItem>
-                                <asp:ListItem>Others</asp:ListItem>
-                            </asp:RadioButtonList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td class="style7" align="left" valign="top">
+                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" />
+&nbsp;&nbsp;
+                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" />
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="tbxDol" runat="server" Width="80px"></asp:TextBox>
-&nbsp;Dollars per student</td>
+&nbsp; Dollars per student<br />
+                        </td>
                         <td class="style8">
                         </td>
                     </tr>
