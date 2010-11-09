@@ -208,6 +208,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin Forms\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
