@@ -44,6 +44,7 @@
     <div class="contentBox">
         <div class="innerBox">
             <div class="contentTitle">
+                Logged In as
             </div>
             <div class="contentText">
                 <form id="form1" runat="server" align="center">
