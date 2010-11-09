@@ -18,8 +18,9 @@ namespace EARS
         private string position;
         private string admin;
         private string officeNo;
+        private DateTime dateofBirth;
 
-        public Staff(int staffID, string name, string staffEmail, string password, string gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo)
+        public Staff(int staffID, string name, string staffEmail, string password, string gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo, DateTime dateofBirth)
         {
             this.staffID = staffID;
             this.name = name;
@@ -32,6 +33,7 @@ namespace EARS
             this.position = position;
             this.admin = admin;
             this.officeNo = officeNo;
+            this.dateofBirth = dateofBirth;
         }
 
         public int StaffID
@@ -99,6 +101,11 @@ namespace EARS
         {
             get { return officeNo; }
             set { officeNo = value; }
+        }
+        public DateTime DateOfBirth
+        {
+            get { return dateofBirth; }
+            set { dateofBirth = value; }
         }
 
     }

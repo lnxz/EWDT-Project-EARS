@@ -38,9 +38,7 @@ namespace EARS
                     string password = dr["Password"].ToString();
                     char gender = dr["Gender"].ToString()[0];
                     string school = dr["School"].ToString();
-                    int yearOfStudy = Convert.ToInt32(dr["YearOfStudy"].ToString());
                     string courseCode = dr["CourseCode"].ToString();
-                    int age = Convert.ToInt32(dr["Age"].ToString());
                     int contactNo = Convert.ToInt32(dr["ContactNo"].ToString());
                     int emergCont = Convert.ToInt32(dr["EmergencyContact"].ToString());
                     string email = dr["Email"].ToString();
@@ -52,7 +50,7 @@ namespace EARS
                     string nationality = dr["Nationality"].ToString();
                     string studentType = dr["StudentType"].ToString();
 
-            //        Student s = new Student(studentID, name, adminNo, password, gender, school, yearOfStudy, courseCode, age, contactNo, emergCont, email, isStudentLeader, tShirtSize, nationality, studentType);
+                Student s = new Student(studentID, name, adminNo, password, gender, school, yearOfStudy, courseCode, age, contactNo, emergCont, email, isStudentLeader, tShirtSize, nationality, studentType);
                    // results.Add(s);
                 }
             }
@@ -107,7 +105,54 @@ namespace EARS
                 conn.Close();
             }
         }
-        
+        public static ArrayList GetAllStaff()
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["staffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    string admin = dr["IsAdmin"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    string officeNo = dr["OfficeNumber"].ToString();
+
+                    //        Staff st = new Staff(staffID, Name, StaffEmail, Password, Gender, School, ContactNo, PersonalEmail, Position, IsAdmin, DateOfBirth, OfficeNumber);
+                    // results.Add(st);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
 
     }
 
