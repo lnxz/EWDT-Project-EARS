@@ -148,7 +148,7 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table style="width: 99%;">
+    <table style="width: 99%;">
         <tr>
             <td class="style50" colspan="2">
                 <strong style="text-align: left">Admin Controls</strong></td>
@@ -272,13 +272,15 @@
                 <asp:TextBox ID="tbxName" runat="server" Width="203px"></asp:TextBox>
             </td>
             <td class="style34">
-                Race:</td>
+                T-Shirt Size:</td>
             <td class="style35">
-                <asp:DropDownList ID="DdlRace" runat="server" Height="22px" Width="161px">
-                    <asp:ListItem>Chinese</asp:ListItem>
-                    <asp:ListItem>Malay</asp:ListItem>
-                    <asp:ListItem>Indian</asp:ListItem>
-                    <asp:ListItem>Others</asp:ListItem>
+                <asp:DropDownList ID="ddlsize" runat="server" Height="26px" Width="84px">
+                    <asp:ListItem>XS</asp:ListItem>
+                    <asp:ListItem>S</asp:ListItem>
+                    <asp:ListItem>M</asp:ListItem>
+                    <asp:ListItem>L</asp:ListItem>
+                    <asp:ListItem>XL</asp:ListItem>
+                    <asp:ListItem>XXL</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -309,11 +311,9 @@
                 <asp:RadioButton ID="rbFemale" runat="server" Text="Female" />
             </td>
             <td class="style37">
-                Citizenship :</td>
+                &nbsp;</td>
             <td class="style38">
-                <asp:DropDownList ID="DdlCitiz" runat="server" Height="22px" Width="162px">
-                </asp:DropDownList>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style41">
@@ -367,17 +367,9 @@
         </tr>
         <tr>
             <td class="style49">
-                T-Shirt Size:</td>
+                &nbsp;</td>
             <td class="style49">
-                <asp:DropDownList ID="DropDownList1" runat="server" Height="26px" Width="84px">
-                    <asp:ListItem>XS</asp:ListItem>
-                    <asp:ListItem>S</asp:ListItem>
-                    <asp:ListItem>M</asp:ListItem>
-                    <asp:ListItem>L</asp:ListItem>
-                    <asp:ListItem>XL</asp:ListItem>
-                    <asp:ListItem>XXL</asp:ListItem>
-                </asp:DropDownList>
-                </td>
+                &nbsp;</td>
             <td class="style49" align="left" colspan="2">
                 </td>
         </tr>
