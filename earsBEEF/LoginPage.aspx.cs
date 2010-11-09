@@ -27,6 +27,15 @@ namespace EARS
                 }
             }
 
+            foreach (Staff st in DBManager.GetAllStaff())
+            {
+                if (tbxLoginId.Text.Equals(st.StaffEmail) && tbxLoginPw.Text.Equals(st.Password))
+                {
+                    loginSuccess = true;
+                    FormsAuthentication.SetAuthCookie(st.Name, false);
+                }
+            }
+
         }
     }
 }
