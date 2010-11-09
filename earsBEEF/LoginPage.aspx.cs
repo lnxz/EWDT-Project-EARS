@@ -22,10 +22,12 @@ namespace EARS
                 if (tbxLoginId.Text.Equals(s.AdminNo) && tbxLoginPw.Text.Equals(s.Password))
                 {
                     loginSuccess = true;
+                    
                 }
             }
 
             lblText.Text = loginSuccess.ToString();
+
         }
     }
 }
