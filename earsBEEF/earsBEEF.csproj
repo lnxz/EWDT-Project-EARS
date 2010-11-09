@@ -54,10 +54,10 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="AddAnnouncement.aspx" />
-    <Content Include="AddEventForm.aspx" />
-    <Content Include="AddStaffForm.aspx" />
-    <Content Include="AddStudentForm.aspx" />
+    <Content Include="Protected Forms\AddAnnouncement.aspx" />
+    <Content Include="Protected Forms\AddEventForm.aspx" />
+    <Content Include="Protected Forms\AddStaffForm.aspx" />
+    <Content Include="Protected Forms\AddStudentForm.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\Stub1.png" />
     <Content Include="Images\Stub10.png" />
@@ -126,32 +126,32 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddAnnouncement.aspx.cs">
+    <Compile Include="Protected Forms\AddAnnouncement.aspx.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddAnnouncement.aspx.designer.cs">
+    <Compile Include="Protected Forms\AddAnnouncement.aspx.designer.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddEventForm.aspx.cs">
+    <Compile Include="Protected Forms\AddEventForm.aspx.cs">
       <DependentUpon>AddEventForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddEventForm.aspx.designer.cs">
+    <Compile Include="Protected Forms\AddEventForm.aspx.designer.cs">
       <DependentUpon>AddEventForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddStaffForm.aspx.cs">
+    <Compile Include="Protected Forms\AddStaffForm.aspx.cs">
       <DependentUpon>AddStaffForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddStaffForm.aspx.designer.cs">
+    <Compile Include="Protected Forms\AddStaffForm.aspx.designer.cs">
       <DependentUpon>AddStaffForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddStudentForm.aspx.cs">
+    <Compile Include="Protected Forms\AddStudentForm.aspx.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddStudentForm.aspx.designer.cs">
+    <Compile Include="Protected Forms\AddStudentForm.aspx.designer.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Annoucement.cs" />
