@@ -25,8 +25,16 @@ namespace EARS
                     loginSuccess = true;
                     FormsAuthentication.SetAuthCookie(s.Name, false);
                     Session["loginUserName"] = tbxLoginId.Text;
-                    if(FormsAuthentication.GetRedirectUrl(s.Name,false) == "/LoginPage.aspx")
+                    if (s.IsStudentLeader)
+                    {
+                        Session["LoginType"] = "StudentYes";
+                    }
+                    else
+                    {
+                        Session["LoginType"] = "StudentNo";
+                    } if (FormsAuthentication.GetRedirectUrl(s.Name, false) == "/LoginPage.aspx")
                     {   Response.Redirect("TESTPAGE.aspx");
+                       
                     }
                     else{
                         FormsAuthentication.RedirectFromLoginPage(s.Name, false);
@@ -40,6 +48,22 @@ namespace EARS
                 {
                     loginSuccess = true;
                     FormsAuthentication.SetAuthCookie(st.Name, false);
+                     Session["loginUserName"] = tbxLoginId.Text;
+                    if (st.Admin.Equals("Y"))
+                    {
+                        Session["LoginType"] = "StaffYes";
+                    }
+                    else
+                    {
+                        Session["LoginType"] = "StaffNo";
+                    } if (FormsAuthentication.GetRedirectUrl(st.Name, false) == "/LoginPage.aspx")
+                    {   Response.Redirect("TESTPAGE.aspx");
+                       
+                    }
+                    else{
+                        FormsAuthentication.RedirectFromLoginPage(st.Name, false);
+                    }
+                }
                 }
             }
 
