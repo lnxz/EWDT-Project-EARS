@@ -1,11 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoggedIn.Master.cs" Inherits="earsBEEF.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoggedInStudent.master.cs" Inherits="earsBEEF.LoggedInStudent" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="MasterPage/mPageStaffAdmin.css">
+    <link rel="stylesheet" type="text/css" href="MasterPage/mPageStudentNo.css">
     <title></title>
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
@@ -24,16 +23,10 @@
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="Images/Stub1.png" />
-        <img src="Images/Stub2.png" />
-        <img src="Images/Stub3.png" />
         <img src="Images/Stub4.png" />
         <img src="Images/Stub5.png" />
         <img src="Images/Stub6.png" />
-        <img src="Images/Stub7.png" />
         <img src="Images/Stub8.png" />
-        <img src="Images/Stub11.png" />
-        <img src="Images/Stub12.png" />
-        <img src="Images/Stub13.png" />
         <img src="Images/Stub9.png" />
         <img src="Images/Stub10.png" />
     </div>

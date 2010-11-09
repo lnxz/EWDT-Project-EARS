@@ -52,8 +52,8 @@ namespace EARS
                     string nationality = dr["Nationality"].ToString();
                     string studentType = dr["StudentType"].ToString();
 
-                    Student s = new Student(studentID, name, adminNo, password, gender, school, yearOfStudy, courseCode, age, contactNo, emergCont, email, isStudentLeader, tShirtSize, nationality, studentType);
-                    results.Add(s);
+            //        Student s = new Student(studentID, name, adminNo, password, gender, school, yearOfStudy, courseCode, age, contactNo, emergCont, email, isStudentLeader, tShirtSize, nationality, studentType);
+                   // results.Add(s);
                 }
             }
             catch (SqlException ex)
