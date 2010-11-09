@@ -39,19 +39,19 @@ namespace EARS
                     char gender = dr["Gender"].ToString()[0];
                     string school = dr["School"].ToString();
                     string courseCode = dr["CourseCode"].ToString();
-                    int contactNo = Convert.ToInt32(dr["ContactNo"].ToString());
-                    int emergCont = Convert.ToInt32(dr["EmergencyContact"].ToString());
+                    string contactNo = dr ["ContactNo"].ToString();
+                    string emergCont = dr ["EmergencyContact"].ToString();
                     string email = dr["Email"].ToString();
                     if (dr["IsStudentLeader"].ToString()[0].Equals("Y"))
                     {
                         isStudentLeader = true;
                     }
                     string tShirtSize = dr["TShirtSize"].ToString();
-                    string nationality = dr["Nationality"].ToString();
+                    DateTime dateofbirth = DateTime.Parse( dr["DateOfBirth"].ToString());
                     string studentType = dr["StudentType"].ToString();
 
-                Student s = new Student(studentID, name, adminNo, password, gender, school, yearOfStudy, courseCode, age, contactNo, emergCont, email, isStudentLeader, tShirtSize, nationality, studentType);
-                   // results.Add(s);
+                Student s = new Student(studentID, name, adminNo, password, gender, school, courseCode,contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
+                    results.Add(s);
                 }
             }
             catch (SqlException ex)
