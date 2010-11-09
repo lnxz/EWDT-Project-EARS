@@ -23,7 +23,7 @@ namespace EARS
         private string studentType;
         private DateTime dateOfBirth;
 
-        public Student(string name,string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
+        public Student(string name, string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
         {
             // TODO: Complete member initialization
             this.name = name;
@@ -40,6 +40,26 @@ namespace EARS
             this.studentType = studentType;
             this.dateOfBirth = dateOfBirth;
         }
+
+        public Student(int studentID,string name,string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
+        {
+            // TODO: Complete member initialization
+            this.studentID = studentID;
+            this.name = name;
+            this.adminNo = adminNo;
+            this.password = password;
+            this.gender = gender;
+            this.school = school;
+            this.courseCode = courseCode;
+            this.contactNo = contactNo;
+            this.emergCont = emergCont;
+            this.email = email;
+            this.isStudentLeader = isStudentLeader;
+            this.tShirtSize = tShirtSize;
+            this.studentType = studentType;
+            this.dateOfBirth = dateOfBirth;
+        }
+
         public string StudentType
         {
             get { return studentType; }
