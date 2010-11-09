@@ -26,7 +26,7 @@ namespace EARS
                     FormsAuthentication.SetAuthCookie(s.Name, false);
                 }
             }
-            foreach (Staff s 
+            foreach (Staff s in DBManager.
 
             lblText.Text = loginSuccess.ToString();
 
