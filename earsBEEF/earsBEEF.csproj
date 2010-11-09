@@ -78,9 +78,10 @@
     <Content Include="MasterPage\background.png" />
     <Content Include="MasterPage\content_back.png" />
     <Content Include="MasterPage\footer.png" />
-    <Content Include="MasterPage\mPage1.css" />
+    <Content Include="MasterPage\mPageStaffAdmin.css" />
     <Content Include="Images\TopBanner.png" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="MasterPage\mPageStudentNo.css" />
     <Content Include="Styles\MainMenu.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -167,6 +168,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoggedInStudent.Master.cs">
+      <DependentUpon>LoggedInStudent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedInStudent.Master.designer.cs">
+      <DependentUpon>LoggedInStudent.Master</DependentUpon>
+    </Compile>
     <Compile Include="LoggedOut.Master.cs">
       <DependentUpon>LoggedOut.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoggedOut.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoggedInStudent.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

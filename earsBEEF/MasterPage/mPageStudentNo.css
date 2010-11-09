@@ -1,4 +1,4 @@
-body
+﻿body
 {
 	margin: 0;
 	padding: 0;
@@ -7,9 +7,9 @@ body
 	font-size: 13px;
 	color: #061C37;
 	background: #014D5D url(background.png);
-	background-repeat: repe
-*
-{
+	background-repeat: repeat-x;
+
+}
 
 *
 {
@@ -17,7 +17,7 @@ body
  text-align:left;
 	font-size: medium;
 	font-family: Arial, Helvetica, sans-serif;
-}
+
 }
 
 #page
@@ -109,7 +109,7 @@ body
 	width: 930px;
 	height: 80px;
 	background-color: #FFFFFF;
-	margin-top: -500px;
+	margin-top: -255px;
 }
 .announcementBox .innerBox
 {
@@ -122,23 +122,7 @@ body
 	background-repeat: repeat-x;
 	left: -1px;
 }
-.announcementBox2
-{
-	width: 1020px;
-	height: 80px;
-	background-color: #FFFFFF;
-	margin-top: 26px;
-}
-.announcementBox2 .innerBox2
-{
-	position: relative;
-	width: 1000px;
-	height: 60px;
-	top: 10px;
-	margin-left: 10px;
-	background-image: url(content_back.png);
-	background-repeat: repeat-x;
-}
+
 
 .contentBox
 {
@@ -152,23 +136,6 @@ body
 {
 	position: relative;
 	width: 910px;
-	height: auto;
-	top: 10px;
-	margin-left: 10px;
-	padding-bottom: 35px;
-}
-.contentBox2
-{
-	width: 1020px;
-	height: 500px;
-	background-color: #FFFFFF;
-	margin-top: 0px;
-}
-
-.contentBox2 .innerBox2
-{
-	position: relative;
-	width: 1000px;
 	height: auto;
 	top: 10px;
 	margin-left: 10px;
@@ -194,7 +161,7 @@ body
 
 #footer
 {
-	width: 1020px;
+	width: 930px;
 	height: 16px;
 	background: url(footer.png);
 	text-align: center;
