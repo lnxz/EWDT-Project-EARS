@@ -64,7 +64,7 @@ namespace EARS
                         FormsAuthentication.RedirectFromLoginPage(st.Name, false);
                     }
                 }
-                }
+                
             }
 
         }
