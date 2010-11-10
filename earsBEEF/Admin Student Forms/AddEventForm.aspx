@@ -112,11 +112,15 @@
             &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
+            &nbsp;/ 
+                           <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList>
+                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <asp:Button ID="Button2" runat="server" Text="Add Date" 
+                                onclick="Button2_Click" />
+                            
             &nbsp;&nbsp;<asp:Panel ID="Panel2" runat="server">
-                                <asp:RadioButton ID="rbD1" runat="server" Text="Add More Date" />
+                                <asp:Label ID="Label1" runat="server"></asp:Label>
                             </asp:Panel>
                         </td>
                         <td>
