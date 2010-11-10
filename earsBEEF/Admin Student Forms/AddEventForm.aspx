@@ -154,6 +154,8 @@
                             Quota:</td>
                         <td class="style11" align="left">
                             <asp:TextBox ID="tbxQuota" runat="server" Width="143px"></asp:TextBox>
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                ControlToValidate="tbxQuota" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td class="style12">
                         </td>
