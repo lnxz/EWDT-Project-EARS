@@ -11,14 +11,6 @@
             height: 21px;
             text-align: right;
         }
-        .style7
-        {
-            height: 21px;
-        }
-        .style13
-        {
-            height: 44px;
-        }
         .style17
         {
             width: 428px;
@@ -43,7 +35,7 @@
         .style23
         {
             height: 41px;
-            width: 358px;
+            width: 493px;
         }
         .style24
         {
@@ -58,7 +50,7 @@
         .style26
         {
             height: 27px;
-            width: 358px;
+            width: 493px;
         }
         .style27
         {
@@ -68,7 +60,7 @@
         .style28
         {
             height: 23px;
-            width: 358px;
+            width: 493px;
         }
         .style30
         {
@@ -95,12 +87,12 @@
         .style35
         {
             height: 35px;
-            width: 358px;
+            width: 493px;
         }
         .style36
         {
             height: 26px;
-            width: 358px;
+            width: 493px;
         }
         .style37
         {
@@ -110,7 +102,7 @@
         .style38
         {
             height: 28px;
-            width: 358px;
+            width: 493px;
         }
         .style41
         {
@@ -120,7 +112,7 @@
         .style42
         {
             height: 30px;
-            width: 358px;
+            width: 493px;
         }
         .style45
         {
@@ -130,7 +122,7 @@
         .style46
         {
             height: 24px;
-            width: 358px;
+            width: 493px;
         }
         .style47
         {
@@ -140,7 +132,7 @@
         .style48
         {
             height: 34px;
-            width: 358px;
+            width: 493px;
         }
         .style49
         {
@@ -155,7 +147,7 @@
         .style51
         {
             height: 32px;
-            width: 358px;
+            width: 493px;
         }
         .style52
         {
@@ -219,27 +211,95 @@
         .style62
         {
             height: 11px;
-            width: 358px;
+            width: 493px;
         }
         .style63
         {
             height: 21px;
-            width: 358px;
+            width: 493px;
         }
         .style64
         {
             height: 44px;
-            width: 358px;
+            width: 493px;
         }
         .style65
         {
             height: 31px;
-            width: 358px;
+            width: 493px;
         }
         .style66
         {
             height: 18px;
-            width: 358px;
+            width: 493px;
+        }
+        .style67
+        {
+            height: 21px;
+        }
+        .style68
+        {
+            height: 44px;
+        }
+        .style69
+        {
+            width: 1256px;
+            height: 41px;
+        }
+        .style70
+        {
+            width: 1256px;
+            height: 23px;
+        }
+        .style71
+        {
+            width: 1256px;
+            height: 31px;
+        }
+        .style72
+        {
+            height: 18px;
+            width: 1256px;
+        }
+        .style73
+        {
+            width: 1256px;
+            height: 35px;
+        }
+        .style74
+        {
+            width: 1256px;
+            height: 26px;
+        }
+        .style75
+        {
+            width: 1256px;
+            height: 28px;
+        }
+        .style76
+        {
+            width: 1256px;
+            height: 30px;
+        }
+        .style77
+        {
+            width: 1256px;
+            height: 24px;
+        }
+        .style78
+        {
+            width: 1256px;
+            height: 27px;
+        }
+        .style79
+        {
+            width: 1256px;
+            height: 34px;
+        }
+        .style80
+        {
+            width: 1256px;
+            height: 20px;
         }
         </style>
 </asp:Content>
@@ -278,27 +338,31 @@
         <tr>
             <td class="style6">
                 Administration Number:</td>
-            <td class="style7">
+            <td class="style67" colspan="2">
                 <asp:TextBox ID="tbxAdminNum" runat="server" style="margin-left: 0px" 
                     Width="178px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ControlToValidate="tbxAdminNum" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" 
+                    runat="server" ControlToValidate="tbxAdminNum" EnableTheming="True" 
+                    ErrorMessage="* Invaild Admin number" ForeColor="Red" 
+                    ValidationExpression="\d{7}\w(1)"></asp:RegularExpressionValidator>
             </td>
-            <td class="style7">
-                </td>
             <td class="style63">
                 </td>
         </tr>
         <tr>
             <td class="style19">
                 Matric Card Number:</td>
-            <td class="style13">
-                <asp:TextBox ID="tbxAdminPw" runat="server" Width="178px"></asp:TextBox>
+            <td class="style68" colspan="2">
+                <asp:TextBox ID="tbxMC" runat="server" Width="178px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                    ControlToValidate="tbxAdminPw" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    ControlToValidate="tbxMC" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator3" 
+                    runat="server" ControlToValidate="tbxMC" EnableTheming="True" 
+                    ErrorMessage="* Invaild Matic No" ForeColor="Red" 
+                    ValidationExpression="\w(T) + \w(B) + \d(5)"></asp:RegularExpressionValidator>
             </td>
-            <td class="style13">
-                </td>
             <td class="style64">
                 </td>
         </tr>
@@ -313,7 +377,7 @@
         <tr>
             <td class="style61">
                 Student Type:</td>
-            <td class="style24">
+            <td class="style69">
                 <asp:DropDownList ID="DdlStudType" runat="server" Height="22px" Width="229px">
                     <asp:ListItem Value="FT">Full Time</asp:ListItem>
                     <asp:ListItem Value="PT">Part Time</asp:ListItem>
@@ -327,7 +391,7 @@
         <tr>
             <td class="style60">
                 School:</td>
-            <td class="style27">
+            <td class="style70">
                 <asp:DropDownList ID="DdlStage0" runat="server" Height="22px" Width="230px">
                     <asp:ListItem Value="AS">Applied Science</asp:ListItem>
                     <asp:ListItem Value="BS">Business</asp:ListItem>
@@ -345,7 +409,7 @@
         <tr>
             <td class="style59">
                 Course:</td>
-            <td class="style31">
+            <td class="style71">
                 <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="229px">
                 </asp:DropDownList>
             </td>
@@ -357,7 +421,7 @@
         <tr>
             <td class="style32">
                 &nbsp;</td>
-            <td class="style32">
+            <td class="style72">
                 &nbsp;</td>
             <td class="style32">
                 &nbsp;</td>
@@ -371,7 +435,7 @@
         <tr>
             <td class="style58">
                 Name:</td>
-            <td class="style34">
+            <td class="style73">
                 <asp:TextBox ID="tbxName" runat="server" Width="203px"></asp:TextBox>
             &nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
@@ -393,7 +457,7 @@
         <tr>
             <td class="style57">
                 Date Of Birth:</td>
-            <td class="style21">
+            <td class="style74">
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
@@ -412,7 +476,7 @@
         <tr>
             <td class="style56">
                 Gender:</td>
-            <td class="style37">
+            <td class="style75">
                 <asp:RadioButton ID="rbMale" runat="server" Text="Male" />
                 <asp:RadioButton ID="rbFemale" runat="server" Text="Female" />
             </td>
@@ -424,7 +488,7 @@
         <tr>
             <td class="style55">
                 Nationality: </td>
-            <td class="style41">
+            <td class="style76">
                 <asp:DropDownList ID="DdlNation" runat="server" Height="22px" Width="176px">
                     <asp:ListItem Value="SG">Singaporean</asp:ListItem>
                     <asp:ListItem Value="PR">Permanent Resident</asp:ListItem>
@@ -439,7 +503,7 @@
         <tr>
             <td class="style54">
                 Is Student leader:</td>
-            <td class="style45">
+            <td class="style77">
                 <asp:RadioButton ID="rbSlYes" runat="server" Text="Yes" />
                 <asp:RadioButton ID="rbSlNo" runat="server" Text="No" />
                 </td>
@@ -451,7 +515,7 @@
         <tr>
             <td class="style53">
                 Contact:</td>
-            <td class="style25">
+            <td class="style78">
                 <asp:TextBox ID="tbxContact" runat="server" Width="205px"></asp:TextBox>
                 &nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
@@ -470,7 +534,7 @@
             <td class="style52">
                 TP
                 Email:</td>
-            <td class="style47">
+            <td class="style79">
                 <asp:TextBox ID="tbxEmail" runat="server" Width="205px"></asp:TextBox>
             &nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
@@ -484,7 +548,7 @@
         <tr>
             <td class="style49">
                 &nbsp;</td>
-            <td class="style49">
+            <td class="style80">
                 &nbsp;</td>
             <td class="style49" align="left" colspan="2">
                 </td>
