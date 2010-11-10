@@ -2,6 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <br />
+   <br />
+   <br />
+   <br />
+   <br />
+   <br />
+      <br />
+      <br />
     <table style="width:100%;">
         <tr>
             <td class="style3" colspan="3">
@@ -21,7 +29,7 @@
             <td class="style2">
                 <asp:TextBox ID="tbxPw" runat="server" Width="141px"></asp:TextBox>
 &nbsp;
-                <asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="76px" />
+                <asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" />
             </td>
             <td class="style10">
                 &nbsp;</td>
@@ -64,6 +72,8 @@
             <td>
                 <asp:Label ID="Label1" runat="server" Text="6780"></asp:Label>
 &nbsp;<asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="tbxOffic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -78,6 +88,8 @@
                 Email:</td>
             <td>
                 <asp:TextBox ID="tbxPersonalEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="tbxPersonalEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -91,6 +103,8 @@
                 Staff Email:</td>
             <td>
                 <asp:TextBox ID="tbxWorkEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="tbxWorkEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -119,7 +133,9 @@
             <td class="style9">
                 Name:</td>
             <td class="style2">
-                <asp:TextBox ID="tbxName" runat="server" Width="141px"></asp:TextBox>
+                <asp:TextBox ID="tbxName" runat="server" Width="194px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td class="style11">
                 Race:</td>
@@ -199,11 +215,15 @@
                 Contact No:</td>
             <td class="style2">
                 <asp:TextBox ID="tbxMoblie" runat="server" Width="205px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="tbxMoblie" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td class="style11">
                 Telephone No:</td>
             <td class="style4">
                 <asp:TextBox ID="tbxTele" runat="server" Width="205px"></asp:TextBox>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="tbxTele" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         </table>
