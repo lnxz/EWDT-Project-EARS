@@ -9,6 +9,23 @@
         {
             width: 453px;
         }
+        .style4
+        {
+            width: 994px;
+        }
+        .style5
+        {
+            width: 920px;
+            height: 99px;
+        }
+        .style6
+        {
+            width: 920px;
+        }
+        .style7
+        {
+            width: 303px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -27,39 +44,47 @@
                     <tr>
                         <td class="style4">
                             Reciepients:</td>
-                        <td class="style5">
-                            <asp:DropDownList ID="DropReciep" runat="server" Height="22px" Width="196px">
+                        <td class="style6" align="left">
+                            <asp:DropDownList ID="DropReciep" runat="server" Height="22px" Width="196px" 
+                                style="text-align: left">
                             </asp:DropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td class="style4">
                             &nbsp;</td>
-                        <td class="style5">
+                        <td class="style6" align="left">
                             &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style9">
                             &nbsp;Title:</td>
-                        <td class="style5">
+                        <td class="style6" align="left">
                             <asp:TextBox ID="tbxTitle" runat="server" Width="224px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="tbxTitle" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td class="style9">
                             Date</td>
-                        <td class="style5">
+                        <td class="style6" align="left">
                             <asp:DropDownList ID="DropDate" runat="server" Height="27px" Width="271px">
                             </asp:DropDownList>
+                            &nbsp;
                             Today&#39;s Date:<asp:Label ID="lblDate" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td class="style9" valign="top">
                             Content:</td>
-                        <td class="style1">
+                        <td class="style5" align="left" valign="top">
                             <asp:TextBox ID="tbxContent" runat="server" Height="112px" TextMode="MultiLine" 
                                 Width="350px"></asp:TextBox>
+                            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                ControlToValidate="tbxTitle" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
+                        <td align="left" class="style7">
                             <asp:Label ID="Attachlbl" runat="server" Text="Attach File:"></asp:Label>
                             <input id="Uploader" type="file" /></td>
                     </tr>
