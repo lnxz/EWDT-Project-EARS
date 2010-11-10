@@ -53,6 +53,25 @@
             width: 291px;
             text-align: right;
         }
+        .style14
+        {
+            width: 421px;
+            height: 38px;
+        }
+        .style15
+        {
+            width: 434px;
+            height: 38px;
+        }
+        .style16
+        {
+            height: 38px;
+        }
+        .style17
+        {
+            width: 439px;
+            height: 40px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -66,7 +85,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style1">
+            <td class="style1" rowspan="10">
                 <table style="width: 100%; height: 355px;">
                     <tr>
                         <td class="style4">
@@ -145,7 +164,10 @@
             &nbsp;/ <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;&nbsp;</td>
+            &nbsp;&nbsp;<asp:Panel ID="Panel2" runat="server">
+                                <asp:RadioButton ID="rbD1" runat="server" Text="Add More Date" />
+                            </asp:Panel>
+                        </td>
                         <td>
                             &nbsp;</td>
                     </tr>
@@ -171,14 +193,14 @@
                             &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style14">
                             Registration Ends:</td>
-                        <td class="style5" align="left">
+                        <td class="style15" align="left">
                             <asp:DropDownList ID="ddlEnds" runat="server" Height="22px" Width="196px">
                             </asp:DropDownList>
                         </td>
-                        <td>
-                            &nbsp;</td>
+                        <td class="style16">
+                            </td>
                     </tr>
                     <tr>
                         <td class="style6" valign="top">
@@ -203,6 +225,42 @@
                 <asp:Image ID="lmEvent" runat="server" Height="173px" Width="176px" />
                 <br />
             </td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style17" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style3" valign="top">
+                &nbsp;</td>
         </tr>
     </table>
     <table style="width:100%;">
