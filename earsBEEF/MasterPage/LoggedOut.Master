@@ -21,7 +21,7 @@
 
     <div id="mainPicture">
         <div class="picture" align="center">
-            <img alt="" class="style1" src="MasterPage/BannerTransparent.png" /></div>
+            <img alt="" class="style1" src="BannerTransparent.png" /></div>
     </div>
         <div class ="announcementBox2" ID="announcements">
         <div class ="innerBox2" 

@@ -19,16 +19,16 @@
 <body>
     <div id="mainPicture">
         <div class="picture" align="center">
-            <img alt="" class="style1" src="MasterPage/BannerTransparent.png" /></div>
+            <img alt="" class="style1" src="BannerTransparent.png" /></div>
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
-        <img src="Images/Stub1.png" />
-        <img src="Images/Stub4.png" />
-        <img src="Images/Stub5.png" />
-        <img src="Images/Stub6.png" />
-        <img src="Images/Stub8.png" />
-        <img src="Images/Stub9.png" />
-        <img src="Images/Stub10.png" />
+        <img src="Stub1.png" />
+        <img src="Stub4.png" />
+        <img src="Stub5.png" />
+        <img src="Stub6.png" />
+        <img src="Stub8.png" />
+        <img src="Stub9.png" />
+        <img src="Stub10.png" />
     </div>
     <div class="announcementBox" name="announcements">
         <div class="innerBox">
