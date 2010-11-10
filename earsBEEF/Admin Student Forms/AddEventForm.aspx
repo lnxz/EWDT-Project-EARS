@@ -1,58 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddEventForm.aspx.cs" Inherits="earsBEEF.AddEventForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
-        .style2
-        {
-            width: 440px;
-        }
-        .style3
-        {
-            width: 439px;
-        }
-        .style4
-        {
-            width: 438px;
-        }
-        .style5
-        {
-            width: 434px;
-        }
-        .style6
-        {
-            width: 433px;
-            height: 30px;
-        }
-        .style7
-        {
-            width: 431px;
-            height: 30px;
-        }
-        .style8
-        {
-            width: 427px;
-            height: 30px;
-        }
-        .style9
-        {
-            width: 421px;
-        }
-        .style10
-        {
-            width: 415px;
-        }
-        .style11
-        {
-            width: 409px;
-        }
-        .style12
-        {
-            width: 404px;
-        }
-        .style13
-        {
-            width: 291px;
-            text-align: right;
-        }
+        
         .style14
         {
             width: 421px;
@@ -122,6 +71,8 @@
                         <td class="style5" align="left">
                             <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px">
                             </asp:DropDownList>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <asp:Button ID="Button1" runat="server" Text="Add Category" />
                         </td>
                         <td>
                             &nbsp;</td>
