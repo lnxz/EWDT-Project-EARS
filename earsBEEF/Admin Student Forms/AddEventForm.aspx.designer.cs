@@ -103,6 +103,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlYear;
         
         /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
         /// Panel2 control.
         /// </summary>
         /// <remarks>
@@ -112,13 +121,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
-        /// rbD1 control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbD1;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// tbxQuota control.
