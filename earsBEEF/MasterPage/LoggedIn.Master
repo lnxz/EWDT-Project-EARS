@@ -10,12 +10,17 @@
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
+                .style1
+        {
+            width: 1002px;
+            height: 99px;
+        }
     </style>
 </head>
 <body>
     <div id="mainPicture">
         <div class="picture" align="center">
-            <img alt="" class="style1" src="BannerTransparent.png" /></div>
+            <img alt="" class="style1" src="../MasterPage/BannerTransparent.png" /></div>
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="../Images/Stub1.png" />
