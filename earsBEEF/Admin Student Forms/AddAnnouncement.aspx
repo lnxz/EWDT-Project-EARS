@@ -1,31 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddAnnouncement.aspx.cs" Inherits="earsBEEF.AddAnnouncement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
-        .style2
-        {
-            width: 462px;
-        }
-        .style3
-        {
-            width: 453px;
-        }
-        .style4
-        {
-            width: 994px;
-        }
-        .style5
-        {
-            width: 920px;
-            height: 99px;
-        }
-        .style6
-        {
-            width: 920px;
-        }
-        .style7
-        {
-            width: 303px;
-        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
