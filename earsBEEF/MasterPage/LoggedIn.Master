@@ -10,11 +10,6 @@
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        .style1
-        {
-            width: 1002px;
-            height: 99px;
-        }
     </style>
 </head>
 <body>
@@ -23,21 +18,21 @@
             <img alt="" class="style1" src="BannerTransparent.png" /></div>
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
-        <img src="Stub1.png" />
-        <img src="Stub2.png" />
-        <img src="Stub3.png" />
-        <img src="Stub4.png" />
-        <img src="Stub5.png" />
-        <img src="Stub6.png" />
-        <img src="Stub7.png" />
-        <img src="Stub8.png" />
-        <img src="Stub11.png" />
-        <img src="Stub12.png" />
-        <img src="Stub13.png" />
-        <img src="Stub9.png" />
-        <img src="Stub10.png" />
+        <img src="../Images/Stub1.png" />
+        <img src="../Images/Stub2.png" />
+        <img src="../Images/Stub3.png" />
+        <img src="../Images/Stub4.png" />
+        <img src="../Images/Stub5.png" />
+        <img src="../Images/Stub6.png" />
+        <img src="../Images/Stub7.png" />
+        <img src="../Images/Stub8.png" />
+        <img src="../Images/Stub11.png" />
+        <img src="../Images/Stub12.png" />
+        <img src="../Images/Stub13.png" />
+        <img src="../Images/Stub9.png" />
+        <img src="../Images/Stub10.png" />
     </div>
-    <div class="announcementBox" name="announcements">
+    <div class="announcementBox">
         <div class="innerBox">
         </div>
     </div>
