@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddStaffForm.aspx.cs" Inherits="earsBEEF.AddStaffForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <style type="text/css">
+
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <br />
@@ -14,13 +17,13 @@
         <tr>
             <td class="style3" colspan="3">
                 <strong>Admin Controls</strong></td>
-            <td class="style3" align="right">
+            <td class="style6" align="right">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style3" colspan="3">
                 &nbsp;</td>
-            <td class="style3">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -33,25 +36,25 @@
             </td>
             <td class="style10">
                 &nbsp;</td>
-            <td>
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style4" colspan="3">
                 &nbsp;</td>
-            <td class="style4">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style3" colspan="3">
                 <strong>Staff - Office Information</strong></td>
-            <td class="style3">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style3" colspan="3">
                 &nbsp;</td>
-            <td class="style3">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -69,11 +72,14 @@
             </td>
             <td class="style11">
                 Office No:</td>
-            <td>
+            <td class="style6">
                 <asp:Label ID="Label1" runat="server" Text="6780"></asp:Label>
 &nbsp;<asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                     ControlToValidate="tbxOffic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
+                    runat="server" ControlToValidate="tbxOffic" ErrorMessage="Invaild Contact" 
+                    ForeColor="Red" ValidationExpression="\d{4}"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -86,7 +92,7 @@
             <td class="style11">
                 Personal
                 Email:</td>
-            <td>
+            <td class="style6">
                 <asp:TextBox ID="tbxPersonalEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                     ControlToValidate="tbxPersonalEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -101,7 +107,7 @@
             </td>
             <td class="style10">
                 Staff Email:</td>
-            <td>
+            <td class="style6">
                 <asp:TextBox ID="tbxWorkEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                     ControlToValidate="tbxWorkEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -114,19 +120,19 @@
                 &nbsp;</td>
             <td class="style10">
                 &nbsp;</td>
-            <td>
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style3" colspan="3">
                 <strong>Staff Particulars</strong></td>
-            <td class="style3">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style3" colspan="3">
                 &nbsp;</td>
-            <td class="style3">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -139,7 +145,7 @@
             </td>
             <td class="style11">
                 Race:</td>
-            <td class="style4">
+            <td class="style6">
                 <asp:DropDownList ID="DdlRace" runat="server" Height="22px" Width="161px">
                     <asp:ListItem>Chinese</asp:ListItem>
                     <asp:ListItem>Malay</asp:ListItem>
@@ -164,7 +170,7 @@
             &nbsp;&nbsp;</td>
             <td class="style11">
                 Marital Status:</td>
-            <td class="style4">
+            <td class="style6">
                 <asp:DropDownList ID="DdlMarSta" runat="server" Height="22px" Width="162px">
                     <asp:ListItem>Single</asp:ListItem>
                     <asp:ListItem>Married</asp:ListItem>
@@ -182,7 +188,7 @@
             </td>
             <td class="style11">
                 &nbsp;</td>
-            <td class="style4">
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -197,7 +203,7 @@
             </td>
             <td class="style10">
                 &nbsp;</td>
-            <td>
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -207,7 +213,7 @@
                 &nbsp;</td>
             <td class="style10">
                 &nbsp;</td>
-            <td>
+            <td class="style6">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -220,11 +226,11 @@
             </td>
             <td class="style11">
                 Telephone No:</td>
-            <td class="style4">
+            <td class="style6">
                 <asp:TextBox ID="tbxTele" runat="server" Width="205px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="tbxTele" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
+            &nbsp;</td>
         </tr>
         </table>
     <table style="width:100%;">
