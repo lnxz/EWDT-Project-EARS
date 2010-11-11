@@ -94,7 +94,7 @@ namespace EARS
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 int rowsAdded = (int)comm.ExecuteNonQuery();
-            }
+             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
@@ -125,7 +125,7 @@ namespace EARS
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                    int staffID = Convert.ToInt32(dr["staffID"].ToString());
+                    
                     string name = dr["Name"].ToString();
                     string staffEmail = dr["StaffEmail"].ToString();
                     string password = dr["Password"].ToString();
@@ -135,11 +135,10 @@ namespace EARS
                     string personalEmail = dr["PersonalEmail"].ToString();
                     string position = dr["Position"].ToString();
                     string admin = dr["IsAdmin"].ToString();
-                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
                     string officeNo = dr["OfficeNumber"].ToString();
-
-                    //        Staff st = new Staff(staffID, Name, StaffEmail, Password, Gender, School, ContactNo, PersonalEmail, Position, IsAdmin, DateOfBirth, OfficeNumber);
-                    // results.Add(st);
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    Staff st = new Staff(name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                    results.Add(st);
                 }
             }
             catch (SqlException ex)
@@ -153,7 +152,44 @@ namespace EARS
             }
             return results;
         }
+        public static void AddStaff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo, DateTime dateofBirth)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Staff(Name,StaffEmail,Password,Gender,School,ContactNo,personalEmail,Position,Admin,OfficeNo,DateofBirth) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l)";
 
+                comm.Parameters.AddWithValue("@b", name);
+                comm.Parameters.AddWithValue("@c", staffEmail);
+                comm.Parameters.AddWithValue("@d", password);
+                comm.Parameters.AddWithValue("@e", gender);
+                comm.Parameters.AddWithValue("@f", school);
+                comm.Parameters.AddWithValue("@g", contactNo);
+                comm.Parameters.AddWithValue("@h", personalEmail);
+                comm.Parameters.AddWithValue("@i", position);
+                comm.Parameters.AddWithValue("@j", admin);
+                comm.Parameters.AddWithValue("@k", officeNo);
+                comm.Parameters.AddWithValue("@l", dateofBirth);
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                int rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+        }
     }
 
 }
