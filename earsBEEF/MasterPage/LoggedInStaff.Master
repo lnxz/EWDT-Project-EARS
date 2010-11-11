@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="mPageStaffAdmin.css">
+    <link rel="stylesheet" type="text/css" href="mPage.css">
     <title></title>
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,6 +13,13 @@
         {
             width: 1002px;
             height: 99px;
+        }
+        .announcementBox
+        {
+        		width: 930px;
+	height: 80px;
+	background-color: #FFFFFF;
+	margin-top: -390px;
         }
     </style>
 </head>
@@ -30,9 +37,6 @@
         <img src="../Images/Stub6.png" />
         <img src="../Images/Stub7.png" />
         <img src="../Images/Stub8.png" />
-        <img src="../Images/Stub11.png" />
-        <img src="../Images/Stub12.png" />
-        <img src="../Images/Stub13.png" />
         <img src="../Images/Stub9.png" />
         <img src="../Images/Stub10.png" />
     </div>
@@ -43,7 +47,7 @@
     <div class="contentBox">
         <div class="innerBox">
             <div class="contentTitle">
-                Logged In as
+                Logged In as 
             </div>
             <div class="contentText">
                 <form id="form1" runat="server" align="center">
