@@ -51,22 +51,23 @@ namespace EARS
                 {
                     FormsAuthentication.SetAuthCookie(st.Name, false);
                      Session["loginUserName"] = tbxLoginId.Text;
-                    if (st.Admin.Equals("Y"))
+                    if (st.Admin.Equals('Y'))
                     {
                         Session["LoginType"] = "StaffYes";
-                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedIn.Master";
                     }
                     else
                     {
                         Session["LoginType"] = "StaffNo";
-                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStaff.Master";
                     } 
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false) == "/LoginPage.aspx")
                     {   Response.Redirect("Home.aspx");
                        
                     }
                     else{
-                        FormsAuthentication.RedirectFromLoginPage(st.Name, false);
+                        Response.Redirect("Home.aspx");
+                        //FormsAuthentication.RedirectFromLoginPage(st.Name, false);
                     }
                 }
                 
