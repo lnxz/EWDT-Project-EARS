@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="../MasterPage/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddStudentForm.aspx.cs" Inherits="earsBEEF.AddStudentForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <style type="text/css">
-  
-        </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <table style="width: 99%;">
@@ -80,7 +77,7 @@
             <td class="style60">
                 School:</td>
             <td class="style70" align="left">
-                <asp:DropDownList ID="DdlStage0" runat="server" Height="22px" Width="230px">
+                <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="230px">
                     <asp:ListItem Value="AS">Applied Science</asp:ListItem>
                     <asp:ListItem Value="BS">Business</asp:ListItem>
                     <asp:ListItem Value="DS">Design</asp:ListItem>
@@ -165,8 +162,9 @@
             <td class="style56">
                 Gender:</td>
             <td class="style75" align="left">
-                <asp:RadioButton ID="rbMale" runat="server" Text="Male" />
-                <asp:RadioButton ID="rbFemale" runat="server" Text="Female" />
+                <asp:RadioButton ID="rbMale" runat="server" Text="Male" Checked="True" />
+                &nbsp;
+                <asp:RadioButton ID="rbFemale" runat="server" Text="Female" Checked="True" />
             </td>
             <td class="style37">
                 &nbsp;</td>
@@ -174,31 +172,27 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style55">
-                Nationality: </td>
-            <td class="style76" align="left">
-                <asp:DropDownList ID="DdlNation" runat="server" Height="22px" Width="176px">
-                    <asp:ListItem Value="SG">Singaporean</asp:ListItem>
-                    <asp:ListItem Value="PR">Permanent Resident</asp:ListItem>
-                    <asp:ListItem Value="OT">Other</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td class="style41">
-                </td>
-            <td class="style42" align="left">
-                </td>
-        </tr>
-        <tr>
             <td class="style54">
                 Is Student leader:</td>
             <td class="style77" align="left">
-                <asp:RadioButton ID="rbSlYes" runat="server" Text="Yes" />
-                <asp:RadioButton ID="rbSlNo" runat="server" Text="No" />
+                <asp:RadioButton ID="rbYes" runat="server" Text="Yes" Checked="True" />
+                &nbsp;&nbsp;&nbsp;
+                <asp:RadioButton ID="rbNo" runat="server" Text="No" Checked="True" />
                 </td>
             <td class="style45">
                 </td>
             <td class="style46" align="left">
                 </td>
+        </tr>
+        <tr>
+            <td class="style54">
+                &nbsp;</td>
+            <td class="style77" align="left">
+                &nbsp;</td>
+            <td class="style45">
+                &nbsp;</td>
+            <td class="style46" align="left">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style53">
@@ -242,15 +236,10 @@
                 </td>
         </tr>
     </table>
-    <table style="width:100%;">
-        <tr>
-            <td class="style17">
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnConfirm" runat="server" Text="Confirm" 
-                    style="text-align: right" />
-            </td>
-            <td align="left" style="text-align: left" class="style30">
+        onclick="btnConfirm_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
-            </td>
-        </tr>
-    </table>
-</asp:Content>
+            </asp:Content>
