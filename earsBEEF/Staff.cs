@@ -11,7 +11,7 @@ namespace EARS
         private string name;
         private string staffEmail;
         private string password;
-        private string gender;
+        private char gender;
         private string school;
         private string mobileNo;
         private string personalEmail;
@@ -19,8 +19,23 @@ namespace EARS
         private string admin;
         private string officeNo;
         private DateTime dateofBirth;
+        public Staff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo, DateTime dateofBirth)
+        {
+            
+            this.name = name;
+            this.staffEmail = staffEmail;
+            this.password = password;
+            this.gender = gender;
+            this.school = school;
+            this.mobileNo = contactNo;
+            this.personalEmail = personalEmail;
+            this.position = position;
+            this.admin = admin;
+            this.officeNo = officeNo;
+            this.dateofBirth = dateofBirth;
+        }
 
-        public Staff(int staffID, string name, string staffEmail, string password, string gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo, DateTime dateofBirth)
+        public Staff(int staffID, string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo, DateTime dateofBirth)
         {
             this.staffID = staffID;
             this.name = name;
@@ -61,7 +76,7 @@ namespace EARS
             set { password = value; }
         }
 
-        public string Gender
+        public char Gender
         {
             get { return gender; }
             set { gender = value; }
