@@ -14,12 +14,19 @@
             width: 1002px;
             height: 99px;
         }
+        .announcementBox
+        {
+        		width: 930px;
+	height: 80px;
+	background-color: #FFFFFF;
+	margin-top: -260px;
+        }
     </style>
 </head>
 <body>
     <div id="mainPicture">
         <div class="picture" align="center">
-            <img alt="" class="style1" src="BannerTransparent.png" /></div>
+            <img alt="" class="style1" src="../MasterPage/BannerTransparent.png" /></div>
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="../Images/Stub1.png" />
