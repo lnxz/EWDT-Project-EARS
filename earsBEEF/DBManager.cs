@@ -190,7 +190,7 @@ namespace EARS
                 conn.Close();
             }
         }
-        public static ArrayList GetAllAnnoucements()
+        public static ArrayList GetAllAnnouncements()
         {
             
             ArrayList results = new ArrayList();
@@ -221,8 +221,8 @@ namespace EARS
                     DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
 
 
-                    Announcement a = new Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
-                   results.Add(a);
+                    earsBEEF.Announcement a = new earsBEEF.Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
+                    results.Add(a);
                 }
             }
             catch (SqlException ex)
@@ -238,7 +238,36 @@ namespace EARS
         }
         public static void AddAnnouncement(string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Student(title,content,date,createStaffID,createStudentID,dateOfAnn) VALUES(@b,@c,@d,@e,@f,@g)";
 
+                comm.Parameters.AddWithValue("@b", title);
+                comm.Parameters.AddWithValue("@c", content);
+                comm.Parameters.AddWithValue("@d", date);
+                comm.Parameters.AddWithValue("@e", createStaffID);
+                comm.Parameters.AddWithValue("@f", createStudID);
+                comm.Parameters.AddWithValue("@g", dateOfAnn);
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                int rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
         }
     
     }
