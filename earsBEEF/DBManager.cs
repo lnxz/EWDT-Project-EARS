@@ -42,7 +42,7 @@ namespace EARS
                     string contactNo = dr ["ContactNo"].ToString();
                     string emergCont = dr ["EmergencyContact"].ToString();
                     string email = dr["Email"].ToString();
-                    if (dr["IsStudentLeader"].ToString()[0].Equals("Y"))
+                    if (dr["IsStudentLeader"].ToString()[0].Equals('Y'))
                     {
                         isStudentLeader = true;
                     }
