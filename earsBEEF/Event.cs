@@ -22,6 +22,25 @@ namespace earsBEEF
         private int orgStaffID;
         private DateTime dateCreated;
 
+        public Event(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        {
+           
+            this.name = name;
+            this.venue = venue;
+            this.regCost = regcost;
+            this.category = category;
+            this.descrip = descrip;
+            this.eventDate = eventdate;
+            this.regStart = regstart;
+            this.regEnd = regend;
+            this.quota = quota;
+            this.ccaID = ccaID;
+            this.orgStaffID = orgstaffID;
+            this.orgStudID = orgstudID;
+            this.dateCreated = dateCreated;
+        }
+      
+
         public Event(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
         {
             this.eventID = eventID;
