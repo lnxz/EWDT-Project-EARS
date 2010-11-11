@@ -40,9 +40,11 @@ namespace earsBEEF
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
-            DateTime dateOfBirth;
-                dateOfBirth.Day.Equals(day);
+            Convert.ToInt32(day);
+            Convert.ToInt32(month);
+            Convert.ToInt32(year);
 
+            DateTime dateOfBirth =new DateTime(year,month,day);
 
 
             //EARS.Staff s = new EARS.Staff (name,  staffEmail, password, gender, school, Mobile,
