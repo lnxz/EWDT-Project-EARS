@@ -123,7 +123,7 @@
     <Compile Include="Admin Forms\AddStudentForm.aspx.designer.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Annoucement.cs" />
+    <Compile Include="Announcement.cs" />
     <Compile Include="cca.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Event.cs" />
