@@ -15,6 +15,17 @@ namespace earsBEEF
         private int createStudID;
         private DateTime dateOfAnn;
 
+        public Annoucement( string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
+        {
+            
+            this.title = title;
+            this.content = content;
+            this.dateCreated = date;
+            this.createStaffID = createStaffID;
+            this.createStudID = createStudID;
+            this.dateOfAnn = dateOfAnn;
+        }
+
         public Annoucement(int announceID, string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
             this.announceID = announceID;

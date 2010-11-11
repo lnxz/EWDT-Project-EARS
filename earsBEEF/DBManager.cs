@@ -125,7 +125,7 @@ namespace EARS
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                    
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
                     string name = dr["Name"].ToString();
                     string staffEmail = dr["StaffEmail"].ToString();
                     string password = dr["Password"].ToString();
@@ -190,6 +190,54 @@ namespace EARS
                 conn.Close();
             }
         }
+        public static ArrayList GetAllAnnouncements
+        {
+            
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Announcement";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    
+                    int announceID = dr["Name"].ToString();
+                    string title = dr["StaffEmail"].ToString();
+                    string content = dr["Password"].ToString();
+                    DateTime  dateCreated = DateTime.parse( dr["Gender"].ToString());
+                    int createStaffID = dr["School"].ToString();
+                    int createStudID = dr["ContactNo"].ToString();
+                    DateTime dateOfAnn = datetime.parse(dr["PersonalEmail"].ToString();
+
+                    
+                   // Announcement a = new Announcement(name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                   // results.Add(st);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+    
     }
+
 
 }
