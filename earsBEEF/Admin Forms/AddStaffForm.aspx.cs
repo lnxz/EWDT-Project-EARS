@@ -34,17 +34,13 @@ namespace earsBEEF
             else { admin = 'N'; }
 
             string name = tbxName.Text;
-            string day = DdlDay.Text;
-            string month = DdlMonth.Text;
-            string year = DdlMonth.Text;
+            int day = Convert.ToInt32(DdlDay);
+            int month = Convert.ToInt32(DdlMonth);
+            int year = Convert.ToInt32(DdlMonth);
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
-            Convert.ToInt32(day);
-            Convert.ToInt32(month);
-            Convert.ToInt32(year);
-
-            DateTime dateOfBirth =new DateTime(year,month,day);
+            DateTime dateOfBirth = new DateTime(year,month,day);
 
 
             //EARS.Staff s = new EARS.Staff (name,  staffEmail, password, gender, school, Mobile,
