@@ -134,7 +134,7 @@ namespace EARS
                     string mobileNo = dr["ContactNo"].ToString();
                     string personalEmail = dr["PersonalEmail"].ToString();
                     string position = dr["Position"].ToString();
-                    string admin = dr["IsAdmin"].ToString();
+                    char admin = dr["IsAdmin"].ToString()[0];
                     string officeNo = dr["OfficeNumber"].ToString();
                     DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
                     Staff st = new Staff(staffID,name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
