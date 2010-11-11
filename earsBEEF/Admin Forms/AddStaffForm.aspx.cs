@@ -11,7 +11,10 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Session["LoginType"].Equals("StaffYes"))
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
