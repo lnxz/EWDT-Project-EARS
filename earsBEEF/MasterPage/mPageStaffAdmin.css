@@ -8,7 +8,7 @@ body
 	color: #061C37;
 	background: #014D5D url(background.png);
 	background-repeat: repeat
-
+}
 *
 {
   margin: 0 auto 0 auto;
@@ -19,8 +19,6 @@ body
 }
 
 
-
-}
 
 #page
 {

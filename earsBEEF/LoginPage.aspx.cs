@@ -17,17 +17,17 @@ namespace EARS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Boolean loginSuccess = false;
             foreach (Student s in DBManager.GetAllStudents())
             {
                 if (tbxLoginId.Text.Equals(s.AdminNo) && tbxLoginPw.Text.Equals(s.Password))
                 {
-                    loginSuccess = true;
+
                     FormsAuthentication.SetAuthCookie(s.Name, false);
                     Session["loginUserName"] = tbxLoginId.Text;
                     if (s.IsStudentLeader)
                     {
                         Session["LoginType"] = "StudentYes";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     }
                     else
                     {
@@ -46,7 +46,6 @@ namespace EARS
             {
                 if (tbxLoginId.Text.Equals(st.StaffEmail) && tbxLoginPw.Text.Equals(st.Password))
                 {
-                    loginSuccess = true;
                     FormsAuthentication.SetAuthCookie(st.Name, false);
                      Session["loginUserName"] = tbxLoginId.Text;
                     if (st.Admin.Equals("Y"))

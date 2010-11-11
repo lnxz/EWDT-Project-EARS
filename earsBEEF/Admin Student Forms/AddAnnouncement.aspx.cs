@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace earsBEEF
 {
@@ -11,6 +12,10 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!(Session["LoginType"].ToString().Equals("StaffYes") || Session["LoginType"].ToString().Equals("StaffNo")))
+            {
+                Response.Redirect("Home.aspx");
+            }
             lblDate.Text = Convert.ToString(System.DateTime.Now.Date.ToLongDateString());
             int tempMonth = DateTime.Today.Month;
             int tempDay = DateTime.Today.Day;
@@ -32,6 +37,7 @@ namespace earsBEEF
 
                 
             }
+
            
         }
       }
