@@ -34,12 +34,13 @@ namespace EARS
                         Session["LoginType"] = "StudentNo";
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     }
-                    if (FormsAuthentication.GetRedirectUrl(s.Name, false) == "/LoginPage.aspx")
-                    {   Response.Redirect("TESTPAGE.aspx");
+                    if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("LoginPage.aspx"))
+                    {   Response.Redirect("Home.aspx");
                        
                     }
                     else{
-                        FormsAuthentication.RedirectFromLoginPage(s.Name, false);
+                        Response.Redirect("Home.aspx");
+                        //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
             }
@@ -61,7 +62,7 @@ namespace EARS
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     } 
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false) == "/LoginPage.aspx")
-                    {   Response.Redirect("TESTPAGE.aspx");
+                    {   Response.Redirect("Home.aspx");
                        
                     }
                     else{
