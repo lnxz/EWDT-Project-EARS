@@ -109,6 +109,19 @@
         </tr>
         <tr>
             <td class="style5">
+                Is Admin:</td>
+            <td class="style2" align="left">
+                <asp:RadioButton ID="rbYes" runat="server" Text="Yes" />
+&nbsp;&nbsp;&nbsp;
+                <asp:RadioButton ID="rbNo" runat="server" Text="No" />
+            </td>
+            <td class="style10">
+                &nbsp;</td>
+            <td class="style6" align="left">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style5">
                 &nbsp;</td>
             <td class="style2" align="left">
                 &nbsp;</td>
@@ -174,21 +187,6 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style9" align="right">
-                Nationality: </td>
-            <td class="style2" align="left">
-                <asp:DropDownList ID="DdlNation" runat="server" Height="22px" Width="162px">
-                    <asp:ListItem Value="SG">Singaporean</asp:ListItem>
-                    <asp:ListItem Value="PR">Permanent Resident</asp:ListItem>
-                    <asp:ListItem Value="OT">Other</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style6" align="left">
-                &nbsp;</td>
-        </tr>
-        <tr>
             <td class="style5" align="right">
                 &nbsp;</td>
             <td class="style2">
@@ -224,11 +222,11 @@
         </tr>
         <tr>
             <td style="text-align: right">
-                <asp:Button ID="Button1" runat="server" 
-                    Text="Confirm" />
+                <asp:Button ID="btnConfirm" runat="server" 
+                    Text="Confirm" onclick="Button1_Click" />
             </td>
             <td>
-                <asp:Button ID="Button2" runat="server" Text="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
         </tr>
     </table>
