@@ -5,7 +5,7 @@ using System.Web;
 
 namespace earsBEEF
 {
-    public class Annoucement
+    public class Announcement
     {
         private int announceID;
         private string title;
@@ -15,7 +15,7 @@ namespace earsBEEF
         private int createStudID;
         private DateTime dateOfAnn;
 
-        public Annoucement( string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
+        public Announcement( string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
             
             this.title = title;
@@ -26,7 +26,7 @@ namespace earsBEEF
             this.dateOfAnn = dateOfAnn;
         }
 
-        public Annoucement(int announceID, string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
+        public Announcement(int announceID, string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
             this.announceID = announceID;
             this.title = title;

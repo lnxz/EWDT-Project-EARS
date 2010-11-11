@@ -190,7 +190,7 @@ namespace EARS
                 conn.Close();
             }
         }
-        public static ArrayList GetAllAnnouncements()
+        public static ArrayList GetAllAnnoucements()
         {
             
             ArrayList results = new ArrayList();
@@ -212,17 +212,17 @@ namespace EARS
                 while (dr.Read())   //read row by row
                 {
                     
-                    int announceID = dr["Name"].ToString();
-                    string title = dr["StaffEmail"].ToString();
-                    string content = dr["Password"].ToString();
-                    DateTime  dateCreated = DateTime.parse( dr["Gender"].ToString());
-                    int createStaffID = dr["School"].ToString();
-                    int createStudID = dr["ContactNo"].ToString();
-                    DateTime dateOfAnn = datetime.parse(dr["PersonalEmail"].ToString();
+                    int announceID = Convert.ToInt32( dr["AnnouncementID"].ToString());
+                    string title = dr["Title"].ToString();
+                    string content = dr["AContent"].ToString();
+                    DateTime  dateCreated = DateTime.Parse( dr["DateCreated"].ToString());
+                    int createStaffID =Convert.ToInt32 (dr["CreateStaffID"].ToString());
+                    int createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
+                    DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
 
-                    
-                   // Announcement a = new Announcement(name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
-                   // results.Add(st);
+
+                    Announcement a = new Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
+                   results.Add(a);
                 }
             }
             catch (SqlException ex)
@@ -235,6 +235,10 @@ namespace EARS
                 conn.Close();
             }
             return results;
+        }
+        public static void AddAnnouncement(string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
+        {
+
         }
     
     }
