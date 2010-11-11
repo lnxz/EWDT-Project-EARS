@@ -137,7 +137,7 @@ namespace EARS
                     string admin = dr["IsAdmin"].ToString();
                     string officeNo = dr["OfficeNumber"].ToString();
                     DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
-                    Staff st = new Staff(name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                    Staff st = new Staff(staffID,name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
                     results.Add(st);
                 }
             }
@@ -190,7 +190,7 @@ namespace EARS
                 conn.Close();
             }
         }
-        public static ArrayList GetAllAnnouncements
+        public static ArrayList GetAllAnnouncements()
         {
             
             ArrayList results = new ArrayList();
