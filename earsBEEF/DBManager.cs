@@ -9,7 +9,7 @@ namespace EARS
 {
     public class DBManager
     {
-        public const string DBCONNSTR = @"Data Source=LNXZ-PC\SQLEXPRESS;Initial Catalog=EWDTProject;Integrated Security=True";
+        public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
 
         public static ArrayList GetAllStudents()
         {
@@ -152,7 +152,7 @@ namespace EARS
             }
             return results;
         }
-        public static void AddStaff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, string admin, string officeNo, DateTime dateofBirth)
+        public static void AddStaff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, char admin, string officeNo, DateTime dateofBirth)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
