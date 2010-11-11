@@ -41,9 +41,8 @@ namespace earsBEEF
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
             DateTime dateOfBirth;
-            dateOfBirth.Day.Equals(day);
-            dateOfBirth.Month.Equals(month);
-            dateOfBirth.Year.Equals(year);
+                dateOfBirth.Day.Equals(day);
+
 
 
             //EARS.Staff s = new EARS.Staff (name,  staffEmail, password, gender, school, Mobile,
