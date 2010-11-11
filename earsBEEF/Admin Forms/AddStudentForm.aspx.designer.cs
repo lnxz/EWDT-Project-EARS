@@ -76,13 +76,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlStudType;
         
         /// <summary>
-        /// DdlStage0 control.
+        /// ddlSchool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlStage0;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSchool;
         
         /// <summary>
         /// DdlCourse control.
@@ -166,31 +166,22 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RadioButton rbFemale;
         
         /// <summary>
-        /// DdlNation control.
+        /// rbYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlNation;
+        protected global::System.Web.UI.WebControls.RadioButton rbYes;
         
         /// <summary>
-        /// rbSlYes control.
+        /// rbNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbSlYes;
-        
-        /// <summary>
-        /// rbSlNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbSlNo;
+        protected global::System.Web.UI.WebControls.RadioButton rbNo;
         
         /// <summary>
         /// tbxContact control.
