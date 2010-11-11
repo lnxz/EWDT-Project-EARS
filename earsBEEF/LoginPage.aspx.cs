@@ -27,12 +27,14 @@ namespace EARS
                     if (s.IsStudentLeader)
                     {
                         Session["LoginType"] = "StudentYes";
-                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudentSL.Master";
                     }
                     else
                     {
                         Session["LoginType"] = "StudentNo";
-                    } if (FormsAuthentication.GetRedirectUrl(s.Name, false) == "/LoginPage.aspx")
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
+                    }
+                    if (FormsAuthentication.GetRedirectUrl(s.Name, false) == "/LoginPage.aspx")
                     {   Response.Redirect("TESTPAGE.aspx");
                        
                     }
@@ -51,11 +53,14 @@ namespace EARS
                     if (st.Admin.Equals("Y"))
                     {
                         Session["LoginType"] = "StaffYes";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     }
                     else
                     {
                         Session["LoginType"] = "StaffNo";
-                    } if (FormsAuthentication.GetRedirectUrl(st.Name, false) == "/LoginPage.aspx")
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
+                    } 
+                    if (FormsAuthentication.GetRedirectUrl(st.Name, false) == "/LoginPage.aspx")
                     {   Response.Redirect("TESTPAGE.aspx");
                        
                     }

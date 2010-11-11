@@ -75,10 +75,10 @@
     <Content Include="MasterPage\background.png" />
     <Content Include="MasterPage\content_back.png" />
     <Content Include="MasterPage\footer.png" />
-    <Content Include="MasterPage\mPageStaffAdmin.css" />
+    <Content Include="MasterPage\mPage.css" />
     <Content Include="Images\TopBanner.png" />
     <Content Include="LoginPage.aspx" />
-    <Content Include="MasterPage\mPageStudentNo.css" />
+    <Content Include="MasterPage\mPageLoggedOut.css" />
     <Content Include="Styles\MainMenu.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -124,7 +124,6 @@
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Announcement.cs" />
-    <Compile Include="cca.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="ForgotPassword.aspx.cs">
@@ -157,6 +156,13 @@
     </Compile>
     <Compile Include="MasterPage\LoggedInStudent.Master.designer.cs">
       <DependentUpon>LoggedInStudent.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\LoggedInStudentSL.Master.cs">
+      <DependentUpon>LoggedInStudentSL.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\LoggedInStudentSL.Master.designer.cs">
+      <DependentUpon>LoggedInStudentSL.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\LoggedOut.Master.cs">
       <DependentUpon>LoggedOut.Master</DependentUpon>
@@ -205,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\LoggedInStaff.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage\LoggedInStudentSL.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
