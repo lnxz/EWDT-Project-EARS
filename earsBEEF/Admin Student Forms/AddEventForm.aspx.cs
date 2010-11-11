@@ -14,6 +14,7 @@ namespace earsBEEF
             if(Session["LoginType"].Equals("StudentNo")){
                 Response.Redirect("Home.aspx");
             }
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void Button2_Click(object sender, EventArgs e)
