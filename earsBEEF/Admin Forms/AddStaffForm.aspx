@@ -23,7 +23,8 @@
             <td class="style5" align="right">
                 Password:</td>
             <td class="style2" align="left">
-                <asp:TextBox ID="tbxPw" runat="server" Width="141px"></asp:TextBox>
+                <asp:TextBox ID="tbxPw" runat="server" Width="141px" 
+                    ontextchanged="tbxPw_TextChanged"></asp:TextBox>
 &nbsp;
                 <asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" />
             </td>
@@ -137,15 +138,9 @@
                     ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td class="style11" align="right">
-                Race:</td>
+                &nbsp;</td>
             <td class="style6" align="left">
-                <asp:DropDownList ID="DdlRace" runat="server" Height="22px" Width="161px">
-                    <asp:ListItem>Chinese</asp:ListItem>
-                    <asp:ListItem>Malay</asp:ListItem>
-                    <asp:ListItem>Indian</asp:ListItem>
-                    <asp:ListItem>Others</asp:ListItem>
-                </asp:DropDownList>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style9" align="right">
@@ -162,15 +157,9 @@
                 </asp:DropDownList>
             &nbsp;&nbsp;</td>
             <td class="style11" align="right">
-                Marital Status:</td>
+                &nbsp;</td>
             <td class="style6" align="left">
-                <asp:DropDownList ID="DdlMarSta" runat="server" Height="22px" Width="162px">
-                    <asp:ListItem>Single</asp:ListItem>
-                    <asp:ListItem>Married</asp:ListItem>
-                    <asp:ListItem>Divorced</asp:ListItem>
-                    <asp:ListItem>Widowed</asp:ListItem>
-                </asp:DropDownList>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style9" align="right">
