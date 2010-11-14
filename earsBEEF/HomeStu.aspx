@@ -152,30 +152,18 @@
                     Event Starting Date</td>
                 <td class="style20">
                     Name</td>
-                <td class="style21">
-                    Registered</td>
-                <td>
-                    Quota</td>
             </tr>
             <tr>
                 <td class="style28">
                     Dec 27</td>
                 <td class="style20">
                     Orientation Training Camp</td>
-                <td class="style21">
-                    150</td>
-                <td>
-                    200</td>
             </tr>
             <tr>
                 <td class="style28">
                     Dec 30</td>
                 <td class="style20">
                     Run for Hope helpers</td>
-                <td class="style21">
-                    30</td>
-                <td>
-                    120</td>
             </tr>
         </table>
         <br />
