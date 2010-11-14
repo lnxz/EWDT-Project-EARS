@@ -28,6 +28,7 @@
     <div id="mainPicture">
         <div class="picture" align="center">
             <img alt="" class="style1" src="../MasterPage/BannerTransparent.png" /></div>
+
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="../Images/Stub1.png" />
