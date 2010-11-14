@@ -56,7 +56,7 @@
         <br />
         <br />
         <br />
-        <asp:Panel ID="Panel2" runat="server" BackColor="Red" ForeColor="#CCCC00">
+        <asp:Panel ID="Panel2" runat="server" BackColor="#FF6666" ForeColor="#CCCC00">
             <asp:Label ID="Label1" runat="server" CssClass="style22" Text="Announcements"></asp:Label>
             <br />
             <table style="width:100%;">
@@ -91,7 +91,7 @@
         </asp:Panel>
         <br />
         <br />
-        <asp:Panel ID="Panel3" runat="server" BackColor="#CCCC00">
+        <asp:Panel ID="Panel3" runat="server" BackColor="#FFFF99">
             <asp:Label ID="Label2" runat="server" CssClass="style23" Text="Upcoming Events"></asp:Label>
             <br />
             <table style="width:100%;">
@@ -146,7 +146,7 @@
             </table>
         </asp:Panel>
         <br />
-        <asp:Panel ID="Panel4" runat="server" BackColor="#00CC00">
+        <asp:Panel ID="Panel4" runat="server" BackColor="#66FF66">
             <asp:Label ID="Label3" runat="server" CssClass="style24" 
                 Text="Organized Events"></asp:Label>
             <br />
