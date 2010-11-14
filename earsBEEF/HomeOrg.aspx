@@ -53,7 +53,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="Panel1" runat="server" Height="769px" Width="853px">
-
+        <br />
+        <br />
         <asp:Panel ID="Panel2" runat="server" BackColor="#FF6666" ForeColor="#CCCC00">
             <asp:Label ID="Label1" runat="server" CssClass="style22" Text="Announcements"></asp:Label>
             <br />
