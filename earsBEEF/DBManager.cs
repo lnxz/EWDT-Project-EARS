@@ -438,7 +438,7 @@ namespace EARS
                 conn.Close();
             }
         }
-        public static void GetAllCategory()
+        public static ArrayList GetAllCategory()
         {
 
 
