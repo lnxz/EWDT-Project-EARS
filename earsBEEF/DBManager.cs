@@ -609,8 +609,7 @@ namespace EARS
                     string type = dr["Type"].ToString();
                     string template = dr["Template"].ToString();
 
-
-                    earsBEEF.eventnotifications c = new earsBEEF.eventnotifications(eventNotificationID, eventID, date, type, template);
+                    earsBEEF.EventNotification c = new earsBEEF.EventNotification(eventNotificationID, eventID, date, type, template);
                     results.Add(c);
                 }
             }
@@ -624,6 +623,38 @@ namespace EARS
                 conn.Close();
             }
             return results;
+        }
+        public static void AddEventNotifications(int categoryID, string name)
+        {
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Cateogry(categoryID,name) VALUES(@b,@c)";
+
+                comm.Parameters.AddWithValue("@b", categoryID);
+                comm.Parameters.AddWithValue("@c", name);
+
+
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                int rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
         }
     }
 
