@@ -246,7 +246,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Student(title,content,date,createStaffID,createStudentID,dateOfAnn) VALUES(@b,@c,@d,@e,@f,@g)";
+                comm.CommandText = "INSERT INTO Announcement(title,content,date,createStaffID,createStudentID,dateOfAnn) VALUES(@b,@c,@d,@e,@f,@g)";
 
                 comm.Parameters.AddWithValue("@b", title);
                 comm.Parameters.AddWithValue("@c", content);
@@ -333,7 +333,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Student(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstudID,orgstaffID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)";
+                comm.CommandText = "INSERT INTO Events(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstudID,orgstaffID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)";
 
                 comm.Parameters.AddWithValue("@b", name);
                 comm.Parameters.AddWithValue("@c", venue);
@@ -417,7 +417,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Student(ccaID,name) VALUES(@b,@c)";
+                comm.CommandText = "INSERT INTO CCA(ccaID,name) VALUES(@b,@c)";
 
                 comm.Parameters.AddWithValue("@b", ccaID);
                 comm.Parameters.AddWithValue("@c", name);
