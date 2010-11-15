@@ -154,9 +154,9 @@ namespace EARS
             finally
             {
                 // Step 4: Close connection
-                return s;
                 conn.Close();
             }
+            return s;
         }
         public static ArrayList GetAllStaff()
         {
