@@ -677,7 +677,7 @@ namespace EARS
             }
             return results;
         }
-        public static void AddEventNotifications(int categoryID, string name)
+        public static void AddEventNotifications(int eventNotificationID, int eventID, DateTime date, string type, string template)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -688,12 +688,13 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Cateogry(categoryID,name) VALUES(@b,@c)";
+                comm.CommandText = "INSERT INTO EventNotifications(eventNotificationID,eventID, date type, template) VALUES(@b,@c,@d,@e,@f)";
 
-                comm.Parameters.AddWithValue("@b", categoryID);
-                comm.Parameters.AddWithValue("@c", name);
-
-
+                comm.Parameters.AddWithValue("@b", eventNotificationID);
+                comm.Parameters.AddWithValue("@c", eventID);
+                comm.Parameters.AddWithValue("@d", date);
+                comm.Parameters.AddWithValue("@e", type);
+                comm.Parameters.AddWithValue("@f", template);
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
