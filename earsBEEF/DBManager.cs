@@ -468,6 +468,47 @@ namespace EARS
                 conn.Close();
             }
         }
+        public static ArrayList GetCCAStudents(int ccaID)
+        {
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Announcement";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    string name = dr["Name"].ToString();
+
+
+                    earsBEEF.cca c = new earsBEEF.cca(ccaID, name);
+                    results.Add(c);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
     
     }
 
