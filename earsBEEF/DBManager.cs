@@ -444,7 +444,7 @@ namespace EARS
                     string name = dr["Name"].ToString();
 
 
-                    earsBEEF.cca c = new earsBEEF.cca(ccaID,name);
+                    earsBEEF.CCA c = new earsBEEF.CCA(ccaID,name);
                     results.Add(c);
                 }
             }
@@ -518,7 +518,7 @@ namespace EARS
                     string name = dr["Name"].ToString();
 
 
-                    earsBEEF.category c = new earsBEEF.category(categoryID, name);
+                    earsBEEF.Category c = new earsBEEF.Category(categoryID, name);
                     results.Add(c);
                 }
             }
