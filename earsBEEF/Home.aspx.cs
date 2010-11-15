@@ -16,6 +16,18 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["login"].Equals("s"))
+            {
+                pstud.Visible = true;
+            }
+            else if (Session["LoginType"].Equals(null))
+            {
+                Response.Redirect("loginPage.aspx");
+            } 
+            else
+            {
+                pOrg.Visible = true;
+            }
         }
     }
 }
