@@ -438,7 +438,6 @@ namespace EARS
                 conn.Close();
             }
         }
-<<<<<<< .mine
         public static void GetAllCategory()
         {
 
@@ -455,7 +454,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Announcement";
+                comm.CommandText = "SELECT * FROM Category";
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
@@ -482,7 +481,6 @@ namespace EARS
             return results;
         }
 
-=======
         public static void AddCCAStudent(int ccaID, int studentID, char isLeader)
         {
                         SqlConnection conn = new SqlConnection();
