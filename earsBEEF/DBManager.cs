@@ -528,14 +528,14 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Announcement";
+                comm.CommandText = "SELECT * FROM CCAStudent";
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
 
-                    int ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    Student  = Convert.ToInt32(dr["CCAID"].ToString());
                     string name = dr["Name"].ToString();
 
 
