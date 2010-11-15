@@ -207,6 +207,7 @@
     </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="StudentAnnouncement.cs" />
     <Compile Include="StudentRegisterEvent.cs" />
     <Compile Include="TESTPAGE.aspx.cs">
       <DependentUpon>TESTPAGE.aspx</DependentUpon>
