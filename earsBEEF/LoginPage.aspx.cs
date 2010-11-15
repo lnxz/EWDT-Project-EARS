@@ -34,7 +34,7 @@ namespace EARS
                         Session["LoginType"] = "StudentNo";
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     }
-                    if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("LoginPage.aspx"))
+                    if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
                     {   Response.Redirect("Home.aspx");
                        
                     }
