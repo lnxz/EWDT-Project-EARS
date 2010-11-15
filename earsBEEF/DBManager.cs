@@ -580,12 +580,9 @@ namespace EARS
             }
             return results;
         }
-<<<<<<< .mine
         public static ArrayList GetAllEventNotifications()
         {
 
-=======
->>>>>>> .r134
 
             ArrayList results = new ArrayList();
 
