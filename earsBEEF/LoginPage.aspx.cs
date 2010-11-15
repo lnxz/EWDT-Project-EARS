@@ -17,33 +17,40 @@ namespace EARS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            foreach (Student s in DBManager.GetAllStudents())
+            if( tbxLoginId.Text.ToString().Length == 8)
             {
-                if (tbxLoginId.Text.Equals(s.AdminNo) && tbxLoginPw.Text.Equals(s.Password))
-                {
+               EARS.Student s = DBManager.loginStudent(tbxLoginId.Text, tbxLoginPw.Text);
+               if (s != null)
+               {
+                   if (s.IsStudentLeader)
+                   {
+                       Session["Login"] = s;
+                       Session["LoginType"] = "Student";
+                       Session["MyPage_Master"] = "~/MasterPage/LoggedInStudentSL.Master";
+                   }
+                   else
+                   {
+                       Session["Login"] = s;
+                       Session["LoginType"] = "Student";
+                       Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
+                   }
+                   if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
+                   {
+                       Response.Redirect("Home.aspx");
 
-                    FormsAuthentication.SetAuthCookie(s.Name, false);
-                    Session["loginUserName"] = tbxLoginId.Text;
-                    if (s.IsStudentLeader)
-                    {
-                        Session["LoginType"] = "StudentYes";
-                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudentSL.Master";
-                    }
-                    else
-                    {
-                        Session["LoginType"] = "StudentNo";
-                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
-                    }
-                    if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
-                    {   Response.Redirect("Home.aspx");
-                       
-                    }
-                    else{
-                        Response.Redirect("Home.aspx");
-                        //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
-                    }
-                }
+                   }
+                   else
+                   {
+                       Response.Redirect("Home.aspx");
+                       //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
+                   }
+               }
+               else
+               {
+
             }
+
+          
 
             foreach (Staff st in DBManager.GetAllStaff())
             {
