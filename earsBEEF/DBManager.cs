@@ -513,10 +513,6 @@ namespace EARS
                 conn.Close();
             }
         }
-
-=======
-=======
->>>>>>> .r125
         public static void AddCCAStudent(int ccaID, int studentID, char isLeader)
         {
                         SqlConnection conn = new SqlConnection();
@@ -588,8 +584,7 @@ namespace EARS
             }
             return results;
         }
->>>>>>> .r122
-    
+
     }
 
 
