@@ -483,7 +483,6 @@ namespace EARS
         public static void AddCategory(int categoryID, string name)
         {
 
-<<<<<<< .mine
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
@@ -581,11 +580,6 @@ namespace EARS
             }
             return results;
         }
-<<<<<<< .mine
-    
-=======
-
->>>>>>> .r129
     }
 
 
