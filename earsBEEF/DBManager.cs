@@ -438,6 +438,36 @@ namespace EARS
                 conn.Close();
             }
         }
+        public static void AddCCAStudent(int ccaID, int studentID, char isLeader)
+        {
+                        SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO CCAStudent(CCAID,StudentID,IsLeader) VALUES(@a,@b,@c)";
+                comm.Parameters.AddWithValue("@a", ccaID);
+                comm.Parameters.AddWithValue("@b", studentID);
+                comm.Parameters.AddWithValue("@c", isLeader);
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                int rowsAdded = (int)comm.ExecuteNonQuery();
+              
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {  
+                // Step 4: Close connection
+                conn.Close();
+            }
+        }
     
     }
 
