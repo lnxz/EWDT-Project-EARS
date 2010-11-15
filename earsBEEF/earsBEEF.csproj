@@ -127,7 +127,7 @@
     </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="cca.cs" />
+    <Compile Include="CCA.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="ForgotPassword.aspx.cs">
