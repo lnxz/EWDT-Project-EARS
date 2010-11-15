@@ -10,6 +10,18 @@ namespace earsBEEF
         private int categoryID;
         private string name;
 
+        public Category(int categoryID, string name)
+        {
+            this.categoryID = categoryID;
+            this.name = name;
+
+        }
+        public Category(string name)
+        {
+            this.name = name;
+
+        }
+
         public string Name
         {
             get { return name; }
