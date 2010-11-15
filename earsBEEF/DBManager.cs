@@ -110,7 +110,7 @@ namespace EARS
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
-            Student s;
+            Student s = null;
             try
             {
                 // Step 1: Open connection
@@ -737,7 +737,7 @@ namespace EARS
                     int eventID = Convert.ToInt32(dr["EventID"].ToString());
 
 
-                    earsBEEF.studentRegisterEvent c = new earsBEEF.studentRegisterEvent(studentID, eventID);
+                    earsBEEF.StudentRegisterEvent c = new earsBEEF.StudentRegisterEvent(studentID, eventID);
                     results.Add(c);
                 }
             }
@@ -811,7 +811,7 @@ namespace EARS
                     int announcementID = Convert.ToInt32(dr["AnnouncementID"].ToString());
 
 
-                    earsBEEF.studentAnnouncement c = new earsBEEF.studentAnnouncement(studentID, announcementID);
+                    earsBEEF.StudentAnnouncement c = new earsBEEF.StudentAnnouncement(studentID, announcementID);
                     results.Add(c);
                 }
             }
