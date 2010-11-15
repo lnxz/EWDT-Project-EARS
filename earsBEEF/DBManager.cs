@@ -558,19 +558,16 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM CCAStudent";
+                comm.CommandText = "SELECT * FROM CCAStudent where CCAID = @ccaID";
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                SqlDataReader dr = comm.ExecuteReader();  
+                comm.Parameters.AddWithValue("@ccaID", ccaID);  // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
 
-                    Student  = Convert.ToInt32(dr["CCAID"].ToString());
-                    string name = dr["Name"].ToString();
-
-
-                    earsBEEF.cca c = new earsBEEF.cca(ccaID, name);
-                    results.Add(c);
+                    int studentID = Convert.ToInt32(dr["StudentID"]);
+                    results.Add(studentID);
                 }
             }
             catch (SqlException ex)
@@ -584,7 +581,11 @@ namespace EARS
             }
             return results;
         }
+<<<<<<< .mine
+    
+=======
 
+>>>>>>> .r129
     }
 
 
