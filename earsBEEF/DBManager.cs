@@ -580,6 +580,54 @@ namespace EARS
             }
             return results;
         }
+<<<<<<< .mine
+        public static ArrayList GetAllEventNotifications()
+        {
+
+=======
+>>>>>>> .r134
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM EventNotifications";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int eventNotificationID = Convert.ToInt32(dr["EventNotificationID"].ToString());
+                    int eventID = Convert.ToInt32(dr["EventID"].ToString());
+                    DateTime date = DateTime.Parse(dr["Date"].ToString());
+                    string type = dr["Type"].ToString();
+                    string template = dr["Template"].ToString();
+
+
+                    earsBEEF.eventnotifications c = new earsBEEF.eventnotifications(eventNotificationID, eventID, date, type, template);
+                    results.Add(c);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
     }
 
 
