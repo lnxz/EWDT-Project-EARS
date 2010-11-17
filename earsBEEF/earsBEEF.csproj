@@ -54,6 +54,7 @@
     <Content Include="Admin Student Forms\AddEventForm.aspx" />
     <Content Include="Admin Forms\AddStaffForm.aspx" />
     <Content Include="Admin Forms\AddStudentForm.aspx" />
+    <Content Include="EditStudProfile.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="HomeOrg.aspx" />
@@ -129,6 +130,13 @@
     <Compile Include="Category.cs" />
     <Compile Include="CCA.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="EditStudProfile.aspx.cs">
+      <DependentUpon>EditStudProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStudProfile.aspx.designer.cs">
+      <DependentUpon>EditStudProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="EventNotification.cs" />
     <Compile Include="ForgotPassword.aspx.cs">
@@ -244,7 +252,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1993</DevelopmentServerPort>
+          <DevelopmentServerPort>63596</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
