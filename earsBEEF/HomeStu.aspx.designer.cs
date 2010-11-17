@@ -40,6 +40,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
+        /// hlAnn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlAnn;
+        
+        /// <summary>
         /// HyperLink4 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// hlUpEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlUpEvent;
+        
+        /// <summary>
         /// Panel4 control.
         /// </summary>
         /// <remarks>
@@ -101,5 +119,14 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
+        /// hlRegiEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlRegiEvent;
     }
 }
