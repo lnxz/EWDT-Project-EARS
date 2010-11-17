@@ -54,6 +54,7 @@
     <Content Include="Admin Student Forms\AddEventForm.aspx" />
     <Content Include="Admin Forms\AddStaffForm.aspx" />
     <Content Include="Admin Forms\AddStudentForm.aspx" />
+    <Content Include="EditStaffProfile.aspx" />
     <Content Include="EditStudProfile.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
@@ -130,6 +131,13 @@
     <Compile Include="Category.cs" />
     <Compile Include="CCA.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="EditStaffProfile.aspx.cs">
+      <DependentUpon>EditStaffProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStaffProfile.aspx.designer.cs">
+      <DependentUpon>EditStaffProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditStudProfile.aspx.cs">
       <DependentUpon>EditStudProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
