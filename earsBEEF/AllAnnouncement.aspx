@@ -49,7 +49,7 @@
             <td class="style3" valign="top">
                 Content:</td>
             <td valign="top">
-                <asp:TextBox ID="tbxAnno" runat="server" Height="173px" TextMode="MultiLine" 
+                <asp:TextBox ID="tbxCon" runat="server" Height="173px" TextMode="MultiLine" 
                     Width="597px"></asp:TextBox>
 &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="tbxAnno" ErrorMessage="*" ForeColor="#CC0000"></asp:RequiredFieldValidator>
@@ -58,7 +58,8 @@
     </table>
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+    <asp:Button ID="btnSubmit" runat="server" Text="Submit" 
+        onclick="btnSubmit_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
     <br />

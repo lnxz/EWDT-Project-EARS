@@ -13,5 +13,12 @@ namespace earsBEEF
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string forwho = ddlFor.Text;
+            string subject = tbxSubject.Text;
+            string context = tbxCon.Text;
+        }
     }
 }
