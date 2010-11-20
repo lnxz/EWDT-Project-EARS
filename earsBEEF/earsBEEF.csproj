@@ -91,6 +91,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="TESTPAGE.aspx" />
+    <Content Include="ViewEventStud.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="TESTPAGE.aspx.designer.cs">
       <DependentUpon>TESTPAGE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEventStud.aspx.cs">
+      <DependentUpon>ViewEventStud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewEventStud.aspx.designer.cs">
+      <DependentUpon>ViewEventStud.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

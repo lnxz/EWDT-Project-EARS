@@ -25,6 +25,15 @@
         {
             width: 500px;
         }
+        .style19
+        {
+            height: 52px;
+        }
+        .style20
+        {
+            width: 500px;
+            height: 52px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -177,9 +186,9 @@
                             </td>
                     </tr>
                     <tr>
-                        <td class="style6" valign="top">
+                        <td class="style19" valign="top">
                             Registration Cost:</td>
-                        <td class="style18" align="left" valign="top">
+                        <td class="style20" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" />
 &nbsp;&nbsp;
                             <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" />
@@ -188,7 +197,7 @@
                             <asp:TextBox ID="tbxDol" runat="server" Width="80px"></asp:TextBox>
 &nbsp; Dollars per student<br />
                         </td>
-                        <td class="style8">
+                        <td class="style19">
                         </td>
                     </tr>
                 </table>
