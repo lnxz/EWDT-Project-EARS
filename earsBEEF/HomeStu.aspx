@@ -17,10 +17,6 @@
         {
             width: 123px;
         }
-        .style18
-        {
-            width: 322px;
-        }
         .style20
         {
             width: 373px;
@@ -37,10 +33,6 @@
         {
             font-weight: 700;
         }
-        .style28
-        {
-            width: 149px;
-        }
         .style29
         {
             text-align: center;
@@ -54,7 +46,7 @@
         }
         .style31
         {
-            width: 322px;
+            width: 250px;
             text-align: center;
             font-weight: bold;
         }
@@ -74,6 +66,18 @@
         {
             width: 91px;
         }
+        .style35
+        {
+            width: 250px;
+        }
+        .style37
+        {
+            width: 213px;
+        }
+        .style38
+        {
+            width: 540px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -83,8 +87,6 @@
 <asp:Panel ID="Panel2" runat="server" BackColor="#FF6666" ForeColor="#CCCC00">
             <asp:Label ID="Label4" runat="server" CssClass="style22" Text="Announcements"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="hlAnn" runat="server" Font-Underline="True" 
-                ForeColor="#3333FF">View More</asp:HyperLink>
             <br />
             <table style="width:100%;">
                 <tr>
@@ -121,8 +123,6 @@
 <asp:Panel ID="Panel3" runat="server" BackColor="#FFFF99">
             <asp:Label ID="Label1" runat="server" CssClass="style23" Text="Upcoming Events"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="hlUpEvent" runat="server" Font-Underline="True" 
-                ForeColor="#3333FF">View More</asp:HyperLink>
             <br />
             <table style="width:100%;" align="center">
                 <tr>
@@ -134,44 +134,68 @@
                         Name</td>
                     <td class="style30">
                         Category</td>
-                    <td class="style29">
+                    <td class="style32">
                         Organizer</td>
+                    <td class="style29">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="style34">
                         Nov 18</td>
                     <td class="style15">
                         Nov 16</td>
-                    <td class="style18">
-                        TPRawks</td>
+                    <td class="style35">
+                        <asp:HyperLink ID="hlTp" runat="server" Font-Bold="False" Font-Overline="False" 
+                            Font-Strikeout="False" Font-Underline="True" ForeColor="#3333FF">TPRawks</asp:HyperLink>
+                    </td>
                     <td class="style17">
                         Campus-Wide</td>
-                    <td>
+                    <td class="style15">
                         Pua Yeow Cheong</td>
+                    <td>
+                        <asp:HyperLink ID="hlReg1" runat="server" Font-Bold="False" 
+                            Font-Overline="False" Font-Strikeout="False" Font-Underline="True" 
+                            ForeColor="#3333FF">Register</asp:HyperLink>
+                    </td>
                 </tr>
                 <tr>
                     <td class="style34">
                         Nov 19</td>
                     <td class="style15">
                         Nov 19</td>
-                    <td class="style18">
-                        CCN Day</td>
+                    <td class="style35">
+                        <asp:HyperLink ID="hlCC" runat="server" Font-Bold="False" Font-Overline="False" 
+                            Font-Strikeout="False" Font-Underline="True" ForeColor="#3333FF">CCN Day</asp:HyperLink>
+                    </td>
                     <td class="style17">
                         Campus-Wide</td>
-                    <td>
+                    <td class="style15">
                         Yeak Shaw Wen</td>
+                    <td>
+                        <asp:HyperLink ID="hlReg2" runat="server" Font-Bold="False" 
+                            Font-Overline="False" Font-Strikeout="False" Font-Underline="True" 
+                            ForeColor="#3333FF">Register</asp:HyperLink>
+                    </td>
                 </tr>
                 <tr>
                     <td class="style34">
                         Dec 27</td>
                     <td class="style15">
                         Nov 30</td>
-                    <td class="style18">
-                        Orientation Training Camp</td>
+                    <td class="style35">
+                        &nbsp;<asp:HyperLink ID="hlOTC" runat="server" Font-Bold="False" 
+                            Font-Overline="False" Font-Strikeout="False" Font-Underline="True" 
+                            ForeColor="#3333FF">Orientation Training Camp</asp:HyperLink>
+                    </td>
                     <td class="style17">
                         Leadership</td>
-                    <td>
+                    <td class="style15">
                         TPSU</td>
+                    <td>
+                        <asp:HyperLink ID="hlReg3" runat="server" Font-Bold="False" 
+                            Font-Overline="False" Font-Strikeout="False" Font-Underline="True" 
+                            ForeColor="#3333FF">Register</asp:HyperLink>
+                    </td>
                 </tr>
             </table>
         </asp:Panel>
@@ -181,27 +205,37 @@
             <asp:Label ID="Label3" runat="server" CssClass="style24" 
                 Text="Registered Events"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="hlRegiEvent" runat="server" Font-Underline="True" 
-                ForeColor="#3333FF">View More</asp:HyperLink>
             <br />
             <table style="width: 100%;">
                 <tr>
-                    <td class="style28">
+                    <td class="style37">
                         Event Starting Date</td>
-                    <td class="style20">
+                    <td class="style38">
                         Name</td>
+                    <td class="style20">
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="style28">
+                    <td class="style37">
                         Dec 27</td>
-                    <td class="style20">
+                    <td class="style38">
                         Orientation Training Camp</td>
+                    <td class="style20">
+                        <asp:HyperLink ID="hlDelete" runat="server" Font-Bold="False" 
+                            Font-Overline="False" Font-Strikeout="False" Font-Underline="True" 
+                            ForeColor="#3333FF">Delete</asp:HyperLink>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="style28">
+                    <td class="style37">
                         Dec 30</td>
-                    <td class="style20">
+                    <td class="style38">
                         Run for Hope helpers</td>
+                    <td class="style20">
+                        <asp:HyperLink ID="hlDelete1" runat="server" Font-Bold="False" 
+                            Font-Overline="False" Font-Strikeout="False" Font-Underline="True" 
+                            ForeColor="#3333FF">Delete</asp:HyperLink>
+                    </td>
                 </tr>
             </table>
         </asp:Panel>
