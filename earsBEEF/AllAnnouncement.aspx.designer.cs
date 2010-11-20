@@ -40,13 +40,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// tbxAnno control.
+        /// tbxCon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxAnno;
+        protected global::System.Web.UI.WebControls.TextBox tbxCon;
         
         /// <summary>
         /// RequiredFieldValidator2 control.
