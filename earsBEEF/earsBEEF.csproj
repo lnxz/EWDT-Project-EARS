@@ -54,6 +54,7 @@
     <Content Include="Admin Student Forms\AddEventForm.aspx" />
     <Content Include="Admin Forms\AddStaffForm.aspx" />
     <Content Include="Admin Forms\AddStudentForm.aspx" />
+    <Content Include="AllAnnouncement.aspx" />
     <Content Include="EditStaffProfile.aspx" />
     <Content Include="EditStudProfile.aspx" />
     <Content Include="ForgotPassword.aspx" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="Admin Forms\AddStudentForm.aspx.designer.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllAnnouncement.aspx.cs">
+      <DependentUpon>AllAnnouncement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllAnnouncement.aspx.designer.cs">
+      <DependentUpon>AllAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="Category.cs" />
