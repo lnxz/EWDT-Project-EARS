@@ -14,7 +14,7 @@
         }
         .style7
         {
-            width: 164px;
+            width: 163px;
         }
     </style>
 </asp:Content>
@@ -24,7 +24,7 @@
             <td class="style2" colspan="2">
                 <strong>
                 <br />
-                <table style="width:100%;">
+                <table style="width:103%;">
                     <tr>
                         <td class="style5">
                 <strong>
@@ -35,9 +35,7 @@
                             </strong>
                         </td>
                         </strong>
-                        <td>
-                        <br />
-                            <br />
+                        <td align="left" valign="top">
                             <table style="width:100%;">
                                 <tr>
                                     <td class="style6" colspan="2">
@@ -78,8 +76,18 @@
                                         <asp:Label ID="Label7" runat="server" Text="Free"></asp:Label>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="style7" valign="top">
+                                        Description: </td>
+                                    <td>
+                                        <asp:TextBox ID="TextBox1" runat="server" Height="111px" ReadOnly="True" 
+                                            TextMode="MultiLine" Width="345px"></asp:TextBox>
+                                    </td>
+                                </tr>
                             </table>
                             <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="btnReg" runat="server" Text="Register" />
                         </td>
                     </tr>
                 </table>
