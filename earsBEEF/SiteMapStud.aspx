@@ -50,7 +50,7 @@
 &nbsp;<asp:HyperLink ID="hlRe" runat="server" ForeColor="#3333FF">Registered Events</asp:HyperLink>
             </td>
             <td class="style6">
-                <asp:HyperLink ID="hlAnn" runat="server" ForeColor="#3333FF">View My Announcements</asp:HyperLink>
+                <asp:HyperLink ID="hlAnn" runat="server" ForeColor="#3333FF">View Announcements</asp:HyperLink>
             </td>
             <td>
                 <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit My Profile</asp:HyperLink>
