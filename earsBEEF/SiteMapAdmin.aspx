@@ -77,146 +77,76 @@
         <tr>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
-                </td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-        </tr>
-        <tr>
             <td class="style6">
                 Category Control</td>
-            <td class="style2">
+            <td class="style4">
                 &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
+            <td class="style6">
+                Announcement Control</td>
         </tr>
         <tr>
+            <td class="style6">
+                &nbsp;</td>
             <td class="style6">
                 <asp:HyperLink ID="hlCreateCate" runat="server" ForeColor="#3333FF">Create Category</asp:HyperLink>
-                </td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
+                <br />
                 <asp:HyperLink ID="hlApprove" runat="server" ForeColor="#3333FF">Category Approval</asp:HyperLink>
                 </td>
             <td class="style4">
                 &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
-                </td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
-                Announcement Control</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style2">
-                &nbsp;</td>
-        </tr>
-        <tr>
             <td class="style6">
                 <asp:HyperLink ID="hlPostAnn" runat="server" ForeColor="#3333FF">Post Announcement</asp:HyperLink>
                 <br />
                 <asp:HyperLink ID="hlDeleteAnn" runat="server" ForeColor="#3333FF">Delete Announcement</asp:HyperLink>
                 </td>
-            <td class="style4">
+        </tr>
+        <tr>
+            <td class="style6">
+                </td>
+            <td class="style6">
                 &nbsp;</td>
-            <td class="style4">
+            <td class="style2">
                 &nbsp;</td>
-            <td class="style4">
+            <td class="style2">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
+            <td class="style2">
                 Notification Control</td>
-            <td class="style4">
+            <td class="style2">
                 &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
             <td class="style6">
                 <strong>Eve nts</strong></td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
         </tr>
         <tr>
             <td class="style6">
-                <asp:HyperLink ID="hlCurr" runat="server" ForeColor="#3333FF">Current Events</asp:HyperLink>
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style6">
+                <asp:HyperLink ID="hlViewEvent" runat="server" ForeColor="#3333FF">View Event</asp:HyperLink>
                 <br />
-&nbsp;<asp:HyperLink ID="hlPt" runat="server" ForeColor="#3333FF">Past Events</asp:HyperLink>
+                <asp:HyperLink ID="hlDeleteEvent" runat="server" ForeColor="#3333FF">Delete Event</asp:HyperLink>
                 <br />
-&nbsp;<asp:HyperLink ID="hlRe" runat="server" ForeColor="#3333FF">Registered Events</asp:HyperLink>
             </td>
+        </tr>
+        <tr>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style6">
+                </td>
             <td class="style2">
                 &nbsp;</td>
             <td class="style2">
@@ -234,6 +164,16 @@
             <td class="style2">
                 &nbsp;</td>
         </tr>
-    </table>
+        <tr>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        </table>
     <br />
 </asp:Content>
