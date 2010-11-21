@@ -43,17 +43,19 @@
         </tr>
         <tr>
             <td class="style2">
-                <asp:HyperLink ID="hlCurr" runat="server" ForeColor="#3333FF">Current Events</asp:HyperLink>
+                <asp:HyperLink ID="hlCurr" runat="server" ForeColor="#3333FF">Current Event</asp:HyperLink>
                 <br />
-&nbsp;<asp:HyperLink ID="hlPt" runat="server" ForeColor="#3333FF">Past Events</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="hlPt" runat="server" ForeColor="#3333FF">Past Event</asp:HyperLink>
                 <br />
-&nbsp;<asp:HyperLink ID="hlRe" runat="server" ForeColor="#3333FF">Registered Events</asp:HyperLink>
+&nbsp;<asp:HyperLink ID="hlRe" runat="server" ForeColor="#3333FF">Registered Event</asp:HyperLink>
             </td>
             <td class="style6">
-                <asp:HyperLink ID="hlAnn" runat="server" ForeColor="#3333FF">View My Announcements</asp:HyperLink>
+                <asp:HyperLink ID="hlViewAnn" runat="server" ForeColor="#3333FF">View Announcement</asp:HyperLink>
             </td>
             <td>
-                <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit My Profile</asp:HyperLink>
+                <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit Profile</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlView" runat="server" ForeColor="#3333FF">View Profile</asp:HyperLink>
             </td>
         </tr>
         <tr>
