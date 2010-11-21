@@ -94,22 +94,22 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.HyperLink hlViewUpcom;
         
         /// <summary>
-        /// hlCreateCate control.
+        /// hlViewRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlCreateCate;
+        protected global::System.Web.UI.WebControls.HyperLink hlViewRegister;
         
         /// <summary>
-        /// hlApprove control.
+        /// hlPastEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlApprove;
+        protected global::System.Web.UI.WebControls.HyperLink hlPastEvent;
         
         /// <summary>
         /// hlEdit control.

@@ -25,13 +25,13 @@
         {
             width: 235px;
         }
-        .style8
-        {
-            width: 231px;
-        }
         .style9
         {
             width: 171px;
+        }
+        .style10
+        {
+            width: 283px;
         }
     </style>
 </asp:Content>
@@ -48,7 +48,7 @@
                 &nbsp;</td>
             <td class="style9">
                 <strong>Event</strong></td>
-            <td class="style4">
+            <td class="style10">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -60,7 +60,7 @@
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
-            <td class="style4">
+            <td class="style10">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -85,10 +85,14 @@
                 <asp:HyperLink ID="hlDeleteEvent" runat="server" ForeColor="#3333FF">Delete Events</asp:HyperLink>
                 <br />
 &nbsp;</td>
-            <td class="style2" valign="top">
-                <asp:HyperLink ID="hlViewOrg" runat="server" ForeColor="#3333FF">View Organise Events</asp:HyperLink>
+            <td class="style10" valign="top">
+                <asp:HyperLink ID="hlViewOrg" runat="server" ForeColor="#3333FF">Organise Events</asp:HyperLink>
                 <br />
-                <asp:HyperLink ID="hlViewUpcom" runat="server" ForeColor="#3333FF">View Upcoming Event</asp:HyperLink>
+                <asp:HyperLink ID="hlViewUpcom" runat="server" ForeColor="#3333FF">Upcoming Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlViewRegister" runat="server" ForeColor="#3333FF">Registered Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlPastEvent" runat="server" ForeColor="#3333FF">Past Event</asp:HyperLink>
             </td>
         </tr>
         <tr>
@@ -100,19 +104,19 @@
                 &nbsp;</td>
             <td class="style9" valign="top">
                 &nbsp;</td>
-            <td valign="top">
+            <td valign="top" class="style10">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
                 &nbsp;</td>
             <td class="style6" valign="top">
-                Category</td>
+                &nbsp;</td>
             <td class="style3" valign="top">
                 &nbsp;</td>
             <td class="style9" valign="top">
                 <strong>Personal Profile</strong></td>
-            <td class="style8" valign="top">
+            <td class="style10" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -124,25 +128,23 @@
                 &nbsp;</td>
             <td class="style9" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style10" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
                 &nbsp;</td>
             <td class="style6" valign="top">
-                <asp:HyperLink ID="hlCreateCate" runat="server" ForeColor="#3333FF">Create Category</asp:HyperLink>
                 <br />
-                <asp:HyperLink ID="hlApprove" runat="server" ForeColor="#3333FF">Category Approval</asp:HyperLink>
                 </td>
             <td class="style3" valign="top">
                 &nbsp;</td>
             <td class="style9" valign="top">
-                <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit My Profile</asp:HyperLink>
+                <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit Profile</asp:HyperLink>
                 <br />
-                <asp:HyperLink ID="hlViewProfile" runat="server" ForeColor="#3333FF">View My Profile</asp:HyperLink>
+                <asp:HyperLink ID="hlViewProfile" runat="server" ForeColor="#3333FF">View Profile</asp:HyperLink>
             </td>
-            <td class="style8" valign="top">
+            <td class="style10" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -154,7 +156,7 @@
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
-            <td>
+            <td class="style10">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -166,7 +168,7 @@
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
-            <td>
+            <td class="style10">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -178,7 +180,7 @@
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
-            <td>
+            <td class="style10">
                 &nbsp;</td>
         </tr>
     </table>
