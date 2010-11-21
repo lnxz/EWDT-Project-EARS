@@ -87,6 +87,7 @@
     <Content Include="SiteMapAdmin.aspx" />
     <Content Include="SiteMapStaff.aspx" />
     <Content Include="SiteMapStud.aspx" />
+    <Content Include="SiteMapStudSL.aspx" />
     <Content Include="Styles\MainMenu.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -253,6 +254,13 @@
     </Compile>
     <Compile Include="SiteMapStud.aspx.designer.cs">
       <DependentUpon>SiteMapStud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMapStudSL.aspx.cs">
+      <DependentUpon>SiteMapStudSL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMapStudSL.aspx.designer.cs">
+      <DependentUpon>SiteMapStudSL.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="Student.cs" />
