@@ -121,30 +121,21 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.HyperLink hlDeleteAnn;
         
         /// <summary>
-        /// hlCurr control.
+        /// hlViewEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlCurr;
+        protected global::System.Web.UI.WebControls.HyperLink hlViewEvent;
         
         /// <summary>
-        /// hlPt control.
+        /// hlDeleteEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlPt;
-        
-        /// <summary>
-        /// hlRe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlRe;
+        protected global::System.Web.UI.WebControls.HyperLink hlDeleteEvent;
     }
 }
