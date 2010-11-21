@@ -1,29 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedInStaff.Master" AutoEventWireup="true" CodeBehind="SiteMapStaff.aspx.cs" Inherits="earsBEEF.SiteMapStaff" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedIn.Master" AutoEventWireup="true" CodeBehind="SiteMapStudSL.aspx.cs" Inherits="earsBEEF.SiteMapStudSL" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
         .style2
         {
-            width: 204px;
+            width: 20px;
+        }
+        .style3
+        {
+            width: 198px;
         }
         .style4
         {
-            width: 189px;
+            width: 248px;
         }
         .style5
         {
-            width: 187px;
+            width: 245px;
         }
         .style6
         {
-            width: 182px;
+            width: 238px;
         }
         .style7
         {
-            width: 179px;
+            width: 235px;
         }
         .style8
         {
-            width: 185px;
+            width: 231px;
+        }
+        .style9
+        {
+            width: 171px;
         }
     </style>
 </asp:Content>
@@ -36,9 +44,9 @@
                 &nbsp;</td>
             <td class="style5">
                 <strong>Announcement</strong></td>
-            <td class="style8">
+            <td class="style3">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style9">
                 <strong>Event</strong></td>
             <td class="style4">
                 &nbsp;</td>
@@ -48,9 +56,9 @@
                 &nbsp;</td>
             <td class="style5">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style3">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style9">
                 &nbsp;</td>
             <td class="style4">
                 &nbsp;</td>
@@ -65,9 +73,9 @@
                 <br />
                 <asp:HyperLink ID="hlDeleteAnn" runat="server" ForeColor="#3333FF">Delete Announcements</asp:HyperLink>
             </td>
-            <td class="style8" valign="top">
+            <td class="style3" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style9" valign="top">
                 <asp:HyperLink ID="hlCreateEvent" runat="server" ForeColor="#3333FF">Create Event</asp:HyperLink>
                 <br />
                 <asp:HyperLink ID="hlViewEvent" runat="server" ForeColor="#3333FF">View Event</asp:HyperLink>
@@ -88,9 +96,9 @@
                 &nbsp;</td>
             <td class="style6" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style3" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style9" valign="top">
                 &nbsp;</td>
             <td valign="top">
                 &nbsp;</td>
@@ -100,9 +108,9 @@
                 &nbsp;</td>
             <td class="style6" valign="top">
                 Category</td>
-            <td class="style8" valign="top">
+            <td class="style3" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style9" valign="top">
                 <strong>Personal Profile</strong></td>
             <td class="style8" valign="top">
                 &nbsp;</td>
@@ -112,9 +120,9 @@
                 &nbsp;</td>
             <td class="style6" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style3" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style9" valign="top">
                 &nbsp;</td>
             <td class="style8" valign="top">
                 &nbsp;</td>
@@ -127,9 +135,9 @@
                 <br />
                 <asp:HyperLink ID="hlApprove" runat="server" ForeColor="#3333FF">Category Approval</asp:HyperLink>
                 </td>
-            <td class="style8" valign="top">
+            <td class="style3" valign="top">
                 &nbsp;</td>
-            <td class="style8" valign="top">
+            <td class="style9" valign="top">
                 <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit My Profile</asp:HyperLink>
                 <br />
                 <asp:HyperLink ID="hlViewProfile" runat="server" ForeColor="#3333FF">View My Profile</asp:HyperLink>
@@ -142,21 +150,9 @@
                 &nbsp;</td>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style3">
                 &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style8">
+            <td class="style9">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -166,9 +162,21 @@
                 &nbsp;</td>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style3">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style9">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style2">
+                &nbsp;</td>
+            <td class="style6">
+                &nbsp;</td>
+            <td class="style3">
+                &nbsp;</td>
+            <td class="style9">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
