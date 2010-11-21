@@ -84,6 +84,7 @@
     <Content Include="Images\TopBanner.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MasterPage\mPageLoggedOut.css" />
+    <Content Include="SiteMapStud.aspx" />
     <Content Include="Styles\MainMenu.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -229,6 +230,13 @@
     </Compile>
     <Compile Include="MasterPage\LoggedIn.Master.designer.cs">
       <DependentUpon>LoggedIn.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMapStud.aspx.cs">
+      <DependentUpon>SiteMapStud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMapStud.aspx.designer.cs">
+      <DependentUpon>SiteMapStud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="Student.cs" />
