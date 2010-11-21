@@ -35,7 +35,7 @@
     <table style="width:100%;">
         <tr>
             <td class="style4">
-                <strong>Eve nts</strong></td>
+                <strong>Events</strong></td>
             <td class="style5">
                 <strong>Announcements</strong></td>
             <td class="style3">
