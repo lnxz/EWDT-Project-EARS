@@ -23,9 +23,9 @@ namespace earsBEEF
             {
                 MultiView1.ActiveViewIndex = 0;
             }
-            else
+            else if (Session["LoginType"].Equals("StudentSL"))
             {
-                MultiView1.ActiveViewIndex = -1;
+                MultiView1.ActiveViewIndex = 3;
             }
         }
     }

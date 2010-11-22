@@ -51,11 +51,6 @@
             height: 20px;
             width: 242px;
         }
-        .style16
-        {
-            height: 20px;
-            width: 300px;
-        }
         .style17
         {
             width: 399px;
@@ -64,6 +59,30 @@
         {
             height: 20px;
             width: 294px;
+        }
+        .style20
+        {
+            height: 20px;
+            width: 154px;
+        }
+        .style21
+        {
+            height: 20px;
+            width: 175px;
+        }
+        .style22
+        {
+            font-size: large;
+            width: 173px;
+        }
+        .style23
+        {
+            width: 170px;
+        }
+        .style24
+        {
+            height: 20px;
+            width: 143px;
         }
     </style>
 </asp:Content>
@@ -425,6 +444,160 @@
     </table>
 
     </asp:View>
+
+    <asp:View ID="StudentLeaderView" runat="server" onactivate="Page_Load">
+    <br />
+&nbsp;<strong><span class="style7">Site Map</span></strong><br />
+    <table style="width:100%;">
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20">
+                <strong>Announcement</strong></td>
+            <td class="style22">
+                &nbsp;</td>
+            <td class="style23">
+                <strong>Event</strong></td>
+            <td class="style10">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20">
+                &nbsp;</td>
+            <td class="style22">
+                &nbsp;</td>
+            <td class="style23">
+                &nbsp;</td>
+            <td class="style10">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+            </td>
+            <td class="style20" valign="top">
+                <asp:HyperLink ID="HyperLink8" runat="server" ForeColor="#3333FF">Post Announcements</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink9" runat="server" ForeColor="#3333FF">View Announcements</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink10" runat="server" ForeColor="#3333FF">Delete Announcements</asp:HyperLink>
+            </td>
+            <td class="style22" valign="top">
+                &nbsp;</td>
+            <td class="style23" valign="top">
+                <asp:HyperLink ID="HyperLink11" runat="server" ForeColor="#3333FF">Create Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink12" runat="server" ForeColor="#3333FF">View Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink13" runat="server" ForeColor="#3333FF">Update Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink14" runat="server" ForeColor="#3333FF">Delete Events</asp:HyperLink>
+                <br />
+&nbsp;</td>
+            <td class="style10" valign="top">
+                <asp:HyperLink ID="HyperLink15" runat="server" ForeColor="#3333FF">Organise Events</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink16" runat="server" ForeColor="#3333FF">Upcoming Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlViewRegister" runat="server" ForeColor="#3333FF">Registered Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlPastEvent" runat="server" ForeColor="#3333FF">Past Event</asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20" valign="top">
+                &nbsp;</td>
+            <td class="style22" valign="top">
+                &nbsp;</td>
+            <td class="style23" valign="top">
+                &nbsp;</td>
+            <td valign="top" class="style10">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20" valign="top">
+                &nbsp;</td>
+            <td class="style22" valign="top">
+                &nbsp;</td>
+            <td class="style23" valign="top">
+                <strong>Personal Profile</strong></td>
+            <td class="style10" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20" valign="top">
+                &nbsp;</td>
+            <td class="style22" valign="top">
+                &nbsp;</td>
+            <td class="style23" valign="top">
+                &nbsp;</td>
+            <td class="style10" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20" valign="top">
+                <br />
+                </td>
+            <td class="style22" valign="top">
+                &nbsp;</td>
+            <td class="style23" valign="top">
+                <asp:HyperLink ID="HyperLink17" runat="server" ForeColor="#3333FF">Edit Profile</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink18" runat="server" ForeColor="#3333FF">View Profile</asp:HyperLink>
+            </td>
+            <td class="style10" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20">
+                &nbsp;</td>
+            <td class="style22">
+                &nbsp;</td>
+            <td class="style23">
+                &nbsp;</td>
+            <td class="style10">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20">
+                &nbsp;</td>
+            <td class="style22">
+                &nbsp;</td>
+            <td class="style23">
+                &nbsp;</td>
+            <td class="style10">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style24">
+                &nbsp;</td>
+            <td class="style20">
+                &nbsp;</td>
+            <td class="style22">
+                &nbsp;</td>
+            <td class="style23">
+                &nbsp;</td>
+            <td class="style10">
+                &nbsp;</td>
+        </tr>
+    </table>
+
+
+
+        </asp:View>
     </asp:MultiView>
 
     <br />
