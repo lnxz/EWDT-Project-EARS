@@ -24,11 +24,50 @@
             height: 20px;
             width: 314px;
         }
+        .style7
+        {
+            width: 11px;
+        }
+        .style8
+        {
+            width: 24px;
+        }
+        .style11
+        {
+            height: 20px;
+            width: 605px;
+        }
+        .style12
+        {
+            height: 20px;
+            width: 293px;
+        }
+        .style13
+        {
+            width: 411px;
+        }
+        .style14
+        {
+            width: 290px;
+        }
+        .style15
+        {
+            height: 20px;
+            width: 242px;
+        }
+        .style16
+        {
+            height: 20px;
+            width: 300px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-    <span class="style3"><strong>Site map</strong></span><br />
+    <br />
+    <asp:MultiView ID="MultiView1" runat="server">
+        <asp:View ID="AdminView" runat="server">
+<span class="style3"><strong>Site map</strong></span><br />
 <table style="width:100%;">
         <tr>
             <td class="style6">
@@ -176,4 +215,200 @@
         </tr>
         </table>
     <br />
+        </asp:View>
+        <asp:View ID="StudentView" runat="server">
+            <strong><span class="style7">Site Map</span></strong><br />
+            <table style="width:100%;">
+                <tr>
+                    <td class="style16">
+                        <strong>Events</strong></td>
+                    <td class="style15">
+                        <strong>Announcements</strong></td>
+                    <td class="style3">
+                        <strong>Profile</strong></td>
+                </tr>
+                <tr>
+                    <td class="style16">
+                        <asp:HyperLink ID="hlCurr" runat="server" ForeColor="#3333FF">Current Event</asp:HyperLink>
+                        <br />
+                        &nbsp;<asp:HyperLink ID="hlPt" runat="server" ForeColor="#3333FF">Past Event</asp:HyperLink>
+                        <br />
+                        &nbsp;<asp:HyperLink ID="hlRe" runat="server" ForeColor="#3333FF">Registered Event</asp:HyperLink>
+                    </td>
+                    <td class="style15">
+                        <asp:HyperLink ID="hlViewAnn" runat="server" ForeColor="#3333FF">View Announcement</asp:HyperLink>
+                    </td>
+                    <td>
+                        <asp:HyperLink ID="hlEdit" runat="server" ForeColor="#3333FF">Edit Profile</asp:HyperLink>
+                        <br />
+                        <asp:HyperLink ID="hlView" runat="server" ForeColor="#3333FF">View Profile</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style16">
+                        &nbsp;</td>
+                    <td class="style15">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+            </table>
+    </asp:View>
+    <asp:View ID="StaffView" runat="server">
+
+<strong><span class="style7">Site Map</span></strong><br />
+    <table style="width:100%;">
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12">
+                <strong>Announcement</strong></td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                <strong>Event</strong></td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td class="style4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12" valign="top">
+                <asp:HyperLink ID="hlAnn" runat="server" ForeColor="#3333FF">Post Announcements</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#3333FF">View Announcements</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink2" runat="server" ForeColor="#3333FF">Delete Announcements</asp:HyperLink>
+            </td>
+            <td class="style13" valign="top">
+                &nbsp;</td>
+            <td class="style14" valign="top">
+                <asp:HyperLink ID="hlCreateEvent" runat="server" ForeColor="#3333FF">Create Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink3" runat="server" ForeColor="#3333FF">View Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlUpdateEvent" runat="server" ForeColor="#3333FF">Update Event</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink4" runat="server" ForeColor="#3333FF">Delete Events</asp:HyperLink>
+                <br />
+&nbsp;</td>
+            <td class="style2" valign="top">
+                <asp:HyperLink ID="hlViewOrg" runat="server" ForeColor="#3333FF">View Organise Events</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlViewUpcom" runat="server" ForeColor="#3333FF">View Upcoming Event</asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12" valign="top">
+                &nbsp;</td>
+            <td class="style13" valign="top">
+                &nbsp;</td>
+            <td class="style14" valign="top">
+                &nbsp;</td>
+            <td valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12" valign="top">
+                Category</td>
+            <td class="style13" valign="top">
+                &nbsp;</td>
+            <td class="style14" valign="top">
+                <strong>Personal Profile</strong></td>
+            <td class="style8" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12" valign="top">
+                &nbsp;</td>
+            <td class="style13" valign="top">
+                &nbsp;</td>
+            <td class="style14" valign="top">
+                &nbsp;</td>
+            <td class="style8" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12" valign="top">
+                <asp:HyperLink ID="HyperLink5" runat="server" ForeColor="#3333FF">Create Category</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink6" runat="server" ForeColor="#3333FF">Category Approval</asp:HyperLink>
+                </td>
+            <td class="style13" valign="top">
+                &nbsp;</td>
+            <td class="style14" valign="top">
+                <asp:HyperLink ID="HyperLink7" runat="server" ForeColor="#3333FF">Edit My Profile</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="hlViewProfile" runat="server" ForeColor="#3333FF">View My Profile</asp:HyperLink>
+            </td>
+            <td class="style8" valign="top">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style11">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+
+    </asp:View>
+    </asp:MultiView>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
 </asp:Content>
