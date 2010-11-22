@@ -22,7 +22,7 @@ namespace earsBEEF
         protected void btnGenerate_Click(object sender, EventArgs e)
         {
             string s ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            string p = p + s.Substring(?,1);
+           // string p = p + s.Substring(?,1);
             string psw;
 
             //for( int i = 0; i < 8; i ++)

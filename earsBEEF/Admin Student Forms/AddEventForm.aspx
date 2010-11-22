@@ -185,7 +185,7 @@
                         <td class="style14">
                             Registration Ends:</td>
                         <td class="style15" align="left">
-                &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" 
+                &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" AutoPostBack="True" 
                                 onselectedindexchanged="DdlMonth1_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
