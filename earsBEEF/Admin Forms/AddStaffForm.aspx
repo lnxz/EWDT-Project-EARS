@@ -20,25 +20,6 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style5" align="right">
-                Password:</td>
-            <td class="style2" align="left">
-&nbsp;<asp:TextBox ID="tbxPw" runat="server"></asp:TextBox>
-&nbsp;<asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" 
-                    onclick="btnGenerate_Click" CausesValidation="False" />
-            </td>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4" colspan="3" align="left">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-        </tr>
-        <tr>
             <td class="style3" colspan="3" align="left">
                 <strong>Staff - Office Information</strong></td>
             <td class="style6">
@@ -108,6 +89,9 @@
                 <asp:TextBox ID="tbxWorkEmail" runat="server" Height="26px" Width="180px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                     ControlToValidate="tbxWorkEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator5" 
+                    runat="server" ControlToValidate="tbxWorkEmail" ErrorMessage="Invaild Email" 
+                    ForeColor="#CC0000" ValidationExpression="\w+([-+.']\w+)*@tp.edu.sg*"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -168,7 +152,18 @@
                 </asp:DropDownList>
             &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Month</asp:ListItem>
-                    <asp:ListItem>04</asp:ListItem>
+                    <asp:ListItem Value="01">January</asp:ListItem>
+                    <asp:ListItem Value="02">February</asp:ListItem>
+                    <asp:ListItem Value="03">March</asp:ListItem>
+                    <asp:ListItem Value="04">April</asp:ListItem>
+                    <asp:ListItem Value="05">May</asp:ListItem>
+                    <asp:ListItem Value="06">June</asp:ListItem>
+                    <asp:ListItem Value="07">July</asp:ListItem>
+                    <asp:ListItem Value="08">August</asp:ListItem>
+                    <asp:ListItem Value="09">September</asp:ListItem>
+                    <asp:ListItem Value="10">October</asp:ListItem>
+                    <asp:ListItem Value="11">November</asp:ListItem>
+                    <asp:ListItem Value="12">December</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
@@ -217,7 +212,7 @@
             <td class="style11" align="right">
                 Telephone No:</td>
             <td class="style6" align="left">
-                <asp:TextBox ID="tbxTele" runat="server" Width="205px"></asp:TextBox>
+                <asp:TextBox ID="tbxTele" runat="server" Width="161px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="tbxTele" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" 

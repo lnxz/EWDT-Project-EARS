@@ -17,24 +17,20 @@ namespace earsBEEF
             //{
             //    Response.Redirect("Home.aspx");
             //}
-        }
 
-        protected void btnGenerate_Click(object sender, EventArgs e)
-        {
-            string s ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            string p = "";
-            Random r = new Random();
-            for (int i = 0; i < 8; i++)
-            {
-                p = p + s.Substring(r.Next(0,s.Length-1),1); 
-            }
-
-            tbxPw.Text = p;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string password = tbxPw.Text;
+            string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string p = "";
+            Random r = new Random();
+            for (int i = 0; i < 8; i++)
+            {
+                p = p + s.Substring(r.Next(0, s.Length - 1), 1);
+            }
+
+            string password = p;
             string school = DdlSch.Text;
             string dept = DdlDept.Text;
             string position = DdlPosit.Text;
@@ -53,7 +49,7 @@ namespace earsBEEF
 
             string name = tbxName.Text;
             int day = Convert.ToInt32(DdlDay.Text);
-            int month = Convert.ToInt32(DdlMonth.Text);
+            int month = Convert.ToInt32(DdlMonth.SelectedValue);
             int year = Convert.ToInt32(DdlYear.Text);
             
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
