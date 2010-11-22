@@ -23,11 +23,9 @@
             <td class="style5" align="right">
                 Password:</td>
             <td class="style2" align="left">
-                <asp:TextBox ID="tbxPw" runat="server" Width="141px" 
-                    ontextchanged="tbxPw_TextChanged"></asp:TextBox>
-&nbsp;
-                <asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" 
-                    onclick="btnGenerate_Click" />
+&nbsp;<asp:TextBox ID="tbxPw" runat="server"></asp:TextBox>
+&nbsp;<asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" 
+                    onclick="btnGenerate_Click" CausesValidation="False" />
             </td>
             <td class="style10">
                 &nbsp;</td>
@@ -82,6 +80,8 @@
                 Department:</td>
             <td class="style2" align="left">
                 <asp:DropDownList ID="DdlDept" runat="server" Height="21px" Width="247px">
+                    <asp:ListItem>Office</asp:ListItem>
+                    <asp:ListItem>Human Resourse</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style11" align="right">
@@ -98,6 +98,8 @@
                 Position:</td>
             <td class="style2" align="left">
                 <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="247px">
+                    <asp:ListItem>Lecturer</asp:ListItem>
+                    <asp:ListItem>Subject Leader</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style10" align="right">
@@ -162,12 +164,15 @@
             <td class="style2" align="left">
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
+                    <asp:ListItem>1</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Month</asp:ListItem>
+                    <asp:ListItem>04</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
+                    <asp:ListItem>2010</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;&nbsp;</td>
             <td class="style11" align="right">
@@ -204,6 +209,9 @@
                 <asp:TextBox ID="tbxMoblie" runat="server" Width="205px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="tbxMoblie" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" 
+                    runat="server" ControlToValidate="tbxMoblie" ErrorMessage="Invaild Contact" 
+                    ForeColor="Red" ValidationExpression="\d{8}"></asp:RegularExpressionValidator>
             </td>
             <td class="style11" align="right">
                 Telephone No:</td>
@@ -211,7 +219,10 @@
                 <asp:TextBox ID="tbxTele" runat="server" Width="205px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                     ControlToValidate="tbxTele" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            &nbsp;</td>
+            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" 
+                    runat="server" ControlToValidate="tbxTele" ErrorMessage="Invaild Contact" 
+                    ForeColor="Red" ValidationExpression="\d{8}"></asp:RegularExpressionValidator>
+            </td>
         </tr>
         </table>
     <table style="width:100%;">
