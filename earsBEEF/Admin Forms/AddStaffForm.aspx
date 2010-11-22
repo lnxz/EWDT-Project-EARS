@@ -114,9 +114,9 @@
             <td class="style5">
                 Is Admin:</td>
             <td class="style2" align="left">
-                <asp:RadioButton ID="rbYes" runat="server" Text="Yes" />
+                <asp:RadioButton ID="rbYes" runat="server" Text="Yes" GroupName="admin" />
 &nbsp;&nbsp;&nbsp;
-                <asp:RadioButton ID="rbNo" runat="server" Text="No" />
+                <asp:RadioButton ID="rbNo" runat="server" Text="No" GroupName="admin" />
             </td>
             <td class="style10">
                 &nbsp;</td>
@@ -184,8 +184,9 @@
             <td class="style9" align="right">
                 Gender:</td>
             <td class="style2" align="left">
-                <asp:RadioButton ID="rbMale" runat="server" Text="Male" />
-                <asp:RadioButton ID="rbFemale" runat="server" Text="Female" />
+                <asp:RadioButton ID="rbMale" runat="server" Text="Male" GroupName="gender" />
+                <asp:RadioButton ID="rbFemale" runat="server" Text="Female" 
+                    GroupName="gender" />
             </td>
             <td class="style11">
                 &nbsp;</td>
