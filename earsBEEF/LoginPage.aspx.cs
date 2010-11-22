@@ -10,11 +10,7 @@ namespace EARS
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (tbxLoginId.Text.ToString().Length == 8)
@@ -45,10 +41,9 @@ namespace EARS
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
-                else
-                {
-
-                }
+            }
+            else
+            {
 
                 EARS.Staff st = DBManager.loginStaff(tbxLoginId.Text, tbxLoginPw.Text);
                 if (st != null)
@@ -65,7 +60,7 @@ namespace EARS
                         Session["LoginType"] = "Staff";
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStaff.Master";
                     }
-                    if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
+                    if (FormsAuthentication.GetRedirectUrl(st.Name, false).Equals("default.aspx"))
                     {
                         Response.Redirect("Home.aspx");
 
@@ -76,11 +71,9 @@ namespace EARS
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
-                else
-                {
-                }
-
+                Label2.Text.Equals("Wrong Login/Password");
             }
+
         }
     }
 }

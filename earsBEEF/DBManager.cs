@@ -9,8 +9,8 @@ namespace EARS
 {
     public class DBManager
     {
-        public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
-
+        //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa";
         public static ArrayList GetAllStudents()
         {
             ArrayList results = new ArrayList();
