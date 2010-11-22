@@ -185,8 +185,8 @@
                         <td class="style14">
                             Registration Ends:</td>
                         <td class="style15" align="left">
-                &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" AutoPostBack="True" 
-                                onselectedindexchanged="DdlMonth1_SelectedIndexChanged">
+                &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" 
+                                AutoPostBack="True" onselectedindexchanged="DdlMonth1_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/
@@ -207,10 +207,11 @@
                         <td class="style20" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" />
 &nbsp;&nbsp;
-                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" />
+                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" 
+                                AutoPostBack="True" oncheckedchanged="RadioButton2_CheckedChanged" />
                             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="tbxDol" runat="server" Width="80px"></asp:TextBox>
+                            <asp:TextBox ID="tbxDol" runat="server" Width="80px" Enabled="False"></asp:TextBox>
 &nbsp; Dollars per student<br />
                         </td>
                         <td class="style19">

@@ -284,5 +284,13 @@ namespace earsBEEF
                 }
             }
         }
+
+        protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RadioButton2.Checked)
+            {
+
+            }
+        }
     }
 }
