@@ -65,8 +65,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddStudent(string name, string adminNo, string password, char gender, string school, int yearOfStudy, string courseCode, int age, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string nationality, string studentType)
+        public static int AddStudent(string name, string adminNo, string password, char gender, string school, int yearOfStudy, string courseCode, int age, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string nationality, string studentType)
         {
+            int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
                try
@@ -93,7 +94,7 @@ namespace EARS
                 comm.Parameters.AddWithValue("@o", nationality);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
              }
             catch (SqlException ex)
             {
@@ -104,6 +105,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+               return rowsAdded;
         }
         public static Student loginStudent(string login, string pass)
         {
@@ -205,12 +207,13 @@ namespace EARS
             }
             return results;
         }
-        public static void AddStaff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, char admin, string officeNo, DateTime dateofBirth)
-        {
+        public static int AddStaff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, char admin, string officeNo, DateTime dateofBirth)
+        {int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
             {
+                
                 // Step 1: Open connection
                 conn.Open();
                 // Step 2: Prepare the sql command
@@ -231,7 +234,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+               rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -242,6 +245,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetAllAnnouncements()
         {
@@ -289,8 +293,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddAnnouncement(string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
+        public static int AddAnnouncement(string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
+            int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
@@ -310,7 +315,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -321,6 +326,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetAllEvents()
         {
@@ -375,8 +381,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddEvents(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        public static int AddEvents(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
         {
+            int rowsAdded = -1;
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -405,7 +412,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                 rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -416,6 +423,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetAllCCA()
         {
@@ -459,8 +467,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddCCA(int ccaID, string name)
+        public static int AddCCA(int ccaID, string name)
         {
+            int rowsAdded = -1;
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -479,7 +488,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                 rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -490,6 +499,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetAllCategory()
         {
@@ -533,9 +543,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddCategory(int categoryID, string name)
+        public static int AddCategory(int categoryID, string name)
         {
-
+            int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
@@ -553,7 +563,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -564,9 +574,12 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
+           
         }
-        public static void AddCCAStudent(int ccaID, int studentID, char isLeader)
+        public static int AddCCAStudent(int ccaID, int studentID, char isLeader)
         {
+            int rowsAdded = -1;
                         SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
@@ -582,7 +595,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
               
             }
             catch (SqlException ex)
@@ -594,6 +607,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetCCAStudents(int ccaID)
         {
@@ -677,8 +691,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddEventNotifications(int eventNotificationID, int eventID, DateTime date, string type, string template)
+        public static int AddEventNotifications(int eventNotificationID, int eventID, DateTime date, string type, string template)
         {
+            int rowsAdded = -1;
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -698,7 +713,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -709,6 +724,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetAllStudentRegisterEvent()
         {
@@ -752,8 +768,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddStudentRegisterEvent(int studentID, int eventID)
+        public static int AddStudentRegisterEvent(int studentID, int eventID)
         {
+            int rowsAdded = -1;
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -772,7 +789,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -783,6 +800,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static ArrayList GetAllStudentAnnouncement()
         {
@@ -826,9 +844,9 @@ namespace EARS
             }
             return results;
         }
-        public static void AddStudentAnnouncement(int studentID, int announcementID)
+        public static int AddStudentAnnouncement(int studentID, int announcementID)
         {
-
+            int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
@@ -846,7 +864,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                int rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -857,6 +875,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
+            return rowsAdded;
         }
         public static bool DeleteStudent(int studentID)
         {
