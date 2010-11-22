@@ -13,5 +13,13 @@ namespace earsBEEF
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            int contact = Convert.ToInt32(tbxContact.Text);
+            int emgContact = Convert.ToInt32(tbxEmergContact.Text);
+            string size = ddlsize.Text;
+
+        }
     }
 }
