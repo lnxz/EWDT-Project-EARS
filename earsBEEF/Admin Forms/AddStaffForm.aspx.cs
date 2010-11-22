@@ -13,26 +13,28 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["LoginType"].Equals("StaffYes"))
-            {
-                Response.Redirect("Home.aspx");
-            }
+            //if (!Session["LoginType"].Equals("StaffYes"))
+            //{
+            //    Response.Redirect("Home.aspx");
+            //}
         }
 
         protected void btnGenerate_Click(object sender, EventArgs e)
         {
             string s ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+<<<<<<< .mine
+            string p = "";
+            Random r = new Random();
+            for (int i = 0; i < 8; i++)
+            {
+                p = p + s.Substring(r.Next(0,s.Length-1),1); 
+            }
+=======
            // string p = p + s.Substring(?,1);
             string psw;
+>>>>>>> .r191
 
-            //for( int i = 0; i < 8; i ++)
-            //{
-            //    s.Substring(?,8);
-            //}
-
-            //psw = tbxPw.Text;
-
-            
+            tbxPw.Text = p;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -55,9 +57,10 @@ namespace earsBEEF
             else { admin = 'N'; }
 
             string name = tbxName.Text;
-            int day = Convert.ToInt32(DdlDay);
-            int month = Convert.ToInt32(DdlMonth);
-            int year = Convert.ToInt32(DdlMonth);
+            int day = Convert.ToInt32(DdlDay.Text);
+
+            int month = Convert.ToInt32(DdlMonth.Text);
+            int year = Convert.ToInt32(DdlMonth.Text);
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
@@ -72,6 +75,5 @@ namespace earsBEEF
             EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, Mobile,
                                         perEmail, position, admin, offContact, dateOfBirth);
         }
-
     }
 }
