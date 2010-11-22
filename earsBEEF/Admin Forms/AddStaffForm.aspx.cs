@@ -22,17 +22,12 @@ namespace earsBEEF
         protected void btnGenerate_Click(object sender, EventArgs e)
         {
             string s ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-<<<<<<< .mine
             string p = "";
             Random r = new Random();
             for (int i = 0; i < 8; i++)
             {
                 p = p + s.Substring(r.Next(0,s.Length-1),1); 
             }
-=======
-           // string p = p + s.Substring(?,1);
-            string psw;
->>>>>>> .r191
 
             tbxPw.Text = p;
         }
@@ -58,10 +53,9 @@ namespace earsBEEF
 
             string name = tbxName.Text;
             int day = Convert.ToInt32(DdlDay.Text);
-
             int month = Convert.ToInt32(DdlMonth.Text);
-            int year = Convert.ToInt32(DdlMonth.Text);
-
+            int year = Convert.ToInt32(DdlYear.Text);
+            
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
             DateTime dateOfBirth = new DateTime(year, month, day);
