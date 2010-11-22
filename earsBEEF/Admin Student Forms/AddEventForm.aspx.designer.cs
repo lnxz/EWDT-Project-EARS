@@ -76,15 +76,6 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.TextBox tbxDes;
         
         /// <summary>
-        /// DdlDay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlDay;
-        
-        /// <summary>
         /// DdlMonth control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlMonth;
+        
+        /// <summary>
+        /// DdlDay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlDay;
         
         /// <summary>
         /// DdlYear control.
@@ -139,15 +139,6 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// DdlDay0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlDay0;
-        
-        /// <summary>
         /// DdlMonth0 control.
         /// </summary>
         /// <remarks>
@@ -155,6 +146,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlMonth0;
+        
+        /// <summary>
+        /// DdlDay0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlDay0;
         
         /// <summary>
         /// DdlYear0 control.
@@ -166,15 +166,6 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlYear0;
         
         /// <summary>
-        /// DdlDay1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlDay1;
-        
-        /// <summary>
         /// DdlMonth1 control.
         /// </summary>
         /// <remarks>
@@ -182,6 +173,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlMonth1;
+        
+        /// <summary>
+        /// DdlDay1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlDay1;
         
         /// <summary>
         /// DdlYear1 control.

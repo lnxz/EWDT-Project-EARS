@@ -821,6 +821,7 @@ namespace EARS
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
+            int rowsAdded = -1;
             try
             {
                 // Step 1: Open connection
@@ -845,9 +846,15 @@ namespace EARS
             finally
             {
                 // Step 4: Close connection
+
                 conn.Close();
             }
+<<<<<<< .mine
             return rowsAdded;
+            
+=======
+            return rowsAdded;
+>>>>>>> .r173
         }
         public static ArrayList GetAllStudentAnnouncement()
         {

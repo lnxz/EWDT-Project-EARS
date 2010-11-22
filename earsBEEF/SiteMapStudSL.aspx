@@ -65,7 +65,9 @@
         </tr>
         <tr>
             <td class="style2">
-                &nbsp;</td>
+                <asp:MultiView ID="MultiView1" runat="server">
+                </asp:MultiView>
+            </td>
             <td class="style6" valign="top">
                 <asp:HyperLink ID="hlAnn" runat="server" ForeColor="#3333FF">Post Announcements</asp:HyperLink>
                 <br />
