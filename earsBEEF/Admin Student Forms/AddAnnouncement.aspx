@@ -72,7 +72,7 @@
         <tr>
             <td class="style3">
                 <asp:Button ID="btnConfirm" runat="server" style="text-align:right" 
-                    Text="Confirm" />
+                    Text="Confirm" onclick="btnConfirm_Click" />
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />

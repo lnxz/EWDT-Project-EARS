@@ -61,7 +61,8 @@
                         <td class="style4">
                             Event Name:</td>
                         <td class="style18" align="left">
-                            <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
+                            <asp:TextBox ID="tbxName" runat="server" Width="224px" 
+                                ontextchanged="tbxName_TextChanged"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
@@ -119,11 +120,14 @@
                         <td class="style9" valign="top">
                             Event Dates:</td>
                         <td class="style18" align="left">
+            &nbsp;<asp:DropDownList ID="DdlMonth" runat="server" 
+                                Height="22px" Width="76px" AutoPostBack="True" 
+                                onselectedindexchanged="DdlMonth_SelectedIndexChanged">
+                    <asp:ListItem>Month</asp:ListItem>
+                </asp:DropDownList>
+                            /
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
-                </asp:DropDownList>
-            &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px">
-                    <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ 
                            <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
@@ -133,7 +137,7 @@
                                 onclick="Button2_Click" />
                             
             &nbsp;&nbsp;<br />
-                                <asp:Label ID="Label1" runat="server">Label1</asp:Label>
+                                <asp:Label ID="Label1" runat="server">Please Add Event Dates</asp:Label>
                         </td>
                         <td>
                             &nbsp;</td>
@@ -153,11 +157,12 @@
                         <td class="style9">
                             Registration Starts:</td>
                         <td class="style18" align="left">
+                            <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px">
+                    <asp:ListItem>Month</asp:ListItem>
+                </asp:DropDownList>
+            &nbsp;/ 
                 <asp:DropDownList ID="DdlDay0" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
-                </asp:DropDownList>
-            &nbsp;/ <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px">
-                    <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ 
                            <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px">
@@ -171,11 +176,12 @@
                         <td class="style14">
                             Registration Ends:</td>
                         <td class="style15" align="left">
+                            <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px">
+                    <asp:ListItem>Month</asp:ListItem>
+                </asp:DropDownList>
+            &nbsp;/
                 <asp:DropDownList ID="DdlDay1" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
-                </asp:DropDownList>
-            &nbsp;/ <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px">
-                    <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ 
                            <asp:DropDownList ID="DdlYear1" runat="server" Height="22px" Width="76px">
@@ -256,7 +262,7 @@
         <tr>
             <td class="style13">
                 <asp:Button ID="btnConfirm" runat="server" style="text-align: right" 
-                    Text="Confirm" />
+                    Text="Confirm" onclick="btnConfirm_Click" />
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
