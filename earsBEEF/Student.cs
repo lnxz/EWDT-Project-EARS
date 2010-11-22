@@ -8,7 +8,7 @@ namespace EARS
     public class Student
     {
 
-        private bool isStudentLeader;
+        private char isStudentLeader;
         private int studentID;
         private string name;
         private string adminNo;
@@ -23,7 +23,7 @@ namespace EARS
         private string studentType;
         private DateTime dateOfBirth;
 
-        public Student(string name, string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
+        public Student(string name, string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, char isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
         {
             // TODO: Complete member initialization
             this.name = name;
@@ -41,7 +41,7 @@ namespace EARS
             this.dateOfBirth = dateOfBirth;
         }
 
-        public Student(int studentID,string name,string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
+        public Student(int studentID,string name,string adminNo, string password, char gender, string school, string courseCode, string contactNo, string emergCont, string email, char isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
         {
             // TODO: Complete member initialization
             this.studentID = studentID;
