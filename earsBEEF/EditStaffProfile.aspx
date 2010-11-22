@@ -126,7 +126,7 @@
                 Gender:</td>
             <td class="style2" align="left">
                 <asp:Label ID="lbGender" runat="server" Text="Label"></asp:Label>
-            </td>
+                -</td>
             <td class="style11">
                 &nbsp;</td>
             <td class="style6" align="left">
