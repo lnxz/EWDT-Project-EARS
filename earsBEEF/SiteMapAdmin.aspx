@@ -42,10 +42,6 @@
             height: 20px;
             width: 293px;
         }
-        .style13
-        {
-            width: 411px;
-        }
         .style14
         {
             width: 290px;
@@ -60,13 +56,39 @@
             height: 20px;
             width: 300px;
         }
+        .style17
+        {
+            width: 399px;
+        }
+        .style18
+        {
+            height: 20px;
+            width: 294px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
+                <br />
+
+<br />
+<br />
+<br />
+<br />
+<br />
+        <br />
     <br />
-    <asp:MultiView ID="MultiView1" runat="server">
-        <asp:View ID="AdminView" runat="server">
+    <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+            <br />
+
+<br />
+<br />
+<br />
+<br />
+<br />
+        <br />
+        <asp:View ID="AdminView" runat="server" onactivate="Page_Load">
+
 <span class="style3"><strong>Site map</strong></span><br />
 <table style="width:100%;">
         <tr>
@@ -157,7 +179,7 @@
             <td class="style2">
                 &nbsp;</td>
             <td class="style6">
-                <strong>Eve nts</strong></td>
+                <strong>Events</strong></td>
         </tr>
         <tr>
             <td class="style6">
@@ -216,11 +238,11 @@
         </table>
     <br />
         </asp:View>
-        <asp:View ID="StudentView" runat="server">
+        <asp:View ID="StudentView" runat="server" onactivate="Page_Load">
             <strong><span class="style7">Site Map</span></strong><br />
             <table style="width:100%;">
                 <tr>
-                    <td class="style16">
+                    <td class="style18">
                         <strong>Events</strong></td>
                     <td class="style15">
                         <strong>Announcements</strong></td>
@@ -228,7 +250,7 @@
                         <strong>Profile</strong></td>
                 </tr>
                 <tr>
-                    <td class="style16">
+                    <td class="style18">
                         <asp:HyperLink ID="hlCurr" runat="server" ForeColor="#3333FF">Current Event</asp:HyperLink>
                         <br />
                         &nbsp;<asp:HyperLink ID="hlPt" runat="server" ForeColor="#3333FF">Past Event</asp:HyperLink>
@@ -245,7 +267,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style16">
+                    <td class="style18">
                         &nbsp;</td>
                     <td class="style15">
                         &nbsp;</td>
@@ -254,7 +276,7 @@
                 </tr>
             </table>
     </asp:View>
-    <asp:View ID="StaffView" runat="server">
+    <asp:View ID="StaffView" runat="server" onactivate="Page_Load">
 
 <strong><span class="style7">Site Map</span></strong><br />
     <table style="width:100%;">
@@ -263,7 +285,7 @@
                 &nbsp;</td>
             <td class="style12">
                 <strong>Announcement</strong></td>
-            <td class="style13">
+            <td class="style17">
                 &nbsp;</td>
             <td class="style14">
                 <strong>Event</strong></td>
@@ -275,7 +297,7 @@
                 &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
-            <td class="style13">
+            <td class="style17">
                 &nbsp;</td>
             <td class="style14">
                 &nbsp;</td>
@@ -292,7 +314,7 @@
                 <br />
                 <asp:HyperLink ID="HyperLink2" runat="server" ForeColor="#3333FF">Delete Announcements</asp:HyperLink>
             </td>
-            <td class="style13" valign="top">
+            <td class="style17" valign="top">
                 &nbsp;</td>
             <td class="style14" valign="top">
                 <asp:HyperLink ID="hlCreateEvent" runat="server" ForeColor="#3333FF">Create Event</asp:HyperLink>
@@ -315,7 +337,7 @@
                 &nbsp;</td>
             <td class="style12" valign="top">
                 &nbsp;</td>
-            <td class="style13" valign="top">
+            <td class="style17" valign="top">
                 &nbsp;</td>
             <td class="style14" valign="top">
                 &nbsp;</td>
@@ -327,7 +349,7 @@
                 &nbsp;</td>
             <td class="style12" valign="top">
                 Category</td>
-            <td class="style13" valign="top">
+            <td class="style17" valign="top">
                 &nbsp;</td>
             <td class="style14" valign="top">
                 <strong>Personal Profile</strong></td>
@@ -339,7 +361,7 @@
                 &nbsp;</td>
             <td class="style12" valign="top">
                 &nbsp;</td>
-            <td class="style13" valign="top">
+            <td class="style17" valign="top">
                 &nbsp;</td>
             <td class="style14" valign="top">
                 &nbsp;</td>
@@ -354,7 +376,7 @@
                 <br />
                 <asp:HyperLink ID="HyperLink6" runat="server" ForeColor="#3333FF">Category Approval</asp:HyperLink>
                 </td>
-            <td class="style13" valign="top">
+            <td class="style17" valign="top">
                 &nbsp;</td>
             <td class="style14" valign="top">
                 <asp:HyperLink ID="HyperLink7" runat="server" ForeColor="#3333FF">Edit My Profile</asp:HyperLink>
@@ -369,7 +391,7 @@
                 &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
-            <td class="style13">
+            <td class="style17">
                 &nbsp;</td>
             <td class="style14">
                 &nbsp;</td>
@@ -381,7 +403,7 @@
                 &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
-            <td class="style13">
+            <td class="style17">
                 &nbsp;</td>
             <td class="style14">
                 &nbsp;</td>
@@ -393,7 +415,7 @@
                 &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
-            <td class="style13">
+            <td class="style17">
                 &nbsp;</td>
             <td class="style14">
                 &nbsp;</td>
