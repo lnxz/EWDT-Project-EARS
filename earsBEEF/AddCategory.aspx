@@ -8,6 +8,7 @@
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
             <asp:BoundField />
+            <asp:BoundField HeaderText="Name" ReadOnly="True" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
