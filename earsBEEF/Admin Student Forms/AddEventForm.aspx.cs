@@ -15,53 +15,94 @@ namespace earsBEEF
             //if(Session["LoginType"].Equals("StudentNo")){
             //    Response.Redirect("Home.aspx");
             //}
-         //   this.MasterPageFile = Session["MyPage_Master"].ToString();
+            //   this.MasterPageFile = Session["MyPage_Master"].ToString();
             if (Page.IsPostBack)
             { }
             else
-            {   
+            {
                 DateTime tempDate = DateTime.Today;
                 for (int x = 0; x < 3; x++)
                 {
-                    if(tempDate.Month.ToString().Equals("1")){
-                    DdlMonth.Items.Add("Jan");
+                    if (tempDate.Month.ToString().Equals("1"))
+                    {
+                        DdlMonth.Items.Add("Jan");
+                        DdlMonth0.Items.Add("Jan");
+                        DdlMonth1.Items.Add("Jan");
                     }
-                    else if(tempDate.Month.ToString().Equals("2")){
-                    DdlMonth.Items.Add("Feb");
+                    else if (tempDate.Month.ToString().Equals("2"))
+                    {
+                        DdlMonth.Items.Add("Feb");
+                        DdlMonth0.Items.Add("Feb");
+                        DdlMonth1.Items.Add("Feb");
                     }
-                    else if(tempDate.Month.ToString().Equals("3")){
-                    DdlMonth.Items.Add("Mar");
+                    else if (tempDate.Month.ToString().Equals("3"))
+                    {
+                        DdlMonth.Items.Add("Mar");
+                        DdlMonth0.Items.Add("Mar");
+                        DdlMonth1.Items.Add("Mar");
                     }
-                    else if(tempDate.Month.ToString().Equals("4")){
-                    DdlMonth.Items.Add("Apr");
+                    else if (tempDate.Month.ToString().Equals("4"))
+                    {
+                        DdlMonth.Items.Add("Apr");
+                        DdlMonth0.Items.Add("Apr");
+                        DdlMonth1.Items.Add("Apr");
                     }
-                    else if(tempDate.Month.ToString().Equals("5")){
-                    DdlMonth.Items.Add("May");
+                    else if (tempDate.Month.ToString().Equals("5"))
+                    {
+                        DdlMonth.Items.Add("May");
+                        DdlMonth0.Items.Add("May");
+                        DdlMonth1.Items.Add("May");
                     }
-                    else if(tempDate.Month.ToString().Equals("6")){
-                    DdlMonth.Items.Add("Jun");
+                    else if (tempDate.Month.ToString().Equals("6"))
+                    {
+                        DdlMonth.Items.Add("Jun");
+                        DdlMonth0.Items.Add("Jun");
+                        DdlMonth1.Items.Add("Jun");
                     }
-                    else if(tempDate.Month.ToString().Equals("7")){
-                    DdlMonth.Items.Add("Jul");
+                    else if (tempDate.Month.ToString().Equals("7"))
+                    {
+
+                        DdlMonth.Items.Add("Jul");
+                        DdlMonth0.Items.Add("Jul");
+                        DdlMonth1.Items.Add("Jul");
                     }
-                    else if(tempDate.Month.ToString().Equals("8")){
-                    DdlMonth.Items.Add("Aug");
+                    else if (tempDate.Month.ToString().Equals("8"))
+                    {
+
+                        DdlMonth.Items.Add("Aug");
+                        DdlMonth1.Items.Add("Aug");
+                        DdlMonth0.Items.Add("Aug");
                     }
-                    else if(tempDate.Month.ToString().Equals("9")){
-                    DdlMonth.Items.Add("Sep");
+                    else if (tempDate.Month.ToString().Equals("9"))
+                    {
+                        DdlMonth.Items.Add("Sep");
+                        DdlMonth0.Items.Add("Sep");
+                        DdlMonth1.Items.Add("Sep");
                     }
-                    else if(tempDate.Month.ToString().Equals("10")){
-                    DdlMonth.Items.Add("Oct");
+                    else if (tempDate.Month.ToString().Equals("10"))
+                    {
+
+                        DdlMonth.Items.Add("Oct");
+                        DdlMonth0.Items.Add("Oct");
+                        DdlMonth1.Items.Add("Oct");
                     }
-                    else if(tempDate.Month.ToString().Equals("11")){
-                    DdlMonth.Items.Add("Nov");
+                    else if (tempDate.Month.ToString().Equals("11"))
+                    {
+                        DdlMonth.Items.Add("Nov");
+                        DdlMonth0.Items.Add("Nov");
+                        DdlMonth1.Items.Add("Nov");
                     }
-                    else if(tempDate.Month.ToString().Equals("12")){
-                    DdlMonth.Items.Add("Dec");
+                    else if (tempDate.Month.ToString().Equals("12"))
+                    {
+
+                        DdlMonth.Items.Add("Dec");
+                        DdlMonth1.Items.Add("Dec");
+                        DdlMonth0.Items.Add("Dec");
                     }
 
                     tempDate = tempDate.AddMonths(1);
                 }
+
             }
 
         }
@@ -86,9 +127,10 @@ namespace earsBEEF
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             int cost = 0;
-            if(RadioButton1.Checked){}
-            else{
-            cost = Convert.ToInt32(tbxDol.Text);
+            if (RadioButton1.Checked) { }
+            else
+            {
+                cost = Convert.ToInt32(tbxDol.Text);
             }
             //EARS.DBManager.AddEvents(tbxName.Text,tbxVenue.Text,cost,ddlCate,tbxDes,
         }
@@ -103,13 +145,13 @@ namespace earsBEEF
             DdlDay.Items.Clear();
             DdlYear.Items.Clear();
             DateTime tempMonthDate = DateTime.Today;
-            tempMonthDate = tempMonthDate.AddMonths(DdlMonth.SelectedIndex-1);
+            tempMonthDate = tempMonthDate.AddMonths(DdlMonth.SelectedIndex - 1);
             DateTime tempDate = new DateTime(DateTime.Today.Year, tempMonthDate.Month, 1);
             do
             {
                 DdlDay.Items.Add(tempDate.Day.ToString());
                 tempDate = tempDate.AddDays(1);
-            } 
+            }
             while (tempDate.Month == tempMonthDate.Month);
 
             DateTime tempMonth = DateTime.Today;
