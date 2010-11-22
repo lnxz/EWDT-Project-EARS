@@ -61,7 +61,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddStudent(string name, string adminNo, string password, char gender, string school, int yearOfStudy, string courseCode, int age, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string nationality, string studentType)
+        public static int AddStudent(string name, string adminNo, string password, char gender, string school, string courseCode, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
@@ -72,22 +72,21 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Student(Name,AdminNo,Password,Gender,School,YearOfStudy,CourseCode,Age,ContactNo,EmergencyContact,Email,IsStudentLeader,TShirtSize,Nationality) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n,@o)";
+                comm.CommandText = "INSERT INTO Student(Name,AdminNo,Password,Gender,School,CourseCode,ContactNo,EmergencyContact,Email,IsStudentLeader,TShirtSize,StudentYpe,DateOfBirth) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)";
 
                 comm.Parameters.AddWithValue("@b", name);
                 comm.Parameters.AddWithValue("@c", adminNo);
                 comm.Parameters.AddWithValue("@d", password);
                 comm.Parameters.AddWithValue("@e", gender);
                 comm.Parameters.AddWithValue("@f", school);
-                comm.Parameters.AddWithValue("@g", yearOfStudy);
-                comm.Parameters.AddWithValue("@h", courseCode);
-                comm.Parameters.AddWithValue("@i", age);
-                comm.Parameters.AddWithValue("@j", contactNo);
-                comm.Parameters.AddWithValue("@k", emergCont);
-                comm.Parameters.AddWithValue("@l", email);
-                comm.Parameters.AddWithValue("@m", isStudentLeader);
-                comm.Parameters.AddWithValue("@n", tShirtSize);
-                comm.Parameters.AddWithValue("@o", nationality);
+                comm.Parameters.AddWithValue("@g", courseCode);
+                comm.Parameters.AddWithValue("@h", contactNo);
+                comm.Parameters.AddWithValue("@i", emergCont);
+                comm.Parameters.AddWithValue("@j", email);
+                comm.Parameters.AddWithValue("@k", isStudentLeader);
+                comm.Parameters.AddWithValue("@l", tShirtSize);
+                comm.Parameters.AddWithValue("@m", studentType);
+                comm.Parameters.AddWithValue("@n", dateOfBirth);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();
