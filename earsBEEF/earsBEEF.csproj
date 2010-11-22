@@ -50,6 +50,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddCategory.aspx" />
     <Content Include="Admin Student Forms\AddAnnouncement.aspx" />
     <Content Include="Admin Student Forms\AddEventForm.aspx" />
     <Content Include="Admin Forms\AddStaffForm.aspx" />
@@ -105,6 +106,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin Student Forms\AddAnnouncement.aspx.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

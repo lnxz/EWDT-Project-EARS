@@ -1001,6 +1001,43 @@ namespace EARS
 
 
         }
+        //checks if admin no. is being used.
+        public static bool CheckAdmin(string adminNo)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQl command 
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Student WHERE adminNo  = @AdminNo";
+                comm.Parameters.AddWithValue("@adminNo", adminNo);
+                comm.Connection = conn;
+                //Excute SQL  command 
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read() == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //close connection
+                conn.Close();
+            }
+            return false;
+        }
     }
 
 
