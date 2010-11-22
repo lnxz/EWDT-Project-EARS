@@ -7,8 +7,8 @@ body
 	font-size: 13px;
 	color: #061C37;
 	background: #014D5D url(background.png);
-	background-repeat: repe
-*
+	background-repeat: repeat-x;
+}*
 {
   margin: 0 auto 0 auto;
  text-align:left;
