@@ -50,35 +50,39 @@ namespace EARS
 
                 }
 
-
-
-                foreach (Staff st in DBManager.GetAllStaff())
+                EARS.Staff st = DBManager.loginStaff(tbxLoginId.Text, tbxLoginPw.Text);
+                if (st != null)
                 {
-                    if (tbxLoginId.Text.Equals(st.StaffEmail) && tbxLoginPw.Text.Equals(st.Password))
+                    if (st.admin.equals('Y'))
                     {
-                        FormsAuthentication.SetAuthCookie(st.Name, false);
-                        Session["loginUserName"] = tbxLoginId.Text;
-                        if (st.Admin.Equals('Y'))
-                        {
-                            Session["LoginType"] = "StaffYes";
-                            Session["MyPage_Master"] = "~/MasterPage/LoggedIn.Master";
-                        }
-                        else
-                        {
-                            Session["LoginType"] = "StaffNo";
-                            Session["MyPage_Master"] = "~/MasterPage/LoggedInStaff.Master";
-                        }
-                        if (FormsAuthentication.GetRedirectUrl(st.Name, false) == "/LoginPage.aspx")
-                        {
-                            Response.Redirect("Home.aspx");
-
-                        }
-                        else
-                        {
-                            Response.Redirect("Home.aspx");
-                            //FormsAuthentication.RedirectFromLoginPage(st.Name, false);
-                        }
+                        Session["Login"] = st;
+                        Session["LoginType"] = "Staff";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStaffSL.Master";
                     }
+                    else
+                    {
+                        Session["Login"] = st;
+                        Session["LoginType"] = "Staff";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStaff.Master";
+                    }
+                    if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
+                    {
+                        Response.Redirect("Home.aspx");
+
+                    }
+                    else
+                    {
+                        Response.Redirect("Home.aspx");
+                        //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
+                    }
+                }
+                else
+                {
+
+                }
+
+
+                
 
                 }
 
