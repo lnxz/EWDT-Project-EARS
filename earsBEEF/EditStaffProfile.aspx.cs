@@ -13,5 +13,13 @@ namespace earsBEEF
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            int phoneNo = Convert.ToInt32(tbxTele.Text);
+            int contactNo = Convert.ToInt32(tbxMoblie.Text);
+            int officeNo = Convert.ToInt32( tbxOffic.Text);
+            string personalEmail = tbxPersonalEmail.Text;
+        }
     }
 }
