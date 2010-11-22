@@ -11,10 +11,10 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Session["LoginType"].Equals("StaffYes"))
-            {
-                Response.Redirect("Home.aspx");
-            }
+            //if (!Session["LoginType"].Equals("StaffYes"))
+            //{
+            //    Response.Redirect("Home.aspx");
+            //}
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace earsBEEF
             string course = DdlCourse.Text;
             string name = tbxName.Text;
             int day = Convert.ToInt32(DdlDay.Text);
-            int month = Convert.ToInt32(DdlMonth.Text);
+            int month = Convert.ToInt32(DdlMonth.SelectedValue);
             int year = Convert.ToInt32(DdlYear.Text);
             string size = ddlsize.Text;
             string contract = tbxContact.Text;
