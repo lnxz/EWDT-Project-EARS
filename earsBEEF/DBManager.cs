@@ -31,7 +31,7 @@ namespace EARS
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                    Boolean isStudentLeader = false;
+                    char isStudentLeader = dr["IsStudentLeader"].ToString()[0];
                     int studentID = Convert.ToInt32(dr["StudentID"].ToString());
                     string name = dr["Name"].ToString();
                     string adminNo = dr["AdminNo"].ToString();
@@ -42,10 +42,6 @@ namespace EARS
                     string contactNo = dr ["ContactNo"].ToString();
                     string emergCont = dr ["EmergencyContact"].ToString();
                     string email = dr["Email"].ToString();
-                    if (dr["IsStudentLeader"].ToString()[0].Equals('Y'))
-                    {
-                        isStudentLeader = true;
-                    }
                     string tShirtSize = dr["TShirtSize"].ToString();
                     DateTime dateofbirth = DateTime.Parse( dr["DateOfBirth"].ToString());
                     string studentType = dr["StudentType"].ToString();
@@ -127,7 +123,7 @@ namespace EARS
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                    char isStudentLeader = 'N';
+                    char isStudentLeader =dr["IsStudentLeader"].ToString()[0];
                     int studentID = Convert.ToInt32(dr["StudentID"].ToString());
                     string name = dr["Name"].ToString();
                     string adminNo = dr["AdminNo"].ToString();
@@ -138,10 +134,6 @@ namespace EARS
                     string contactNo = dr["ContactNo"].ToString();
                     string emergCont = dr["EmergencyContact"].ToString();
                     string email = dr["Email"].ToString();
-                    if (dr["IsStudentLeader"].ToString()[0].Equals('Y'))
-                    {
-                        isStudentLeader = 'Y';
-                    }
                     string tShirtSize = dr["TShirtSize"].ToString();
                     DateTime dateofbirth = DateTime.Parse(dr["DateOfBirth"].ToString());
                     string studentType = dr["StudentType"].ToString();
@@ -190,15 +182,9 @@ namespace EARS
                     string mobileNo = dr["ContactNo"].ToString();
                     string personalEmail = dr["PersonalEmail"].ToString();
                     string position = dr["Position"].ToString();
-                    char admin ='N';
+                    char admin =dr["isAdmin"].ToString()[0];
                     string officeNo = dr["OfficeNumber"].ToString();
                     DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
-
-                    if (dr["isAdmin"].ToString()[0].Equals('Y'))
-                    {
-                        admin = 'Y';
-                    }
-
                     
                     s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
                 }
