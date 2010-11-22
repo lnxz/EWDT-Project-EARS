@@ -18,7 +18,7 @@ namespace EARS
                 EARS.Student s = DBManager.loginStudent(tbxLoginId.Text, tbxLoginPw.Text);
                 if (s != null)
                 {
-                    if (s.IsStudentLeader)
+                    if (s.IsStudentLeader.Equals('Y'))
                     {
                         Session["Login"] = s;
                         Session["LoginType"] = "Student";

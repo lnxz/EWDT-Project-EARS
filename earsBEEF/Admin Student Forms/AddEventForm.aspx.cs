@@ -68,11 +68,17 @@ namespace earsBEEF
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (DdlDay.SelectedIndex != 0 && DdlMonth.SelectedIndex != 0 && DdlYear.SelectedIndex != 0)
+            if (DdlMonth.SelectedIndex != 0)
             {
                 if (datesAdded == 0)
                 {
-                    Label1.Text = DdlDay.Text + " " + DdlMonth + " " + DdlYear;
+                    Label1.Text = DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text;
+                    datesAdded++;
+                }
+                else if (datesAdded < 5)
+                {
+                    Label1.Text = Label1.Text + " | " + DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text;
+                    datesAdded++;
                 }
             }
         }
@@ -95,6 +101,7 @@ namespace earsBEEF
         protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             DdlDay.Items.Clear();
+            DdlYear.Items.Clear();
             DateTime tempMonthDate = DateTime.Today;
             tempMonthDate = tempMonthDate.AddMonths(DdlMonth.SelectedIndex-1);
             DateTime tempDate = new DateTime(DateTime.Today.Year, tempMonthDate.Month, 1);
@@ -105,6 +112,135 @@ namespace earsBEEF
             } 
             while (tempDate.Month == tempMonthDate.Month);
 
+            DateTime tempMonth = DateTime.Today;
+            if (tempMonth.Month <= 10)
+            {
+                DdlYear.Items.Add(DateTime.Today.Year.ToString());
+            }
+            else if (tempMonth.Month == 11)
+            {
+                if (DdlMonth.SelectedIndex == 3)
+                {
+                    DateTime tempYear = DateTime.Today;
+                    tempYear = tempYear.AddYears(1);
+                    DdlYear.Items.Add(tempYear.Year.ToString());
+                }
+                else
+                {
+                    DdlYear.Items.Add(DateTime.Today.Year.ToString());
+                }
+
+            }
+            else if (tempMonth.Month == 12)
+            {
+                if (DdlMonth.SelectedIndex == 2 || DdlMonth.SelectedIndex == 3)
+                {
+                    DateTime tempYear = DateTime.Today;
+                    tempYear = tempYear.AddYears(1);
+                    DdlYear.Items.Add(tempYear.Year.ToString());
+                }
+                else
+                {
+                    DdlYear.Items.Add(DateTime.Today.Year.ToString());
+                }
+            }
+
+        }
+
+        protected void DdlMonth0_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DdlDay0.Items.Clear();
+            DdlYear0.Items.Clear();
+            DateTime tempMonthDate = DateTime.Today;
+            tempMonthDate = tempMonthDate.AddMonths(DdlMonth0.SelectedIndex - 1);
+            DateTime tempDate = new DateTime(DateTime.Today.Year, tempMonthDate.Month, 1);
+            do
+            {
+                DdlDay0.Items.Add(tempDate.Day.ToString());
+                tempDate = tempDate.AddDays(1);
+            }
+            while (tempDate.Month == tempMonthDate.Month);
+
+            DateTime tempMonth = DateTime.Today;
+            if (tempMonth.Month <= 10)
+            {
+                DdlYear0.Items.Add(DateTime.Today.Year.ToString());
+            }
+            else if (tempMonth.Month == 11)
+            {
+                if (DdlMonth0.SelectedIndex == 3)
+                {
+                    DateTime tempYear = DateTime.Today;
+                    tempYear = tempYear.AddYears(1);
+                    DdlYear0.Items.Add(tempYear.Year.ToString());
+                }
+                else
+                {
+                    DdlYear0.Items.Add(DateTime.Today.Year.ToString());
+                }
+
+            }
+            else if (tempMonth.Month == 12)
+            {
+                if (DdlMonth0.SelectedIndex == 2 || DdlMonth0.SelectedIndex == 3)
+                {
+                    DateTime tempYear = DateTime.Today;
+                    tempYear = tempYear.AddYears(1);
+                    DdlYear0.Items.Add(tempYear.Year.ToString());
+                }
+                else
+                {
+                    DdlYear0.Items.Add(DateTime.Today.Year.ToString());
+                }
+            }
+        }
+
+        protected void DdlMonth1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DdlDay1.Items.Clear();
+            DdlYear1.Items.Clear();
+            DateTime tempMonthDate = DateTime.Today;
+            tempMonthDate = tempMonthDate.AddMonths(DdlMonth1.SelectedIndex - 1);
+            DateTime tempDate = new DateTime(DateTime.Today.Year, tempMonthDate.Month, 1);
+            do
+            {
+                DdlDay1.Items.Add(tempDate.Day.ToString());
+                tempDate = tempDate.AddDays(1);
+            }
+            while (tempDate.Month == tempMonthDate.Month);
+
+            DateTime tempMonth = DateTime.Today;
+            if (tempMonth.Month <= 10)
+            {
+                DdlYear1.Items.Add(DateTime.Today.Year.ToString());
+            }
+            else if (tempMonth.Month == 11)
+            {
+                if (DdlMonth1.SelectedIndex == 3)
+                {
+                    DateTime tempYear = DateTime.Today;
+                    tempYear = tempYear.AddYears(1);
+                    DdlYear1.Items.Add(tempYear.Year.ToString());
+                }
+                else
+                {
+                    DdlYear1.Items.Add(DateTime.Today.Year.ToString());
+                }
+
+            }
+            else if (tempMonth.Month == 12)
+            {
+                if (DdlMonth1.SelectedIndex == 2 || DdlMonth1.SelectedIndex == 3)
+                {
+                    DateTime tempYear = DateTime.Today;
+                    tempYear = tempYear.AddYears(1);
+                    DdlYear1.Items.Add(tempYear.Year.ToString());
+                }
+                else
+                {
+                    DdlYear1.Items.Add(DateTime.Today.Year.ToString());
+                }
+            }
         }
     }
 }
