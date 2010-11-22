@@ -16,12 +16,12 @@ namespace earsBEEF
         {
             foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
             {
-                GridView1.Rows.
+                //GridView1.Rows.
             }
         }
-        public DataTable populateCategoryTable()
-        {
+        //public DataTable populateCategoryTable()
+        //{
 
-        }
+        //}
     }
 }
