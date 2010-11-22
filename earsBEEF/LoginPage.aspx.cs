@@ -53,7 +53,7 @@ namespace EARS
                 EARS.Staff st = DBManager.loginStaff(tbxLoginId.Text, tbxLoginPw.Text);
                 if (st != null)
                 {
-                    if (st.admin.equals('Y'))
+                    if (st.Admin.Equals('Y'))
                     {
                         Session["Login"] = st;
                         Session["LoginType"] = "Staff";
@@ -78,12 +78,6 @@ namespace EARS
                 }
                 else
                 {
-
-                }
-
-
-                
-
                 }
 
             }
