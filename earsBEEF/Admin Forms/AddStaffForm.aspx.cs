@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 
 namespace earsBEEF
 {
+
     public partial class AddStaffForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -15,6 +17,22 @@ namespace earsBEEF
             {
                 Response.Redirect("Home.aspx");
             }
+        }
+
+        protected void btnGenerate_Click(object sender, EventArgs e)
+        {
+            string s ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string p = p + s.Substring(?,1);
+            string psw;
+
+            //for( int i = 0; i < 8; i ++)
+            //{
+            //    s.Substring(?,8);
+            //}
+
+            //psw = tbxPw.Text;
+
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -43,11 +61,13 @@ namespace earsBEEF
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
-            DateTime dateOfBirth = new DateTime(year,month,day);
+            DateTime dateOfBirth = new DateTime(year, month, day);
 
 
             //EARS.Staff s = new EARS.Staff (name,  staffEmail, password, gender, school, Mobile,
             //                            perEmail, position, admin, offContact, dateOfBirth);
+
+
 
             EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, Mobile,
                                         perEmail, position, admin, offContact, dateOfBirth);

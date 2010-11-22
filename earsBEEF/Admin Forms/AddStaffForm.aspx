@@ -26,7 +26,8 @@
                 <asp:TextBox ID="tbxPw" runat="server" Width="141px" 
                     ontextchanged="tbxPw_TextChanged"></asp:TextBox>
 &nbsp;
-                <asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" />
+                <asp:Button ID="btnGenerate" runat="server" Text="Generate" Width="100px" 
+                    onclick="btnGenerate_Click" />
             </td>
             <td class="style10">
                 &nbsp;</td>
