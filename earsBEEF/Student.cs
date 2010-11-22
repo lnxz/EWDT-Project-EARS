@@ -120,7 +120,7 @@ namespace EARS
             get { return studentID; }
             set { studentID = value; }
         }
-        public Boolean IsStudentLeader
+        public char IsStudentLeader
         {
             get { return isStudentLeader; }
             set { isStudentLeader = value; }

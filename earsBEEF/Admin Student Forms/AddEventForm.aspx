@@ -34,6 +34,15 @@
             width: 500px;
             height: 52px;
         }
+        .style21
+        {
+            height: 28px;
+        }
+        .style22
+        {
+            width: 500px;
+            height: 28px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -120,10 +129,9 @@
                         <td class="style9" valign="top">
                             Event Dates:</td>
                         <td class="style18" align="left">
-            &nbsp;<asp:DropDownList ID="DdlMonth" runat="server" 
-                                Height="22px" Width="76px" AutoPostBack="True" 
-                                onselectedindexchanged="DdlMonth_SelectedIndexChanged">
-                    <asp:ListItem>Month</asp:ListItem>
+            &nbsp;<asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px" 
+                                AutoPostBack="True" onselectedindexchanged="DdlMonth_SelectedIndexChanged">
+                                <asp:ListItem Value="Month"></asp:ListItem>
                 </asp:DropDownList>
                             /
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
@@ -134,7 +142,7 @@
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                             <asp:Button ID="Button2" runat="server" Text="Add Date" 
-                                onclick="Button2_Click" />
+                                onclick="Button2_Click" CausesValidation="False" />
                             
             &nbsp;&nbsp;<br />
                                 <asp:Label ID="Label1" runat="server">Please Add Event Dates</asp:Label>
@@ -154,10 +162,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style21">
                             Registration Starts:</td>
-                        <td class="style18" align="left">
-                            <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px">
+                        <td class="style22" align="left">
+                &nbsp; <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px" 
+                                AutoPostBack="True" onselectedindexchanged="DdlMonth0_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ 
@@ -169,14 +178,15 @@
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </td>
-                        <td>
-                            &nbsp;</td>
+                        <td class="style21">
+                            </td>
                     </tr>
                     <tr>
                         <td class="style14">
                             Registration Ends:</td>
                         <td class="style15" align="left">
-                            <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px">
+                &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" 
+                                onselectedindexchanged="DdlMonth1_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/

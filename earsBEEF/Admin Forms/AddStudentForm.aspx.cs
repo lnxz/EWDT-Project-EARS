@@ -37,9 +37,9 @@ namespace earsBEEF
             if (rbMale.Checked) { gender = 'M'; }
             else { gender = 'F'; }
 
-            Boolean leader;
-            if (rbYes.Checked){leader = true;}
-            else {leader = false;}
+            char leader;
+            if (rbYes.Checked){leader = 'Y';}
+            else {leader = 'N';}
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
