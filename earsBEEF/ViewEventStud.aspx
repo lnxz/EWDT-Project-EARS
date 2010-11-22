@@ -7,7 +7,7 @@
         }
         .style5
         {
-            width: 318px;
+            width: 190px;
         }
         .style6
         {
@@ -24,19 +24,19 @@
             <td class="style2" colspan="2">
                 <strong>
                 <br />
-                <table style="width:103%;">
+                <table style="width:100%;">
                     <tr>
                         <td class="style5">
                 <strong>
-                            <asp:Panel ID="Panel1" runat="server" Width="317px">
-                                <asp:Image ID="lmEvent" runat="server" Height="336px" 
-    Width="299px" />
+                            <asp:Panel ID="Panel1" runat="server" Width="265px" Height="325px">
+                                <asp:Image ID="lmEvent" runat="server" Height="329px" 
+    Width="258px" />
                             </asp:Panel>
                             </strong>
                         </td>
                         </strong>
                         <td align="left" valign="top">
-                            <table style="width:100%;">
+                            <table style="width:100%; margin-left: 0px;">
                                 <tr>
                                     <td class="style6" colspan="2">
                                         <asp:Label ID="Label2" runat="server" Text="Name" 
@@ -81,7 +81,7 @@
                                         Description: </td>
                                     <td>
                                         <asp:TextBox ID="TextBox1" runat="server" Height="111px" ReadOnly="True" 
-                                            TextMode="MultiLine" Width="345px"></asp:TextBox>
+                                            TextMode="MultiLine" Width="313px"></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
