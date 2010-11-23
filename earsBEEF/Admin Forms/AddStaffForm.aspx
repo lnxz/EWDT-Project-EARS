@@ -148,9 +148,9 @@
             <td class="style2" align="left">
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
-                    <asp:ListItem>1</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px">
+            &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px" 
+                    AutoPostBack="True" onselectedindexchanged="DdlMonth_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                     <asp:ListItem Value="01">January</asp:ListItem>
                     <asp:ListItem Value="02">February</asp:ListItem>
