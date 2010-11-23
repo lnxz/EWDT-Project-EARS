@@ -71,9 +71,14 @@ namespace EARS
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
-                Label2.Text.Equals("Wrong Login/Password");
+                
             }
+            Label2.Visible = true;
+        }
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Label2.Visible = false;
         }
     }
 }
