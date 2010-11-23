@@ -62,12 +62,12 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("~/Admin Student Forms/AddEventForm.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("~/Admin Student Forms/AddEventForm.aspx");
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
