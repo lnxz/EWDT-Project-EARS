@@ -81,23 +81,23 @@ namespace earsBEEF
             //    }
             //}
             DdlDay.Items.Clear();
-            DateTime tempDate = new DateTime(2010, 1, 1);
-            DateTime tempDate2 = new DateTime(2010, 1, 1);
-            
-            tempDate.AddMonths(DdlMonth.SelectedIndex - 1);
-            tempDate2.AddMonths(DdlMonth.SelectedIndex - 1);
-
-            do
+            if (DdlMonth.SelectedIndex != 0)
             {
-                DdlDay.Items.Add(tempDate.Day.ToString());
-                tempDate.AddDays(1);
+                DateTime tempDate = new DateTime(2010, 1, 1);
+                DateTime tempDate2 = new DateTime(2010, 1, 1);
+
+                tempDate.AddMonths(DdlMonth.SelectedIndex - 1);
+                tempDate2.AddMonths(DdlMonth.SelectedIndex - 1);
+
+                do
+                {
+                    DdlDay.Items.Add(tempDate.Day.ToString());
+                   tempDate = tempDate.AddDays(1);
 
 
-            } while (tempDate.Month == tempDate2.Month);
+                } while (tempDate.Month == tempDate2.Month);
 
-
-
-
+            }
         }
     }
 }
