@@ -54,17 +54,9 @@ namespace earsBEEF
 
             DateTime dateOfBirth = new DateTime(year, month, day);
 
-            //EARS.Student s = new EARS.Student(name, adminNo, matricNo, gender, school, course, 
-            //                    contract, emgContract, email, leader, size, studType, dateOfBirth);
-
-<<<<<<< .mine
-
-=======
             EARS.DBManager.AddStudent(name, adminNo, password, gender, school, course,
                                 contract, emgContract, email, leader, size, studType, dateOfBirth); ;
 
-            // EARS.DBManager.AddStudent();
->>>>>>> .r206
         }
 
         protected void ddlSchool_SelectedIndexChanged(object sender, EventArgs e)
