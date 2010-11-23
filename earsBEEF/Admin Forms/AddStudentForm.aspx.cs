@@ -156,5 +156,25 @@ namespace earsBEEF
                 DdlCourse.Items.Add("Moblie& Network Services (T24)");
             }
         }
+
+        protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DdlDay.Items.Clear();
+            if (DdlMonth.SelectedIndex != 0)
+            {
+                DateTime tempDate = new DateTime(2010, 1, 1);
+                DateTime tempDate2 = new DateTime(2010, 1, 1);
+
+                tempDate.AddMonths(DdlMonth.SelectedIndex - 1);
+                tempDate2.AddMonths(DdlMonth.SelectedIndex - 1);
+
+                do
+                {
+                    DdlDay.Items.Add(tempDate.Day.ToString());
+                   tempDate = tempDate.AddDays(1);
+
+
+                } while (tempDate.Month == tempDate2.Month);
+        }
     }
 }
