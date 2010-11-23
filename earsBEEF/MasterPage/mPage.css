@@ -7,8 +7,10 @@ body
 	font-size: 13px;
 	color: #061C37;
 	background: #014D5D url(background.png);
-	background-repeat: repeat-*
-{*
+	background-repeat: repeat-x;
+
+}
+*
 {
   margin: 0 auto 0 auto;
  text-align:left;
@@ -20,7 +22,7 @@ body
 }
 
 
-
+ 
 
 
 
@@ -244,4 +246,8 @@ html, body
 p
 {
 	text-align: left;
-}
+};
+    background-attachment: scroll;
+    background-position: 0% 0%;;
+    background-color: #014D5D;
+    background-image: url('background.png');
