@@ -140,9 +140,9 @@ namespace earsBEEF
             else if (ddlSchool.SelectedIndex == 4)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("T54)");
-                DdlCourse.Items.Add("T53)");
-                DdlCourse.Items.Add("T48)");
+                DdlCourse.Items.Add("T54");
+                DdlCourse.Items.Add("T53");
+                DdlCourse.Items.Add("T48");
             }
             else if (ddlSchool.SelectedIndex == 5)
             {
