@@ -72,7 +72,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Student(Name,AdminNo,Password,Gender,School,CourseCode,ContactNo,EmergencyContact,Email,IsStudentLeader,TShirtSize,StudentYpe,DateOfBirth) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)";
+                comm.CommandText = "INSERT INTO Student(Name,AdminNo,Password,Gender,School,CourseCode,ContactNo,EmergencyContact,Email,IsStudentLeader,TShirtSize,StudentType,DateOfBirth) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)";
 
                 comm.Parameters.AddWithValue("@b", name);
                 comm.Parameters.AddWithValue("@c", adminNo);
