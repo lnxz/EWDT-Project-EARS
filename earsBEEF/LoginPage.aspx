@@ -39,7 +39,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button1" runat="server" Text="Submit" onclick="Button1_Click" />
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Invalid Login ID/Password" 
+            ForeColor="Red"
+            Visible="False"></asp:Label>
         <br />
         <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="False" 
             ForeColor="Black" NavigateUrl="ForgotPassword.aspx" style="font-size: medium">Forgot your password ?</asp:HyperLink>
