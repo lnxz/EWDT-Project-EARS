@@ -48,7 +48,11 @@ namespace earsBEEF
             EARS.Student s = new EARS.Student(name, adminNo, matricNo, gender, school, course, 
                                 contract, emgContract, email, leader, size, studType, dateOfBirth);
 
+<<<<<<< .mine
+           // EARS.DBManager.AddStudent();
+=======
             
+>>>>>>> .r201
         }
     }
 }
