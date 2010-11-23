@@ -16,6 +16,13 @@ namespace earsBEEF
             //    Response.Redirect("Home.aspx");
             //}
             //   this.MasterPageFile = Session["MyPage_Master"].ToString();
+            ddlCate.Items.Clear();
+            EARS.Staff s = (EARS.Staff)(Session["Login"]);
+            foreach(string x in EARS.DBManager.GetCCAofStaff(s.StaffID))
+            {
+                ddlCate.Items.Add(x);
+            }
+            
             if (Page.IsPostBack)
             { }
             else

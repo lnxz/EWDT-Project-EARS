@@ -1037,7 +1037,7 @@ namespace EARS
             }
             return false;
         }
-        public static ArrayList GetCCAofStaff(string staffID)
+        public static ArrayList GetCCAofStaff(int staffID)
         {
             ArrayList results = new ArrayList();
 
@@ -1051,7 +1051,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM CCAStaff where StaffId = @StaffId";
+                comm.CommandText = "SELECT Name From CCA Where CCAID IN ( Select CCAID FROM CCAStaff where StaffId = @StaffId)";
                 comm.Parameters.AddWithValue("@StaffID", staffID);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
@@ -1059,9 +1059,9 @@ namespace EARS
                 while (dr.Read())   //read row by row
                 {
 
-                    int CCAID = Convert.ToInt32(dr["CCAID"].ToString());
+                    String ccaName = dr["Name"].ToString();
                     
-                    results.Add(CCAID);
+                    results.Add(ccaName);
                 }
             }
             catch (SqlException ex)
