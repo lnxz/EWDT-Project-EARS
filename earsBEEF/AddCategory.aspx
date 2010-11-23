@@ -5,11 +5,11 @@
     <asp:GridView ID="GridView1" runat="server" BackColor="White" 
         BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
         ForeColor="Black" GridLines="Horizontal" Width="487px" 
-        AutoGenerateColumns="False" Height="88px">
+    AutoGenerateColumns="False" 
+    DataSourceID="SqlDataSource1" Height="88px">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
-            <asp:BoundField />
-            <asp:BoundField HeaderText="Name" />
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -20,4 +20,7 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+    ConnectionString="<%$ ConnectionStrings:EWDTProjectConnectionString %>" 
+    SelectCommand="SELECT [Name] FROM [Category]"></asp:SqlDataSource>
 </asp:Content>
