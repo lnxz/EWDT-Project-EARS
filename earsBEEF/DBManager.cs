@@ -61,7 +61,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddStudent(string name, string adminNo, string password, char gender, string school, string courseCode, int contactNo, int emergCont, string email, bool isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
+        public static int AddStudent(string name, string adminNo, string password, char gender, string school, string courseCode, int contactNo, int emergCont, string email, char isStudentLeader, string tShirtSize, string studentType, DateTime dateOfBirth)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();

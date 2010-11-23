@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="../MasterPage/LoggedIn.Master" AutoEventWireup="true" CodeBehind="AddStudentForm.aspx.cs" Inherits="earsBEEF.AddStudentForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="../MasterPage/LoggedInStudent.Master" AutoEventWireup="true" CodeBehind="AddStudentForm.aspx.cs" Inherits="earsBEEF.AddStudentForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
         .style2
@@ -16,6 +16,10 @@
         .style5
         {
             width: 339px;
+        }
+        .style6
+        {
+            height: 23px;
         }
     </style>
     </asp:Content>
@@ -49,28 +53,13 @@
             &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" 
                     runat="server" ControlToValidate="tbxAdminNum" EnableTheming="True" 
                     ErrorMessage="* Invaild Admin number" ForeColor="Red" 
-                    ValidationExpression="\d{7}\w(1)"></asp:RegularExpressionValidator>
+                    ValidationExpression="\d{7}\w"></asp:RegularExpressionValidator>
             </td>
             <td class="style63">
                 </td>
         </tr>
         <tr>
-            <td class="style3">
-                Matric Card Number:</td>
-            <td class="style68" colspan="2" align="left">
-                <asp:TextBox ID="tbxMC" runat="server" Width="178px"></asp:TextBox>
-            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                    ControlToValidate="tbxMC" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator3" 
-                    runat="server" ControlToValidate="tbxMC" EnableTheming="True" 
-                    ErrorMessage="* Invaild Matic No" ForeColor="Red" 
-                    ValidationExpression="\w(T) + \w(B) + \d(5)"></asp:RegularExpressionValidator>
-            </td>
-            <td class="style64">
-                </td>
-        </tr>
-        <tr>
-            <td class="style20" colspan="4">
+            <td class="style6" colspan="4">
                 </td>
         </tr>
         <tr>
@@ -95,7 +84,8 @@
             <td class="style3">
                 School:</td>
             <td class="style5" align="left">
-                <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="230px">
+                <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="230px" 
+                    AutoPostBack="True" onselectedindexchanged="ddlSchool_SelectedIndexChanged">
                     <asp:ListItem Value="AS">Applied Science</asp:ListItem>
                     <asp:ListItem Value="BS">Business</asp:ListItem>
                     <asp:ListItem Value="DS">Design</asp:ListItem>
@@ -147,7 +137,7 @@
             <td class="style2">
                 T-Shirt Size:</td>
             <td class="style35" align="left">
-                <asp:DropDownList ID="ddlsize" runat="server" Height="26px" Width="84px">
+                <asp:DropDownList ID="ddlSize" runat="server" Height="16px" Width="60px">
                     <asp:ListItem>XS</asp:ListItem>
                     <asp:ListItem>S</asp:ListItem>
                     <asp:ListItem>M</asp:ListItem>
@@ -272,7 +262,8 @@
                     ControlToValidate="tbxEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator5" 
                     runat="server" ControlToValidate="tbxEmail" ErrorMessage="Invaild Email" 
-                    ForeColor="#CC0000" ValidationExpression="\w+([-+.']\w+)*@tp.edu.sg*"></asp:RegularExpressionValidator>
+                    ForeColor="#CC0000" 
+                    ValidationExpression="\w+([-+.']\w+)*@student.tp.edu.sg*"></asp:RegularExpressionValidator>
             </td>
             <td class="style2">
                 </td>
