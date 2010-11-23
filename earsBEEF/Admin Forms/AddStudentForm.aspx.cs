@@ -15,6 +15,24 @@ namespace earsBEEF
             //{
             //    Response.Redirect("Home.aspx");
             //}
+            if (Page.IsPostBack)
+            {}
+            else
+            {
+                DateTime tempDatet = DateTime.Today;
+                int syear = 1989;
+                int y = 0;
+                for (int i = 0; i < syear; i++)
+                {
+                    if (tempDatet.Year != syear)
+                    {
+                        y = (tempDatet.Year) - 1;
+                    }
+                    DdlYear.Items.Add(y);
+                }
+
+                tempDatet = tempDatet.AddYears(1);
+            }
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
@@ -74,7 +92,6 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T25");
                 DdlCourse.Items.Add("T45");
             }
-
             else if (ddlSchool.SelectedIndex == 1)
             {
                 DdlCourse.Items.Clear();
@@ -84,13 +101,11 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T40");
                 DdlCourse.Items.Add("T18");
                 DdlCourse.Items.Add("T08");
-
                 DdlCourse.Items.Add("T09");
                 DdlCourse.Items.Add("T19");
                 DdlCourse.Items.Add("T01");
                 DdlCourse.Items.Add("T39");
             }
-
             else if (ddlSchool.SelectedIndex == 2)
             {
                 DdlCourse.Items.Clear();
@@ -103,9 +118,6 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T47");
                 DdlCourse.Items.Add("T24");
             }
-
-
-
             else if (ddlSchool.SelectedIndex == 3)
             {
                 DdlCourse.Items.Clear();
@@ -127,8 +139,6 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T05");
                 DdlCourse.Items.Add("T05");
             }
-
-
             else if (ddlSchool.SelectedIndex == 4)
             {
                 DdlCourse.Items.Clear();
