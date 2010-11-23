@@ -38,7 +38,7 @@ namespace earsBEEF
             int month = Convert.ToInt32(DdlMonth.SelectedValue);
             int year = Convert.ToInt32(DdlYear.Text);
             string size = ddlSize.Text;
-            int contract = Convert.ToInt32( tbxContact.Text);
+            int contract = Convert.ToInt32(tbxContact.Text);
             string email = tbxEmail.Text;
             int emgContract = Convert.ToInt32(tbxEmergContact.Text);
 
@@ -47,8 +47,8 @@ namespace earsBEEF
             else { gender = 'F'; }
 
             char leader;
-            if (rbYes.Checked){leader = 'Y';}
-            else {leader = 'N';}
+            if (rbYes.Checked) { leader = 'Y'; }
+            else { leader = 'N'; }
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
 
@@ -63,7 +63,7 @@ namespace earsBEEF
             EARS.DBManager.AddStudent(name, adminNo, password, gender, school, course,
                                 contract, emgContract, email, leader, size, studType, dateOfBirth); ;
 
-           // EARS.DBManager.AddStudent();
+            // EARS.DBManager.AddStudent();
 >>>>>>> .r206
         }
 
@@ -74,45 +74,42 @@ namespace earsBEEF
             if (ddlSchool.SelectedIndex == 0)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("Diploma In Applied Food Science & Nutrition (T26)");
-                DdlCourse.Items.Add("Diploma in Baking & Culinary Science (T44)");
-                DdlCourse.Items.Add("Diploma in Biomedical Science (T27)");
-                DdlCourse.Items.Add("Diploma in Biotechnology (T31)");
-                DdlCourse.Items.Add("Diploma in Chemical Engineering (T33)");
-                DdlCourse.Items.Add("Diploma in Consumer Science & Technology");
-                DdlCourse.Items.Add("Diploma in Pharmaceutical Science (T25)");
-                DdlCourse.Items.Add("Diploma in Veterinary Technology (T45)");
+                DdlCourse.Items.Add("T26");
+                DdlCourse.Items.Add("T44");
+                DdlCourse.Items.Add("T27");
+                DdlCourse.Items.Add("T31");
+                DdlCourse.Items.Add("T33");
+                DdlCourse.Items.Add("T25");
+                DdlCourse.Items.Add("T45");
             }
 
             else if (ddlSchool.SelectedIndex == 1)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("Diploma in Accounting & Finance (T02)");
-                DdlCourse.Items.Add("Diploma in Business (T01)");
-                DdlCourse.Items.Add("Diploma in Business Information Technology (T36)");
-                DdlCourse.Items.Add("Diploma in Communications & Media Management (T40)");
-                DdlCourse.Items.Add("Diploma in Culinary & Catering Management (T18)");
-                DdlCourse.Items.Add("Diploma in Hospitality & Tourism Management (T08)");
-                DdlCourse.Items.Add("Diploma in Hospitality & Tourism Business");
-                DdlCourse.Items.Add("Diploma in Law & Management (T09)");
-                DdlCourse.Items.Add("Diploma in Leisure & Resort Management (T19)");
-                DdlCourse.Items.Add("Diploma in Marketing (T01)");
-                DdlCourse.Items.Add("Diploma in Retail Management (T39)");
-                DdlCourse.Items.Add("Diploma in Baking & culinary Science ()");
-                DdlCourse.Items.Add("Business Studies Grouping");
+                DdlCourse.Items.Add("T02");
+                DdlCourse.Items.Add("T01");
+                DdlCourse.Items.Add("T36");
+                DdlCourse.Items.Add("T40");
+                DdlCourse.Items.Add("T18");
+                DdlCourse.Items.Add("T08");
+
+                DdlCourse.Items.Add("T09");
+                DdlCourse.Items.Add("T19");
+                DdlCourse.Items.Add("T01");
+                DdlCourse.Items.Add("T39");
             }
 
             else if (ddlSchool.SelectedIndex == 2)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("Diploma in Apparel Design & Merchandising (T20)");
-                DdlCourse.Items.Add("Diploma in Environment Design (T46)");
-                DdlCourse.Items.Add("Diploma in Interior Architecture & Design  (T22)");
-                DdlCourse.Items.Add("Diploma in Interactive Media Design  (T21)");
-                DdlCourse.Items.Add("Diploma in Moving Images  (T23)");
-                DdlCourse.Items.Add("Diploma in Product & Industrial Design  (T35)");
-                DdlCourse.Items.Add("Diploma in Retail & Hospitality Design  (T47)");
-                DdlCourse.Items.Add("Diploma in Visual Communication  (T24)");
+                DdlCourse.Items.Add("T20");
+                DdlCourse.Items.Add("T46");
+                DdlCourse.Items.Add("T22");
+                DdlCourse.Items.Add("T21");
+                DdlCourse.Items.Add("T23");
+                DdlCourse.Items.Add("T35");
+                DdlCourse.Items.Add("T47");
+                DdlCourse.Items.Add("T24");
             }
 
 
@@ -120,44 +117,42 @@ namespace earsBEEF
             else if (ddlSchool.SelectedIndex == 3)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("Diploma in Common Engineering Programme (T56)");
-                DdlCourse.Items.Add("Diploma in Electrical & Electronic Engineering Programme (T05");
-                DdlCourse.Items.Add("Diploma in Mechatronics & Aerospace Progamme (T06)");
-                DdlCourse.Items.Add("#D Interactive Media Technology (T49)");
-                DdlCourse.Items.Add("Infocomm & Network Engineering (T37)");
-                DdlCourse.Items.Add("Aerospace Electronics (T50)");
-                DdlCourse.Items.Add("Aerospace Engineeing (T51)");
-                DdlCourse.Items.Add("Aviation Management & Services (T04)");
-                DdlCourse.Items.Add("Biomedical Informatic & Engineeing (T38)");
-                DdlCourse.Items.Add("Business Process & Systems Engineering (T43)");
-                DdlCourse.Items.Add("Clean Energy (T52)");
-                DdlCourse.Items.Add("Computer Engineering (T13)");
-                DdlCourse.Items.Add("Electronics (T05)");
-                DdlCourse.Items.Add("Green Buliding & Sustainability (T29)");
-                DdlCourse.Items.Add("Intergrated Facility Management (T28)");
-                DdlCourse.Items.Add("Mechatronics");
-                DdlCourse.Items.Add("Microelectronics (T05)");
-                DdlCourse.Items.Add("Media & Communication Technonlgy (T05)");
+                DdlCourse.Items.Add("T56");
+                DdlCourse.Items.Add("T05");
+                DdlCourse.Items.Add("T06");
+                DdlCourse.Items.Add("T49");
+                DdlCourse.Items.Add("T37");
+                DdlCourse.Items.Add("T50");
+                DdlCourse.Items.Add("T51");
+                DdlCourse.Items.Add("T04");
+                DdlCourse.Items.Add("T38");
+                DdlCourse.Items.Add("T43");
+                DdlCourse.Items.Add("T52");
+                DdlCourse.Items.Add("T13");
+                DdlCourse.Items.Add("T05");
+                DdlCourse.Items.Add("T29");
+                DdlCourse.Items.Add("T28");
+                DdlCourse.Items.Add("T05");
+                DdlCourse.Items.Add("T05");
             }
 
 
             else if (ddlSchool.SelectedIndex == 4)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("Diploma in Early Childhood Studies  (T54)");
-                DdlCourse.Items.Add("Diploma in Gerontological Management Studies  (T53)");
-                DdlCourse.Items.Add("Diploma in Psychology Studies  (T48)");
+                DdlCourse.Items.Add("T54)");
+                DdlCourse.Items.Add("T53)");
+                DdlCourse.Items.Add("T48)");
             }
             else if (ddlSchool.SelectedIndex == 5)
             {
                 DdlCourse.Items.Clear();
-                DdlCourse.Items.Add("Diploma in Digital Forensics(T55)");
-                DdlCourse.Items.Add("Diploma in Cyber & Digital Security(T15)");
-                DdlCourse.Items.Add("Diploma in Game  & Enterainment (T16)");
-                DdlCourse.Items.Add("Diploma in Financial Business Informatics");
-                DdlCourse.Items.Add("Diploma in Information Technology (T30)");
-                DdlCourse.Items.Add("Diploma in INteractive Media Informatics (T34)");
-                DdlCourse.Items.Add("Moblie& Network Services (T24)");
+                DdlCourse.Items.Add("T55");
+                DdlCourse.Items.Add("T15");
+                DdlCourse.Items.Add("T16");
+                DdlCourse.Items.Add("T30");
+                DdlCourse.Items.Add("T34");
+                DdlCourse.Items.Add("T24");
             }
         }
 
@@ -175,10 +170,11 @@ namespace earsBEEF
                 do
                 {
                     DdlDay.Items.Add(tempDate.Day.ToString());
-                   tempDate = tempDate.AddDays(1);
+                    tempDate = tempDate.AddDays(1);
 
 
                 } while (tempDate.Month == tempDate2.Month);
+            }
         }
     }
 }
