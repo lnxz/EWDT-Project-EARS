@@ -11,13 +11,17 @@
     <table style="width:100%;">
         <tr>
             <td align="left" class="style2">
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="style3" __designer:mapid="5f"><strong __designer:mapid="60"> 
+                Add Category</strong></span><br />
+    </br>
     <asp:GridView ID="GridView1" runat="server" BackColor="White" 
         BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
         ForeColor="Black" GridLines="Horizontal" Width="452px" 
-    AutoGenerateColumns="False" Height="215px">
+    AutoGenerateColumns="False" Height="215px" 
+                    onselectedindexchanged="GridView1_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
-            <asp:BoundField DataField="Name" />
+            <asp:BoundField DataField="Name" HeaderText="Name" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -30,7 +34,13 @@
     </asp:GridView>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged" 
+                    Width="300px" Height="19px"></asp:TextBox>
+                    </br>
+                    </br>
+                <asp:Button ID="Button1" runat="server" Text="Add" Height="25px" 
+                    Width="95px" />
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -38,7 +48,10 @@
             <td class="style2">
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
+                
+                <asp:Button ID="Button2" runat="server" Text="Back" align="right" 
+                    Width="80px" />
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -51,7 +64,4 @@
                 &nbsp;</td>
         </tr>
     </table>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-    ConnectionString="<%$ ConnectionStrings:EWDTProjectConnectionString %>" 
-    SelectCommand="SELECT [Name] FROM [Category]"></asp:SqlDataSource>
 </asp:Content>

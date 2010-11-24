@@ -17,6 +17,16 @@ namespace earsBEEF
             GridView1.DataSource = EARS.DBManager.GetAllCategory();//populateCategoryTable();
             GridView1.DataBind();
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         
     }
 }
