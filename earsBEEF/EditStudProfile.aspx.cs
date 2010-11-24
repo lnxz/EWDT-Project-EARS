@@ -11,7 +11,18 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            EARS.Student s = (EARS.Student)Session["Login"];
 
+            lbST.Text = s.StudentType;
+            lbSch.Text = s.School;
+            lbCourse.Text = s.CourseCode;
+            lbName.Text = s.Name;
+            lbDOB.Text = Convert.ToString(s.DateOfBirth);
+            lbGender.Text = Convert.ToString(s.Gender);
+            tbxContact.Text = s.ContactNo;
+            tbxEmergContact.Text = s.EmergCont;
+            lbTpEmail.Text = s.Email;
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -20,6 +31,7 @@ namespace earsBEEF
             int emgContact = Convert.ToInt32(tbxEmergContact.Text);
             string size = ddlsize.Text;
 
+            //EARS.DBManager.
         }
     }
 }

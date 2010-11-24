@@ -12,6 +12,7 @@
         .style4
         {
             width: 173px;
+            text-align: right;
         }
         .style5
         {
@@ -46,15 +47,6 @@
                 Administration Number:</td>
             <td class="style12" colspan="2" align="left">
             &nbsp;&nbsp;<asp:Label ID="lbAdmin" runat="server" Text="Label"></asp:Label>
-            </td>
-            <td class="style11">
-                </td>
-        </tr>
-        <tr>
-            <td class="style4">
-                Matric Card Number:</td>
-            <td class="style12" colspan="2" align="left">
-            &nbsp;&nbsp;<asp:Label ID="lbMC" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style11">
                 </td>
@@ -177,7 +169,7 @@
             <td class="style4" valign="top" align="right">
                 Contact :</td>
             <td class="style3" align="left" valign="top">
-                <asp:TextBox ID="tbxContact" runat="server" Width="158px"></asp:TextBox>
+                <asp:TextBox ID="tbxContact" runat="server" Width="158px" Height="27px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
                     ControlToValidate="tbxContact" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
