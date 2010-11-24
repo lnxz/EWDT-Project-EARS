@@ -15,11 +15,30 @@
         }
         .style5
         {
-            width: 339px;
+            width: 386px;
         }
         .style6
         {
             height: 23px;
+        }
+        .style7
+        {
+            width: 162px;
+            height: 28px;
+        }
+        .style8
+        {
+            width: 386px;
+            height: 28px;
+        }
+        .style9
+        {
+            width: 120px;
+            height: 28px;
+        }
+        .style10
+        {
+            height: 28px;
         }
     </style>
     </asp:Content>
@@ -53,7 +72,7 @@
             &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" 
                     runat="server" ControlToValidate="tbxAdminNum" EnableTheming="True" 
                     ErrorMessage="* Invaild Admin number" ForeColor="Red" 
-                    ValidationExpression="\d{7}\w"></asp:RegularExpressionValidator>
+                    ValidationExpression="\d{7}\w{1}"></asp:RegularExpressionValidator>
             </td>
             <td class="style63">
                 </td>
@@ -154,7 +173,8 @@
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px" 
+            &nbsp;/ 
+                <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="113px" 
                     AutoPostBack="True" onselectedindexchanged="DdlMonth_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                     <asp:ListItem Value="01">January</asp:ListItem>
@@ -182,19 +202,21 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3">
+            <td class="style7">
                 Gender:</td>
-            <td class="style5" align="left">
+            <td class="style8" align="left">
                 &nbsp;
-                <asp:RadioButton ID="rbMale" runat="server" Text="Male" GroupName="gender" />
+                <asp:RadioButton ID="rbMale" runat="server" Text="Male" GroupName="gender" 
+                    Checked="True" ValidationGroup="gender" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RadioButton ID="rbFemale" runat="server" Text="Female" 
-                    GroupName="gender" />
+                    GroupName="gender" ValidationGroup="gender" />
+            &nbsp;&nbsp;&nbsp;
             </td>
-            <td class="style2">
-                &nbsp;</td>
-            <td class="style38" align="left">
-                &nbsp;</td>
+            <td class="style9">
+                </td>
+            <td class="style10" align="left">
+                </td>
         </tr>
         <tr>
             <td class="style3">
@@ -202,7 +224,9 @@
             <td class="style5" align="left">
                 &nbsp;&nbsp;<asp:RadioButton ID="rbYes" runat="server" Text="Yes" GroupName="admin" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RadioButton ID="rbNo" runat="server" Text="No" GroupName="admin" />
+                <asp:RadioButton ID="rbNo" runat="server" Text="No" GroupName="admin" 
+                    Checked="True" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
             <td class="style2">
                 </td>
