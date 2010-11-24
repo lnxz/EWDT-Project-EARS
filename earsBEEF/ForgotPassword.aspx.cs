@@ -16,8 +16,8 @@ namespace EARS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Panel1.Visible = false;
-            Panel2.Visible = true;
+            string id = tbxId.Text;
+            string email = tbxEmail.Text;
         }
     }
 }

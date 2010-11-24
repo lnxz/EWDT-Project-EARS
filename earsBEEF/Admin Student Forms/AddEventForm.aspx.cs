@@ -306,5 +306,6 @@ namespace earsBEEF
                 tbxDol.Enabled = true ;
             }
         }
+
     }
 }
