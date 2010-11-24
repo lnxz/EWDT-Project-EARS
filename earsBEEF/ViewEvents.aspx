@@ -5,23 +5,20 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" 
         GridLines="None" onselectedindexchanged="GridView1_SelectedIndexChanged" 
-        style="height: 35px; width: 352px" Width="100%">
+        Width="72%" Height="63px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
             <asp:BoundField DataField="Venue" HeaderText="Venue" SortExpression="Venue" />
             <asp:BoundField DataField="RegistrationCost" HeaderText="RegistrationCost" 
                 SortExpression="RegistrationCost" />
-            <asp:BoundField DataField="Description" HeaderText="Description" 
-                SortExpression="Description">
-            <ControlStyle Width="300px" />
-            </asp:BoundField>
             <asp:BoundField DataField="EventDates" HeaderText="EventDates" 
-                SortExpression="EventDates" />
+                SortExpression="EventDates">
+            </asp:BoundField>
             <asp:BoundField DataField="RegistrationStart" HeaderText="RegistrationStart" 
-                SortExpression="RegistrationStart"></asp:BoundField>
+                SortExpression="RegistrationStart" />
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
-                SortExpression="RegistrationEnd" />
+                SortExpression="RegistrationEnd"></asp:BoundField>
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -36,6 +33,7 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:EWDTProjectConnectionString %>" 
-        SelectCommand="SELECT [Name], [Venue], [RegistrationCost], [Description], [EventDates], [RegistrationStart], [RegistrationEnd] FROM [Event]">
+        
+        SelectCommand="SELECT [Name], [Venue], [RegistrationCost], [EventDates], [RegistrationStart], [RegistrationEnd] FROM [Event]">
     </asp:SqlDataSource>
 </asp:Content>

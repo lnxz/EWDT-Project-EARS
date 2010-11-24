@@ -14,7 +14,10 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                //GridView1();
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

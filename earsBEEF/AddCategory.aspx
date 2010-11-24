@@ -4,12 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView ID="GridView1" runat="server" BackColor="White" 
         BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
-        ForeColor="Black" GridLines="Horizontal" Width="548px" 
-    AutoGenerateColumns="False" 
-    DataSourceID="SqlDataSource1" Height="130px">
+        ForeColor="Black" GridLines="Horizontal" Width="290px" 
+    AutoGenerateColumns="False" Height="244px">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
-            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            <asp:BoundField DataField="Name" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
