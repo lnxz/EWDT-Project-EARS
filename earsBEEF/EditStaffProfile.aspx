@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedInStaff.Master" AutoEventWireup="true" CodeBehind="EditStaffProfile.aspx.cs" Inherits="earsBEEF.EditStaffProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <style type="text/css">
+        .style2
+        {
+            height: 27px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -27,14 +33,14 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style5" align="right">
+            <td class="style2" align="right">
                 School:</td>
             <td class="style2" align="left">
                 <asp:Label ID="lbSchool" runat="server" Text="Label"></asp:Label>
             </td>
-            <td class="style11" align="right">
+            <td class="style2" align="right">
                 Office No:</td>
-            <td class="style6" align="left">
+            <td class="style2" align="left">
                 <asp:Label ID="Label1" runat="server" Text="6780"></asp:Label>
 &nbsp;<asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
@@ -148,15 +154,9 @@
                     ForeColor="#CC0000" ValidationExpression="\d{8}"></asp:RegularExpressionValidator>
             </td>
             <td class="style11" align="right">
-                Telephone No:</td>
+                &nbsp;</td>
             <td class="style6" align="left">
-                <asp:TextBox ID="tbxTele" runat="server" Width="205px"></asp:TextBox>
-            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                    ControlToValidate="tbxTele" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
-                    ControlToValidate="tbxTele" ErrorMessage="Invalid Contact" 
-                    ForeColor="#CC0000" ValidationExpression="\d{8}"></asp:RegularExpressionValidator>
-                </td>
+                &nbsp;</td>
         </tr>
         </table>
     <br />
