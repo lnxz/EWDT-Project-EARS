@@ -17,7 +17,23 @@ namespace earsBEEF
             //{
             //    Response.Redirect("Home.aspx");
             //}
+            if (Page.IsPostBack)
+            { }
+            else
+            {
+                DateTime tempDatet = DateTime.Today;
+                int syear = 1970;
+                for (int i = syear; i < tempDatet.Year; i++)
+                {
+                    if (syear != tempDatet.Year)
+                    {
+                        DdlYear.Items.Add(Convert.ToString(syear));
+                        syear++;
+                    }
+                }
 
+                tempDatet = tempDatet.AddYears(1);
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -55,30 +71,12 @@ namespace earsBEEF
 
             DateTime dateOfBirth = new DateTime(year, month, day);
 
-
-            //EARS.Staff s = new EARS.Staff (name,  staffEmail, password, gender, school, Mobile,
-            //                            perEmail, position, admin, offContact, dateOfBirth);
-
-
-
             EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, Mobile,
                                         perEmail, position, admin, offContact, dateOfBirth);
         }
 
         protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int[] days = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28};
-            //int p;
-            //if (DdlMonth.SelectedIndex == 2)
-            //{
-            //    DdlDay.Items.Clear();
-            //    DdlDay.Items.Add(days);
-
-            //    for (int i = 0; i < days.Length; i++)
-            //    {
-            //       p = days.GetValuE();
-            //    }
-            //}
             DdlDay.Items.Clear();
             if (DdlMonth.SelectedIndex != 0)
             {
