@@ -420,7 +420,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddEvents(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        public static int AddEvents(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, DateTime dateCreated, int orgstaffID)
         {
             int rowsAdded = -1;
 
@@ -432,7 +432,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Events(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstudID,orgstaffID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@m,@n)";
+                comm.CommandText = "INSERT INTO Events(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstaffID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@m,@n)";
 
                 comm.Parameters.AddWithValue("@b", name);
                 comm.Parameters.AddWithValue("@c", venue);
@@ -444,7 +444,6 @@ namespace EARS
                 comm.Parameters.AddWithValue("@i", regend);
                 comm.Parameters.AddWithValue("@j", quota);
                 comm.Parameters.AddWithValue("@k", ccaID);
-                comm.Parameters.AddWithValue("@l", orgstudID);
                 comm.Parameters.AddWithValue("@m", orgstaffID);
                 comm.Parameters.AddWithValue("@n", dateCreated);
 
@@ -464,6 +463,50 @@ namespace EARS
             }
             return rowsAdded;
         }
+        public static int AddEvents(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, DateTime dateCreated)
+        {
+            int rowsAdded = -1;
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Events(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstudID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@n)";
+
+                comm.Parameters.AddWithValue("@b", name);
+                comm.Parameters.AddWithValue("@c", venue);
+                comm.Parameters.AddWithValue("@d", regcost);
+                comm.Parameters.AddWithValue("@e", category);
+                comm.Parameters.AddWithValue("@f", descrip);
+                comm.Parameters.AddWithValue("@g", eventdate);
+                comm.Parameters.AddWithValue("@h", regstart);
+                comm.Parameters.AddWithValue("@i", regend);
+                comm.Parameters.AddWithValue("@j", quota);
+                comm.Parameters.AddWithValue("@k", ccaID);
+                comm.Parameters.AddWithValue("@l", orgstudID);
+                comm.Parameters.AddWithValue("@n", dateCreated);
+
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return rowsAdded;
+        }
+
         public static ArrayList GetAllCCA()
         {
 
@@ -556,7 +599,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Category";
+                comm.CommandText = "SELECT * FROM Category order by Name";
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
@@ -1050,7 +1093,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT Name From CCA Where CCAID IN ( Select CCAID FROM CCAStaff where StaffId = @StaffId)";
+                comm.CommandText = "SELECT * From CCA Where CCAID IN ( Select CCAID FROM CCAStaff where StaffId = @StaffId)";
                 comm.Parameters.AddWithValue("@StaffID", staffID);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
@@ -1058,9 +1101,10 @@ namespace EARS
                 while (dr.Read())   //read row by row
                 {
 
-                    String ccaName = dr["Name"].ToString();
-                    
-                    results.Add(ccaName);
+                    String name = dr["Name"].ToString();
+                    int ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    earsBEEF.CCA ca = new earsBEEF.CCA(ccaID, name);
+                    results.Add(ca);
                 }
             }
             catch (SqlException ex)

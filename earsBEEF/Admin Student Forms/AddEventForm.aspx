@@ -73,7 +73,8 @@
                             <asp:TextBox ID="tbxName" runat="server" Width="224px" 
                                 ontextchanged="tbxName_TextChanged"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                                ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                ControlToValidate="tbxName" ErrorMessage="Please input Event Name" 
+                                ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td>
                             &nbsp;</td>
@@ -82,7 +83,8 @@
                         <td class="style9">
                             CCA involved:</td>
                         <td class="style18" align="left">
-                            <asp:DropDownList ID="DropDownList1" runat="server" Height="17px" Width="218px">
+                            <asp:DropDownList ID="ddlCCA" runat="server" Height="17px" Width="218px">
+                                <asp:ListItem>No CCA</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                         <td>
@@ -92,10 +94,12 @@
                         <td class="style9">
                             Category:</td>
                         <td class="style18" align="left">
-                            <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px">
+                            <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px" 
+                                onselectedindexchanged="ddlCate_SelectedIndexChanged">
                             </asp:DropDownList>
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                              <asp:Button ID="Button1" runat="server" Text="Add Category" />
+                              <asp:Button ID="Button1" runat="server" Text="Add Category" 
+                                CausesValidation="False" />
                         </td>
                         <td>
                             &nbsp;</td>
@@ -105,6 +109,8 @@
                             Venue:</td>
                         <td class="style18" rowspan="2" align="left">
                             <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="219px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                ControlToValidate="tbxVenue" ErrorMessage="Please input venue" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td>
                             &nbsp;</td>
@@ -145,7 +151,7 @@
                                 onclick="Button2_Click" CausesValidation="False" />
                             
             &nbsp;&nbsp;<br />
-                                <asp:Label ID="Label1" runat="server">Please Add Event Dates</asp:Label>
+                                <asp:Label ID="Label1" runat="server" ForeColor="Red">Please Add Event Dates</asp:Label>
                         </td>
                         <td>
                             &nbsp;</td>
@@ -156,7 +162,8 @@
                         <td class="style18" align="left">
                             <asp:TextBox ID="tbxQuota" runat="server" Width="143px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                                ControlToValidate="tbxQuota" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                ControlToValidate="tbxQuota" ErrorMessage="Please input Quota" 
+                                ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td class="style12">
                         </td>
@@ -177,6 +184,10 @@
                            <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br />
+&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblDateError1" runat="server" ForeColor="Red" 
+                                Text="Please select Dates" Visible="False"></asp:Label>
                         </td>
                         <td class="style21">
                             </td>
@@ -197,6 +208,10 @@
                            <asp:DropDownList ID="DdlYear1" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br />
+&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="lblDateError" runat="server" ForeColor="Red" 
+                                Text="End Date earlier than Start Date" Visible="False"></asp:Label>
                         </td>
                         <td class="style16">
                             </td>
@@ -205,13 +220,15 @@
                         <td class="style19" valign="top">
                             Registration Cost:</td>
                         <td class="style20" align="left" valign="top">
-                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" />
+                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" Checked="True" 
+                                GroupName="cost" />
 &nbsp;&nbsp;
                             <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" 
-                                AutoPostBack="True" oncheckedchanged="RadioButton2_CheckedChanged" />
+                                AutoPostBack="True" oncheckedchanged="RadioButton2_CheckedChanged" 
+                                GroupName="cost" />
                             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="tbxDol" runat="server" Width="80px" Enabled="False"></asp:TextBox>
+                            <asp:TextBox ID="tbxDol" runat="server" Width="80px" Enabled="False">0</asp:TextBox>
 &nbsp; Dollars per student<br />
                         </td>
                         <td class="style19">
