@@ -16,19 +16,18 @@ namespace earsBEEF
             //    Response.Redirect("Home.aspx");
             //}
             if (Page.IsPostBack)
-            {}
+            { }
             else
             {
                 DateTime tempDatet = DateTime.Today;
-                int syear = 1989;
-                int y = 0;
-                for (int i = 0; i < syear; i++)
+                int syear = 1970;
+                for (int i = syear ; i < tempDatet.Year; i++)
                 {
-                    if (tempDatet.Year != syear)
+                    if (syear != tempDatet.Year)
                     {
-                        y = (tempDatet.Year) - 1;
+                        DdlYear.Items.Add(Convert.ToString(syear));
+                        syear++;
                     }
-                    DdlYear.Items.Add(y);
                 }
 
                 tempDatet = tempDatet.AddYears(1);
@@ -69,7 +68,7 @@ namespace earsBEEF
             else { leader = 'N'; }
 
             string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
-
+            
             DateTime dateOfBirth = new DateTime(year, month, day);
 
             EARS.DBManager.AddStudent(name, adminNo, password, gender, school, course,
