@@ -31,13 +31,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlCCA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCCA;
         
         /// <summary>
         /// ddlCate control.
@@ -65,6 +65,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxVenue;
+        
+        /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
         /// tbxDes control.
@@ -166,6 +175,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlYear0;
         
         /// <summary>
+        /// lblDateError1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDateError1;
+        
+        /// <summary>
         /// DdlMonth1 control.
         /// </summary>
         /// <remarks>
@@ -191,6 +209,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlYear1;
+        
+        /// <summary>
+        /// lblDateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDateError;
         
         /// <summary>
         /// RadioButton1 control.

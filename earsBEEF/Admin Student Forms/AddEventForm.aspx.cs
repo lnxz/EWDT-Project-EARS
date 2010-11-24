@@ -12,17 +12,35 @@ namespace earsBEEF
         public static int datesAdded = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(Session["LoginType"].Equals("StudentNo")){
-            //    Response.Redirect("Home.aspx");
-            //}
-            //   this.MasterPageFile = Session["MyPage_Master"].ToString();
+            if (Session["LoginType"].Equals("StudentNo"))
+            {
+                Response.Redirect("Home.aspx");
+            }
+
+            //initialize CCA dropdown list
             ddlCate.Items.Clear();
             EARS.Staff s = (EARS.Staff)(Session["Login"]);
-            //foreach (string x in EARS.DBManager.GetCCAofStaff(s.StaffID))
+
+
+            ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
+           ddlCCA.DataTextField="Name";
+            ddlCCA.DataValueField ="CCAID";
+            ddlCCA.DataBind();
+           
+
+            //initialize category dropdown list
+            ddlCate.Items.Clear();
+            //foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
             //{
-            //    ddlCate.Items.Add(x);
+            //    ddlCate.Items.Add(c.Name);
             //}
-            
+
+            ddlCate.DataSource = EARS.DBManager.GetAllCategory();
+            ddlCate.DataTextField = "Name";
+            ddlCate.DataValueField = "CategoryID";
+            ddlCate.DataBind();
+
+
             if (Page.IsPostBack)
             { }
             else
@@ -133,27 +151,53 @@ namespace earsBEEF
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            int cost = 0;
+            double cost = 0;
             if (RadioButton1.Checked) { }
             else
             {
-                cost = Convert.ToInt32(tbxDol.Text);
-            }
-            DateTime month1 = DateTime.Today.AddMonths(DdlMonth0.SelectedIndex - 1);
-            int monthStart = month1.Month;
-            DateTime month2 = DateTime.Today.AddMonths(DdlMonth1.SelectedIndex - 1);
-            int monthEnd = month2.Month;
-            DateTime startDate = new DateTime(Convert.ToInt32(DdlYear0.Text), monthStart, DdlDay0.SelectedIndex + 1);
-            DateTime endDate = new DateTime(Convert.ToInt32(DdlYear1.Text), monthEnd, DdlDay1.SelectedIndex + 1);
-            int ccaID = 0;
-        }// get CCA ID here
-            //EARS.DBManager.AddEvents(tbxName.Text,tbxVenue.Text,cost,ddlCate.Text,tbxDes.Text,Label1.Text.Trim,startDate,endDate,tbxQuota.Text,ccaID,;
+                if (tbxDol.Text.Equals(""))
+                {
 
-        protected void tbxName_TextChanged(object sender, EventArgs e)
-        {
+                }
+                else
+                {
+                    cost = Convert.ToDouble(tbxDol.Text);
+                }
+            }
+            if (DdlDay0.SelectedValue.Equals("Day") || DdlDay1.SelectedValue.Equals("Day"))
+            {
+                lblDateError1.Visible = true;
+            }
+            else
+            {
+                lblDateError1.Visible = false;
+                DateTime month1 = DateTime.Today.AddMonths(DdlMonth0.SelectedIndex - 1);
+                int monthStart = month1.Month;
+                DateTime month2 = DateTime.Today.AddMonths(DdlMonth1.SelectedIndex - 1);
+                int monthEnd = month2.Month;
+                DateTime startDate = new DateTime(Convert.ToInt32(DdlYear0.Text), monthStart, DdlDay0.SelectedIndex + 1);
+                DateTime endDate = new DateTime(Convert.ToInt32(DdlYear1.Text), monthEnd, DdlDay1.SelectedIndex + 1);
+                if (endDate < startDate)
+                {
+                    lblDateError.Visible = true;
+                }
+                else
+                {
+                    lblDateError.Visible = false;
+                }
+                if (Session["LoginType"].ToString().Equals("Staff"))
+                {
+                    EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID);
+                }
+                else
+                {
+                    EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text),tempStudent.StudentID,  DateTime.Today);
+                }
+            }
 
         }
-
         protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             DdlDay.Items.Clear();
@@ -303,9 +347,24 @@ namespace earsBEEF
         {
             if (RadioButton2.Checked)
             {
-                tbxDol.Enabled = true ;
+                tbxDol.Enabled = true;
             }
         }
+<<<<<<< .mine
 
+        protected void ddlCate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
+            {
+                ddlCate.Items.Add(c.Name);
+            }
+        }
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+=======
+
+>>>>>>> .r232
     }
 }
