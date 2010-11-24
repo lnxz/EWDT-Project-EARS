@@ -11,7 +11,9 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EARS.Staff s = (EARS.Staff)Session["Login"];
+            lbSchool.Text = s.School;
+            //lbDept.Text = s.d
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

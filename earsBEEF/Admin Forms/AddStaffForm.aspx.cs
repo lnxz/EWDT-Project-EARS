@@ -32,7 +32,6 @@ namespace earsBEEF
 
             string password = p;
             string school = DdlSch.Text;
-            string dept = DdlDept.Text;
             string position = DdlPosit.Text;
             string offContact = tbxOffic.Text;
             string Mobile = tbxMoblie.Text;

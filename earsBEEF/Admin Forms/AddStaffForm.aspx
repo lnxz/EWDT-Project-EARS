@@ -58,11 +58,11 @@
         </tr>
         <tr>
             <td class="style5" align="right">
-                Department:</td>
+                Position:</td>
             <td class="style2" align="left">
-                <asp:DropDownList ID="DdlDept" runat="server" Height="21px" Width="247px">
-                    <asp:ListItem>Office</asp:ListItem>
-                    <asp:ListItem>Human Resourse</asp:ListItem>
+                <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="247px">
+                    <asp:ListItem>Lecturer</asp:ListItem>
+                    <asp:ListItem>Subject Leader</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style11" align="right">
@@ -76,12 +76,11 @@
         </tr>
         <tr>
             <td class="style5" align="right">
-                Position:</td>
+                Is Admin:</td>
             <td class="style2" align="left">
-                <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="247px">
-                    <asp:ListItem>Lecturer</asp:ListItem>
-                    <asp:ListItem>Subject Leader</asp:ListItem>
-                </asp:DropDownList>
+                <asp:RadioButton ID="rbYes" runat="server" Text="Yes" GroupName="admin" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:RadioButton ID="rbNo" runat="server" Text="No" GroupName="admin" />
             </td>
             <td class="style10" align="right">
                 Staff Email:</td>
@@ -93,19 +92,6 @@
                     runat="server" ControlToValidate="tbxWorkEmail" ErrorMessage="Invaild Email" 
                     ForeColor="#CC0000" ValidationExpression="\w+([-+.']\w+)*@tp.edu.sg*"></asp:RegularExpressionValidator>
             </td>
-        </tr>
-        <tr>
-            <td class="style5">
-                Is Admin:</td>
-            <td class="style2" align="left">
-                <asp:RadioButton ID="rbYes" runat="server" Text="Yes" GroupName="admin" />
-&nbsp;&nbsp;&nbsp;
-                <asp:RadioButton ID="rbNo" runat="server" Text="No" GroupName="admin" />
-            </td>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style6" align="left">
-                &nbsp;</td>
         </tr>
         <tr>
             <td class="style5">
