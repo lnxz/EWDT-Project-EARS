@@ -582,7 +582,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddCategory(int categoryID, string name)
+        public static int AddCategory(string name)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
@@ -593,9 +593,8 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Cateogry(categoryID,name) VALUES(@b,@c)";
+                comm.CommandText = "INSERT INTO Cateogry(name) VALUES(@c)";
 
-                comm.Parameters.AddWithValue("@b", categoryID);
                 comm.Parameters.AddWithValue("@c", name);
 
 
