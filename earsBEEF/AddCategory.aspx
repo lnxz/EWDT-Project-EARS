@@ -14,6 +14,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="style3" __designer:mapid="5f"><strong __designer:mapid="60"> 
                 Add Category</strong></span><br />
     </br>
+    </br>
     <asp:GridView ID="GridView1" runat="server" BackColor="White" 
         BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
         ForeColor="Black" GridLines="Horizontal" Width="452px" 
@@ -34,12 +35,27 @@
     </asp:GridView>
             </td>
             <td>
+                    </br>
+                    </br>
+                </br>
+                </br>
                 <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged" 
                     Width="300px" Height="19px"></asp:TextBox>
                     </br>
                     </br>
                 <asp:Button ID="Button1" runat="server" Text="Add" Height="25px" 
-                    Width="95px" />
+                    Width="95px" onclick="Button1_Click" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                
+                <asp:Button ID="Button2" runat="server" Text="Back" align="right" 
+                    Width="80px" />
             </td>
             <td>
                 &nbsp;</td>
@@ -49,9 +65,7 @@
                 &nbsp;</td>
             <td>
                 
-                <asp:Button ID="Button2" runat="server" Text="Back" align="right" 
-                    Width="80px" />
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
