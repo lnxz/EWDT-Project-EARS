@@ -8,11 +8,9 @@ body
 	color: #061C37;
 
 	background: #014D5D url(background.png);
-	background-repeat: rep
+	background-repeat: repeat-x;
 
-*
-{
- 
+}
 
 *
 {
