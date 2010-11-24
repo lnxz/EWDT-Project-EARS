@@ -46,9 +46,9 @@
         </tr>
         <tr>
             <td class="style5" align="right">
-                Department:</td>
+                Position:</td>
             <td class="style2" align="left">
-                <asp:Label ID="lbDept" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lbPost" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style11" align="right">
                 Personal
@@ -61,26 +61,15 @@
         </tr>
         <tr>
             <td class="style5" align="right">
-                Position:</td>
+                Is Admin:</td>
             <td class="style2" align="left">
-                <asp:Label ID="lbPost" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lbAdmin" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style10" align="right">
                 Staff Email:</td>
             <td class="style6" align="left">
                 <asp:Label ID="lbEmail" runat="server" Text="Label"></asp:Label>
             </td>
-        </tr>
-        <tr>
-            <td class="style5">
-                Is Admin:</td>
-            <td class="style2" align="left">
-                <asp:Label ID="lbAdmin" runat="server" Text="Label"></asp:Label>
-            </td>
-            <td class="style10">
-                &nbsp;</td>
-            <td class="style6" align="left">
-                &nbsp;</td>
         </tr>
         <tr>
             <td class="style5">

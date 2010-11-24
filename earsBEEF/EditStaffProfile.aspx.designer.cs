@@ -58,13 +58,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
-        /// lbDept control.
+        /// lbPost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDept;
+        protected global::System.Web.UI.WebControls.Label lbPost;
         
         /// <summary>
         /// tbxPersonalEmail control.
@@ -85,13 +85,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// lbPost control.
+        /// lbAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPost;
+        protected global::System.Web.UI.WebControls.Label lbAdmin;
         
         /// <summary>
         /// lbEmail control.
@@ -101,15 +101,6 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbEmail;
-        
-        /// <summary>
-        /// lbAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbAdmin;
         
         /// <summary>
         /// lbName control.
