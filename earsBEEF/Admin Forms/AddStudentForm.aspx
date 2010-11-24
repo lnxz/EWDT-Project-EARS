@@ -66,7 +66,7 @@
                 Administration Number:</td>
             <td class="style67" colspan="2" align="left">
                 <asp:TextBox ID="tbxAdminNum" runat="server" style="margin-left: 0px" 
-                    Width="178px"></asp:TextBox>
+                    Width="143px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ControlToValidate="tbxAdminNum" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator4" 
@@ -103,12 +103,14 @@
             <td class="style3">
                 School:</td>
             <td class="style5" align="left">
-                <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="230px" 
-                    AutoPostBack="True" onselectedindexchanged="ddlSchool_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="202px" 
+                    AutoPostBack="True" 
+                    onselectedindexchanged="ddlSchool_SelectedIndexChanged">
+                    <asp:ListItem>School</asp:ListItem>
                     <asp:ListItem Value="AS">Applied Science</asp:ListItem>
                     <asp:ListItem Value="BS">Business</asp:ListItem>
                     <asp:ListItem Value="DS">Design</asp:ListItem>
-                    <asp:ListItem Value="EN">Engine</asp:ListItem>
+                    <asp:ListItem Value="EN">Engineering</asp:ListItem>
                     <asp:ListItem Value="HSS">Humanities &amp; Social Science</asp:ListItem>
                     <asp:ListItem Value="IIT">Informatics &amp; IT </asp:ListItem>
                 </asp:DropDownList>
@@ -122,7 +124,7 @@
             <td class="style3">
                 Course:</td>
             <td class="style5" align="left">
-                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="229px">
+                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="155px">
                 </asp:DropDownList>
             </td>
             <td class="style2">
@@ -283,7 +285,7 @@
                 TP
                 Email:</td>
             <td class="style5" align="left">
-                <asp:TextBox ID="tbxEmail" runat="server" Width="161px"></asp:TextBox>
+                <asp:TextBox ID="tbxEmail" runat="server" Width="237px"></asp:TextBox>
             &nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                     ControlToValidate="tbxEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
