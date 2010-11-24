@@ -7,7 +7,7 @@
         }
         .style3
         {
-            width: 162px;
+            width: 197px;
         }
         .style4
         {
@@ -23,7 +23,7 @@
         }
         .style7
         {
-            width: 162px;
+            width: 197px;
             height: 28px;
         }
         .style8
