@@ -8,55 +8,44 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-        <asp:Panel ID="Panel2" runat="server" Height="271px" Visible="False" 
-            Width="567px">
+<asp:MultiView ID="MultiView1" runat="server">
+        <asp:View ID="Vacc" runat="server">
             <br />
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <asp:MultiView ID="MultiView1" runat="server" 
-                onactiveviewchanged="MultiView1_ActiveViewChanged">
-                <asp:View ID="Vacc" runat="server">
-                    <asp:Panel ID="Panel1" runat="server" Height="303px" Width="552px">
-                        <asp:Label ID="lblTitle1" runat="server" style="font-size: xx-large; " 
+        <asp:Label ID="lblTitle1" runat="server" style="font-size: xx-large; " 
                             Text="Validate Account"></asp:Label>
-                        <br />
-                        <br />
-                        <asp:Label ID="lblId" runat="server" Text="Login ID"></asp:Label>
-                        &nbsp;&nbsp;
-                        <asp:TextBox ID="tbxId" runat="server" Width="151px"></asp:TextBox>
-                        &nbsp;&nbsp;
-                        <asp:RequiredFieldValidator ID="rfvID" runat="server" ControlToValidate="tbxId" 
+                <br />
+                <br />
+                <asp:Label ID="lblId" runat="server" Text="Login ID"></asp:Label>
+                &nbsp;&nbsp;
+                <asp:TextBox ID="tbxId" runat="server" Width="151px"></asp:TextBox>
+                &nbsp;&nbsp;
+                <asp:RequiredFieldValidator ID="rfvID" runat="server" ControlToValidate="tbxId" 
                             ErrorMessage="Please enter Login ID" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <br />
-                        <br />
-                        <asp:Label ID="lblEmail" runat="server" Text="Email "></asp:Label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="tbxEmail" runat="server" Width="151px"></asp:TextBox>
-                        &nbsp;&nbsp;
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
-                            ControlToValidate="tbxEmail" ErrorMessage="Please enter Email " ForeColor="Red"></asp:RequiredFieldValidator>
-                        &nbsp;
-                        <asp:RegularExpressionValidator ID="revEmail" runat="server" 
+                <br />
+                <br />
+                <asp:Label ID="lblEmail" runat="server" Text="Email "></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="tbxEmail" runat="server" Width="151px"></asp:TextBox>
+                &nbsp;&nbsp;
+                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
+                            ControlToValidate="tbxEmail" ErrorMessage="Please enter Email " 
+                            ForeColor="Red"></asp:RequiredFieldValidator>
+                &nbsp;
+                <asp:RegularExpressionValidator ID="revEmail" runat="server" 
                             ControlToValidate="tbxEmail" ErrorMessage="Please Input Valid Email" 
                             ForeColor="Red" 
-                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                        <br />
-                        <br />
-                        <br />
-                        <asp:Label ID="Label4" runat="server"></asp:Label>
-                        <br />
-                        <br />
-                        <asp:Button ID="btnSubmit" runat="server" onclick="Button1_Click" 
+                            
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                <br />
+                <br />
+                <br />
+                <asp:Label ID="Label4" runat="server"></asp:Label>
+                <br />
+                <asp:Button ID="btnSubmit" runat="server" onclick="Button1_Click" 
                             Text="Submit" />
-                    </asp:Panel>
-                </asp:View>
-                <asp:View ID="View2" runat="server">
+                <br />
+        </asp:View>
+        <asp:View ID="ValidatePsw" runat="server">
                     <table style="width:100%;">
                         <tr>
                             <td colspan="2">
@@ -90,7 +79,7 @@
                     <asp:Button ID="btnSubmit1" runat="server" onclick="Button1_Click" 
                         Text="Submit" />
                 </asp:View>
-                <asp:View ID="View3" runat="server">
+                <asp:View ID="changePsw" runat="server">
                     <br />
                     <asp:Label ID="lblTitle2" runat="server" style="font-size: xx-large; " 
                         Text="Change New Password"></asp:Label>
@@ -119,15 +108,13 @@
                         Text="Confirm" />
                     <br />
                 </asp:View>
-                <asp:View ID="View4" runat="server">
+                <asp:View ID="pswSuccessful" runat="server">
                     Change Password Successful<br />
                     <br />
                     <asp:Button ID="btnBack" runat="server" Height="34px" onclick="Button1_Click" 
                         Text="Back" Width="69px" />
                     <br />
                 </asp:View>
-            </asp:MultiView>
-        </asp:Panel>
-    </asp:Panel>
+    </asp:MultiView>
 
 </asp:Content>

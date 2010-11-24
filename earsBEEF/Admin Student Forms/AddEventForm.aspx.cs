@@ -188,12 +188,12 @@ namespace earsBEEF
                 if (Session["LoginType"].ToString().Equals("Staff"))
                 {
                     EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
-                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID);
+                    //EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID);
                 }
                 else
                 {
                     EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
-                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text),tempStudent.StudentID,  DateTime.Today);
+                    //EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text),tempStudent.StudentID,  DateTime.Today);
                 }
             }
 

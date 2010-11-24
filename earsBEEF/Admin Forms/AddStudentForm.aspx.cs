@@ -28,10 +28,7 @@ namespace earsBEEF
                         DdlYear.Items.Add(Convert.ToString(syear));
                         syear++;
                     }
-<<<<<<< .mine
                   //  DdlYear.Items.Add(y);
-=======
->>>>>>> .r232
                 }
 
                 tempDatet = tempDatet.AddYears(1);

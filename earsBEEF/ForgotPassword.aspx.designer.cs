@@ -13,15 +13,6 @@ namespace EARS {
     public partial class ForgotPassword {
         
         /// <summary>
-        /// Panel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
-        
-        /// <summary>
         /// MultiView1 control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace EARS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View Vacc;
-        
-        /// <summary>
-        /// Panel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// lblTitle1 control.
@@ -139,13 +121,13 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// View2 control.
+        /// ValidatePsw control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View2;
+        protected global::System.Web.UI.WebControls.View ValidatePsw;
         
         /// <summary>
         /// tbxPEmail control.
@@ -175,13 +157,13 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.Button btnSubmit1;
         
         /// <summary>
-        /// View3 control.
+        /// changePsw control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View3;
+        protected global::System.Web.UI.WebControls.View changePsw;
         
         /// <summary>
         /// lblTitle2 control.
@@ -265,13 +247,13 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// View4 control.
+        /// pswSuccessful control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View4;
+        protected global::System.Web.UI.WebControls.View pswSuccessful;
         
         /// <summary>
         /// btnBack control.
