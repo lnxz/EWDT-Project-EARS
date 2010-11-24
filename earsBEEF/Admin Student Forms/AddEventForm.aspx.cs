@@ -350,7 +350,6 @@ namespace earsBEEF
                 tbxDol.Enabled = true;
             }
         }
-<<<<<<< .mine
 
         protected void ddlCate_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -363,8 +362,5 @@ namespace earsBEEF
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
-=======
-
->>>>>>> .r232
     }
 }
