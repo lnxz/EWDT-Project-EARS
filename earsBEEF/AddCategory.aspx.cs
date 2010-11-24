@@ -8,15 +8,15 @@ using System.Xml.Linq;
 using System.Net;
 using System.Data;
 
-//namespace earsBEEF
-//{
-    /**public partial class AddCategory : System.Web.UI.Page
+namespace earsBEEF
+{
+    public partial class AddCategory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
+            //foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
             {
-                GridView1.DataSource = populateCategoryTable();
+                GridView1.DataSource = EARS.DBManager.GetAllCategory();//populateCategoryTable();
                 GridView1.DataBind();
             }
         }
@@ -31,13 +31,13 @@ using System.Data;
             dcol = new DataColumn("Name", typeof (System.String));
             dt.Columns.Add (dcol);
 
-            foreach (Category c in catList)
+           // foreach (Category c in )
             {
                 //create rows
                 DataRow drow = dt.NewRow();
                 //insert values into the columns
-                drow["CategoryID"];
-                drow["Name"];
+             //   drow["CategoryID"];
+             //   drow["Name"];
 
                 //add rows into the table
                 dt.Rows.Add(drow);
@@ -46,4 +46,4 @@ using System.Data;
             return dt;
         }
     }
-}*/
+}
