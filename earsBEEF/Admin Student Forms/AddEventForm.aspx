@@ -6,14 +6,11 @@
         {
             width: 421px;
             height: 38px;
+            color: #000000;
         }
         .style15
         {
-            width: 500px;
-            height: 38px;
-        }
-        .style16
-        {
+            width: 749px;
             height: 38px;
         }
         .style17
@@ -23,25 +20,35 @@
         }
         .style18
         {
-            width: 500px;
-        }
-        .style19
-        {
-            height: 52px;
+            width: 749px;
         }
         .style20
         {
-            width: 500px;
+            width: 749px;
             height: 52px;
-        }
-        .style21
-        {
-            height: 28px;
         }
         .style22
         {
-            width: 500px;
+            width: 749px;
             height: 28px;
+        }
+        .style23
+        {
+            text-decoration: none;
+        }
+        .style24
+        {
+            height: 52px;
+            color: #000000;
+        }
+        .style25
+        {
+            color: #000000;
+        }
+        .style26
+        {
+            height: 28px;
+            color: #000000;
         }
     </style>
 </asp:Content>
@@ -63,175 +70,167 @@
                             &nbsp;</td>
                         <td class="style18">
                             &nbsp;</td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style4">
+                        <td class="style24">
                             Event Name:</td>
-                        <td class="style18" align="left">
+                        <td class="style20" align="left">
                             <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="tbxName" ErrorMessage="Please input Event Name" 
-                                ForeColor="Red"></asp:RequiredFieldValidator>
+                                ForeColor="Red" CssClass="style25"></asp:RequiredFieldValidator>
                         </td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style25">
                             CCA involved:</td>
                         <td class="style18" align="left">
                             <asp:DropDownList ID="ddlCCA" runat="server" Height="17px" Width="218px">
                                 <asp:ListItem>No CCA</asp:ListItem>
                             </asp:DropDownList>
                         </td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style25">
                             Category:</td>
                         <td class="style18" align="left">
                             <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px" 
                                 onselectedindexchanged="ddlCate_SelectedIndexChanged">
                             </asp:DropDownList>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              </span>
                               <asp:Button ID="Button1" runat="server" Text="Add Category" 
                                 CausesValidation="False" />
                         </td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style25">
                             Venue:</td>
                         <td class="style18" rowspan="2" align="left">
-                            <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="219px"></asp:TextBox>
+                            <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="219px" 
+                                CssClass="style25"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                ControlToValidate="tbxVenue" ErrorMessage="Please input venue" ForeColor="Red"></asp:RequiredFieldValidator>
+                                ControlToValidate="tbxVenue" ErrorMessage="Please input venue" 
+                                ForeColor="Red" CssClass="style25"></asp:RequiredFieldValidator>
                         </td>
-                        <td>
+                    </tr>
+                    <tr>
+                        <td class="style25">
                             &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9">
-                            &nbsp;</td>
-                        <td>
-                            &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="style9" valign="top">
+                        <td class="style25" valign="top">
                             Description:</td>
                         <td class="style18" align="left">
                             <asp:TextBox ID="tbxDes" runat="server" Height="112px" TextMode="MultiLine" 
-                                Width="350px"></asp:TextBox>
+                                Width="350px" CssClass="style25"></asp:TextBox>
                         </td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9" valign="top">
+                        <td class="style25" valign="top">
                             Event Dates:</td>
                         <td class="style18" align="left">
             &nbsp;<asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px" 
                                 AutoPostBack="True" onselectedindexchanged="DdlMonth_SelectedIndexChanged">
                                 <asp:ListItem Value="Month"></asp:ListItem>
                 </asp:DropDownList>
-                            /
+                            <span class="style25">/
+                </span>
                 <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px" 
                                 onselectedindexchanged="DdlDay_SelectedIndexChanged">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ 
+                            <span class="style25">&nbsp;/ 
+                           </span> 
                            <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            </span> 
                             <asp:Button ID="Button2" runat="server" Text="Add Date" 
                                 onclick="Button2_Click" CausesValidation="False" />
                             
-            &nbsp;&nbsp;<br />
-                                <asp:Label ID="Label1" runat="server" ForeColor="Red">Please Add Event Dates</asp:Label>
+                            <span class="style25">&nbsp;&nbsp;</span><br class="style25" />
+                                <asp:Label ID="Label1" runat="server" ForeColor="Red" CssClass="style25">Please Add Event Dates</asp:Label>
                         </td>
-                        <td>
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style10">
+                        <td class="style25">
                             Quota:</td>
                         <td class="style18" align="left">
                             <asp:TextBox ID="tbxQuota" runat="server" Width="143px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                 ControlToValidate="tbxQuota" ErrorMessage="Please input Quota" 
-                                ForeColor="Red"></asp:RequiredFieldValidator>
-                        </td>
-                        <td class="style12">
+                                ForeColor="Red" CssClass="style25"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
-                        <td class="style21">
+                        <td class="style26">
                             Registration Starts:</td>
                         <td class="style22" align="left">
-                &nbsp; <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px" 
+                            <span class="style25">&nbsp; </span> <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px" 
                                 AutoPostBack="True" onselectedindexchanged="DdlMonth0_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ 
+                            <span class="style25">&nbsp;/ 
+                </span> 
                 <asp:DropDownList ID="DdlDay0" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ 
+                            <span class="style25">&nbsp;/ 
+                           </span> 
                            <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <br />
-&nbsp;&nbsp;&nbsp;
+                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
+                            <br class="style25" />
+                            <span class="style25">&nbsp;&nbsp;&nbsp;
+                            </span>
                             <asp:Label ID="lblDateError1" runat="server" ForeColor="Red" 
-                                Text="Please select Dates" Visible="False"></asp:Label>
+                                Text="Please select Dates" Visible="False" CssClass="style25"></asp:Label>
                         </td>
-                        <td class="style21">
-                            </td>
                     </tr>
                     <tr>
                         <td class="style14">
                             Registration Ends:</td>
                         <td class="style15" align="left">
-                &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" 
+                            <span class="style25">&nbsp; </span> <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" 
                                 AutoPostBack="True" onselectedindexchanged="DdlMonth1_SelectedIndexChanged">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/
+                            <span class="style25">&nbsp;/
+                </span>
                 <asp:DropDownList ID="DdlDay1" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
-            &nbsp;/ 
+                            <span class="style25">&nbsp;/ 
+                           </span> 
                            <asp:DropDownList ID="DdlYear1" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <br />
-&nbsp;&nbsp;&nbsp;
+                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
+                            <br class="style25" />
+                            <span class="style25">&nbsp;&nbsp;&nbsp;
+                            </span>
                             <asp:Label ID="lblDateError" runat="server" ForeColor="Red" 
-                                Text="End Date earlier than Start Date" Visible="False"></asp:Label>
+                                Text="End Date earlier than Start Date" Visible="False" CssClass="style25"></asp:Label>
                         </td>
-                        <td class="style16">
-                            </td>
                     </tr>
                     <tr>
-                        <td class="style19" valign="top">
+                        <td class="style24" valign="top">
                             Registration Cost:</td>
                         <td class="style20" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" Checked="True" 
-                                GroupName="cost" />
-&nbsp;&nbsp;
+                                GroupName="cost" CssClass="style25" />
+                            <span class="style25">&nbsp;&nbsp;
+                            </span>
                             <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" 
                                 AutoPostBack="True" oncheckedchanged="RadioButton2_CheckedChanged" 
-                                GroupName="cost" />
-                            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                GroupName="cost" CssClass="style25" />
+                            <br class="style25" />
+                            <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
                             <asp:TextBox ID="tbxDol" runat="server" Width="80px" Enabled="False">0</asp:TextBox>
-&nbsp; Dollars per student<br />
-                        </td>
-                        <td class="style19">
+                            <span class="style25">&nbsp; Dollars per student</span><br class="style25" />
                         </td>
                     </tr>
                 </table>
