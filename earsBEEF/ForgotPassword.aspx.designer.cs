@@ -157,6 +157,15 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
         /// btnSubmit1 control.
         /// </summary>
         /// <remarks>
@@ -247,13 +256,13 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.CompareValidator cvPw;
         
         /// <summary>
-        /// Button2 control.
+        /// btnConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
         
         /// <summary>
         /// pswSuccessful control.

@@ -651,8 +651,6 @@ namespace EARS
 
                 comm.Parameters.AddWithValue("@c", name);
 
-
-
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();
@@ -1168,6 +1166,11 @@ namespace EARS
             }
             return results;
         }
+
+
+
+
+        // for change password forms.........
         public static Student ValidatePasswordStud(string login, string lemail)
 
 
@@ -1363,6 +1366,53 @@ namespace EARS
             }
             return s;
         }
+        public static Student GetPasswordStud(string pass)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Student s = null;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT Password FROM Student where Password = @p";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@p", pass);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    char isStudentLeader = dr["IsStudentLeader"].ToString()[0];
+                    int studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string adminNo = dr["AdminNo"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string courseCode = dr["CourseCode"].ToString();
+                    string contactNo = dr["ContactNo"].ToString();
+                    string emergCont = dr["EmergencyContact"].ToString();
+                    string email = dr["Email"].ToString();
+                    string tShirtSize = dr["TShirtSize"].ToString();
+                    DateTime dateofbirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    string studentType = dr["StudentType"].ToString();
+
+                    s = new Student(studentID, name, adminNo, password, gender, school, courseCode, contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return s;
        
     }
 }
