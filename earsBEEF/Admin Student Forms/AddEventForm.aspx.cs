@@ -12,10 +12,13 @@ namespace earsBEEF
         public static int datesAdded = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["LoginType"].Equals("StudentNo"))
+            if (Session["LoginType"].Equals("Student"))
             {
                 Response.Redirect("Home.aspx");
             }
+            
+            if(Session["LoginType"].Equals("Staff"))
+            {
 
             //initialize CCA dropdown list
             ddlCate.Items.Clear();
@@ -23,10 +26,11 @@ namespace earsBEEF
 
 
             ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
-           ddlCCA.DataTextField="Name";
-            ddlCCA.DataValueField ="CCAID";
+            ddlCCA.DataTextField = "Name";
+            ddlCCA.DataValueField = "CcaID";
             ddlCCA.DataBind();
-           
+            }
+
 
             //initialize category dropdown list
             ddlCate.Items.Clear();

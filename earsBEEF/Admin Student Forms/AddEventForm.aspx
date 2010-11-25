@@ -70,8 +70,7 @@
                         <td class="style4">
                             Event Name:</td>
                         <td class="style18" align="left">
-                            <asp:TextBox ID="tbxName" runat="server" Width="224px" 
-                                ontextchanged="tbxName_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="tbxName" ErrorMessage="Please input Event Name" 
                                 ForeColor="Red"></asp:RequiredFieldValidator>

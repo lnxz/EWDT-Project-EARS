@@ -52,7 +52,7 @@ namespace EARS
                     {
                         Session["Login"] = st;
                         Session["LoginType"] = "Staff";
-                        Session["MyPage_Master"] = "~/MasterPage/LoggedInStaffSL.Master";
+                        Session["MyPage_Master"] = "~/MasterPage/LoggedIn.Master";
                     }
                     else
                     {
