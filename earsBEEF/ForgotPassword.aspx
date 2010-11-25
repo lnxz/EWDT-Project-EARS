@@ -36,14 +36,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <br />
     <asp:MultiView ID="mv" runat="server">
-                <br />
-            <br />
             <br />
         <asp:View ID="Vacc" runat="server">
             <br />
             <table style="width:100%;">
                 <tr>
-                    <td class="style3">
+                    <td class="style3" valign="top">
                         <asp:Label ID="lblTitle3" runat="server" CssClass="style4" Font-Bold="True" 
                             Text="Validate Account"></asp:Label>
                         <br class="style4" />
@@ -76,7 +74,11 @@
                             Text="Button" />
                     </td>
                     <td>
-                        <span class="style5">For Staff:</span><br /> <span class="style9">Login ID is 
+                        <asp:Image ID="Image1" runat="server" Height="164px" Width="153px" />
+                        <span class="style5">
+                        <br />
+                        <br />
+                        For Staff:</span><br /> <span class="style9">Login ID is 
                         your Staff Email</span><br class="style9" /> <span class="style9">Email is your 
                         Personal Email</span><br />
                         <br />
