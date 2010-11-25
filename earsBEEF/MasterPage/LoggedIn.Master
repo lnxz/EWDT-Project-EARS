@@ -23,9 +23,10 @@
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="../Images/Stub1.png" />
-        <img src="../Images/Stub2.png" />
-        <img src="../Images/Stub3.png" />
-        <img src="../Images/Stub4.png" />
+        <a href="../UpdateEventSL.aspx">
+        <img src="../Images/Stub2.png" /></a> <a href="../ViewEvents.aspx">
+        <img src="../Images/Stub3.png" /></a> <a href="../ViewEventStud.aspx">
+        <img src="../Images/Stub4.png" /></a>
         <img src="../Images/Stub5.png" />
         <img src="../Images/Stub6.png" />
         <img src="../Images/Stub7.png" />
