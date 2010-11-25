@@ -19,7 +19,7 @@
     <table style="width:100%;">
         <tr>
             <td class="style4" colspan="2">
-                <strong>Post Announcement</strong></td>
+                <strong><font face="Courier New">Post Announcement</strong></td>
         </tr>
         <tr>
             <td class="style2" colspan="2">
