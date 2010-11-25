@@ -23,20 +23,28 @@
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="../Images/Stub1.png" />
-        <a href="../UpdateEventSL.aspx">
-        <img src="../Images/Stub2.png" /></a> <a href="../ViewEvents.aspx">
+       
+        <img src="../Images/Stub2.png" /> <a href="../Admin Student Forms/AddEventForm.aspx">
         <img src="../Images/Stub3.png" />
         <img src="../Images/Stub4.png" />
         <img src="../Images/Stub5.png" />
         <img src="../Images/Stub6.png" />
+<<<<<<< .mine
+        <img src="../Images/Stub7.png" /> <a href="../Admin Student Forms/AddAnnouncement.aspx"></a>
+        <img src="../Images/Stub8.png" /><a href="../AllAnnouncement.aspx">
+        <img src="../Images/Stub11.png" /></a>
+        <img src="../Images/Stub12.png" /><a href="../Admin Forms/AddStudentForm.aspx"></a>
+        <img src="../Images/Stub13.png" /><a href="../Admin Forms/AddStaffForm.aspx"></a>
+=======
         <img src="../Images/Stub7.png" /> <a href="../AllAnnouncement.aspx">
         <img src="../Images/Stub8.png" />
         <img src="../Images/Stub11.png" />
         <img src="../Images/Stub12.png" />
         <img src="../Images/Stub13.png" />
+>>>>>>> .r253
         <a href="../AllAnnouncement.aspx">
         <img src="../Images/Stub9.png" />
-        <img src="../Images/Stub10.png" />
+        <img src="../Images/Stub10.png" /><a href="../LoginPage.aspx"></a>
     </div>
     <div class="announcementBox">
         <div class="innerBox">
