@@ -136,9 +136,8 @@
             &nbsp;/ 
                            <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            <asp:Button ID="Button2" runat="server" Text="Add Date" 
-                                onclick="Button2_Click" CausesValidation="False" />
+                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnAddDate" 
+                                runat="server" Text="Add Date" />
                             
             &nbsp;&nbsp;<br />
                                 <asp:Label ID="Label1" runat="server">Please Add Event Dates</asp:Label>
@@ -204,10 +203,8 @@
                             Registration Cost:</td>
                         <td class="style6" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" GroupName="rc" />
-&nbsp;&nbsp;
-                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" 
-                                AutoPostBack="True" oncheckedchanged="RadioButton2_CheckedChanged" 
-                                GroupName="rc" />
+&nbsp; &nbsp;
+                            <asp:RadioButton ID="rbOthers" runat="server" GroupName="rc" Text="Others" />
                             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="tbxDol" runat="server" Width="80px" Enabled="False"></asp:TextBox>
