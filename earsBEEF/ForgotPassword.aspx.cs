@@ -19,5 +19,21 @@ namespace EARS
             string id = tbxId.Text;
             string email = tbxEmail.Text;
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string id = tbxId.Text;
+            string email = tbxEmail.Text;
+
+            //if (tbxId.Text.ToString().Length == 8)
+            //{
+            //    EARS.Student s = DBManager.ValidatePassword(tbxId.Text, tbxEmail.Text);
+
+            //    if (s.AdminNo.Equals(id) && s.Email.Equals(email))
+            //    {
+            MultiView1.ActiveViewIndex = 0;
+            //    }
+            //}
+        }
     }
 }
