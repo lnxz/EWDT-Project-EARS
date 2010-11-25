@@ -25,8 +25,13 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+<asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0" 
+        onactiveviewchanged="MultiView1_ActiveViewChanged">
         <asp:View ID="Vacc" runat="server">
+        <br />
+        <br />
+        <br />
+        <br />
             <table style="width:100%;">
                 <tr>
                     <td class="style3">
@@ -36,7 +41,7 @@
                         <br class="style4" />
                         <asp:Label ID="lblId0" runat="server" CssClass="style4" Text="Login ID"></asp:Label>
                         <span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;
-                        <asp:TextBox ID="tbxId" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tbxId" runat="server" BorderStyle="Solid"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvID0" runat="server" 
                             ControlToValidate="tbxId" CssClass="style4" 
                             ErrorMessage="Please enter Login ID" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -60,7 +65,7 @@
                         <br class="style4" />
                         <br />
                         <asp:Button ID="btnSubmit2" runat="server" onclick="btnSubmit_Click" 
-                            Text="Submit" />
+                            Text="Submit" BorderColor="Black" />
                     </td>
                     <td>
                         <span class="style5">For Staff:</span><br /> Login ID is your Staff Email<br /> 

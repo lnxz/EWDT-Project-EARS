@@ -49,10 +49,5 @@ namespace EARS
                 //}
             }
         }
-
-        protected void tbxEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
