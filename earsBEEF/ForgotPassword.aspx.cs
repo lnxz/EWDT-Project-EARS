@@ -14,40 +14,38 @@ namespace EARS
             mv.ActiveViewIndex = 0;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string id = tbxId.Text;
             string email = tbxEmail.Text;
+
+            EARS.Student s = DBManager.ValidatePasswordStud(tbxId.Text, tbxEmail.Text);
+
+            if (s.AdminNo.Equals(id) && s.Email.Equals(email))
+            {
+
+                 mv.ActiveViewIndex = 1;
+            }
+            else
+            {
+                Label5.Text = "Login ID and Email Unmatch";
+            }
+
+            EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
+
+            if (t.StaffEmail.Equals(id) && t.PersonalEmail.Equals(email))
+            {
+                mv.ActiveViewIndex = 1;
+            }
+            else
+            {
+                Label5.Text = "Login ID and Email Unmatch";
+            }
         }
 
-        //protected void btnSubmit_Click(object sender, EventArgs e)
-        //{
-        //    string id = tbxId.Text;
-        //    string email = tbxEmail.Text;
+        protected void btnSubmit1_Click(object sender, EventArgs e)
+        {
 
-        //    if (tbxId.Text.ToString().Length == 8)
-        //    {
-        //   //     EARS.Student s = DBManager.ValidatePasswordStud(tbxId.Text, tbxEmail.Text);
-
-        //        if (s.AdminNo.Equals(id) && s.Email.Equals(email))
-        //        {
-
-        //        }
-        //        else
-        //        {
-        //            Label5.Text = "Login ID and Email Unmatch";
-        //        }
-
-        //        EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
-        //        //if ()
-        //        //{
-
-        //        //}
-        //        //else
-        //        //{
-
-        //        //}
-        //    }
-        //}
+        }
     }
 }
