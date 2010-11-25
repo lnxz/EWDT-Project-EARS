@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
     <br />
-    <div style="height: 350px; width: 5px; align: RIGHT; left: 100px; position: relative;">
+    <div style="height: 350px; width: 5px; left: 100px; position: relative;">
     <asp:Panel ID="Panel1" runat="server" Height="197px" Width="236px" Wrap="False" 
         BorderStyle="Groove" BackColor="#AEC9FF" style="margin-left: 0px" >
         <br />

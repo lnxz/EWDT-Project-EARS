@@ -10,7 +10,7 @@ namespace EARS
     public class DBManager
     {
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa";
         public static ArrayList GetAllStudents()
         {
             ArrayList results = new ArrayList();
@@ -1058,7 +1058,7 @@ namespace EARS
                 comm.Connection = conn;
                 //Excute SQL  command 
                 SqlDataReader dr = comm.ExecuteReader();
-                if (dr.Read() == null)
+                if (dr.Read())
                 {
                     return false;
                 }
@@ -1118,6 +1118,47 @@ namespace EARS
             }
             return results;
         }
+<<<<<<< .mine
+        public static ArrayList GetCCAofStudent(int studentID)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * From CCA Where CCAID IN ( Select CCAID FROM CCAStudent where StudentId = @StudentID)";
+                comm.Parameters.AddWithValue("@StudentID", studentID);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    String name = dr["Name"].ToString();
+                    int ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    earsBEEF.CCA ca = new earsBEEF.CCA(ccaID, name);
+                    results.Add(ca);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+=======
         public static Student ValidatePassword(string login, string lemail)
         {
             // Establish connection with database
@@ -1167,6 +1208,7 @@ namespace EARS
             }
             return s;
         }
+>>>>>>> .r237
     }
     
         
