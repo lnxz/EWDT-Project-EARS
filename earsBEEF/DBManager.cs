@@ -442,7 +442,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Events(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstaffID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@m,@n)";
+                comm.CommandText = "INSERT INTO Event(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstaffID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@m,@n)";
 
                 comm.Parameters.AddWithValue("@b", name);
                 comm.Parameters.AddWithValue("@c", venue);
@@ -473,7 +473,7 @@ namespace EARS
             }
             return rowsAdded;
         }
-        public static int AddEvents(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, DateTime dateCreated)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime regend, int quota, int ccaID, int orgstudID, DateTime dateCreated)
         {
             int rowsAdded = -1;
 
@@ -485,20 +485,20 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Events(name,venue,regcost,category,descrip,eventdate,regstart,regend,quota,ccaID,orgstudID,dateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@n)";
+                comm.CommandText = "INSERT INTO Event(Name,Venue,RegistrationCost,CategoryID,Description,EventDates,RegistrationStart,RegistrationEnd,Quota,CCAID,OrgStudentID, DateCreated) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@n)";
 
-                comm.Parameters.AddWithValue("@b", name);
-                comm.Parameters.AddWithValue("@c", venue);
-                comm.Parameters.AddWithValue("@d", regcost);
-                comm.Parameters.AddWithValue("@e", category);
-                comm.Parameters.AddWithValue("@f", descrip);
-                comm.Parameters.AddWithValue("@g", eventdate);
-                comm.Parameters.AddWithValue("@h", regstart);
-                comm.Parameters.AddWithValue("@i", regend);
-                comm.Parameters.AddWithValue("@j", quota);
-                comm.Parameters.AddWithValue("@k", ccaID);
-                comm.Parameters.AddWithValue("@l", orgstudID);
-                comm.Parameters.AddWithValue("@n", dateCreated);
+                comm.Parameters.AddWithValue("@b", Name);
+                comm.Parameters.AddWithValue("@c", Venue);
+                comm.Parameters.AddWithValue("@d", RegistrationCost);
+                comm.Parameters.AddWithValue("@e", CategoryID);
+                comm.Parameters.AddWithValue("@f", Description);
+                comm.Parameters.AddWithValue("@g", EventDates);
+                comm.Parameters.AddWithValue("@h", RegistrationStart);
+                comm.Parameters.AddWithValue("@i", RegistrationEnd);
+                comm.Parameters.AddWithValue("@j", Quota);
+                comm.Parameters.AddWithValue("@k", CCAID);
+                comm.Parameters.AddWithValue("@l", OrgStudentID);
+                comm.Parameters.AddWithValue("@n", DateCreated);
 
 
                 comm.Connection = conn;
