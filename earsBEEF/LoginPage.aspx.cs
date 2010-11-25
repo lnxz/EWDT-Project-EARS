@@ -32,12 +32,12 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("~/Admin Student Forms/AddEventForm.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("~/Admin Student Forms/AddEventForm.aspx"); //home.aspx
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
@@ -79,6 +79,7 @@ namespace EARS
         protected void Page_Load(object sender, EventArgs e)
         {
             Label2.Visible = false;
+            tbxLoginId.Focus();
         }
     }
 }
