@@ -82,10 +82,5 @@ namespace EARS
                 Label5.Text = "Login ID and Email Unmatch";
             }
         }
-
-        protected void btnSubmit1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
