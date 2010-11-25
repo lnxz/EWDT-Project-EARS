@@ -30,14 +30,17 @@
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="../Images/Stub1.png" />
-        <img src="../Images/Stub2.png" />
+        <a href="../Admin%20Student%20Forms/AddEventForm.aspx">
+        <img src="../Images/Stub2.png" /></a>
         <img src="../Images/Stub3.png" />
         <img src="../Images/Stub4.png" />
         <img src="../Images/Stub5.png" />
         <img src="../Images/Stub6.png" />
-        <img src="../Images/Stub7.png" />
-        <img src="../Images/Stub8.png" />
-        <img src="../Images/Stub9.png" /> <a href="../LoginPage.aspx">
+        <a href="../Admin%20Student%20Forms/AddAnnouncement.aspx">
+        <img src="../Images/Stub7.png" /></a> <a href="../AllAnnouncement.aspx">
+        <img src="../Images/Stub8.png" /></a>
+        <img src="../Images/Stub9.png" />
+        <a href="../LoginPage.aspx">
         <img src="../Images/Stub10.png" /></a>
     </div>
     <div class="announcementBox">
@@ -48,8 +51,7 @@
         <div class="innerBox">
             <div class="contentTitle">
                 Logged In as 
-            </div>
-            <div class="contentText">
+                       <div class="contentText">
                 <form id="form1" runat="server" align="center">
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
