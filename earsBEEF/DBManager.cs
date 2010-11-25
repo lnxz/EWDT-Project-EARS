@@ -1123,12 +1123,6 @@ namespace EARS
             }
             return results;
         }
-
-
-     //   public static Student ValidatePasswordStud(string login, string lemail)
-       
-
-
         public static ArrayList GetCCAofStudent(int studentID)
         {
             ArrayList results = new ArrayList();
@@ -1168,11 +1162,6 @@ namespace EARS
             }
             return results;
         }
-
-
-        //public static Student ValidatePassword(string login, string lemail)
-
-
         public static Student ValidatePasswordStud(string login, string lemail)
 
 
@@ -1224,7 +1213,6 @@ namespace EARS
             }
             return s;
         }
-
         public static Staff ValidatePasswordStaff(string email, string pemail)
         {
             // Establish connection with database
