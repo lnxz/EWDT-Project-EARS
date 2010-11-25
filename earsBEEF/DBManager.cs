@@ -9,8 +9,13 @@ namespace EARS
 {
     public class DBManager
     {
+
+        //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;Integrated Security=True";
+        //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
+        public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa";
+        //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa";
+
         public static ArrayList GetAllStudents()
         {
             ArrayList results = new ArrayList();
@@ -1118,6 +1123,12 @@ namespace EARS
             }
             return results;
         }
+
+
+     //   public static Student ValidatePasswordStud(string login, string lemail)
+       
+
+
         public static ArrayList GetCCAofStudent(int studentID)
         {
             ArrayList results = new ArrayList();
@@ -1157,7 +1168,13 @@ namespace EARS
             }
             return results;
         }
+
+
+        //public static Student ValidatePassword(string login, string lemail)
+
+
         public static Student ValidatePasswordStud(string login, string lemail)
+
 
         {
             // Establish connection with database
