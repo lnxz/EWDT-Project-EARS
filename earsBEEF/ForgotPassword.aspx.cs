@@ -20,34 +20,34 @@ namespace EARS
             string email = tbxEmail.Text;
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            string id = tbxId.Text;
-            string email = tbxEmail.Text;
+        //protected void btnSubmit_Click(object sender, EventArgs e)
+        //{
+        //    string id = tbxId.Text;
+        //    string email = tbxEmail.Text;
 
-            if (tbxId.Text.ToString().Length == 8)
-            {
-                EARS.Student s = DBManager.ValidatePasswordStud(tbxId.Text, tbxEmail.Text);
+        //    if (tbxId.Text.ToString().Length == 8)
+        //    {
+        //   //     EARS.Student s = DBManager.ValidatePasswordStud(tbxId.Text, tbxEmail.Text);
 
-                if (s.AdminNo.Equals(id) && s.Email.Equals(email))
-                {
+        //        if (s.AdminNo.Equals(id) && s.Email.Equals(email))
+        //        {
 
-                }
-                else
-                {
-                    Label5.Text = "Login ID and Email Unmatch";
-                }
+        //        }
+        //        else
+        //        {
+        //            Label5.Text = "Login ID and Email Unmatch";
+        //        }
 
-                EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
-                //if ()
-                //{
+        //        EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
+        //        //if ()
+        //        //{
 
-                //}
-                //else
-                //{
+        //        //}
+        //        //else
+        //        //{
 
-                //}
-            }
-        }
+        //        //}
+        //    }
+        //}
     }
 }

@@ -68,8 +68,7 @@
                         <td class="style4">
                             Event Name:</td>
                         <td class="style6" align="left">
-                            <asp:TextBox ID="tbxName" runat="server" Width="224px" 
-                                ontextchanged="tbxName_TextChanged"></asp:TextBox>
+                            <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
@@ -127,7 +126,7 @@
                             Event Dates:</td>
                         <td class="style6" align="left">
             &nbsp;<asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px" 
-                                AutoPostBack="True" onselectedindexchanged="DdlMonth_SelectedIndexChanged">
+                                AutoPostBack="True">
                                 <asp:ListItem Value="Month"></asp:ListItem>
                 </asp:DropDownList>
                             /
