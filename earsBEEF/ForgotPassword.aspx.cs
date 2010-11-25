@@ -11,7 +11,7 @@ namespace EARS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MultiView1.ActiveViewIndex = 0;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -25,15 +25,34 @@ namespace EARS
             string id = tbxId.Text;
             string email = tbxEmail.Text;
 
-            //if (tbxId.Text.ToString().Length == 8)
-            //{
-            //    EARS.Student s = DBManager.ValidatePassword(tbxId.Text, tbxEmail.Text);
+            if (tbxId.Text.ToString().Length == 8)
+            {
+                EARS.Student s = DBManager.ValidatePasswordStud(tbxId.Text, tbxEmail.Text);
 
-            //    if (s.AdminNo.Equals(id) && s.Email.Equals(email))
-            //    {
-            MultiView1.ActiveViewIndex = 0;
-            //    }
-            //}
+                if (s.AdminNo.Equals(id) && s.Email.Equals(email))
+                {
+
+                }
+                else
+                {
+                    Label5.Text = "Login ID and Email Unmatch";
+                }
+
+                EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
+                //if ()
+                //{
+
+                //}
+                //else
+                //{
+
+                //}
+            }
+        }
+
+        protected void tbxEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
