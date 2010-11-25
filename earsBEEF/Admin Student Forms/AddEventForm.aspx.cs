@@ -16,28 +16,32 @@ namespace earsBEEF
             {
                 Response.Redirect("Home.aspx");
             }
-            
-            if(Session["LoginType"].Equals("Staff"))
+
+            if (Session["LoginType"].Equals("Staff"))
             {
 
-            //initialize CCA dropdown list
-            ddlCate.Items.Clear();
-            EARS.Staff s = (EARS.Staff)(Session["Login"]);
-
-
-            ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
-            ddlCCA.DataTextField = "Name";
-            ddlCCA.DataValueField = "CcaID";
-            ddlCCA.DataBind();
+                //initialize CCA dropdown list
+                ddlCate.Items.Clear();
+                EARS.Staff s = (EARS.Staff)(Session["Login"]);
+                ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
+                ddlCCA.DataTextField = "Name";
+                //   ddlCCA.DataValueField = "CcaID";
+                ddlCCA.DataBind();
+            }
+            else
+            {
+                //initialize CCA dropdown list
+                ddlCate.Items.Clear();
+                EARS.Student s = (EARS.Student)(Session["Login"]);
+                ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StudentID);
+                ddlCCA.DataTextField = "Name";
+                //   ddlCCA.DataValueField = "CcaID";
+                ddlCCA.DataBind();
             }
 
 
             //initialize category dropdown list
             ddlCate.Items.Clear();
-            //foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
-            //{
-            //    ddlCate.Items.Add(c.Name);
-            //}
 
             ddlCate.DataSource = EARS.DBManager.GetAllCategory();
             ddlCate.DataTextField = "Name";

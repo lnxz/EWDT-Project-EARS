@@ -1158,6 +1158,7 @@ namespace EARS
             return results;
         }
         public static Student ValidatePasswordStud(string login, string lemail)
+
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1206,6 +1207,7 @@ namespace EARS
             }
             return s;
         }
+
         public static Staff ValidatePasswordStaff(string email, string pemail)
         {
             // Establish connection with database
