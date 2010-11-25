@@ -41,8 +41,6 @@
                 Subject:</td>
             <td>
                 <asp:TextBox ID="tbxSubject" runat="server" Width="317px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ControlToValidate="tbxSubject" ErrorMessage="*" ForeColor="#CC0000"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -51,9 +49,7 @@
             <td valign="top">
                 <asp:TextBox ID="tbxCon" runat="server" Height="173px" TextMode="MultiLine" 
                     Width="597px"></asp:TextBox>
-&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                    ControlToValidate="tbxAnno" ErrorMessage="*" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-            </td>
+&nbsp;</td>
         </tr>
     </table>
     <br />
