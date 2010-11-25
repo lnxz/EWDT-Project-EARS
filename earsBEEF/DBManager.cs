@@ -1314,7 +1314,7 @@ namespace EARS
             }
             return s;
         }
-        public static Student UpdatePasswordStud(string pass)
+        public static Student UpdatePasswordStud(string admin ,string pass)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1326,9 +1326,10 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET Password = @password";
+                comm.CommandText = "UPDATE Student SET Password = @password WHERE AdminNo = @admin";
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@password", pass);
+                comm.Parameters.AddWithValue("@admin", admin);
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row

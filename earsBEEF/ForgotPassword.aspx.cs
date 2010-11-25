@@ -27,7 +27,20 @@ namespace EARS
 
             if (s != null)
             {
-                 // generate password and send to email
+                 // generate password
+                string pass = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                string p = "";
+                Random r = new Random();
+                for (int i = 0; i < 8; i++)
+                {
+                    p = p + pass.Substring(r.Next(0, pass.Length - 1), 1);
+                }
+
+                string password = p;
+
+                EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
+
+                //send to email
                 MailMessage mail = new MailMessage("",email,"Reset Password","here is your new password");
                 SmtpClient client = new SmtpClient("",999);
                 client.UseDefaultCredentials = true;
@@ -42,8 +55,26 @@ namespace EARS
 
             EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
 
-            if (t.StaffEmail.Equals(id) && t.PersonalEmail.Equals(email))
+            if (t != null)
             {
+                // generate Password
+                string passString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                string value = "";
+                Random ra = new Random();
+                for (int i = 0; i < 8; i++)
+                {
+                    value = value + passString.Substring(ra.Next(0, value.Length - 1), 1);
+                }
+
+                string password1 = value;
+
+                //send email
+                MailMessage mail = new MailMessage("", email, "Reset Password", "Here is your new password");
+                SmtpClient client = new SmtpClient("", 999);
+                client.UseDefaultCredentials = true;
+                client.Send(mail);
+                //http://www.c-sharpcorner.com/uploadfile/scottlysle/emailattachmentscs08052008234321pm/emailattachmentscs.aspx
+
                 mv.ActiveViewIndex = 1;
             }
             else
