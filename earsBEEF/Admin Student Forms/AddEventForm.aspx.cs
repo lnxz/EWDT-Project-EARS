@@ -12,10 +12,6 @@ namespace earsBEEF
         public static int datesAdded = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["LoginType"].Equals("Student"))
-            {
-                Response.Redirect("Home.aspx");
-            }
 
             if (Session["LoginType"].Equals("Staff"))
             {
@@ -25,7 +21,7 @@ namespace earsBEEF
                 EARS.Staff s = (EARS.Staff)(Session["Login"]);
                 ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
                 ddlCCA.DataTextField = "Name";
-                //   ddlCCA.DataValueField = "CcaID";
+               //ddlCCA.DataValueField = "CcaID";
                 ddlCCA.DataBind();
             }
             else
@@ -35,7 +31,7 @@ namespace earsBEEF
                 EARS.Student s = (EARS.Student)(Session["Login"]);
                 ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StudentID);
                 ddlCCA.DataTextField = "Name";
-                //   ddlCCA.DataValueField = "CcaID";
+                ddlCCA.DataValueField = "CcaID";
                 ddlCCA.DataBind();
             }
 
