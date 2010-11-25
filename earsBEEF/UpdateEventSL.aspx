@@ -39,7 +39,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table style="width:88%;">
+    <table style="width:88%;">
         <tr>
             <td class="style2" colspan="2">
                 <strong>

@@ -139,7 +139,8 @@
                                 <asp:ListItem Value="Month"></asp:ListItem>
                 </asp:DropDownList>
                             /
-                <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px">
+                <asp:DropDownList ID="DdlDay" runat="server" Height="22px" Width="76px" 
+                                onselectedindexchanged="DdlDay_SelectedIndexChanged">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;/ 
