@@ -35,18 +35,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0" 
-        onactiveviewchanged="MultiView1_ActiveViewChanged">
+    <asp:MultiView ID="mv" runat="server">
+                <br />
+            <br />
+            <br />
         <asp:View ID="Vacc" runat="server">
-        <br />
-        <br />
-        <br />
-        <br />
+            <br />
             <table style="width:100%;">
                 <tr>
                     <td class="style3">
@@ -63,9 +57,9 @@
                         <br class="style4" />
                         <br class="style4" />
                         <asp:Label ID="lblEmail0" runat="server" CssClass="style4" Text="Email "></asp:Label>
-                        <span class="style4">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="tbxEmail" runat="server"></asp:TextBox>
-&nbsp; </span>
-                        &nbsp;
+                        <span class="style4">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox 
+                            ID="tbxEmail" runat="server"></asp:TextBox>
+                        &nbsp; </span>&nbsp;
                         <asp:RequiredFieldValidator ID="rfvEmail0" runat="server" 
                             ControlToValidate="tbxEmail" CssClass="style4" 
                             ErrorMessage="Please enter Email " ForeColor="Red"></asp:RequiredFieldValidator>
@@ -78,8 +72,8 @@
                         <asp:Label ID="Label5" runat="server" CssClass="style4"></asp:Label>
                         <br class="style4" />
                         <br />
-                        <asp:Button ID="btnSubmit2" runat="server" onclick="btnSubmit_Click" 
-                            Text="Submit" />
+                        <asp:Button ID="btnSubmit" runat="server" 
+                            Text="Button" />
                     </td>
                     <td>
                         <span class="style5">For Staff:</span><br /> <span class="style9">Login ID is 
@@ -91,74 +85,86 @@
                         <span class="style9">Email is your TP Email</span></td>
                 </tr>
             </table>
+
+        </asp:View>
+                    <br />
+            <br />
+            <asp:View ID="ValidatePsw" runat="server">
+                <table style="width:100%;">
+                    <tr>
+                        <td colspan="3">
+                            Validate Email Password</td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td class="style8">
+                            &nbsp;</td>
+                        <td rowspan="2">
+                            <span class="style5">Notice:</span><br /> Please Check your Email for Validate 
+                            Password</td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Password Email&nbsp;
+                        </td>
+                        <td class="style8">
+                            <asp:TextBox ID="tbxPEmail" runat="server" Width="202px"></asp:TextBox>
+                            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="tbxPEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                <asp:Button ID="btnSubmit1" runat="server" onclick="Button1_Click" 
+                    Text="Submit" />
+        </asp:View>
+            <br />
+                        <br />
+            <asp:View ID="changePsw" runat="server">
+                <br />
+                <asp:Label ID="lblTitle2" runat="server" Font-Bold="True" 
+                    style="font-size: medium; " Text="Change New Password"></asp:Label>
+                <br />
+                <br />
+                <asp:Label ID="lblPwChange1" runat="server" Text="New Password"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="tbxPwC1" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvNewPw" runat="server" 
+                    ControlToValidate="tbxPwC1" ErrorMessage="Enter New Password" ForeColor="Red"></asp:RequiredFieldValidator>
+                <br />
+                &nbsp;<br />
+                <asp:Label ID="lblPwChange2" runat="server" Text="Retype New Password"></asp:Label>
+                &nbsp;
+                <asp:TextBox ID="tbxPwC2" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvNewPw2" runat="server" 
+                    ControlToValidate="tbxPwC2" ErrorMessage="Re-Enter New Password" 
+                    ForeColor="Red"></asp:RequiredFieldValidator>
+                &nbsp;
+                <asp:CompareValidator ID="cvPw" runat="server" ControlToCompare="tbxPwC1" 
+                    ControlToValidate="tbxPwC2" ErrorMessage="Password Mismatch" ForeColor="Red"></asp:CompareValidator>
+                <br />
+                <br />
+                <asp:Button ID="Button2" runat="server" onclick="Button1_Click" 
+                    Text="Confirm" />
                 <br />
         </asp:View>
-        <asp:View ID="ValidatePsw" runat="server">
-                    <table style="width:100%;">
-                        <tr>
-                            <td colspan="3">
-                                Validate Email Password</td>
-                        </tr>
-                        <tr>
-                            <td class="style2">
-                                &nbsp;</td>
-                            <td class="style8">
-                                &nbsp;</td>
-                            <td rowspan="2">
-                                <span class="style5">Notice:</span><br /> Please Check your Email for Validate 
-                                Password</td>
-                        </tr>
-                        <tr>
-                            <td class="style2">
-                                Password Email&nbsp;
-                            </td>
-                            <td class="style8">
-                                <asp:TextBox ID="tbxPEmail" runat="server" Width="202px" BorderColor="#CC0066"></asp:TextBox>
-                                &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                    ControlToValidate="tbxPEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <br />
-                    <asp:Button ID="btnSubmit1" runat="server" onclick="Button1_Click" 
-                        Text="Submit" />
-                </asp:View>
-                <asp:View ID="changePsw" runat="server">
-                    <br />
-                    <asp:Label ID="lblTitle2" runat="server" style="font-size: medium; " 
-                        Text="Change New Password" Font-Bold="True"></asp:Label>
-                    <br />
-                    <br />
-                    <asp:Label ID="lblPwChange1" runat="server" Text="New Password"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="tbxPwC1" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvNewPw" runat="server" 
-                        ControlToValidate="tbxPwC1" ErrorMessage="Enter New Password" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <br />
-                    &nbsp;<br />
-                    <asp:Label ID="lblPwChange2" runat="server" Text="Retype New Password"></asp:Label>
-                    &nbsp;
-                    <asp:TextBox ID="tbxPwC2" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvNewPw2" runat="server" 
-                        ControlToValidate="tbxPwC2" ErrorMessage="Re-Enter New Password" 
-                        ForeColor="Red"></asp:RequiredFieldValidator>
-                    &nbsp;
-                    <asp:CompareValidator ID="cvPw" runat="server" ControlToCompare="tbxPwC1" 
-                        ControlToValidate="tbxPwC2" ErrorMessage="Password Mismatch" ForeColor="Red"></asp:CompareValidator>
-                    <br />
-                    <br />
-                    <asp:Button ID="Button2" runat="server" onclick="Button1_Click" 
-                        Text="Confirm" />
-                    <br />
-                </asp:View>
-                <asp:View ID="pswSuccessful" runat="server">
-                    Change Password Successful<br />
-                    <br />
-                    <asp:Button ID="btnBack" runat="server" Height="25px" onclick="Button1_Click" 
-                        Text="Back" Width="73px" />
-                    <br />
-                </asp:View>
+        <br />
+        <asp:View ID="pswSuccessful" runat="server">
+            Change Password Successful<br />
+            <br />
+            <asp:Button ID="btnBack" runat="server" Height="25px" onclick="Button1_Click" 
+                Text="Back" Width="73px" />
+            <br />
+        </asp:View>
+            <br />
+            <br />
     </asp:MultiView>
+<br />
+<br />
+<br />
+<br />
+<br />
 
 </asp:Content>
