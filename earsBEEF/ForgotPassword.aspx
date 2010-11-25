@@ -16,7 +16,7 @@
                 <br />
                 <br />
                 <asp:Label ID="lblId" runat="server" Text="Login ID"></asp:Label>
-                &nbsp;&nbsp;
+                &nbsp; &nbsp;
                 <asp:TextBox ID="tbxId" runat="server" Width="151px"></asp:TextBox>
                 &nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rfvID" runat="server" ControlToValidate="tbxId" 
@@ -41,7 +41,7 @@
                 <br />
                 <asp:Label ID="Label4" runat="server"></asp:Label>
                 <br />
-                <asp:Button ID="btnSubmit" runat="server" onclick="Button1_Click" 
+                <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
                             Text="Submit" />
                 <br />
         </asp:View>
