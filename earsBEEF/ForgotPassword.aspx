@@ -22,9 +22,24 @@
         {
             width: 390px;
         }
+        .style9
+        {
+            font-size: small;
+        }
+        .style10
+        {
+            width: 165px;
+            font-size: small;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0" 
         onactiveviewchanged="MultiView1_ActiveViewChanged">
         <asp:View ID="Vacc" runat="server">
@@ -40,17 +55,16 @@
                         <br class="style4" />
                         <br class="style4" />
                         <asp:Label ID="lblId0" runat="server" CssClass="style4" Text="Login ID"></asp:Label>
-                        <span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp;
-                        <asp:TextBox ID="tbxId" runat="server" BorderStyle="Solid"></asp:TextBox>
+                        <span class="style4">&nbsp;&nbsp;&nbsp;</span>&nbsp;
+                        <asp:TextBox ID="tbxId" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvID0" runat="server" 
                             ControlToValidate="tbxId" CssClass="style4" 
                             ErrorMessage="Please enter Login ID" ForeColor="Red"></asp:RequiredFieldValidator>
                         <br class="style4" />
                         <br class="style4" />
                         <asp:Label ID="lblEmail0" runat="server" CssClass="style4" Text="Email "></asp:Label>
-                        <span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-                        <asp:TextBox ID="tbxEmail" runat="server" CssClass="style4" 
-                            ontextchanged="tbxEmail_TextChanged" Width="151px"></asp:TextBox>
+                        <span class="style4">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:TextBox ID="tbxEmail" runat="server"></asp:TextBox>
+&nbsp; </span>
                         &nbsp;
                         <asp:RequiredFieldValidator ID="rfvEmail0" runat="server" 
                             ControlToValidate="tbxEmail" CssClass="style4" 
@@ -65,14 +79,16 @@
                         <br class="style4" />
                         <br />
                         <asp:Button ID="btnSubmit2" runat="server" onclick="btnSubmit_Click" 
-                            Text="Submit" BorderColor="Black" />
+                            Text="Submit" />
                     </td>
                     <td>
-                        <span class="style5">For Staff:</span><br /> Login ID is your Staff Email<br /> 
-                        Email is your Personal Email<br />
+                        <span class="style5">For Staff:</span><br /> <span class="style9">Login ID is 
+                        your Staff Email</span><br class="style9" /> <span class="style9">Email is your 
+                        Personal Email</span><br />
                         <br />
-                        <span class="style5">For Student:</span><br /> Login ID is your Admin Number
-                        <span class="style2">(eg. 1234567E)</span><br /> Email is your TP Email</td>
+                        <span class="style5">For Student:</span><br /> <span class="style9">Login ID is 
+                        your Admin Number </span><span class="style10">(eg. 1234567E)</span><br class="style9" />
+                        <span class="style9">Email is your TP Email</span></td>
                 </tr>
             </table>
                 <br />
@@ -115,7 +131,7 @@
                     <br />
                     <br />
                     <asp:Label ID="lblPwChange1" runat="server" Text="New Password"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="tbxPwC1" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvNewPw" runat="server" 
                         ControlToValidate="tbxPwC1" ErrorMessage="Enter New Password" ForeColor="Red"></asp:RequiredFieldValidator>
