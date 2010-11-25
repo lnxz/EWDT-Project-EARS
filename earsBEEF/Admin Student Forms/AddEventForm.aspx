@@ -220,9 +220,14 @@
                             Registration Cost:</td>
                         <td class="style20" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" Checked="True" 
+<<<<<<< .mine
+                                GroupName="cost" oncheckedchanged="RadioButton1_CheckedChanged" />
+&nbsp;&nbsp;
+=======
                                 GroupName="cost" CssClass="style25" />
                             <span class="style25">&nbsp;&nbsp;
                             </span>
+>>>>>>> .r250
                             <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" 
                                 AutoPostBack="True" oncheckedchanged="RadioButton2_CheckedChanged" 
                                 GroupName="cost" CssClass="style25" />

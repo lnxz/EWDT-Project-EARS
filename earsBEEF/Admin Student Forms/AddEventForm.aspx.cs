@@ -31,7 +31,7 @@ namespace earsBEEF
                 EARS.Student s = (EARS.Student)(Session["Login"]);
                 ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StudentID);
                 ddlCCA.DataTextField = "Name";
-                ddlCCA.DataValueField = "CcaID";
+             //   ddlCCA.DataValueField = "CcaID";
                 ddlCCA.DataBind();
             }
 
@@ -192,12 +192,12 @@ namespace earsBEEF
                 if (Session["LoginType"].ToString().Equals("Staff"))
                 {
                     EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
-                    //EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID);
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 2, DateTime.Today, tempStaff.StaffID);
                 }
                 else
                 {
                     EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
-                    //EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text.Trim, startDate, endDate, Convert.ToInt32(tbxQuota.Text),tempStudent.StudentID,  DateTime.Today);
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, Label1.Text, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 2, tempStudent.StudentID ,DateTime.Today);
                 }
             }
 
@@ -365,6 +365,11 @@ namespace earsBEEF
         protected void Page_PreInit()
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            tbxDol.Enabled = false;
         }
     }
 }
