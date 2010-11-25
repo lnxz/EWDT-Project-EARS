@@ -31,22 +31,22 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.View Vacc;
         
         /// <summary>
-        /// lblTitle1 control.
+        /// lblTitle3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle1;
+        protected global::System.Web.UI.WebControls.Label lblTitle3;
         
         /// <summary>
-        /// lblId control.
+        /// lblId0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId;
+        protected global::System.Web.UI.WebControls.Label lblId0;
         
         /// <summary>
         /// tbxId control.
@@ -58,22 +58,22 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.TextBox tbxId;
         
         /// <summary>
-        /// rfvID control.
+        /// rfvID0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvID;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvID0;
         
         /// <summary>
-        /// lblEmail control.
+        /// lblEmail0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.Label lblEmail0;
         
         /// <summary>
         /// tbxEmail control.
@@ -85,40 +85,40 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.TextBox tbxEmail;
         
         /// <summary>
-        /// rfvEmail control.
+        /// rfvEmail0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail0;
         
         /// <summary>
-        /// revEmail control.
+        /// revEmail0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail0;
         
         /// <summary>
-        /// Label4 control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// btnSubmit control.
+        /// btnSubmit2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnSubmit2;
         
         /// <summary>
         /// ValidatePsw control.

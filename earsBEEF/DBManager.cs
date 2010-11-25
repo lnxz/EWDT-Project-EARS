@@ -506,7 +506,6 @@ namespace EARS
             }
             return rowsAdded;
         }
-
         public static ArrayList GetAllCCA()
         {
 
@@ -1119,6 +1118,9 @@ namespace EARS
             return results;
         }
 <<<<<<< .mine
+        public static Student ValidatePasswordStud(string login, string lemail)
+=======
+<<<<<<< .mine
         public static ArrayList GetCCAofStudent(int studentID)
         {
             ArrayList results = new ArrayList();
@@ -1160,6 +1162,7 @@ namespace EARS
         }
 =======
         public static Student ValidatePassword(string login, string lemail)
+>>>>>>> .r238
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1208,7 +1211,58 @@ namespace EARS
             }
             return s;
         }
+<<<<<<< .mine
+        public static Staff ValidatePasswordStaff(string email, string pemail)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Staff s = null;
+            try
+            {
+
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff where StaffEmail = @staffEmail and PersonalEmail = @p";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@staffEmail", email);
+                comm.Parameters.AddWithValue("@p", pemail);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    char admin = dr["isAdmin"].ToString()[0];
+                    string officeNo = dr["OfficeNumber"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+
+                    s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return s;
+        }
+=======
 >>>>>>> .r237
+>>>>>>> .r238
     }
     
         
