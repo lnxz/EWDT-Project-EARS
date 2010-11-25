@@ -13,13 +13,13 @@ namespace EARS {
     public partial class ForgotPassword {
         
         /// <summary>
-        /// MultiView1 control.
+        /// mv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView1;
+        protected global::System.Web.UI.WebControls.MultiView mv;
         
         /// <summary>
         /// Vacc control.
@@ -112,13 +112,13 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// btnSubmit2 control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit2;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
         /// ValidatePsw control.

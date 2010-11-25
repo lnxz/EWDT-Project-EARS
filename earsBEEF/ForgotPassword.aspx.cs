@@ -11,7 +11,7 @@ namespace EARS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 0;
+            mv.ActiveViewIndex = 0;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
