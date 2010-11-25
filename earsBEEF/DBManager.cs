@@ -39,14 +39,14 @@ namespace EARS
                     char gender = dr["Gender"].ToString()[0];
                     string school = dr["School"].ToString();
                     string courseCode = dr["CourseCode"].ToString();
-                    string contactNo = dr ["ContactNo"].ToString();
-                    string emergCont = dr ["EmergencyContact"].ToString();
+                    string contactNo = dr["ContactNo"].ToString();
+                    string emergCont = dr["EmergencyContact"].ToString();
                     string email = dr["Email"].ToString();
                     string tShirtSize = dr["TShirtSize"].ToString();
-                    DateTime dateofbirth = DateTime.Parse( dr["DateOfBirth"].ToString());
+                    DateTime dateofbirth = DateTime.Parse(dr["DateOfBirth"].ToString());
                     string studentType = dr["StudentType"].ToString();
 
-                Student s = new Student(studentID, name, adminNo, password, gender, school, courseCode,contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
+                    Student s = new Student(studentID, name, adminNo, password, gender, school, courseCode, contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
                     results.Add(s);
                 }
             }
@@ -66,7 +66,7 @@ namespace EARS
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
-               try
+            try
             {
                 // Step 1: Open connection
                 conn.Open();
@@ -90,7 +90,7 @@ namespace EARS
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();
-             }
+            }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
@@ -100,7 +100,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
-               return rowsAdded;
+            return rowsAdded;
         }
         public static Student loginStudent(string login, string pass)
         {
@@ -122,7 +122,7 @@ namespace EARS
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                    char isStudentLeader =dr["IsStudentLeader"].ToString()[0];
+                    char isStudentLeader = dr["IsStudentLeader"].ToString()[0];
                     int studentID = Convert.ToInt32(dr["StudentID"].ToString());
                     string name = dr["Name"].ToString();
                     string adminNo = dr["AdminNo"].ToString();
@@ -159,7 +159,7 @@ namespace EARS
             Staff s = null;
             try
             {
-                
+
                 // Step 1: Open connection
                 conn.Open();
                 // Step 2: Prepare the sql command
@@ -181,10 +181,10 @@ namespace EARS
                     string mobileNo = dr["ContactNo"].ToString();
                     string personalEmail = dr["PersonalEmail"].ToString();
                     string position = dr["Position"].ToString();
-                    char admin =dr["isAdmin"].ToString()[0];
+                    char admin = dr["isAdmin"].ToString()[0];
                     string officeNo = dr["OfficeNumber"].ToString();
                     DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
-                    
+
                     s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
                 }
             }
@@ -231,7 +231,7 @@ namespace EARS
                     char admin = dr["IsAdmin"].ToString()[0];
                     string officeNo = dr["OfficeNumber"].ToString();
                     DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
-                    Staff st = new Staff(staffID,name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                    Staff st = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
                     results.Add(st);
                 }
             }
@@ -247,12 +247,13 @@ namespace EARS
             return results;
         }
         public static int AddStaff(string name, string staffEmail, string password, char gender, string school, string contactNo, string personalEmail, string position, char admin, string officeNo, DateTime dateofBirth)
-        {int rowsAdded = -1;
+        {
+            int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
             {
-                
+
                 // Step 1: Open connection
                 conn.Open();
                 // Step 2: Prepare the sql command
@@ -273,7 +274,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-               rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -288,7 +289,7 @@ namespace EARS
         }
         public static ArrayList GetAllAnnouncements()
         {
-            
+
             ArrayList results = new ArrayList();
 
             // Establish connection with database
@@ -307,12 +308,12 @@ namespace EARS
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                    
-                    int announceID = Convert.ToInt32( dr["AnnouncementID"].ToString());
+
+                    int announceID = Convert.ToInt32(dr["AnnouncementID"].ToString());
                     string title = dr["Title"].ToString();
                     string content = dr["AContent"].ToString();
-                    DateTime  dateCreated = DateTime.Parse( dr["DateCreated"].ToString());
-                    int createStaffID =Convert.ToInt32 (dr["CreateStaffID"].ToString());
+                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
+                    int createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
                     int createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
                     DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
 
@@ -393,7 +394,7 @@ namespace EARS
                     int eventID = Convert.ToInt32(dr["EventID"].ToString());
                     string name = dr["Name"].ToString();
                     string venue = dr["Venue"].ToString();
-                    double regCost = Convert.ToInt32( dr["RegistrationCost"].ToString());
+                    double regCost = Convert.ToInt32(dr["RegistrationCost"].ToString());
                     string category = dr["CategoryID"].ToString();
                     string descrip = dr["Description"].ToString();
                     string eventDate = dr["eventDates"].ToString();
@@ -405,7 +406,7 @@ namespace EARS
                     int orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    earsBEEF.Event b = new earsBEEF.Event(eventID,name,venue,regCost,category,descrip,eventDate,regStart,regend,quota,ccaID,orgStudID,orgStaffID,dateCreated );
+                    earsBEEF.Event b = new earsBEEF.Event(eventID, name, venue, regCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
                     results.Add(b);
                 }
             }
@@ -450,7 +451,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                 rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -533,7 +534,7 @@ namespace EARS
                     string name = dr["Name"].ToString();
 
 
-                    earsBEEF.CCA c = new earsBEEF.CCA(ccaID,name);
+                    earsBEEF.CCA c = new earsBEEF.CCA(ccaID, name);
                     results.Add(c);
                 }
             }
@@ -569,7 +570,7 @@ namespace EARS
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                 rowsAdded = (int)comm.ExecuteNonQuery();
+                rowsAdded = (int)comm.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -655,12 +656,12 @@ namespace EARS
                 conn.Close();
             }
             return rowsAdded;
-           
+
         }
         public static int AddCCAStudent(int ccaID, int studentID, char isLeader)
         {
             int rowsAdded = -1;
-                        SqlConnection conn = new SqlConnection();
+            SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             try
             {
@@ -676,14 +677,14 @@ namespace EARS
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();
-              
+
             }
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
             finally
-            {  
+            {
                 // Step 4: Close connection
                 conn.Close();
             }
@@ -707,7 +708,7 @@ namespace EARS
                 comm.CommandText = "SELECT * FROM CCAStudent where CCAID = @ccaID";
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();  
+                SqlDataReader dr = comm.ExecuteReader();
                 comm.Parameters.AddWithValue("@ccaID", ccaID);  // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
@@ -1117,10 +1118,6 @@ namespace EARS
             }
             return results;
         }
-<<<<<<< .mine
-        public static Student ValidatePasswordStud(string login, string lemail)
-=======
-<<<<<<< .mine
         public static ArrayList GetCCAofStudent(int studentID)
         {
             ArrayList results = new ArrayList();
@@ -1160,9 +1157,7 @@ namespace EARS
             }
             return results;
         }
-=======
-        public static Student ValidatePassword(string login, string lemail)
->>>>>>> .r238
+        public static Student ValidatePasswordStud(string login, string lemail)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1211,7 +1206,6 @@ namespace EARS
             }
             return s;
         }
-<<<<<<< .mine
         public static Staff ValidatePasswordStaff(string email, string pemail)
         {
             // Establish connection with database
@@ -1260,11 +1254,5 @@ namespace EARS
             }
             return s;
         }
-=======
->>>>>>> .r237
->>>>>>> .r238
     }
-    
-        
-
 }
