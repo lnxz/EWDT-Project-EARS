@@ -32,10 +32,6 @@
             width: 749px;
             height: 28px;
         }
-        .style23
-        {
-            text-decoration: none;
-        }
         .style24
         {
             height: 52px;
@@ -50,25 +46,34 @@
             height: 28px;
             color: #000000;
         }
+        .style27
+        {
+            width: 749px;
+            color: #000000;
+        }
+        .style30
+        {
+            text-decoration: none;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
-            <td class="style2" colspan="2">
+            <td class="style25" colspan="2">
                 <strong>Create an Event</strong></td>
         </tr>
         <tr>
-            <td class="style2" colspan="2">
+            <td class="style25" colspan="2">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style1" rowspan="10">
                 <table style="width: 100%; height: 355px;">
                     <tr>
-                        <td class="style4">
+                        <td class="style25">
                             &nbsp;</td>
-                        <td class="style18">
+                        <td class="style27">
                             &nbsp;</td>
                     </tr>
                     <tr>
@@ -219,7 +224,8 @@
                             Registration Cost:</td>
                         <td class="style20" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" Checked="True" 
-                                GroupName="cost" oncheckedchanged="RadioButton1_CheckedChanged" />
+                                GroupName="cost" oncheckedchanged="RadioButton1_CheckedChanged" 
+                                CssClass="style25" />
                             <span class="style25">&nbsp;&nbsp;
                             </span>
                             <asp:RadioButton ID="RadioButton2" runat="server" Text="Others" 
@@ -235,14 +241,15 @@
                 </table>
             </td>
             <td class="style3" valign="top">
-                <asp:FileUpload ID="FileUpload1" runat="server" Height="27px" Width="220px" />
-                <br />
-                <asp:Image ID="lmEvent" runat="server" Height="173px" Width="176px" />
-                <br />
+                <asp:FileUpload ID="FileUpload1" runat="server" Height="27px" Width="253px" />
+                <br class="style25" />
+                <asp:Image ID="lmEvent" runat="server" Height="173px" Width="176px" 
+                    CssClass="style25" />
+                <br class="style25" />
             </td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
@@ -250,39 +257,39 @@
             </td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style25" valign="top">
                 &nbsp;</td>
         </tr>
     </table>
     <table style="width:100%;">
         <tr>
-            <td class="style13">
+            <td class="style25">
                 &nbsp;</td>
-            <td>
+            <td class="style25">
                 &nbsp;</td>
         </tr>
         <tr>
