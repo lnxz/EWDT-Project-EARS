@@ -41,7 +41,7 @@ namespace EARS
                 EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
 
                 //send to email
-                MailMessage mail = new MailMessage("",email,"Reset Password","here is your new password");
+                MailMessage mail = new MailMessage("",email,"Reset Password","Here is your new password");
                 SmtpClient client = new SmtpClient("",999);
                 client.UseDefaultCredentials = true;
                 client.Send(mail);
@@ -81,6 +81,29 @@ namespace EARS
             {
                 Label5.Text = "Login ID and Email Unmatch";
             }
+        }
+
+        protected void btnSubmit1_Click(object sender, EventArgs e)
+        {
+            string Epass = tbxPEmail.Text;
+
+            EARS.Student s = DBManager.GetPasswordStud(Epass);
+
+            if (s != null)
+            {
+                mv.ActiveViewIndex = 2;
+            }
+            else
+            {
+                Label6.Text = "Invalid Email Password, Please Confirm the Password";
+            }
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string p = tbxPwC2.Text;
+
+
         }
     }
 }

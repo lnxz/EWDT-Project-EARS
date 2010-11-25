@@ -169,6 +169,8 @@
                     </tr>
                 </table>
                 <br />
+                <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+                <br />
                 <br />
                 <asp:Button ID="btnSubmit1" runat="server" onclick="btnSubmit1_Click" 
                     Text="Submit" />
@@ -199,7 +201,7 @@
                     ControlToValidate="tbxPwC2" ErrorMessage="Password Mismatch" ForeColor="Red"></asp:CompareValidator>
                 <br />
                 <br />
-                <asp:Button ID="Button2" runat="server" onclick="Button1_Click" 
+                <asp:Button ID="btnConfirm" runat="server" onclick="btnConfirm_Click" 
                     Text="Confirm" />
                 <br />
         </asp:View>
