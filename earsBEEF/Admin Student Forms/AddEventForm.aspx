@@ -291,7 +291,8 @@
                     Text="Confirm" onclick="btnConfirm_Click" />
             </td>
             <td>
-                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
+                    onclick="btnCancel_Click" />
             </td>
         </tr>
     </table>
