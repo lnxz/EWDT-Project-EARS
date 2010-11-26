@@ -23,6 +23,7 @@ namespace EARS
             string id = tbxId.Text;
             string email = tbxEmail.Text;
 
+            // check student
             EARS.Student s = DBManager.ValidatePasswordStud(id, email);
 
             if (s != null)
@@ -53,6 +54,7 @@ namespace EARS
                 Label5.Text = "Login ID and Email Unmatch";
             }
 
+            // check staff
             EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
 
             if (t != null)
@@ -85,9 +87,10 @@ namespace EARS
 
         protected void btnSubmit1_Click(object sender, EventArgs e)
         {
-            string Epass = tbxPEmail.Text;
-
-            EARS.Student s = DBManager.GetPasswordStud(Epass);
+            string pe = tbxPEmail.Text;
+            string id1 = tbxId.Text;
+            // check student
+            EARS.Student s = DBManager.GetPasswordStud(id1 , pe);
 
             if (s != null)
             {
@@ -97,13 +100,48 @@ namespace EARS
             {
                 Label6.Text = "Invalid Email Password, Please Confirm the Password";
             }
+
+            // check staff
+
+            EARS.Staff sta = DBManager.GetPasswordStaff(id1, pe);
+
+            if (sta != null)
+            {
+                mv.ActiveViewIndex = 2;
+            }
+            else
+            {
+                Label6.Text = "Invalid Email Password, Please Confirm the Password";
+            }
+
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             string p = tbxPwC2.Text;
+            string id2 = tbxId.Text;
 
+            // change student password
+            EARS.Student stu = DBManager.GetPasswordStud(id2,p);
 
+            if (stu != null)
+            {
+                EARS.Student stu1 = DBManager.UpdatePasswordStud(id2, p);
+            }
+
+            // change staff password
+
+            EARS.Staff staff = DBManager.GetPasswordStaff(id2, p);
+
+            if (stu != null)
+            {
+                EARS.Staff sta1 = DBManager.ValidatePasswordStaff(id2, p);
+            }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
         }
     }
 }

@@ -47,14 +47,6 @@
         .style17
         {
         }
-        .style18
-        {
-            width: 103px;
-        }
-        .style19
-        {
-            width: 409px;
-        }
         .style20
         {
             width: 102px;
@@ -83,10 +75,10 @@
                         <br />
                         <span class="style5">For Student:</span><br /> <span class="style9">Login ID is 
                         your Admin Number </span><span class="style10">(eg. 1234567E)</span><br class="style9" />
-                        <span class="style9">Email is your TP Email<br />
+                        <span class="style9">Email is your Student Email<br />
                         <br />
-                        <span class="style5">For Staff:</span><br class="style9" /> Email is your TP 
-                        Email</span></td>
+                        <span class="style5">For Staff:</span><br class="style9" /> Login ID is your 
+                        Staff Email</span></td>
                         <td class="style3" valign="top">
                             <table style="width:100%;">
                                 <tr>
@@ -207,9 +199,10 @@
         </asp:View>
         <br />
         <asp:View ID="pswSuccessful" runat="server">
-            Change Password Successful<br />
+            Change Password Successful
             <br />
-            <asp:Button ID="btnBack" runat="server" Height="25px" onclick="Button1_Click" 
+            <br />
+            <asp:Button ID="btnBack" runat="server" Height="25px" onclick="btnBack_Click" 
                 Text="Back" Width="73px" />
             <br />
         </asp:View>
