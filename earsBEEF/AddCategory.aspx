@@ -11,8 +11,7 @@
     <table style="width:100%;">
         <tr>
             <td align="left" class="style2">
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="style3" __designer:mapid="5f"><strong __designer:mapid="60"> 
-                Add Category</strong></span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="style3" __designer:mapid="5f"><strong __designer:mapid="60">Category</strong></span><br />
     </br>
     </br>
     <asp:GridView ID="GridView1" runat="server" BackColor="White" 
@@ -43,10 +42,12 @@
                     Width="300px" Height="19px"></asp:TextBox>
                     </br>
                     </br>
-                <asp:Button ID="Button1" runat="server" Text="Add" Height="25px" 
-                    Width="95px" onclick="Button1_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" Height="25px" 
+                    Width="95px" onclick="btnAdd_Click" />
                 <br />
                 <br />
+                    <asp:Button ID="btnDelete" runat="server" onclick="btnDelete_Click" 
+                        Text="Delete" Width="95px" />
                 <br />
                 <br />
                 <br />
