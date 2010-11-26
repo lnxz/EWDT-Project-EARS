@@ -7,15 +7,11 @@
         }
         .style4
         {
-            width: 127px;
-        }
-        .style5
-        {
-            width: 255px;
+            width: 149px;
         }
         .style6
         {
-            width: 447px;
+            width: 468px;
         }
         .style7
         {
@@ -28,22 +24,51 @@
         }
         .style9
         {
-            width: 127px;
-            height: 41px;
-        }
+            width: 149px;
+            }
         .style10
         {
-            width: 255px;
-            height: 41px;
+            width: 149px;
+            height: 31px;
         }
-    </style>
+        .style11
+        {
+            width: 468px;
+            height: 31px;
+        }
+        .style12
+        {
+            width: 208px;
+        }
+        .style13
+        {
+            width: 149px;
+            height: 163px;
+        }
+        .style14
+        {
+            width: 468px;
+            height: 163px;
+        }
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
     <table style="width:88%;">
         <tr>
             <td class="style2" colspan="2">
                 <strong>
                 <br />
+                </strong>
                 <table style="width:274%;">
         <tr>
             <td class="style2" colspan="2">
@@ -61,29 +86,21 @@
                             &nbsp;</td>
                         <td class="style6">
                             &nbsp;</td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4">
                             Event Name:</td>
                         <td class="style6" align="left">
-                            <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
-                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                                ControlToValidate="tbxName" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lbName" runat="server" Text="Label"></asp:Label>
                         </td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4">
                             CCA involved:</td>
                         <td class="style6" align="left">
-                            <asp:DropDownList ID="DropDownList1" runat="server" Height="17px" Width="218px">
+                            <asp:DropDownList ID="ddlCca" runat="server" Height="17px" Width="218px">
                             </asp:DropDownList>
                         </td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4">
@@ -92,24 +109,14 @@
                             <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px">
                             </asp:DropDownList>
                               &nbsp;</td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style9">
+                        <td class="style9" valign="top">
                             Venue:</td>
-                        <td class="style6" rowspan="2" align="left">
+                        <td class="style6" align="left">
                             <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="410px" 
                                 Height="77px"></asp:TextBox>
                         </td>
-                        <td class="style10">
-                            </td>
-                    </tr>
-                    <tr>
-                        <td class="style4">
-                            &nbsp;</td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4" valign="top">
@@ -118,13 +125,11 @@
                             <asp:TextBox ID="tbxDes" runat="server" Height="99px" TextMode="MultiLine" 
                                 Width="411px"></asp:TextBox>
                         </td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style4" valign="top">
+                        <td class="style13" valign="top">
                             Event Dates:</td>
-                        <td class="style6" align="left">
+                        <td class="style14" align="left" valign="top">
             &nbsp;<asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="76px" 
                                 AutoPostBack="True">
                                 <asp:ListItem Value="Month"></asp:ListItem>
@@ -140,20 +145,26 @@
                                 runat="server" Text="Add Date" />
                             
             &nbsp;&nbsp;<br />
-                                <asp:Label ID="Label1" runat="server">Please Add Event Dates</asp:Label>
+                            <table style="width: 102%;">
+                                <tr>
+                                    <td class="style12">
+                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px">
+                                        </asp:ListBox>
+                                    </td>
+                                    <td align="right" valign="top">
+                                        <asp:Button ID="btnRemove" runat="server" Text="Remove" Width="96px" />
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
-                        <td class="style5">
-                            &nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="style4">
+                        <td class="style10">
                             Quota:</td>
-                        <td class="style6" align="left">
+                        <td class="style11" align="left">
                             <asp:TextBox ID="tbxQuota" runat="server" Width="143px"></asp:TextBox>
                         &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                 ControlToValidate="tbxQuota" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </td>
-                        <td class="style5">
                         </td>
                     </tr>
                     <tr>
@@ -172,10 +183,7 @@
             &nbsp;/ 
                            <asp:DropDownList ID="DdlYear0" runat="server" Height="21px" Width="86px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </td>
-                        <td class="style5">
-                            </td>
+                </asp:DropDownList> &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4">
@@ -193,10 +201,7 @@
             &nbsp;/ 
                            <asp:DropDownList ID="DdlYear1" runat="server" Height="21px" Width="86px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        </td>
-                        <td class="style5">
-                            </td>
+                </asp:DropDownList> &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4" valign="top">
@@ -210,8 +215,6 @@
                             <asp:TextBox ID="tbxDol" runat="server" Width="80px" Enabled="False"></asp:TextBox>
 &nbsp; Dollars per student<br />
                         </td>
-                        <td class="style5">
-                        </td>
                     </tr>
                 </table>
             </td>
@@ -223,6 +226,11 @@
             </td>
         </tr>
         </table>
+                <strong>
                 <br />
+                <asp:Button ID="btnConfirm" runat="server" onclick="btnConfirm_Click" 
+                    Text="Confirm" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
                 <br />
 </asp:Content>
