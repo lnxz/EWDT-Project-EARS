@@ -51,7 +51,7 @@
             width: 749px;
             color: #000000;
         }
-        .style30
+        .style33
         {
             text-decoration: none;
         }

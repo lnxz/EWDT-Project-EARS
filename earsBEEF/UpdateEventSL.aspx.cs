@@ -158,5 +158,11 @@ namespace earsBEEF
                 }
             }
         }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            string name = lbName.Text;
+            string cca = ddlCca.Text;
+        }
     }
 }
