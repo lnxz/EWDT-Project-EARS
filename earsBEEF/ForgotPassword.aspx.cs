@@ -58,7 +58,7 @@ namespace EARS
 
                 //'(4) Send the MailMessage (will use the Web.config settings)
                 //smtp.Send(mm)
-
+                // http://www.stardeveloper.com/articles/display.html?article=2001082601&page=1
                 //send to email
                 MailMessage mail = new MailMessage("",email,"Reset Password","Here is your new password");
                 SmtpClient client = new SmtpClient("",25);
