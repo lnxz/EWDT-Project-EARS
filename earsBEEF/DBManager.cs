@@ -1171,6 +1171,7 @@ namespace EARS
 
 
         // for change password forms.........
+        // telle with student login and email and staff
         public static Student ValidatePasswordStud(string login, string lemail)
 
 
@@ -1270,6 +1271,7 @@ namespace EARS
             }
             return s;
         }
+        // update password from staff and student.
         public static Staff UpdatePasswordStaff(string pass)
         {
             // Establish connection with database
@@ -1366,7 +1368,8 @@ namespace EARS
             }
             return s;
         }
-        public static Student GetPasswordStud(string pass)
+        // retrieve password form staff and student.
+        public static Student GetPasswordStud(string admin , string pass)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1378,9 +1381,10 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT Password FROM Student where Password = @p";
+                comm.CommandText = "SELECT AdminNo, Password FROM Student where Password = @p, AdminNo = @a";
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@p", pass);
+                comm.Parameters.AddWithValue("@a", admin);
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
@@ -1415,3 +1419,51 @@ namespace EARS
             return s;
        
     }
+        public static Staff GetPasswordStaff (string email , string pass)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Staff s = null;
+            try
+            {
+
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff where StaffEmail = @staffEmail and Password = @p";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@staffEmail", email);
+                comm.Parameters.AddWithValue("@p", pass);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    char admin = dr["isAdmin"].ToString()[0];
+                    string officeNo = dr["OfficeNumber"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+
+                    s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return s;
+        }
