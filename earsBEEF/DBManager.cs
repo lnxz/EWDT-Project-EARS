@@ -10,7 +10,7 @@ namespace EARS
     public class DBManager
     {
 
-       
+
         // LEVEL 5 LAB
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
         // GWEN LAPTOP
@@ -431,7 +431,7 @@ namespace EARS
             return results;
         }
         // Overloaded AddEvent method for Staff
-        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID,  DateTime DateCreated , int OrgStaffID)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID)
         {
             int rowsAdded = -1;
 
@@ -1173,8 +1173,6 @@ namespace EARS
         // for change password forms.........
         // telle with student login and email and staff
         public static Student ValidatePasswordStud(string login, string lemail)
-
-
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1319,7 +1317,7 @@ namespace EARS
             }
             return s;
         }
-        public static Student UpdatePasswordStud(string admin ,string pass)
+        public static Student UpdatePasswordStud(string admin, string pass)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1369,7 +1367,7 @@ namespace EARS
             return s;
         }
         // retrieve password form staff and student.
-        public static Student GetPasswordStud(string admin , string pass)
+        public static Student GetPasswordStud(string admin, string pass)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1417,9 +1415,9 @@ namespace EARS
                 conn.Close();
             }
             return s;
-       
-    }
-        public static Staff GetPasswordStaff (string email , string pass)
+
+        }
+        public static Staff GetPasswordStaff(string email, string pass)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1467,3 +1465,5 @@ namespace EARS
             }
             return s;
         }
+    }
+}

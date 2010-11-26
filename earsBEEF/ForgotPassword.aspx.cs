@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.Net.Mime;
-using System.Web.Mail.SmtpMail;
+//using System.Web.Mail.SmtpMail;
 
 
 
