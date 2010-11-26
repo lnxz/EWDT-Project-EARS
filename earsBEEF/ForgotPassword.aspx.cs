@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.Net.Mime;
+using System.Web.Mail.SmtpMail;
 
 
 
@@ -41,9 +42,26 @@ namespace EARS
 
                 EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
 
+                
+                // Const ToAddress As String = "you@youremail.com";
+                //http://www.eggheadcafe.com/community/aspnet/7/10065297/send-email.aspx
+                //'(1) Create the MailMessage instance
+                //Dim mm As New MailMessage(UsersEmail.Text, ToAddress)
+
+                //'(2) Assign the MailMessage's properties
+                //mm.Subject = Subject.Text
+                //mm.Body = Body.Text
+                //mm.IsBodyHtml = False
+
+                //'(3) Create the SmtpClient object
+                //Dim smtp As New SmtpClient
+
+                //'(4) Send the MailMessage (will use the Web.config settings)
+                //smtp.Send(mm)
+
                 //send to email
                 MailMessage mail = new MailMessage("",email,"Reset Password","Here is your new password");
-                SmtpClient client = new SmtpClient("",999);
+                SmtpClient client = new SmtpClient("",25);
                 client.UseDefaultCredentials = true;
                 client.Send(mail);
                 //http://www.c-sharpcorner.com/uploadfile/scottlysle/emailattachmentscs08052008234321pm/emailattachmentscs.aspx
