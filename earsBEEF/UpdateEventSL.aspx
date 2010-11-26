@@ -9,10 +9,6 @@
         {
             width: 149px;
         }
-        .style6
-        {
-            width: 468px;
-        }
         .style7
         {
             width: 1048px;
@@ -20,7 +16,7 @@
         }
         .style8
         {
-            width: 353px;
+            width: 380px;
         }
         .style9
         {
@@ -33,7 +29,7 @@
         }
         .style11
         {
-            width: 468px;
+            width: 392px;
             height: 31px;
         }
         .style12
@@ -47,8 +43,12 @@
         }
         .style14
         {
-            width: 468px;
+            width: 392px;
             height: 163px;
+        }
+        .style15
+        {
+            width: 392px;
         }
         </style>
 </asp:Content>
@@ -84,20 +84,20 @@
                     <tr>
                         <td class="style4">
                             &nbsp;</td>
-                        <td class="style6">
+                        <td class="style15">
                             &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="style4">
                             Event Name:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                             <asp:Label ID="lbName" runat="server" Text="Label"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td class="style4">
                             CCA involved:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                             <asp:DropDownList ID="ddlCca" runat="server" Height="17px" Width="218px">
                             </asp:DropDownList>
                         </td>
@@ -105,7 +105,7 @@
                     <tr>
                         <td class="style4">
                             Category:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                             <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px">
                             </asp:DropDownList>
                               &nbsp;</td>
@@ -113,7 +113,7 @@
                     <tr>
                         <td class="style9" valign="top">
                             Venue:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                             <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="410px" 
                                 Height="77px"></asp:TextBox>
                         </td>
@@ -121,7 +121,7 @@
                     <tr>
                         <td class="style4" valign="top">
                             Description:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                             <asp:TextBox ID="tbxDes" runat="server" Height="99px" TextMode="MultiLine" 
                                 Width="411px"></asp:TextBox>
                         </td>
@@ -170,7 +170,7 @@
                     <tr>
                         <td class="style4">
                             Registration Starts:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                 &nbsp; <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="87px" 
                                 AutoPostBack="True" 
                                 onselectedindexchanged="DdlMonth0_SelectedIndexChanged">
@@ -188,7 +188,7 @@
                     <tr>
                         <td class="style4">
                             Registration Ends:</td>
-                        <td class="style6" align="left">
+                        <td class="style15" align="left">
                 &nbsp; <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="86px" 
                                 AutoPostBack="True" 
                                 onselectedindexchanged="DdlMonth1_SelectedIndexChanged">
@@ -206,7 +206,7 @@
                     <tr>
                         <td class="style4" valign="top">
                             Registration Cost:</td>
-                        <td class="style6" align="left" valign="top">
+                        <td class="style15" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" GroupName="rc" />
 &nbsp; &nbsp;
                             <asp:RadioButton ID="rbOthers" runat="server" GroupName="rc" Text="Others" />
