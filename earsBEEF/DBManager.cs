@@ -296,87 +296,6 @@ namespace EARS
             }
             return rowsAdded;
         }
-        public static ArrayList GetAllAnnouncements()
-        {
-
-            ArrayList results = new ArrayList();
-
-            // Establish connection with database
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-
-            try
-            {
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Announcement";
-                comm.Connection = conn;
-                // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
-                while (dr.Read())   //read row by row
-                {
-
-                    int announceID = Convert.ToInt32(dr["AnnouncementID"].ToString());
-                    string title = dr["Title"].ToString();
-                    string content = dr["AContent"].ToString();
-                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
-                    int createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
-                    int createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
-                    DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
-
-
-                    earsBEEF.Announcement a = new earsBEEF.Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
-                    results.Add(a);
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return results;
-        }
-        public static int AddAnnouncement(string title, string content, DateTime date, int createStaffID, int createStudID, DateTime dateOfAnn)
-        {
-            int rowsAdded = -1;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-            try
-            {
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Announcement(title,content,date,createStaffID,createStudentID,dateOfAnn) VALUES(@b,@c,@d,@e,@f,@g)";
-
-                comm.Parameters.AddWithValue("@b", title);
-                comm.Parameters.AddWithValue("@c", content);
-                comm.Parameters.AddWithValue("@d", date);
-                comm.Parameters.AddWithValue("@e", createStaffID);
-                comm.Parameters.AddWithValue("@f", createStudID);
-                comm.Parameters.AddWithValue("@g", dateOfAnn);
-
-                comm.Connection = conn;
-                // Step 3: Execute the sql command
-                rowsAdded = (int)comm.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return rowsAdded;
-        }
         public static ArrayList GetAllEvents()
         {
 
@@ -895,48 +814,6 @@ namespace EARS
             return rowsAdded;
 
         }
-        public static ArrayList GetAllStudentAnnouncement()
-        {
-
-
-            ArrayList results = new ArrayList();
-
-            // Establish connection with database
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-
-            try
-            {
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM StudentAnnouncement";
-                comm.Connection = conn;
-                // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
-                while (dr.Read())   //read row by row
-                {
-
-                    int studentID = Convert.ToInt32(dr["StudentID"].ToString());
-                    int announcementID = Convert.ToInt32(dr["AnnouncementID"].ToString());
-
-
-                    earsBEEF.StudentAnnouncement c = new earsBEEF.StudentAnnouncement(studentID, announcementID);
-                    results.Add(c);
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return results;
-        }
         public static int AddStudentAnnouncement(int studentID, int announcementID)
         {
             int rowsAdded = -1;
@@ -1167,8 +1044,130 @@ namespace EARS
             return results;
         }
 
+        // Announcement
+        public static ArrayList GetAllAnnouncements()
+        {
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Announcement";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int announceID = Convert.ToInt32(dr["AnnouncementID"].ToString());
+                    string title = dr["Title"].ToString();
+                    string content = dr["AContent"].ToString();
+                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
+                    int createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
+                    int createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
+                    DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
 
 
+                    earsBEEF.Announcement a = new earsBEEF.Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
+                    results.Add(a);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+        public static int AddAnnouncement(string title, string content, DateTime dateCreate, int createStaffID, int createStudID, DateTime dateOfAnn)
+        {
+            int rowsAdded = -1;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Announcement(title,content,date,createStaffID,createStudentID,dateOfAnn) VALUES(@b,@c,@d,@e,@f,@g)";
+
+                comm.Parameters.AddWithValue("@b", title);
+                comm.Parameters.AddWithValue("@c", content);
+                comm.Parameters.AddWithValue("@d", dateCreate);
+                comm.Parameters.AddWithValue("@e", createStaffID);
+                comm.Parameters.AddWithValue("@f", createStudID);
+                comm.Parameters.AddWithValue("@g", dateOfAnn);
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return rowsAdded;
+        }
+        public static ArrayList GetAllStudentAnnouncement()
+        {
+
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM StudentAnnouncement";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                    int announcementID = Convert.ToInt32(dr["AnnouncementID"].ToString());
+
+
+                    earsBEEF.StudentAnnouncement c = new earsBEEF.StudentAnnouncement(studentID, announcementID);
+                    results.Add(c);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
 
         // for change password forms.........
         // telle with student login and email and staff
