@@ -151,7 +151,7 @@
                                         <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px">
                                         </asp:ListBox>
                                     </td>
-                                    <td align="right" valign="top">
+                                    <td align="left" valign="top">
                                         <asp:Button ID="btnRemove" runat="server" Text="Remove" Width="96px" />
                                     </td>
                                 </tr>
@@ -233,6 +233,7 @@
                 <asp:Button ID="btnUpdate" runat="server" onclick="btnConfirm_Click" 
                     Text="Update" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
+                    onclick="btnCancel_Click" />
                 <br />
 </asp:Content>
