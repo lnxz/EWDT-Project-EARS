@@ -73,7 +73,7 @@ namespace earsBEEF
             DateTime dateOfBirth = new DateTime(year, month, day);
 
             EARS.DBManager.AddStudent(name, adminNo, password, gender, school, course,
-                                contract, emgContract, email, leader, size, studType, dateOfBirth); ;
+                                contract, emgContract, email, leader, size, studType, dateOfBirth);
 
         }
 
