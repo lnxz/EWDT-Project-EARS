@@ -44,25 +44,25 @@ namespace EARS
 
                     EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
 
-                    // create a email object
-                    //MailMessage mail = new System.Net.Mail.MailMessage();
-                    //// set the log in authentication for the email so that can send email to others
-                    //// login and password for email.
-                    //NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "ewdtears");
+                     //create a email object
+                    MailMessage mail = new System.Net.Mail.MailMessage();
+                    // set the log in authentication for the email so that can send email to others
+                    // login and password for email.
+                    NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "ewdtears");
 
-                    //mail.To.Add(email); // add the receipt email
-                    //mail.Subject = "Password for EARs System"; // add email subject
-                    //mail.From = new System.Net.Mail.MailAddress("earsbeef@gmail.com"); // sender
-                    //mail.IsBodyHtml = true; // if there is a hyperlink set to true
-                    //mail.Body = "Here is your email password for your account :" + p;
+                    mail.To.Add(email); // add the receipt email
+                    mail.Subject = "Password for EARs System"; // add email subject
+                    mail.From = new System.Net.Mail.MailAddress("earsbeef@gmail.com"); // sender
+                    mail.IsBodyHtml = true; // if there is a hyperlink set to true
+                    mail.Body = "Here is your email password for your account :" + p;
 
-                    ////gateway for email to be send
-                    //System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
-                    //smtp.UseDefaultCredentials = false;
-                    //smtp.EnableSsl = true;
-                    //smtp.Credentials = cred;
-                    //smtp.Port = 587;
-                    //smtp.Send(mail);
+                    //gateway for email to be send
+                    System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                    smtp.UseDefaultCredentials = false;
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = cred;
+                    smtp.Port = 587;
+                    smtp.Send(mail);
 
                     //MailMessage mail1 = new MailMessage("earsbeef@gmail.com",email,"Reset Password","Here is your new password");
                     //SmtpClient client = new SmtpClient("earsbeef@gmail.com",25);

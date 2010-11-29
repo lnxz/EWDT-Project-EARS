@@ -245,6 +245,8 @@ namespace earsBEEF
                 }
             }
 
+
+
         }
         protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -408,7 +410,7 @@ namespace earsBEEF
         }
         protected void Page_PreInit()
         {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
+            //this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
@@ -423,6 +425,22 @@ namespace earsBEEF
                 tbxDes.Text = "";
                 tbxDol.Text = "";
                 tbxQuota.Text = "";
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            //upload file
+            if (uploadFile.HasFile)
+            {
+                uploadFile.SaveAs(@"C:\Users\ewdt.IT3746P24\Documents\Visual Studio 2010\Projects\earsBEEF\UploadFile" + uploadFile.FileName);
+                lbfile.Text = "File Uploaded: " + uploadFile.FileName;
+                //Image1.ImageUrl = (@"F:\School Work\Semester 2.2\Term 1\Yanteen Project\Enterprise Web Development and Testing(EWDT)\ClaimApp\" + FileUpload1.FileName);
+            }
+            else
+            {
+                lbfile.Text = "No File Uploaded";
+                return;
+            }
         }
     }
 }
