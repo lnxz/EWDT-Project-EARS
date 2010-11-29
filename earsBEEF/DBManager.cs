@@ -334,7 +334,7 @@ namespace EARS
                 conn.Close();
             }
             return false;
-        }#endregion
+        }
         public static bool DeleteStudent(int studentID)
         {
             SqlConnection conn = new SqlConnection();

@@ -194,6 +194,9 @@
                     ControlToValidate="tbxPwC2" ErrorMessage="Password Mismatch" ForeColor="Red"></asp:CompareValidator>
                 <br />
                 <br />
+                <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+                <br />
+                <br />
                 <asp:Button ID="btnConfirm" runat="server" onclick="btnConfirm_Click" 
                     Text="Confirm" />
                 <br />
