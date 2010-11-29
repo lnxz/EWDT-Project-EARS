@@ -1551,10 +1551,7 @@ namespace EARS
             }
             return s;
         }
-<<<<<<< .mine
-=======
 
->>>>>>> .r289
 #endregion
 
     }
