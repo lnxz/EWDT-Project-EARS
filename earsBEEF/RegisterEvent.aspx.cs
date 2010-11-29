@@ -11,13 +11,14 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            earsBEEF.Event e;
-            tbxName.Text = e.Name;
-            tbxVenue.Text = e.Venue;
-            tbxCategory.Text = EARS.DBManager.GetCategoryName(Convert.ToInt32(e.Category));
-            tbxDescription.Text = e.Descrip;
-            tbxEventDates.Text = e.EventDate;
-            tbxCCA.Text = EARS.DBManager.GetCCAName(e.CcaID);
+            //earsBEEF.Event e;
+            //tbxName.Text = e.Name;
+            //tbxVenue.Text = e.Venue;
+            //tbxCategory.Text = EARS.DBManager.GetCategoryName(Convert.ToInt32(e.Category));
+            //tbxDescription.Text = e.Descrip;
+            //tbxEventDates.Text = e.EventDate;
+            //tbxCCA.Text = EARS.DBManager.GetCCAName(e.CcaID);
+
         }
 
         protected void btnReg_Click(object sender, EventArgs e)
