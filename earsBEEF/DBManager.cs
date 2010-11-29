@@ -18,9 +18,16 @@ namespace EARS
         // SHAUN LAPTOP
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
+<<<<<<< .mine
+      //  public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
+        #endregion 
+=======
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
         public const string DBCONNSTR = @"Data Source=.\;AttachDbFilename=C:\Users\ewdt\Desktop\EWDTProject.mdf;User ID=sa;Password=imsa";
 #endregion
+>>>>>>> .r298
+
 
         #region Administrative, students/Staff 
         public static ArrayList GetAllStudents()
@@ -337,14 +344,19 @@ namespace EARS
             return false;
 
         }
+<<<<<<< .mine
+
+=======
         #endregion
 
 
 
+>>>>>>> .r298
         public static bool DeleteStudent(int studentID)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
+            Boolean successful = false;
             try
             {
                 //Connect
@@ -357,20 +369,19 @@ namespace EARS
                 //Excute SQL  command 
                 int rowsDeleted = (int)comm.ExecuteNonQuery();
                 if (rowsDeleted > 0)
-                    return true;
-                else
-                    return false;
+                    successful =  true;
+
             }
             catch (SqlException ex)
             {
-                Console.WriteLine(ex.Message);
+                
             }
             finally
             {
                 //close connection
                 conn.Close();
             }
-            return false;
+            return successful;
 
         }
         public static bool UpdateStudent(int studentID, Student updatedStudent)
@@ -1591,7 +1602,6 @@ namespace EARS
             }
             return s;
         }
-
 #endregion
     
     }
