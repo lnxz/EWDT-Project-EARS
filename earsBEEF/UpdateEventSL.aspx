@@ -228,7 +228,8 @@
         </table>
                 <strong>
                 <br />
-                &nbsp;<asp:Button ID="btnDelete" runat="server" Text="Delete" />
+                &nbsp;<asp:Button ID="btnDelete" runat="server" Text="Delete" 
+                    onclick="btnDelete_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnUpdate" runat="server" onclick="btnConfirm_Click" 
                     Text="Update" />

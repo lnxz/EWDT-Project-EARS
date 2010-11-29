@@ -19,7 +19,7 @@ namespace EARS
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
         public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
-#endregion
+
 
         #region Administrative, students/Staff 
         public static ArrayList GetAllStudents()
@@ -1484,11 +1484,11 @@ namespace EARS
             }
             return s;
         }
-<<<<<<< .mine
+
 #endregion
 
         //check if category existed in db
-        public static bool AddCategory (string name)
+        public static bool CheckCategory (string name)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;

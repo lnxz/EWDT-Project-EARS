@@ -70,8 +70,8 @@
                 </td>
             <td>
                 
-                <asp:Button ID="Button2" runat="server" Text="Cancel" align="right" 
-                    Width="80px" />
+                <asp:Button ID="Cancel" runat="server" Text="Cancel" align="right" 
+                    Width="80px" onclick="Button2_Click" />
             </td>
             <td>
                 &nbsp;</td>
