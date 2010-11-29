@@ -11,6 +11,7 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             //earsBEEF.Event e;
             //tbxName.Text = e.Name;
             //tbxVenue.Text = e.Venue;
