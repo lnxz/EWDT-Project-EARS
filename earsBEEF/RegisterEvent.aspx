@@ -56,71 +56,72 @@
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="Label1" runat="server" Text="Name : "></asp:Label>
+                <asp:Label ID="lblName" runat="server" Text="Name : "></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbxName" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td class="style9">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="Label2" runat="server" Text="Venue :"></asp:Label>
+                <asp:Label ID="lblVenue" runat="server" Text="Venue :"></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="TextBox2" runat="server" Height="39px" Width="204px"></asp:TextBox>
+                <asp:TextBox ID="tbxVenue" runat="server" Enabled="False" Height="39px" 
+                    Width="204px"></asp:TextBox>
             </td>
             <td class="style9">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="Label3" runat="server" Text="Registration Cost :"></asp:Label>
+                <asp:Label ID="lblRegistration" runat="server" Text="Registration Cost :"></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbxRegCost" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td class="style9">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="Label4" runat="server" Text="Category : "></asp:Label>
+                <asp:Label ID="lblCategory" runat="server" Text="Category : "></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbxCategory" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td class="style9">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style3">
-                <asp:Label ID="Label5" runat="server" Text="Description:"></asp:Label>
+                <asp:Label ID="lblDesc" runat="server" Text="Description:"></asp:Label>
             </td>
             <td class="style7">
-                <asp:TextBox ID="TextBox5" runat="server" Height="86px" TextMode="MultiLine" 
-                    Width="382px"></asp:TextBox>
+                <asp:TextBox ID="tbxDescription" runat="server" Enabled="False" Height="86px" 
+                    TextMode="MultiLine" Width="382px"></asp:TextBox>
             </td>
             <td class="style4">
             </td>
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="Label6" runat="server" Text="Event Dates :"></asp:Label>
+                <asp:Label ID="lblEvent" runat="server" Text="Event Dates :"></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbxEventDates" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td class="style9">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
-                <asp:Label ID="Label7" runat="server" Text="CCA : "></asp:Label>
+                <asp:Label ID="lblCCA" runat="server" Text="CCA : "></asp:Label>
             </td>
             <td class="style6">
-                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbxCCA" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td class="style9">
                 &nbsp;</td>
@@ -150,10 +151,10 @@
             <td class="style6">
                 &nbsp;</td>
             <td class="style9">
-                <asp:Button ID="Button3" runat="server" Text="Register" />
+                <asp:Button ID="btnReg" runat="server" onclick="btnReg_Click" Text="Register" />
             </td>
             <td>
-                <asp:Button ID="Button2" runat="server" Text="Cancel" />
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
             </td>
         </tr>
     </table>
