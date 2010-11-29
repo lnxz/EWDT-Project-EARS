@@ -11,7 +11,9 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EARS.DBManager.AddStudentRegisterEvent(
+            int eventID = 0;//edit as necessary
+            EARS.Student s = (EARS.Student)(this.Session["Login"]);
+            EARS.DBManager.AddStudentRegisterEvent(s.StudentID, eventID);
         }
     }
 }
