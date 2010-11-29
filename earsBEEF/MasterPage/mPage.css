@@ -6,16 +6,13 @@ body
 	font-family: "Adobe Garamond Pro Bold" , Georgia, "Times New Roman" , Times, serif;
 	font-size: 13px;
 	color: #061C37;
+    background: #014D5D url(background.png);
+	background-repeat: repeat-x;
 
-	background: #014D5D url(background.png);
-	background-repeat: repeat
-
-*
-{
+}
 
 *
 {
-  border-width: 0px;
     margin: 0 auto;
     text-align:left;
 	font-size: medium;
@@ -263,5 +260,9 @@ html, body
 {
 	text-align: center;
     text-decoration: underline;
-}
+};
+    background-attachment: scroll;
+    background-position: 0% 0%;;
+    background-color: #014D5D;
+    background-image: url('background.png');
 
