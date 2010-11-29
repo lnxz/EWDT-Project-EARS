@@ -102,6 +102,7 @@
     <Content Include="UpdateEventSL.aspx" />
     <Content Include="ViewEvents.aspx" />
     <Content Include="ViewEventStud.aspx" />
+    <Content Include="ViewPastEventStud.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -327,6 +328,13 @@
     </Compile>
     <Compile Include="ViewEventStud.aspx.designer.cs">
       <DependentUpon>ViewEventStud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPastEventStud.aspx.cs">
+      <DependentUpon>ViewPastEventStud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPastEventStud.aspx.designer.cs">
+      <DependentUpon>ViewPastEventStud.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
