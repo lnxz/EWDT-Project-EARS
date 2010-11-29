@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" ForeColor="#333333" 
-        GridLines="None" onselectedindexchanged="GridView1_SelectedIndexChanged" 
+        GridLines="None" 
         Width="75%" Height="62px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -31,9 +31,4 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:EWDTProjectConnectionString %>" 
-        
-        SelectCommand="SELECT [Name], [Venue], [RegistrationCost], [EventDates], [RegistrationStart], [RegistrationEnd] FROM [Event]">
-    </asp:SqlDataSource>
-</asp:Content>
+    </asp:Content>
