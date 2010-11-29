@@ -20,11 +20,7 @@ namespace earsBEEF
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-<<<<<<< .mine
-            //EARS.DBManager.AddCategory(string 
-=======
-           // EARS.DBManager.AddCategory(string 
->>>>>>> .r298
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)

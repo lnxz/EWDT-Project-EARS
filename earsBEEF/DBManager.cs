@@ -18,18 +18,15 @@ namespace EARS
         // SHAUN LAPTOP
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-<<<<<<< .mine
-      //  public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
-        #endregion 
-=======
-        //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
-        public const string DBCONNSTR = @"Data Source=.\;AttachDbFilename=C:\Users\ewdt\Desktop\EWDTProject.mdf;User ID=sa;Password=imsa";
-#endregion
->>>>>>> .r298
+
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        // public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
+        #endregion
 
 
-        #region Administrative, students/Staff 
+
+
+        #region Administrative, students/Staff
         public static ArrayList GetAllStudents()
         {
             ArrayList results = new ArrayList();
@@ -306,7 +303,7 @@ namespace EARS
             }
             return rowsAdded;
         }
-         //checks if admin no. is being used.
+        //checks if admin no. is being used.
         public static bool CheckAdmin(string adminNo)
         {
             SqlConnection conn = new SqlConnection();
@@ -344,14 +341,12 @@ namespace EARS
             return false;
 
         }
-<<<<<<< .mine
 
-=======
         #endregion
 
 
 
->>>>>>> .r298
+
         public static bool DeleteStudent(int studentID)
         {
             SqlConnection conn = new SqlConnection();
@@ -369,12 +364,12 @@ namespace EARS
                 //Excute SQL  command 
                 int rowsDeleted = (int)comm.ExecuteNonQuery();
                 if (rowsDeleted > 0)
-                    successful =  true;
+                    successful = true;
 
             }
             catch (SqlException ex)
             {
-                
+
             }
             finally
             {
@@ -434,7 +429,7 @@ namespace EARS
 
         }
 
-        
+
         #region Events&Notifications
         public static ArrayList GetAllEvents()
         {
@@ -452,7 +447,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Events";
+                comm.CommandText = "SELECT * FROM Event";
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
@@ -462,7 +457,7 @@ namespace EARS
                     int eventID = Convert.ToInt32(dr["EventID"].ToString());
                     string name = dr["Name"].ToString();
                     string venue = dr["Venue"].ToString();
-                    double regCost = Convert.ToInt32(dr["RegistrationCost"].ToString());
+                    double regCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
                     string category = dr["CategoryID"].ToString();
                     string descrip = dr["Description"].ToString();
                     string eventDate = dr["eventDates"].ToString();
@@ -577,7 +572,7 @@ namespace EARS
             }
             return rowsAdded;
         }
-         public static ArrayList GetAllEventNotifications()
+        public static ArrayList GetAllEventNotifications()
         {
 
 
@@ -656,7 +651,7 @@ namespace EARS
             }
             return rowsAdded;
         }
-             public static ArrayList GetAllStudentRegisterEvent()
+        public static ArrayList GetAllStudentRegisterEvent()
         {
 
 
@@ -737,10 +732,10 @@ namespace EARS
 
         }
 
-#endregion
+        #endregion
 
         #region Announcements
-     public static ArrayList GetAllAnnouncements()
+        public static ArrayList GetAllAnnouncements()
         {
 
             ArrayList results = new ArrayList();
@@ -896,7 +891,7 @@ namespace EARS
             }
             return rowsAdded;
         }
-#endregion
+        #endregion
 
         #region Category
         public static ArrayList GetAllCategory()
@@ -943,7 +938,7 @@ namespace EARS
         }
         public static string GetCategoryName(int categoryID)
         {
-             // Establish connection with database
+            // Establish connection with database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             string cateName = "";
@@ -960,7 +955,7 @@ namespace EARS
                 comm.Parameters.AddWithValue("@CategoryID", categoryID);  // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                   cateName = (dr["Name"].ToString());               
+                    cateName = (dr["Name"].ToString());
                 }
             }
             catch (SqlException ex)
@@ -973,7 +968,7 @@ namespace EARS
                 conn.Close();
             }
             return cateName;
-        } 
+        }
         public static int AddCategory(string name)
         {
             int rowsAdded = -1;
@@ -1005,7 +1000,7 @@ namespace EARS
             return rowsAdded;
 
         }
-          //check if category name already exists
+        //check if category name already exists
         public static bool CheckCategoryName(string name)
         {
             SqlConnection conn = new SqlConnection();
@@ -1039,7 +1034,7 @@ namespace EARS
             }
             return found;
         }
-#endregion
+        #endregion
 
         #region CCA
         public static ArrayList GetAllCCA()
@@ -1188,7 +1183,7 @@ namespace EARS
                 conn.Close();
             }
             return results;
-        }       
+        }
         public static ArrayList GetCCAofStaff(int staffID)
         {
             ArrayList results = new ArrayList();
@@ -1269,7 +1264,7 @@ namespace EARS
         }
         public static string GetCCAName(int CCAID)
         {
-             // Establish connection with database
+            // Establish connection with database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
             string CCAName = "";
@@ -1286,7 +1281,7 @@ namespace EARS
                 comm.Parameters.AddWithValue("@CCAID", CCAID);  // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                   CCAName = (dr["Name"].ToString());               
+                    CCAName = (dr["Name"].ToString());
                 }
             }
             catch (SqlException ex)
@@ -1299,9 +1294,9 @@ namespace EARS
                 conn.Close();
             }
             return CCAName;
-        } 
+        }
 
-#endregion
+        #endregion
 
         #region Password Changing
         // Password Changing ~
@@ -1602,7 +1597,7 @@ namespace EARS
             }
             return s;
         }
-#endregion
-    
+        #endregion
+
     }
 }
