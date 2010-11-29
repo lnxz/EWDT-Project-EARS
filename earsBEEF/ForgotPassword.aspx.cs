@@ -13,18 +13,17 @@ namespace EARS
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
+        string id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            mv.ActiveViewIndex = 0;
+            mv.ActiveViewIndex = 1;
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string id = tbxId.Text;
+            id = tbxId.Text;
             string email = tbxEmail.Text;
 
-            if (Session["LoginType"].Equals("Student"))
-            {
                 // check student
                 EARS.Student s = DBManager.ValidatePasswordStud(id, email);
 
@@ -47,7 +46,7 @@ namespace EARS
                     MailMessage mail = new System.Net.Mail.MailMessage();
                     // set the log in authentication for the email so that can send email to others
                     // login and password for email.
-                    NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "earsbeef");
+                    NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "ewdtears");
 
                     mail.To.Add(email); // add the receipt email
                     mail.Subject = "Password for EARs System"; // add email subject
@@ -75,9 +74,6 @@ namespace EARS
                 {
                     Label5.Text = "Login ID and Email Unmatch";
                 }
-            }
-            else if (Session["LoginType"].Equals("Staff"))
-            {
 
                 // check staff
                 EARS.Staff t = DBManager.ValidatePasswordStaff(tbxId.Text, tbxEmail.Text);
@@ -98,7 +94,7 @@ namespace EARS
                     MailMessage mail = new System.Net.Mail.MailMessage();
                     // set the log in authentication for the email so that can send email to others
                     // login and password for email.
-                    NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "earsbeef");
+                    NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "ewdtears");
 
                     mail.To.Add(email); // add the receipt email
                     mail.Subject = "Password for EARs System"; // add email subject
@@ -121,17 +117,15 @@ namespace EARS
                     Label5.Text = "Login ID and Email Unmatch";
                 }
             }
-        }
+        // done ^^^^^
 
         protected void btnSubmit1_Click(object sender, EventArgs e)
         {
             string pe = tbxPEmail.Text;
-            string id1 = tbxId.Text;
+            id = tbxId.Text;
             // check student
 
-            if (Session["LoginType"].Equals("Student"))
-            {
-                EARS.Student s = DBManager.GetPasswordStud(id1, pe);
+                EARS.Student s = DBManager.GetPasswordStud(id, pe);
 
                 if (s != null)
                 {
@@ -141,58 +135,50 @@ namespace EARS
                 {
                     Label6.Text = "Invalid Email Password, Please Confirm the Password";
                 }
-            }
-            else if (Session["LoginType"].Equals("Staff"))
-            {
-                    // check staff
-                    EARS.Staff sta = DBManager.GetPasswordStaff(id1, pe);
 
-                    if (sta != null)
-                    {
-                        mv.ActiveViewIndex = 2;
-                    }
-                    else
-                    {
-                        Label6.Text = "Invalid Email Password, Please Confirm the Password";
+                //check staff
+                EARS.Staff sta = DBManager.GetPasswordStaff(id, pe);
+
+                if (sta != null)
+                {
+                      mv.ActiveViewIndex = 2;
                 }
-            }
+                else
+                {
+                     Label6.Text = "Invalid Email Password, Please Confirm the Password";
+                }
 
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             string p = tbxPwC2.Text;
-            string id2 = tbxId.Text;
+            id = tbxId.Text;
 
             // change student password
-            EARS.Student stu = DBManager.GetPasswordStud(id2,p);
+            EARS.Student stu = DBManager.GetPasswordStud(id, p);
 
-            if (Session["LoginType"].Equals("Student"))
-            {
                 if (stu != null)
                 {
-                    EARS.Student stu1 = DBManager.UpdatePasswordStud(id2, p);
+                    EARS.Student stu1 = DBManager.UpdatePasswordStud(id, p);
                 }
                 else
                 {
                     Label7.Text = "Error";
                 }
-            }
-            else if (Session["LoginType"].Equals("Staff"))
-            {
+          
 
                 // change staff password
-                EARS.Staff staff = DBManager.GetPasswordStaff(id2, p);
+                EARS.Staff staff = DBManager.GetPasswordStaff(id, p);
 
                 if (staff != null)
                 {
-                    EARS.Staff sta1 = DBManager.ValidatePasswordStaff(id2, p);
+                    EARS.Staff sta1 = DBManager.ValidatePasswordStaff(id, p);
                 }
                 else
                 {
                     Label7.Text = "Error";
                 }
-            }
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

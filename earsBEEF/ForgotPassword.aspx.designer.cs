@@ -103,15 +103,6 @@ namespace EARS {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail0;
         
         /// <summary>
-        /// revEmail0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail0;
-        
-        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>

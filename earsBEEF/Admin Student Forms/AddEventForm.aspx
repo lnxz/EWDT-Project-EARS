@@ -51,9 +51,9 @@
             width: 749px;
             color: #000000;
         }
-        .style33
+        .style34
         {
-            text-decoration: none;
+            width: 395px;
         }
     </style>
 </asp:Content>
@@ -285,6 +285,27 @@
                 &nbsp;</td>
         </tr>
     </table>
+<br />
+<br />
+    <table style="width:100%;">
+        <tr>
+            <td class="style34">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style34">
+                <asp:FileUpload ID="FileUpload2" runat="server" />
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+<br />
+<br />
+<br />
+<br />
     <table style="width:100%;">
         <tr>
             <td class="style25">

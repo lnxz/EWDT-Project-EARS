@@ -1310,7 +1310,7 @@ namespace EARS
                 comm.CommandText = "SELECT * FROM Student where AdminNo = @adminNo and Email = @email";
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@adminNo", login);
-                comm.Parameters.AddWithValue("@password", lemail);
+                comm.Parameters.AddWithValue("@email", lemail);
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
@@ -1504,7 +1504,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT AdminNo, Password FROM Student where Password = @p, AdminNo = @a";
+                comm.CommandText = "SELECT * FROM Student where Password = @p AND AdminNo = @a";
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@p", pass);
                 comm.Parameters.AddWithValue("@a", admin);
