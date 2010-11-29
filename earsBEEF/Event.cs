@@ -10,29 +10,29 @@ namespace earsBEEF
         private int eventID;
         private string name;
         private string venue;
-        private double regCost;
+        private double registrationCost;
         private string category;
         private string descrip;
         private string eventDate;
-        private DateTime regStart;
-        private DateTime regEnd;
+        private DateTime registrationStart;
+        private DateTime registrationEnd;
         private int quota;
         private int ccaID;
         private int orgStudID;
         private int orgStaffID;
         private DateTime dateCreated;
 
-        public Event(string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        public Event(string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
         {
            
             this.name = name;
             this.venue = venue;
-            this.regCost = regcost;
+            this.registrationCost = registrationCost;
             this.category = category;
             this.descrip = descrip;
             this.eventDate = eventdate;
-            this.regStart = regstart;
-            this.regEnd = regend;
+            this.registrationStart = registrationStart;
+            this.registrationEnd = registrationEnd;
             this.quota = quota;
             this.ccaID = ccaID;
             this.orgStaffID = orgstaffID;
@@ -41,17 +41,17 @@ namespace earsBEEF
         }
       
 
-        public Event(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime regstart, DateTime regend, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        public Event(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
         {
             this.eventID = eventID;
             this.name = name;
             this.venue = venue;
-            this.regCost = regcost;
+            this.registrationCost = regcost;
             this.category = category;
             this.descrip = descrip;
             this.eventDate = eventdate;
-            this.regStart = regstart;
-            this.regEnd = regend;
+            this.registrationStart = registrationStart;
+            this.registrationEnd = registrationEnd;
             this.quota = quota;
             this.ccaID = ccaID;
             this.orgStaffID = orgstaffID;
@@ -77,10 +77,10 @@ namespace earsBEEF
             set { venue = value; }
         }
 
-        public double RegCost
+        public double RegistrationCost
         {
-            get { return regCost; }
-            set { regCost = value; }
+            get { return registrationCost; }
+            set { registrationCost = value; }
         }
 
         public string Category
@@ -101,16 +101,16 @@ namespace earsBEEF
             set { eventDate = value; }
         }
 
-        public DateTime RegStart
+        public DateTime RegistrationStart
         {
-            get { return regStart; }
-            set { regStart = value; }
+            get { return registrationStart; }
+            set { registrationStart = value; }
         }
 
-        public DateTime RegEnd
+        public DateTime RegistrationEnd
         {
-            get { return regEnd; }
-            set { regEnd = value; }
+            get { return registrationEnd; }
+            set { registrationEnd = value; }
         }
 
         public int Quota

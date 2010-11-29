@@ -16,10 +16,9 @@ namespace EARS
         // GWEN LAPTOP
         //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP
-        //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
+        public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        // public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
         // public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
         #endregion
 
@@ -457,19 +456,33 @@ namespace EARS
                     int eventID = Convert.ToInt32(dr["EventID"].ToString());
                     string name = dr["Name"].ToString();
                     string venue = dr["Venue"].ToString();
-                    double regCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
+                    double registrationCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
                     string category = dr["CategoryID"].ToString();
                     string descrip = dr["Description"].ToString();
                     string eventDate = dr["eventDates"].ToString();
                     DateTime regStart = DateTime.Parse(dr["RegistrationStart"].ToString());
                     DateTime regend = DateTime.Parse(dr["RegistrationEnd"].ToString());
                     int quota = Convert.ToInt32(dr["Quota"].ToString());
-                    int ccaID = Convert.ToInt32(dr["CCAID"].ToString());
-                    int orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
-                    int orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
+                    int ccaID = -1;
+                    int orgStudID = -1;
+                    int orgStaffID = -1;
+                    
+                    if (dr["CCAID"].Equals(null))
+                    {
+                         ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    }
+                    if (dr["OrgStudentID"].Equals(null))
+                    {
+
+                         orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
+                    }
+                    if (dr["OrgStaffID"].Equals(null))
+                    {
+                         orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
+                    }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    earsBEEF.Event b = new earsBEEF.Event(eventID, name, venue, regCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+                    earsBEEF.Event b = new earsBEEF.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
                     results.Add(b);
                 }
             }
