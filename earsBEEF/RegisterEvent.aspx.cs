@@ -14,10 +14,10 @@ namespace earsBEEF
             earsBEEF.Event e;
             tbxName.Text = e.Name;
             tbxVenue.Text = e.Venue;
-            tbxCategory.Text = EARS.DBManager.GetCategoryName(e.Category);
+            tbxCategory.Text = EARS.DBManager.GetCategoryName(Convert.ToInt32(e.Category));
             tbxDescription.Text = e.Descrip;
             tbxEventDates.Text = e.EventDate;
-            tbxCCA.Text = 
+            tbxCCA.Text = EARS.DBManager.GetCCAName(e.CcaID);
         }
 
         protected void btnReg_Click(object sender, EventArgs e)
