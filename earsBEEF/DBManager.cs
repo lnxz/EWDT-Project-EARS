@@ -778,6 +778,7 @@ namespace EARS
             }
             return results;
         }
+        //Register for event ( Student )
         public static int AddStudentRegisterEvent(int studentID, int eventID)
         {
             int rowsAdded = -1;
