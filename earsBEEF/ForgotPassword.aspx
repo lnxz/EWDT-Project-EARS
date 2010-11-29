@@ -115,10 +115,6 @@
                                             ControlToValidate="tbxEmail" CssClass="style4" 
                                             ErrorMessage="Please enter Email " ForeColor="Red"></asp:RequiredFieldValidator>
                                         <br />
-                                        <asp:RegularExpressionValidator ID="revEmail0" runat="server" 
-                                            ControlToValidate="tbxEmail" CssClass="style4" 
-                                            ErrorMessage="Please Input Valid Email" ForeColor="Red" 
-                                            ValidationExpression="\w+([-+.']\w+)*@student.tp.edu.sg*"></asp:RegularExpressionValidator>
                                     </td>
                                 </tr>
                             </table>
