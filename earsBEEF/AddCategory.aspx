@@ -5,6 +5,13 @@
         {
             width: 485px;
         }
+        .style3
+        {
+            width: 323px;
+        }
+        .style4
+        {
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -33,21 +40,17 @@
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
             </td>
-            <td>
+            <td class="style4" colspan="2">
                     </br>
                     </br>
                 </br>
                 </br>
                 <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged" 
-                    Width="300px" Height="19px"></asp:TextBox>
+                    Width="296px" Height="27px"></asp:TextBox>
                     </br>
                     </br>
-                <asp:Button ID="btnAdd" runat="server" Text="Add" Height="25px" 
-                    Width="95px" onclick="btnAdd_Click" />
                 <br />
                 <br />
-                    <asp:Button ID="btnDelete" runat="server" onclick="btnDelete_Click" 
-                        Text="Delete" Width="95px" />
                 <br />
                 <br />
                 <br />
@@ -55,7 +58,19 @@
                 <br />
                 <br />
                 
-                <asp:Button ID="Button2" runat="server" Text="Back" align="right" 
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+                &nbsp;</td>
+            <td class="style4">
+                
+                <asp:Button ID="btnAdd" runat="server" Text="Add" Height="25px" 
+                    Width="95px" onclick="btnAdd_Click" />
+                </td>
+            <td>
+                
+                <asp:Button ID="Button2" runat="server" Text="Cancel" align="right" 
                     Width="80px" />
             </td>
             <td>
@@ -64,16 +79,7 @@
         <tr>
             <td class="style2">
                 &nbsp;</td>
-            <td>
-                
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style2">
-                &nbsp;</td>
-            <td>
+            <td class="style4">
                 &nbsp;</td>
             <td align="left">
                 &nbsp;</td>

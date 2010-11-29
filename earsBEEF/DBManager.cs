@@ -14,11 +14,11 @@ namespace EARS
         // LEVEL 5 LAB
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
         // GWEN LAPTOP
-        public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
+        //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-        //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
 
         public static ArrayList GetAllStudents()
         {
@@ -1467,6 +1467,43 @@ namespace EARS
                 conn.Close();
             }
             return s;
+        }
+        //check if category existed in db
+        public static bool AddCategory (string name)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQl command 
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Category WHERE name  = @Name";
+                comm.Parameters.AddWithValue("@Name", name);
+                comm.Connection = conn;
+                //Excute SQL  command 
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //close connection
+                conn.Close();
+            }
+            return false;
         }
     }
 }
