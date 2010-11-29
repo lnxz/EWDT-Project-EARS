@@ -292,14 +292,16 @@
             <td class="style34">
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
+                <asp:Label ID="lbfile" runat="server" Text="Label"></asp:Label>
+            </td>
         </tr>
         <tr>
             <td class="style34">
-                <asp:FileUpload ID="FileUpload2" runat="server" />
+                <asp:FileUpload ID="uploadFile" runat="server" />
             </td>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="btnAdd" runat="server" onclick="btnAdd_Click" Text="add" />
+            </td>
         </tr>
     </table>
 <br />
