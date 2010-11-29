@@ -881,6 +881,150 @@ namespace EARS
         }
 #endregion
 
+        #region Category
+        public static ArrayList GetAllCategory()
+        {
+
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Category order by Name";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int categoryID = Convert.ToInt32(dr["CategoryID"].ToString());
+                    string name = dr["Name"].ToString();
+
+
+                    earsBEEF.Category c = new earsBEEF.Category(categoryID, name);
+                    results.Add(c);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+        public static string GetCategoryName(string categoryID)
+        {
+             // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            string cateName = "";
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT Name FROM Category where CategoryID = @CategoryID";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();
+                comm.Parameters.AddWithValue("@CategoryID", categoryID);  // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                   cateName = (dr["Name"].ToString());               
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return cateName;
+        } 
+        public static int AddCategory(string name)
+        {
+            int rowsAdded = -1;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Cateogry(name) VALUES(@c)";
+
+                comm.Parameters.AddWithValue("@c", name);
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return rowsAdded;
+
+        }
+          //check if category name already exists
+        public static bool CheckCategoryName(string name)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Boolean found = false;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQl command 
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Category WHERE name  = @Name";
+                comm.Parameters.AddWithValue("@Name", name);
+                comm.Connection = conn;
+                //Excute SQL  command 
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    found = true;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //close connection
+                conn.Close();
+            }
+            return found;
+        }
+#endregion
+
+        #region CCA
         public static ArrayList GetAllCCA()
         {
 
@@ -957,79 +1101,6 @@ namespace EARS
             }
             return rowsAdded;
         }
-        public static ArrayList GetAllCategory()
-        {
-
-
-            ArrayList results = new ArrayList();
-
-            // Establish connection with database
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-
-            try
-            {
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Category order by Name";
-                comm.Connection = conn;
-                // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
-                while (dr.Read())   //read row by row
-                {
-
-                    int categoryID = Convert.ToInt32(dr["CategoryID"].ToString());
-                    string name = dr["Name"].ToString();
-
-
-                    earsBEEF.Category c = new earsBEEF.Category(categoryID, name);
-                    results.Add(c);
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return results;
-        }
-        public static int AddCategory(string name)
-        {
-            int rowsAdded = -1;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-            try
-            {
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Cateogry(name) VALUES(@c)";
-
-                comm.Parameters.AddWithValue("@c", name);
-
-                comm.Connection = conn;
-                // Step 3: Execute the sql command
-                rowsAdded = (int)comm.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return rowsAdded;
-
-        }
         public static int AddCCAStudent(int ccaID, int studentID, char isLeader)
         {
             int rowsAdded = -1;
@@ -1100,11 +1171,7 @@ namespace EARS
                 conn.Close();
             }
             return results;
-        }
-  
-
-  
-       
+        }       
         public static ArrayList GetCCAofStaff(int staffID)
         {
             ArrayList results = new ArrayList();
@@ -1183,8 +1250,8 @@ namespace EARS
             }
             return results;
         }
-        // Announcement
-   
+#endregion
+
         #region Password Changing
         // Password Changing ~
         // Validate login and email for students
@@ -1436,7 +1503,7 @@ namespace EARS
 
         }
         // Retrieve password from Staff  
-        /public static Staff GetPasswordStaff(string email, string pass)
+        public static Staff GetPasswordStaff(string email, string pass)
         {
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -1484,45 +1551,11 @@ namespace EARS
             }
             return s;
         }
+<<<<<<< .mine
+=======
 
+>>>>>>> .r289
 #endregion
 
-        //check if category existed in db
-        public static bool CheckCategory (string name)
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-            try
-            {
-                //Connect
-                conn.Open();
-                //prepare SQl command 
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Category WHERE name  = @Name";
-                comm.Parameters.AddWithValue("@Name", name);
-                comm.Connection = conn;
-                //Excute SQL  command 
-                SqlDataReader dr = comm.ExecuteReader();
-                if (dr.Read())
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                //close connection
-                conn.Close();
-            }
-            return false;
-        }
     }
 }

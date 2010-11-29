@@ -11,6 +11,14 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            earsBEEF.Event e;
+            tbxName.Text = e.Name;
+            tbxVenue.Text = e.Venue;
+            tbxRegCost.Text = EARS.DBManager.GetCategoryName(e.Category);
+        }
+
+        protected void btnReg_Click(object sender, EventArgs e)
+        {
             int eventID = 0;//edit as necessary
             EARS.Student s = (EARS.Student)(this.Session["Login"]);
             EARS.DBManager.AddStudentRegisterEvent(s.StudentID, eventID);
