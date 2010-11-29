@@ -924,7 +924,7 @@ namespace EARS
             }
             return results;
         }
-        public static string GetCategoryName(string categoryID)
+        public static string GetCategoryName(int categoryID)
         {
              // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -968,7 +968,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Cateogry(name) VALUES(@c)";
+                comm.CommandText = "INSERT INTO Category(name) VALUES(@c)";
 
                 comm.Parameters.AddWithValue("@c", name);
 
@@ -1250,6 +1250,40 @@ namespace EARS
             }
             return results;
         }
+        public static string GetCCAName(int CCAID)
+        {
+             // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            string CCAName = "";
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT Name FROM CCA where CCAID = @CCAID";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();
+                comm.Parameters.AddWithValue("@CCAID", CCAID);  // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                   CCAName = (dr["Name"].ToString());               
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return CCAName;
+        } 
+
 #endregion
 
         #region Password Changing
