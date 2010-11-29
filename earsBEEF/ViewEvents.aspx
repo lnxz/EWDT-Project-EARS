@@ -12,13 +12,14 @@
             <asp:BoundField DataField="Venue" HeaderText="Venue" SortExpression="Venue" />
             <asp:BoundField DataField="RegistrationCost" HeaderText="RegistrationCost" 
                 SortExpression="RegistrationCost" />
-            <asp:BoundField DataField="EventDates" HeaderText="EventDates" 
-                SortExpression="EventDates">
+            <asp:BoundField DataField="EventDate" HeaderText="EventDate" 
+                SortExpression="EventDate">
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationStart" HeaderText="RegistrationStart" 
                 SortExpression="RegistrationStart" />
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
                 SortExpression="RegistrationEnd"></asp:BoundField>
+            <asp:ButtonField Text="Register" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
