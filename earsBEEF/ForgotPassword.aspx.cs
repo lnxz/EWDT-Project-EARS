@@ -4,9 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
 using System.Net.Mail;
-using System.Net.Mime;
-//using System.Web.Mail.SmtpMail;
 
 
 
@@ -42,30 +41,32 @@ namespace EARS
 
                 EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
 
+                // create a email object
+                 MailMessage mail = new System.Net.Mail.MailMessage();
+                // set the log in authentication for the email so that can send email to others
+                NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "earsbeef");
+
+                mail.To.Add(email); // add the receipt email
+                mail.Subject = "Password for EARs System"; // add email subject
+                mail.From = new System.Net.Mail.MailAddress("earsbeef@gmail.com"); // sender
+                mail.IsBodyHtml = true; // if there is a hyperlink set to true
+                mail.Body = "Here is your password for your account";
+
+                //gateway for email to be send
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                smtp.UseDefaultCredentials = false;
+                smtp.EnableSsl = true;
+                smtp.Credentials = cred;
+                smtp.Port = 587;
+                smtp.Send(mail);
                 
-                // Const ToAddress As String = "you@youremail.com";
-                //http://www.eggheadcafe.com/community/aspnet/7/10065297/send-email.aspx
-                //'(1) Create the MailMessage instance
-                //Dim mm As New MailMessage(UsersEmail.Text, ToAddress)
+                //MailMessage mail1 = new MailMessage("earsbeef@gmail.com",email,"Reset Password","Here is your new password");
+                //SmtpClient client = new SmtpClient("earsbeef@gmail.com",25);
+                //client.UseDefaultCredentials = true;
+                //client.Send(mail);
+                ////http://www.c-sharpcorner.com/uploadfile/scottlysle/emailattachmentscs08052008234321pm/emailattachmentscs.aspx
+                // mv.ActiveViewIndex = 1;
 
-                //'(2) Assign the MailMessage's properties
-                //mm.Subject = Subject.Text
-                //mm.Body = Body.Text
-                //mm.IsBodyHtml = False
-
-                //'(3) Create the SmtpClient object
-                //Dim smtp As New SmtpClient
-
-                //'(4) Send the MailMessage (will use the Web.config settings)
-                //smtp.Send(mm)
-                // http://www.stardeveloper.com/articles/display.html?article=2001082601&page=1
-                //send to email
-                MailMessage mail = new MailMessage("",email,"Reset Password","Here is your new password");
-                SmtpClient client = new SmtpClient("",25);
-                client.UseDefaultCredentials = true;
-                client.Send(mail);
-                //http://www.c-sharpcorner.com/uploadfile/scottlysle/emailattachmentscs08052008234321pm/emailattachmentscs.aspx
-                 mv.ActiveViewIndex = 1;
             }
             else
             {
