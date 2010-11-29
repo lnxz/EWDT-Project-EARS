@@ -44,13 +44,14 @@ namespace EARS
                 // create a email object
                  MailMessage mail = new System.Net.Mail.MailMessage();
                 // set the log in authentication for the email so that can send email to others
+                // login and password for email.
                 NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "earsbeef");
 
                 mail.To.Add(email); // add the receipt email
                 mail.Subject = "Password for EARs System"; // add email subject
                 mail.From = new System.Net.Mail.MailAddress("earsbeef@gmail.com"); // sender
                 mail.IsBodyHtml = true; // if there is a hyperlink set to true
-                mail.Body = "Here is your password for your account";
+                mail.Body = "Here is your email password for your account :" + p;
 
                 //gateway for email to be send
                 System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
