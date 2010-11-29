@@ -65,12 +65,12 @@
                 &nbsp;</td>
             <td class="style4">
                 
-                <asp:Button ID="btnAdd" runat="server" Text="Add" Height="25px" 
+                <asp:Button ID="btnCfm" runat="server" Text="Confirm" Height="25px" 
                     Width="95px" onclick="btnAdd_Click" />
                 </td>
             <td>
                 
-                <asp:Button ID="Cancel" runat="server" Text="Cancel" align="right" 
+                <asp:Button ID="Cancel" runat="server" Text="Cancel" 
                     Width="80px" onclick="Button2_Click" />
             </td>
             <td>

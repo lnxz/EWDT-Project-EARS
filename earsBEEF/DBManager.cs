@@ -18,7 +18,8 @@ namespace EARS
         // SHAUN LAPTOP
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        public const string DBCONNSTR = @"Data Source=.\;AttachDbFilename=C:\Users\ewdt\Desktop\EWDTProject.mdf;User ID=sa;Password=imsa";
 #endregion
 
         #region Administrative, students/Staff 
@@ -334,7 +335,12 @@ namespace EARS
                 conn.Close();
             }
             return false;
+
         }
+        #endregion
+
+
+
         public static bool DeleteStudent(int studentID)
         {
             SqlConnection conn = new SqlConnection();
@@ -416,7 +422,7 @@ namespace EARS
 
 
         }
-#endregion
+
         
         #region Events&Notifications
         public static ArrayList GetAllEvents()
