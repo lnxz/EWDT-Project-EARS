@@ -618,6 +618,7 @@ namespace EARS
             }
             return rowsAdded;
         }
+        // Gets students inside a CCA
         public static ArrayList GetCCAStudents(int ccaID)
         {
 
@@ -1043,7 +1044,6 @@ namespace EARS
             }
             return results;
         }
-
         // Announcement
         public static ArrayList GetAllAnnouncements()
         {
@@ -1169,8 +1169,8 @@ namespace EARS
             return results;
         }
 
-        // for change password forms.........
-        // telle with student login and email and staff
+        // Password Changing ~
+        // Validate login and email for students
         public static Student ValidatePasswordStud(string login, string lemail)
         {
             // Establish connection with database
@@ -1220,6 +1220,7 @@ namespace EARS
             }
             return s;
         }
+        // Validate email and personal email for staff
         public static Staff ValidatePasswordStaff(string email, string pemail)
         {
             // Establish connection with database
@@ -1268,7 +1269,7 @@ namespace EARS
             }
             return s;
         }
-        // update password from staff and student.
+        // Update Password for staff
         public static Staff UpdatePasswordStaff(string pass)
         {
             // Establish connection with database
@@ -1316,6 +1317,7 @@ namespace EARS
             }
             return s;
         }
+        // Update Password for Student
         public static Student UpdatePasswordStud(string admin, string pass)
         {
             // Establish connection with database
@@ -1365,7 +1367,7 @@ namespace EARS
             }
             return s;
         }
-        // retrieve password form staff and student.
+        // Retrieve password from Student
         public static Student GetPasswordStud(string admin, string pass)
         {
             // Establish connection with database
@@ -1416,6 +1418,7 @@ namespace EARS
             return s;
 
         }
+        // Retrieve password from Staff
         public static Staff GetPasswordStaff(string email, string pass)
         {
             // Establish connection with database
