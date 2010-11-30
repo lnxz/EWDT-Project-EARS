@@ -493,11 +493,9 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-<<<<<<< .mine
                     EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
-=======
-                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
->>>>>>> .r319
+                    
+
                     results.Add(b);
                 }
             }
