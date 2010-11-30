@@ -5,7 +5,13 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" ForeColor="#333333" 
         GridLines="None" 
+<<<<<<< .mine
+        Width="88%" Height="185px" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged" 
+        DataKeyNames="EventID" onrowcommand="GridView1_RowCommand">
+=======
         Width="88%" Height="185px">
+>>>>>>> .r321
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" 
@@ -26,7 +32,8 @@
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
                 SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
-            <asp:ButtonField Text="Register" ButtonType="Button" />
+            <asp:CommandField ButtonType="Button" SelectText="Register" 
+                ShowSelectButton="True" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

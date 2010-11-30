@@ -11,17 +11,8 @@ namespace earsBEEF
 
     public partial class AddEventForm : System.Web.UI.Page
     {
-<<<<<<< .mine
-=======
-
->>>>>>> .r316
         public static ArrayList eventDates = new ArrayList();
-<<<<<<< .mine
         public static int datesAdded = 0;
-
-=======
-
->>>>>>> .r316
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -156,45 +147,36 @@ namespace earsBEEF
                 string tempDate = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
                 if (eventDates.Count == 0)
                 {
-<<<<<<< .mine
                    ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-  
-=======
->>>>>>> .r316
                     eventDates.Add(tempDate);
-<<<<<<< .mine
                     lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
 =======
 <<<<<<< .mine
 
                     lbDate.Items.Add(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text);
                     datesAdded++;
-=======
                     ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+<<<<<<< .mine
+=======
 >>>>>>> .r319
 >>>>>>> .r316
+>>>>>>> .r321
                 }
 
                 for (int x = 0; x < eventDates.Count; x++)
                 {
-<<<<<<< .mine
                     ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-                    for (int x = 0; x < eventDates.Count; x++)
-=======
-                    if (eventDates[x].Equals(tempDate))
->>>>>>> .r316
+                    for (int j = 0; j < eventDates.Count; j++)
+                    if (eventDates[j].Equals(tempDate))
                     {
                         repeat = true;
                     }
-<<<<<<< .mine
                     if (repeat == false)
                     {
                         eventDates.Add(tempDate);
                         lbDate.Items.Add( DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                         datesAdded++;
                     }
-=======
->>>>>>> .r316
                 }
                 if (repeat == false)
                 {
