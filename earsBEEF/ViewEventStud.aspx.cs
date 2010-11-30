@@ -10,6 +10,17 @@ namespace earsBEEF
 {
     public partial class ViewEventStud : System.Web.UI.Page
     {
+<<<<<<< .mine
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    EARS.Event e = DBManager.GetAllEvents();
+        //    string eventName = lb
+        //}
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
+=======
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,10 +33,18 @@ namespace earsBEEF
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+>>>>>>> .r319
 
-        protected void btnReg_Click(object sender, EventArgs e)
-        {
+        //protected void btnReg_Click(object sender, EventArgs e)
+        //{
+        //    if (Session["LoginType"].Equals("Student"))
+        //    {
+        //        EARS.Student s = DBManager.GetAllStudents();
+        //    }
+        //}
 
+<<<<<<< .mine
+=======
             int x = 0;
             int y = 0;
 
@@ -47,5 +66,6 @@ namespace earsBEEF
 
             // if the event date crash prompt a warning
         }
+>>>>>>> .r319
     }
 }

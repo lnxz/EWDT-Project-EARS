@@ -29,21 +29,21 @@ namespace earsBEEF
             {
 
                 //initialize CCA dropdown list
-                ddlCate.Items.Clear();
+                ddlCCA.Items.Clear();
                 EARS.Staff s = (EARS.Staff)(Session["Login"]);
                 ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
                 ddlCCA.DataTextField = "Name";
-                //ddlCCA.DataValueField = "CcaID";
+                ddlCCA.DataValueField = "CCAID";
                 ddlCCA.DataBind();
             }
             else
             {
                 //initialize CCA dropdown list
-                ddlCate.Items.Clear();
+                ddlCCA.Items.Clear();
                 EARS.Student s = (EARS.Student)(Session["Login"]);
-                ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StudentID);
+                ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
                 ddlCCA.DataTextField = "Name";
-                //   ddlCCA.DataValueField = "CcaID";
+                ddlCCA.DataValueField = "CcaID";
                 ddlCCA.DataBind();
             }
 
@@ -163,11 +163,15 @@ namespace earsBEEF
 >>>>>>> .r316
                     eventDates.Add(tempDate);
 <<<<<<< .mine
+                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+=======
+<<<<<<< .mine
 
                     lbDate.Items.Add(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text);
                     datesAdded++;
 =======
                     ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+>>>>>>> .r319
 >>>>>>> .r316
                 }
 
@@ -195,7 +199,7 @@ namespace earsBEEF
                 if (repeat == false)
                 {
                     eventDates.Add(tempDate);
-                    ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                 }
             }
 
@@ -242,36 +246,38 @@ namespace earsBEEF
                 }
 
                 string eventDatesString = "";
-                for (int x = 0; x < eventDates.Count; x++)
+                for (int x = 0; x < lbDate.Items.Count; x++)
                 {
-                    eventDatesString = eventDatesString + eventDates[x] + ";";
+                    eventDatesString = eventDatesString + lbDate.Items[x].ToString();
                 }
+                 
 
                 if (Session["LoginType"].ToString().Equals("Staff"))
                 {
                     EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
-                    if (EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 2, DateTime.Today, tempStaff.StaffID) == 1)
-                    {
+                  EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 
+                      Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available") ;
+                    
                         tbxName.Text = "";
                         tbxVenue.Text = "";
                         tbxDes.Text = "";
                         tbxDol.Text = "";
                         tbxQuota.Text = "";
 
-                    }
+                    
                 }
                 else
                 {
                     EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
-                    if (EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 2, tempStudent.StudentID, DateTime.Today) == 1)
-                    {
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate,
+                        Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), tempStudent.StudentID, DateTime.Today, "Available");
+               
                         tbxName.Text = "";
                         tbxVenue.Text = "";
                         tbxDes.Text = "";
                         tbxDol.Text = "";
                         tbxQuota.Text = "";
 
-                    }
                 }
             }
 
@@ -433,10 +439,6 @@ namespace earsBEEF
 
         protected void ddlCate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (earsBEEF.Category c in EARS.DBManager.GetAllCategory())
-            {
-                ddlCate.Items.Add(c.Name);
-            }
         }
         protected void Page_PreInit()
         {
@@ -457,20 +459,16 @@ namespace earsBEEF
             tbxQuota.Text = "";
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
+        protected void btnRemove_Click(object sender, EventArgs e)
         {
-            //upload file
-            if (uploadFile.HasFile)
+            try
             {
-                uploadFile.SaveAs(@"C:\Users\ewdt.IT3746P24\Documents\Visual Studio 2010\Projects\earsBEEF\UploadFile" + uploadFile.FileName);
-                lbfile.Text = "File Uploaded: " + uploadFile.FileName;
-                //Image1.ImageUrl = (@"F:\School Work\Semester 2.2\Term 1\Yanteen Project\Enterprise Web Development and Testing(EWDT)\ClaimApp\" + FileUpload1.FileName);
+                lbDate.Items.RemoveAt(lbDate.SelectedIndex);
             }
-            else
+            catch (Exception)
             {
-                lbfile.Text = "No File Uploaded";
-                return;
             }
         }
+
     }
 }
