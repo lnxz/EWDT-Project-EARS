@@ -5,13 +5,10 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" ForeColor="#333333" 
         GridLines="None" 
-<<<<<<< .mine
         Width="88%" Height="185px" 
         onselectedindexchanged="GridView1_SelectedIndexChanged" 
         DataKeyNames="EventID" onrowcommand="GridView1_RowCommand">
-=======
-        Width="88%" Height="185px">
->>>>>>> .r321
+        
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" 
