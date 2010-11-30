@@ -261,6 +261,7 @@
     <Compile Include="RegisterEvent.aspx.designer.cs">
       <DependentUpon>RegisterEvent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SendEmail.cs" />
     <Compile Include="SiteMapAdmin.aspx.cs">
       <DependentUpon>SiteMapAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
