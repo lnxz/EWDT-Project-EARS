@@ -5,8 +5,7 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" ForeColor="#333333" 
         GridLines="None" 
-        Width="88%" Height="185px" 
-        onselectedindexchanged="GridView1_SelectedIndexChanged">
+        Width="88%" Height="185px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" 

@@ -8,6 +8,12 @@ namespace earsBEEF
     public class CCA
     {
         private int ccaID;
+
+        public int CcaID
+        {
+            get { return ccaID; }
+            set { ccaID = value; }
+        }
         private string name;
 
         public CCA(int ccaID, string name)
@@ -22,10 +28,6 @@ namespace earsBEEF
             set { name = value; }
         }
 
-        public int CcaID
-        {
-            get { return CcaID; }
-            set { CcaID = value; }
-        }
+
     }
 }

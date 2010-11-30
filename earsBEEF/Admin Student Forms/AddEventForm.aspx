@@ -51,10 +51,6 @@
             width: 749px;
             color: #000000;
         }
-        .style34
-        {
-            width: 395px;
-        }
         .style35
         {
             height: 53px;
@@ -100,7 +96,7 @@
                         <td class="style25">
                             CCA involved:</td>
                         <td class="style18" align="left">
-                            <asp:DropDownList ID="ddlCCA" runat="server" Height="17px" Width="218px">
+                            <asp:DropDownList ID="ddlCCA" runat="server" Height="31px" Width="219px">
                                 <asp:ListItem>No CCA</asp:ListItem>
                             </asp:DropDownList>
                         </td>
@@ -109,7 +105,7 @@
                         <td class="style25">
                             Category:</td>
                         <td class="style18" align="left">
-                            <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="218px" 
+                            <asp:DropDownList ID="ddlCate" runat="server" Height="33px" Width="220px" 
                                 onselectedindexchanged="ddlCate_SelectedIndexChanged">
                             </asp:DropDownList>
                               <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -169,7 +165,8 @@
                                         <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px" 
                                 Enabled="False">
                                         </asp:ListBox>
-                                        <asp:Button ID="btnRemove" runat="server" Text="Remove" Width="96px" />
+                                        <asp:Button ID="btnRemove" runat="server" Text="Remove" 
+                                Width="96px" onclick="btnRemove_Click" />
                         </td>
                     </tr>
                     <tr>
@@ -301,28 +298,6 @@
                 &nbsp;</td>
         </tr>
     </table>
-<br />
-<br />
-    <table style="width:100%;">
-        <tr>
-            <td class="style34">
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="lbfile" runat="server" Text="Label"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="style34">
-                <asp:FileUpload ID="uploadFile" runat="server" />
-            </td>
-            <td>
-                <asp:Button ID="btnAdd" runat="server" onclick="btnAdd_Click" Text="add" />
-            </td>
-        </tr>
-    </table>
-<br />
-<br />
-<br />
 <br />
     <table style="width:100%;">
         <tr>
