@@ -39,7 +39,7 @@
                             <table style="width:100%; margin-left: 0px;">
                                 <tr>
                                     <td class="style6" colspan="2">
-                                        <asp:Label ID="Label2" runat="server" Text="Name" 
+                                        <asp:Label ID="lbName" runat="server" Text="Name" 
                                             style="font-size: large; font-weight: 700"></asp:Label>
                                     </td>
                 <strong>
@@ -49,14 +49,14 @@
                                         Held at: 
                                     </td>
                                     <td>
-                                        <asp:Label ID="Label3" runat="server" Text="Place"></asp:Label>
+                                        <asp:Label ID="lbPlace" runat="server" Text="Place"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="style7">
                                         Event Start :</td>
                                     <td>
-                                        <asp:Label ID="Label4" runat="server" Text="Date"></asp:Label>
+                                        <asp:Label ID="lbStartDate" runat="server" Text="Date"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -64,23 +64,23 @@
                                         Registration Avabilable : 
                                     </td>
                                     <td>
-                                        <asp:Label ID="Label5" runat="server" Text="Date"></asp:Label>
+                                        <asp:Label ID="lbRegStart" runat="server" Text="Date"></asp:Label>
                 <strong>&nbsp;- </strong>
-                                        <asp:Label ID="Label6" runat="server" Text="Date"></asp:Label>
+                                        <asp:Label ID="lbRegEnd" runat="server" Text="Date"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="style7">
                                         Registration Cost:</td>
                                     <td>
-                                        <asp:Label ID="Label7" runat="server" Text="Free"></asp:Label>
+                                        <asp:Label ID="lbCost" runat="server" Text="Free"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="style7" valign="top">
                                         Description: </td>
                                     <td>
-                                        <asp:TextBox ID="TextBox1" runat="server" Height="111px" ReadOnly="True" 
+                                        <asp:TextBox ID="tbxDes" runat="server" Height="111px" ReadOnly="True" 
                                             TextMode="MultiLine" Width="313px"></asp:TextBox>
                                     </td>
                                 </tr>

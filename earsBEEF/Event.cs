@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Drawing; // for image
 
-namespace earsBEEF
+namespace EARS
 {
     public class Event
     {
