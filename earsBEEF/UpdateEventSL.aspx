@@ -70,7 +70,8 @@
                 <br />
                 </strong>
                 <table style="width:274%;">
-        <tr>
+                </td>
+        </tr>
             <td class="style2" colspan="2">
                 <strong>Create an Event</strong></td>
         </tr>
@@ -145,10 +146,12 @@
                                 runat="server" Text="Add Date" />
                             
             &nbsp;&nbsp;<br />
+
                             <table style="width: 102%;">
                                 <tr>
                                     <td class="style12">
-                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px">
+                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px" 
+                                            Enabled="False">
                                         </asp:ListBox>
                                     </td>
                                     <td align="left" valign="top">

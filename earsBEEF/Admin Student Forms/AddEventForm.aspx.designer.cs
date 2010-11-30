@@ -130,6 +130,26 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
+<<<<<<< .mine
+        /// lbDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbDate;
+        
+        /// <summary>
+        /// btnRemove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemove;
+        
+        /// <summary>
+=======
         /// Button3 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +159,7 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
+>>>>>>> .r310
         /// tbxQuota control.
         /// </summary>
         /// <remarks>
