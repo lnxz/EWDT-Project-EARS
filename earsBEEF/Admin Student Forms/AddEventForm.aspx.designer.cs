@@ -148,8 +148,7 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Button btnRemove;
         
         /// <summary>
-<<<<<<< .mine
-=======
+
         /// Button3 control.
         /// </summary>
         /// <remarks>
@@ -159,7 +158,7 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
->>>>>>> .r319
+
         /// tbxQuota control.
         /// </summary>
         /// <remarks>
