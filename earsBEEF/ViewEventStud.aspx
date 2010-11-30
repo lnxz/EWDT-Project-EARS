@@ -39,8 +39,7 @@
                             <table style="width:100%; margin-left: 0px;">
                                 <tr>
                                     <td class="style6" colspan="2">
-                                        <asp:Label ID="lbName" runat="server" Text="Name" 
-                                            style="font-size: large; font-weight: 700"></asp:Label>
+                                        <asp:Label ID="lbName" runat="server" Text="Name"></asp:Label>
                                     </td>
                 <strong>
                                 </tr>
@@ -50,6 +49,7 @@
                                     </td>
                                     <td>
                                         <asp:Label ID="lbPlace" runat="server" Text="Place"></asp:Label>
+                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
