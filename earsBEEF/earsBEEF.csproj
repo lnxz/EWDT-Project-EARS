@@ -62,8 +62,6 @@
     <Content Include="EditStudProfile.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="HomeOrg.aspx" />
-    <Content Include="HomeStu.aspx" />
     <Content Include="Images\Stub1.png" />
     <Content Include="Images\Stub10.png" />
     <Content Include="Images\Stub11.png" />
@@ -205,20 +203,6 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="HomeOrg.aspx.cs">
-      <DependentUpon>HomeOrg.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HomeOrg.aspx.designer.cs">
-      <DependentUpon>HomeOrg.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="HomeStu.aspx.cs">
-      <DependentUpon>HomeStu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HomeStu.aspx.designer.cs">
-      <DependentUpon>HomeStu.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage\LoggedInStaff.Master.cs">
       <DependentUpon>LoggedInStaff.Master</DependentUpon>

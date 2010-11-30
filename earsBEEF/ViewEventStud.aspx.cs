@@ -17,5 +17,13 @@ namespace earsBEEF
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+
+        protected void btnReg_Click(object sender, EventArgs e)
+        {
+            if (Session["LoginType"].Equals("Student"))
+            {
+
+            }
+        }
     }
 }
