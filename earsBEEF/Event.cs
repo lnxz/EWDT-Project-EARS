@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Drawing; // for image
 
 namespace earsBEEF
 {
@@ -21,7 +22,9 @@ namespace earsBEEF
         private int orgStudID;
         private int orgStaffID;
         private DateTime dateCreated;
+        //private Image picture;
 
+        // add image to constructure
         public Event(string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
         {
            
@@ -39,6 +42,25 @@ namespace earsBEEF
             this.orgStudID = orgstudID;
             this.dateCreated = dateCreated;
         }
+
+        //public Event(string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated, Image picture)
+        //{
+
+        //    this.name = name;
+        //    this.venue = venue;
+        //    this.registrationCost = registrationCost;
+        //    this.category = category;
+        //    this.descrip = descrip;
+        //    this.eventDate = eventdate;
+        //    this.registrationStart = registrationStart;
+        //    this.registrationEnd = registrationEnd;
+        //    this.quota = quota;
+        //    this.ccaID = ccaID;
+        //    this.orgStaffID = orgstaffID;
+        //    this.orgStudID = orgstudID;
+        //    this.dateCreated = dateCreated;
+        //    this.picture = picture;
+        //}
       
 
         public Event(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
@@ -58,6 +80,25 @@ namespace earsBEEF
             this.orgStudID = orgstudID;
             this.dateCreated = dateCreated;
         }
+
+        //public Event(int eventID, string name, string venue, double regcost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated, Image picture)
+        //{
+        //    this.eventID = eventID;
+        //    this.name = name;
+        //    this.venue = venue;
+        //    this.registrationCost = regcost;
+        //    this.category = category;
+        //    this.descrip = descrip;
+        //    this.eventDate = eventdate;
+        //    this.registrationStart = registrationStart;
+        //    this.registrationEnd = registrationEnd;
+        //    this.quota = quota;
+        //    this.ccaID = ccaID;
+        //    this.orgStaffID = orgstaffID;
+        //    this.orgStudID = orgstudID;
+        //    this.dateCreated = dateCreated;
+        //    this.picture = picture;
+        //}
       
         public int EventID
         {
@@ -143,5 +184,10 @@ namespace earsBEEF
             set { dateCreated = value; }
         }
 
+        //public Image Picture
+        //{
+        //    get { return Picture; }
+        //    set { Picture = value; }
+        //}
     }
 }

@@ -16,7 +16,7 @@ namespace earsBEEF
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridView1.DataSource = EARS.DBManager.g
+            GridView1.DataSource = EARS.DBManager.GetAllStudentRegisterEvent();
         }
     }
 }
