@@ -11,11 +11,9 @@ namespace earsBEEF
 
     public partial class AddEventForm : System.Web.UI.Page
     {
-<<<<<<< .mine
-=======
+
         public static ArrayList eventDates = new ArrayList();
-        public static int datesAdded = 0;
->>>>>>> .r309
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -148,41 +146,28 @@ namespace earsBEEF
             {
                 Boolean repeat = false;
                 string tempDate = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
-                if (datesAdded == 0)
+                if (eventDates.Count == 0)
                 {
-<<<<<<< .mine
-                   ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-  
-=======
                     eventDates.Add(tempDate);
-
-                    Label1.Text = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
-                    datesAdded++;
->>>>>>> .r309
-                }
-                else
-                {
-<<<<<<< .mine
                     ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-=======
-                    for (int x = 0; x < eventDates.Count; x++)
-                    {
-                        if (eventDates[x].Equals(tempDate))
-                        {
-                            repeat = true;
-                        }
-                    }
-                    if (repeat == false)
-                    {
-                        eventDates.Add(tempDate);
-                        Label1.Text = Label1.Text + " | " + DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text;
-                        datesAdded++;
-                    }
->>>>>>> .r309
                 }
 
+                for (int x = 0; x < eventDates.Count; x++)
+                {
+                    if (eventDates[x].Equals(tempDate))
+                    {
+                        repeat = true;
+                    }
+                }
+                if (repeat == false)
+                {
+                    eventDates.Add(tempDate);
+                    ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+                }
             }
+
         }
+
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -431,12 +416,12 @@ namespace earsBEEF
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
-        {           
-                tbxName.Text = "";
-                tbxVenue.Text = "";
-                tbxDes.Text = "";
-                tbxDol.Text = "";
-                tbxQuota.Text = "";
+        {
+            tbxName.Text = "";
+            tbxVenue.Text = "";
+            tbxDes.Text = "";
+            tbxDol.Text = "";
+            tbxQuota.Text = "";
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

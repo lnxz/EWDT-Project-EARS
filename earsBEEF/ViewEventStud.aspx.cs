@@ -18,6 +18,13 @@ namespace EARS
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+<<<<<<< .mine
+
+        protected void btnReg_Click(object sender, EventArgs e)
+        {
+
+        }
+=======
 
         protected void btnReg_Click(object sender, EventArgs e)
         {
@@ -26,5 +33,6 @@ namespace EARS
                 EARS.Student s = DBManager.GetAllStudents();
             }
         }
+>>>>>>> .r314
     }
 }

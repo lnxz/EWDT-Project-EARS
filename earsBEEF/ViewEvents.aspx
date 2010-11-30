@@ -5,20 +5,28 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" ForeColor="#333333" 
         GridLines="None" 
-        Width="75%" Height="62px">
+        Width="88%" Height="185px" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-            <asp:BoundField DataField="Venue" HeaderText="Venue" SortExpression="Venue" />
+            <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" 
+                ReadOnly="True" />
+            <asp:BoundField DataField="Venue" HeaderText="Venue" SortExpression="Venue" 
+                ReadOnly="True" />
             <asp:BoundField DataField="RegistrationCost" HeaderText="RegistrationCost" 
-                SortExpression="RegistrationCost" />
+                SortExpression="RegistrationCost" ReadOnly="True" />
             <asp:BoundField DataField="EventDate" HeaderText="EventDate" 
-                SortExpression="EventDate">
+                SortExpression="EventDate" ReadOnly="True">
+            <ControlStyle Width="200px" />
+            <HeaderStyle Width="200px" />
+            <ItemStyle Width="200px" />
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationStart" HeaderText="RegistrationStart" 
-                SortExpression="RegistrationStart" />
+                SortExpression="RegistrationStart" ReadOnly="True" >
+            <ControlStyle Width="170px" />
+            </asp:BoundField>
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
-                SortExpression="RegistrationEnd"></asp:BoundField>
+                SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
             <asp:ButtonField Text="Register" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
