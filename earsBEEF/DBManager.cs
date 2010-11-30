@@ -482,7 +482,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    earsBEEF.Event b = new earsBEEF.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
                     results.Add(b);
                 }
             }
