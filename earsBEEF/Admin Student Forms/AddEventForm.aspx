@@ -55,6 +55,16 @@
         {
             width: 395px;
         }
+        .style35
+        {
+            height: 53px;
+            color: #000000;
+        }
+        .style36
+        {
+            width: 749px;
+            height: 53px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -155,6 +165,11 @@
                             
                             <span class="style25">&nbsp;&nbsp;</span><br class="style25" />
                                 <asp:Label ID="Label1" runat="server" ForeColor="Red" CssClass="style25">Please Add Event Dates</asp:Label>
+                            <br />
+                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px" 
+                                Enabled="False">
+                                        </asp:ListBox>
+                                        <asp:Button ID="btnRemove" runat="server" Text="Remove" Width="96px" />
                         </td>
                     </tr>
                     <tr>
@@ -220,9 +235,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="style24" valign="top">
+                        <td class="style35" valign="top">
                             Registration Cost:</td>
-                        <td class="style20" align="left" valign="top">
+                        <td class="style36" align="left" valign="top">
                             <asp:RadioButton ID="RadioButton1" runat="server" Text="Free" Checked="True" 
                                 GroupName="cost" oncheckedchanged="RadioButton1_CheckedChanged" 
                                 CssClass="style25" />
