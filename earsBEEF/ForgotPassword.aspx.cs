@@ -44,7 +44,7 @@ namespace EARS
 
                     EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
 
-                     //create a email object
+                    //create a email object
                     MailMessage mail = new System.Net.Mail.MailMessage();
                     // set the log in authentication for the email so that can send email to others
                     // login and password for email.
@@ -161,6 +161,8 @@ namespace EARS
                 if (stu != null)
                 {
                     EARS.Student stu1 = DBManager.UpdatePasswordStud(id, p);
+                    Label7.Text = "Change Password Successful";
+                    mv.ActiveViewIndex = 3;
                 }
                 else
                 {
@@ -174,6 +176,8 @@ namespace EARS
                 if (staff != null)
                 {
                     EARS.Staff sta1 = DBManager.ValidatePasswordStaff(id, p);
+                    Label7.Text = "Change Password Successful";
+                    mv.ActiveViewIndex = 3;
                 }
                 else
                 {
