@@ -27,7 +27,7 @@
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
                 SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
-            <asp:ButtonField Text="Register" />
+            <asp:ButtonField Text="Register" ButtonType="Button" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

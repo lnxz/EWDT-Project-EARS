@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 
 namespace earsBEEF
 {
@@ -16,7 +17,16 @@ namespace earsBEEF
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridView1.DataSource = EARS.DBManager.GetAllStudentRegisterEvent();
+            //ArrayList s = new ArrayList();
+
+            //s = EARS.DBManager.GetAllStudents();
+
+            foreach (EARS.Student s in EARS.DBManager.GetAllStudents())
+            {
+
+            }
+
+
         }
     }
 }
