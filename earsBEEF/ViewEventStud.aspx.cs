@@ -33,7 +33,10 @@ namespace earsBEEF
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+<<<<<<< .mine
+=======
 >>>>>>> .r319
+>>>>>>> .r320
 
         //protected void btnReg_Click(object sender, EventArgs e)
         //{
@@ -44,7 +47,6 @@ namespace earsBEEF
         //}
 
 <<<<<<< .mine
-=======
             int x = 0;
             int y = 0;
 
@@ -66,6 +68,10 @@ namespace earsBEEF
 
             // if the event date crash prompt a warning
         }
+<<<<<<< .mine
+
+=======
 >>>>>>> .r319
+>>>>>>> .r320
     }
 }
