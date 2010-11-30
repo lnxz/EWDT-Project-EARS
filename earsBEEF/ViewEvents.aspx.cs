@@ -26,11 +26,6 @@ namespace earsBEEF
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Select")
