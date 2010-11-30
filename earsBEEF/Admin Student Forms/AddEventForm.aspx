@@ -245,6 +245,7 @@
                 <br class="style25" />
                 <asp:Image ID="lmEvent" runat="server" Height="173px" Width="176px" 
                     CssClass="style25" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br class="style25" />
             </td>
         </tr>
