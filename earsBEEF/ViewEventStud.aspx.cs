@@ -15,55 +15,37 @@ namespace earsBEEF
         {
 
             
-            //foreach (EARS.Event e in EARS.DBManager.GetAllEvents())
-            //{
-            //    e.Name = lbName.Text;
-            //    e.Venue = lbPlace.Text;
-            //    e.RegistrationStart = lbRegStart.Text;
-            //    e.RegistrationEnd = lbRegEnd.Text;
-            //    e.RegistrationCost = lbCost.Text;
-            //    e.EventDate = lbStartDate.Text;
-            //}
+
 
         }
         protected void Page_PreInit()
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
-<<<<<<< .mine
 
         protected void btnReg_Click(object sender, EventArgs e)
         {
-<<<<<<< .mine
 
+            int x = 0;
+            int y = 0;
 
-            
-            //if (Session["LoginType"].Equals("Student"))
-            //{
-            //    foreach (EARS.Event e in EARS.DBManager.GetAllEvents())
-            //    {
-            //        if (e.Name.Equals(lbName.Text))
-            //        {
-                        
-            //        }
-            //    }
-            //}
+            ArrayList s= new ArrayList();
 
-            // string name = lb
-
-=======
-
-        }
-=======
-
-        protected void btnReg_Click(object sender, EventArgs e)
-        {
-            if (Session["LoginType"].Equals("Student"))
+            // get student id and event id
+            foreach (EARS.Event ee in EARS.DBManager.GetAllEvents())
             {
-                EARS.Student s = DBManager.GetAllStudents();
+                foreach (EARS.Student h in EARS.DBManager.GetAllStudents())
+                {
+                    x = ee.EventID;
+                    y = h.StudentID;
+                }
+
             }
->>>>>>> .r316
+
+            // assign to database
+            EARS.DBManager.AddStudentRegisterEvent(x, y);
+
+            // if the event date crash prompt a warning
         }
->>>>>>> .r314
     }
 }
