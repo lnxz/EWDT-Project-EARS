@@ -27,13 +27,13 @@ namespace earsBEEF
                 string name ="";
                 string adminNo ="";
                 string password ="";
-                char gender ='';
+                char gender =' ';
                 string school ="";
                 string courseCode ="";
                 int contactNo = 0;
                 int emergencyContact = 0 ;
-                string email ="";
-                char isStudentLeader ='';
+                string email = "";
+                char isStudentLeader = ' ';
                 string tshirtSize ="";
                 string studentType ="";
                 DateTime dateOfBirth = DateTime.Today;
@@ -94,7 +94,7 @@ namespace earsBEEF
                     }
 
                 }
-                EARS.DBManager.AddStudent(name, adminNo, password, gender, school, courseCode, contactNo, emergencyContact, email, isStudentLeader, tshirtSize, studentType, dateOfBirth)
+                EARS.DBManager.AddStudent(name, adminNo, password, gender, school, courseCode, contactNo, emergencyContact, email, isStudentLeader, tshirtSize, studentType, dateOfBirth);
 
             }
 

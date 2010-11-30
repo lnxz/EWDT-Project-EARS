@@ -10,7 +10,6 @@ namespace earsBEEF
 {
     public partial class ViewEventStud : System.Web.UI.Page
     {
-<<<<<<< .mine
         //protected void Page_Load(object sender, EventArgs e)
         //{
         //    EARS.Event e = DBManager.GetAllEvents();
@@ -20,7 +19,6 @@ namespace earsBEEF
         //{
         //    this.MasterPageFile = Session["MyPage_Master"].ToString();
         //}
-=======
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,15 +31,8 @@ namespace earsBEEF
         //{
         //    this.MasterPageFile = Session["MyPage_Master"].ToString();
         //}
-<<<<<<< .mine
-=======
->>>>>>> .r319
->>>>>>> .r320
-
-<<<<<<< .mine
         //protected void btnReg_Click(object sender, EventArgs e)
         //{
-=======
         //protected void btnReg_Click(object sender, EventArgs e)
         //{
         //    if (Session["LoginType"].Equals("Student"))
@@ -49,16 +40,11 @@ namespace earsBEEF
         //        EARS.Student s = DBManager.GetAllStudents();
         //    }
         //}
->>>>>>> .r321
 
-<<<<<<< .mine
         //    int x = 0;
         //    int y = 0;
-=======
-<<<<<<< .mine
             int x = 0;
             int y = 0;
->>>>>>> .r321
 
         //    ArrayList s= new ArrayList();
 
@@ -78,10 +64,5 @@ namespace earsBEEF
 
         //    // if the event date crash prompt a warning
         //}
-<<<<<<< .mine
-
-=======
->>>>>>> .r319
->>>>>>> .r320
     }
 }
