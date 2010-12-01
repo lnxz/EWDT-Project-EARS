@@ -148,7 +148,7 @@ namespace earsBEEF
                 string tempDate = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
                 if (eventDates.Count == 0)
                 {
-                    ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                     eventDates.Add(tempDate);
                 }
                 else
@@ -166,7 +166,7 @@ namespace earsBEEF
                         if (repeat == false)
                         {
                             eventDates.Add(tempDate);
-                            ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+                            lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                         }
                     }
                 }
@@ -220,11 +220,9 @@ namespace earsBEEF
                     eventDatesString = eventDatesString + lbDate.Items[x].ToString();
                 }
                  
-
-                if (Session["LoginType"].ToString().Equals("Staff"))
-                {
-                    EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
-                  EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 
+                //need add in eventID
+                EARS.DBManager.UpdateEvent(1,tbxName.Text, tbxVenue.Text,cost, ddlCate.SelectedValue
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 
                       Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available") ;
                     
                         tbxName.Text = "";
@@ -234,20 +232,7 @@ namespace earsBEEF
                         tbxQuota.Text = "";
 
                     
-                }
-                else
-                {
-                    EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
-                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate,
-                        Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), tempStudent.StudentID, DateTime.Today, "Available");
-               
-                        tbxName.Text = "";
-                        tbxVenue.Text = "";
-                        tbxDes.Text = "";
-                        tbxDol.Text = "";
-                        tbxQuota.Text = "";
-
-                }
+ 
             }
 
 
