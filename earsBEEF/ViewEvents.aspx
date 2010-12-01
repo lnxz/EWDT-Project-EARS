@@ -2,17 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        CellPadding="4" ForeColor="#333333" 
-        GridLines="None" 
-        Width="88%" Height="185px" 
-        DataKeyNames="EventID" onrowcommand="GridView1_RowCommand">
         
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
-
-<br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
             Width="88%" DataKeyNames="EventID"

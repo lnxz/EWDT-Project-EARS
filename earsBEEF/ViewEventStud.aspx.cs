@@ -31,16 +31,14 @@ namespace earsBEEF
                     lbStartDate.Text = a.EventDate;
                     lbRegStart.Text = Convert.ToDateTime(a.RegistrationStart).ToString();
                     lbRegEnd.Text = Convert.ToDateTime(a.RegistrationEnd).ToString();
-                    lbCost.Text = Convert.ToDouble(a.RegistrationCost).ToString();
+                    lbCost.Text = "$" + Convert.ToDouble(a.RegistrationCost).ToString() + ".00";
                     tbxDes.Text = a.Descrip;
                 }
             }
         }
             protected void btnReg_Click(object sender, EventArgs e)
             {
-
                 EARS.Student stu = (EARS.Student)(this.Session["Login"]);
-
                 EARS.DBManager.AddStudentRegisterEvent(stu.StudentID, s);
 
                 //    if (Session["LoginType"].Equals("Student"))
@@ -67,6 +65,11 @@ namespace earsBEEF
 
                 //    // if the event date crash prompt a warning
                 //}
+            }
+
+            protected void btnCancel_Click(object sender, EventArgs e)
+            {
+                Response.Redirect("VewEvent.aspx");
             }
 
 
