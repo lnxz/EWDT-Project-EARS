@@ -11,7 +11,7 @@ namespace EARS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            earsBEEF.OLEDBManager.massStudentImport();
         }
     }
 }
