@@ -147,25 +147,18 @@ namespace earsBEEF
                 string tempDate = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
                 if (eventDates.Count == 0)
                 {
-                   ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                     eventDates.Add(tempDate);
                     lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-=======
-<<<<<<< .mine
 
                     lbDate.Items.Add(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text);
                     datesAdded++;
-                    ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-<<<<<<< .mine
-=======
->>>>>>> .r319
->>>>>>> .r316
->>>>>>> .r321
+                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                 }
 
                 for (int x = 0; x < eventDates.Count; x++)
                 {
-                    ListBox1.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
+                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                     for (int j = 0; j < eventDates.Count; j++)
                     if (eventDates[j].Equals(tempDate))
                     {
