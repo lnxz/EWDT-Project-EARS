@@ -221,10 +221,8 @@ namespace earsBEEF
                 }
                  
                 //need add in eventID
-                EARS.DBManager.UpdateEvent(1,tbxName.Text, tbxVenue.Text,cost, ddlCate.SelectedValue
-                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 
-                      Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available") ;
-                    
+                EARS.DBManager.UpdateEvent(1, tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today,"updated");
+
                         tbxName.Text = "";
                         tbxVenue.Text = "";
                         tbxDes.Text = "";
