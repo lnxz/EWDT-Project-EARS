@@ -10,64 +10,52 @@ namespace earsBEEF
 {
     public partial class ViewEventStud : System.Web.UI.Page
     {
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    EARS.Event e = DBManager.GetAllEvents();
-        //    string eventName = lb
-        //}
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
-
         protected void Page_Load(object sender, EventArgs e)
         {
+            int s =  Convert.ToInt32(Request.QueryString["eid"]);
 
-            
-            
+            // check event 
+            EARS.Event a  = EARS.DBManager.RetrieveEvent(s);
 
+            if (a != null)
+            {
+                lbName.Text = a.Name;
+                lbPlace.Text = a.Venue;
+                lbStartDate.Text = a.EventDate;
+                lbRegStart.Text = Convert.ToDateTime(a.RegistrationStart).ToString();
+                lbRegEnd.Text = Convert.ToDateTime(a.RegistrationEnd).ToString();
+                lbCost.Text = Convert.ToDouble(a.RegistrationCost).ToString();
+                tbxDes.Text = a.Descrip;
+            }
         }
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
-        //protected void btnReg_Click(object sender, EventArgs e)
-        //{
-        //protected void btnReg_Click(object sender, EventArgs e)
-        //{
-        //    if (Session["LoginType"].Equals("Student"))
-        //    {
-        //        EARS.Student s = DBManager.GetAllStudents();
-        //    }
-        //}
-
-        //    int x = 0;
-        //    int y = 0;
-            int x = 0;
-            int y = 0;
-
             protected void btnReg_Click(object sender, EventArgs e)
             {
+                //    if (Session["LoginType"].Equals("Student"))
+                //    {
+                //        EARS.Student s = DBManager.GetAllStudents();
+                //    }
 
+                //    ArrayList s= new ArrayList();
+
+                // get student id and event id
+
+                //foreach (EARS.Event ee in EARS.DBManager.GetAllEvents())
+                //{
+                //    foreach (EARS.Student h in EARS.DBManager.GetAllStudents())
+                //    {
+                //        x = ee.EventID;
+                //        y = h.StudentID;
+                //    }
+
+                //}
+
+                //// assign to database
+                //EARS.DBManager.AddStudentRegisterEvent(x, y);
+
+                //    // if the event date crash prompt a warning
+                //}
             }
 
-        //    ArrayList s= new ArrayList();
 
-        //    // get student id and event id
-        //    foreach (EARS.Event ee in EARS.DBManager.GetAllEvents())
-        //    {
-        //        foreach (EARS.Student h in EARS.DBManager.GetAllStudents())
-        //        {
-        //            x = ee.EventID;
-        //            y = h.StudentID;
-        //        }
-
-        //    }
-
-        //    // assign to database
-        //    EARS.DBManager.AddStudentRegisterEvent(x, y);
-
-        //    // if the event date crash prompt a warning
-        //}
     }
 }
