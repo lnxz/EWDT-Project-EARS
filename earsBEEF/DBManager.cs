@@ -468,7 +468,7 @@ namespace EARS
                     int orgStaffID = -1;
                     //string status = dr["Status"].ToString();
 
-                    if (dr["CCAID"]== DBNull.Value)
+                    if (dr["CCAID"] == DBNull.Value)
                     {
 
                     }
@@ -496,7 +496,7 @@ namespace EARS
                     EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
-                    
+
 
                     results.Add(b);
                 }
@@ -558,7 +558,7 @@ namespace EARS
             return rowsAdded;
         }
         // Overloaded AddEvent method for Students
-        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated,string status)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status)
         {
             int rowsAdded = -1;
 
@@ -761,6 +761,56 @@ namespace EARS
             return rowsAdded;
 
         }
+        // Update event
+        public static bool UpdateEvent(int eventID, string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            bool updateStatus = false;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQL Commmand
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "UPDATE Event set Name = @a, Venue = @b, RegistrationCost = @c, CategoryID = @d, Description = @e, EventDates = @f, RegistrationStart = @g, RegistrationEnd = @h, Quota = @i, CCAID = @j, DateCreated = @k, status = @l where eventID = @EventID";
+                comm.Parameters.AddWithValue("@eventID", eventID);
+                comm.Parameters.AddWithValue("@a", Name);
+                comm.Parameters.AddWithValue("@b", Venue);
+                comm.Parameters.AddWithValue("@c",RegistrationCost);
+                comm.Parameters.AddWithValue("@d", CategoryID);
+                comm.Parameters.AddWithValue("@e", Description);
+                comm.Parameters.AddWithValue("@f", EventDates);
+                comm.Parameters.AddWithValue("@g", RegistrationStart);
+                comm.Parameters.AddWithValue("@h", RegistrationEnd);
+                comm.Parameters.AddWithValue("@i", Quota);
+                comm.Parameters.AddWithValue("@j", CCAID);
+                comm.Parameters.AddWithValue("@k", DateCreated);
+                comm.Parameters.AddWithValue("@l", status);
+
+
+
+                comm.Connection = conn;
+
+                //Execute SQL Command
+                int rowsUpdated = (int)comm.ExecuteNonQuery();
+
+                if (rowsUpdated > 0)
+                { updateStatus = true; }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //Close
+                conn.Close();
+            }
+            return updateStatus;
+        }
+
 
         #endregion
 

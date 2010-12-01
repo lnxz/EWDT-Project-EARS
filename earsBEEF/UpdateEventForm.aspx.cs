@@ -9,9 +9,10 @@ using System.Collections;
 namespace earsBEEF
 {
 
-    public partial class AddEventForm : System.Web.UI.Page
+    public partial class UpdateEventForm : System.Web.UI.Page
     {
         public static ArrayList eventDates = new ArrayList();
+        public static int datesAdded = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -140,6 +141,7 @@ namespace earsBEEF
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+
             if (DdlMonth.SelectedIndex != 0)
             {
                 Boolean repeat = false;
@@ -153,7 +155,7 @@ namespace earsBEEF
                 {
                     for (int x = 0; x < eventDates.Count; x++)
                     {
-                       
+
                         for (int j = 0; j < eventDates.Count; j++)
                         {
                             if (eventDates[j].Equals(tempDate))

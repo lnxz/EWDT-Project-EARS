@@ -10,25 +10,34 @@
 namespace earsBEEF {
     
     
-    public partial class UpdateEventSL {
+    public partial class AddEventForm {
         
         /// <summary>
-        /// lbName control.
+        /// tbxName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbName;
+        protected global::System.Web.UI.WebControls.TextBox tbxName;
         
         /// <summary>
-        /// ddlCca control.
+        /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCca;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
+        /// ddlCCA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCCA;
         
         /// <summary>
         /// ddlCate control.
@@ -40,6 +49,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList ddlCate;
         
         /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
         /// tbxVenue control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace earsBEEF {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbxVenue;
+        
+        /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
         /// tbxDes control.
@@ -85,13 +112,22 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlYear;
         
         /// <summary>
-        /// btnAddDate control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddDate;
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// lbDate control.
@@ -112,6 +148,17 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Button btnRemove;
         
         /// <summary>
+
+        /// Button3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
+        
+        /// <summary>
+
         /// tbxQuota control.
         /// </summary>
         /// <remarks>
@@ -157,6 +204,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlYear0;
         
         /// <summary>
+        /// lblDateError1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDateError1;
+        
+        /// <summary>
         /// DdlMonth1 control.
         /// </summary>
         /// <remarks>
@@ -184,6 +240,15 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.DropDownList DdlYear1;
         
         /// <summary>
+        /// lblDateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDateError;
+        
+        /// <summary>
         /// RadioButton1 control.
         /// </summary>
         /// <remarks>
@@ -193,13 +258,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
         
         /// <summary>
-        /// rbOthers control.
+        /// RadioButton2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbOthers;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
         
         /// <summary>
         /// tbxDol control.
@@ -229,22 +294,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Image lmEvent;
         
         /// <summary>
-        /// btnDelete control.
+        /// btnConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDelete;
-        
-        /// <summary>
-        /// btnUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
         
         /// <summary>
         /// btnCancel control.
