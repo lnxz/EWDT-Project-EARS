@@ -21,6 +21,5 @@ namespace earsBEEF {
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
-      
     }
 }
