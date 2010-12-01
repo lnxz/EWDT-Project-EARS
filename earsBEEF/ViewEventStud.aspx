@@ -49,7 +49,6 @@
                                     </td>
                                     <td>
                                         <asp:Label ID="lbPlace" runat="server" Text="Place"></asp:Label>
-                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -81,7 +80,7 @@
                                         Description: </td>
                                     <td>
                                         <asp:TextBox ID="tbxDes" runat="server" Height="111px" ReadOnly="True" 
-                                            TextMode="MultiLine" Width="313px"></asp:TextBox>
+                                            TextMode="MultiLine" Width="313px" Enabled="False"></asp:TextBox>
                                     </td>
                                 </tr>
                             </table>
