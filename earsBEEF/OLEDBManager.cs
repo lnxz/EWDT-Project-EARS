@@ -4,45 +4,54 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.OleDb;
+using System.Collections;
 
 namespace earsBEEF
 {
     public class OLEDBManager
     {
 
-        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\Book1.xls;Extended Properties=""Excel 8.0;HDR=Yes""";
-        public static void massStudentImport()
+        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\Book2.xlsx;Extended Properties=""Excel 8.0;HDR=Yes""";
+        public static ArrayList massStudentImport()
         {
-            OleDbCommand myCommand = new OleDbCommand("Select * from [Student$];");
+            ArrayList errorList = new ArrayList(); 
+            OleDbCommand myCommand = new OleDbCommand("Select * from [student$];");
             OleDbConnection myConnection = new OleDbConnection(connectionString);
-
+            try{
             myConnection.Open();
 
             myCommand.Connection = myConnection;
 
             OleDbDataReader myReader = myCommand.ExecuteReader();
-
-            while (myReader.Read())
+            Boolean checkRepeat = false;
+            while (myReader.Read() && checkRepeat ==false)
             {
-                string name ="";
-                string adminNo ="";
-                string password ="";
-                char gender =' ';
-                string school ="";
-                string courseCode ="";
+                string name = "";
+                string adminNo = "";
+                string password = "";
+                char gender = 'M';
+                string school = "";
+                string courseCode = "";
                 int contactNo = 0;
-                int emergencyContact = 0 ;
+                int emergencyContact = 0;
                 string email = "";
-                char isStudentLeader = ' ';
-                string tshirtSize ="";
-                string studentType ="";
+                char isStudentLeader = 'N';
+                string tshirtSize = "";
+                string studentType = "";
                 DateTime dateOfBirth = DateTime.Today;
-               
+
+
                 for (int i = 0; i < 13; i++)
                 {
-                    if(i == 0)
+                    if (i == 0)
                     {
                         name = myReader[i].ToString();
+                        if (name.Equals(""))
+                        {
+                            checkRepeat = true;
+                            break;
+                            
+                        }
                     }
                     else if (i == 1)
                     {
@@ -54,7 +63,12 @@ namespace earsBEEF
                     }
                     else if (i == 3)
                     {
-                        gender = myReader[i].ToString()[0];
+                        string genderTemp = myReader[i].ToString();
+                        if (genderTemp.Equals("F"))
+                        {
+                            gender = 'F';
+                        }
+
                     }
                     else if (i == 4)
                     {
@@ -66,6 +80,7 @@ namespace earsBEEF
                     }
                     else if (i == 6)
                     {
+                        string testcont = myReader[i].ToString();
                         contactNo = Convert.ToInt32(myReader[i].ToString());
                     }
                     else if (i == 7)
@@ -93,12 +108,33 @@ namespace earsBEEF
                         dateOfBirth = DateTime.Parse(myReader[i].ToString());
                     }
 
+
+                } if (checkRepeat == true)
+                {
                 }
-                EARS.DBManager.AddStudent(name, adminNo, password, gender, school, courseCode, contactNo, emergencyContact, email, isStudentLeader, tshirtSize, studentType, dateOfBirth);
+                else
+                {
+                    if (EARS.DBManager.CheckAdmin(adminNo))
+                    {
+                        EARS.DBManager.AddStudent(name, adminNo, password, gender, school, courseCode, contactNo, emergencyContact, email, isStudentLeader, tshirtSize, studentType, dateOfBirth);
+                        errorList.Add("Successfully Added!");
+                    }
+                    else
+                    {
+                        errorList.Add("Duplicate AdminNo: " + adminNo + " already exists");
+                    }
+                }
+            }
+          
+            }  catch(OleDbException ex)
+            {
 
             }
-
+            finally{
+            
             myConnection.Close();
+            }
+            return errorList;
         }
     }
 }
