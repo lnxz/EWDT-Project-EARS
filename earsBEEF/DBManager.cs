@@ -466,7 +466,7 @@ namespace EARS
                     int ccaID = -1;
                     int orgStudID = -1;
                     int orgStaffID = -1;
-                    string status = dr["Status"].ToString();
+                    //string status = dr["Status"].ToString();
 
                     if (dr["CCAID"]== DBNull.Value)
                     {
@@ -493,7 +493,9 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+
+                    //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                     
 
                     results.Add(b);

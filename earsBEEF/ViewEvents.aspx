@@ -2,14 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        CellPadding="4" ForeColor="#333333" 
-        GridLines="None" 
-        Width="88%" Height="185px" 
-        onselectedindexchanged="GridView1_SelectedIndexChanged" 
-        DataKeyNames="EventID" onrowcommand="GridView1_RowCommand">
-        
-        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+
+<br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+            CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
+            Width="88%" DataKeyNames="EventID" onrowcommand="GridView1_RowCommand" 
+        onselectedindexchanging="GridView1_SelectedIndexChanging">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" 
                 ReadOnly="True" />
@@ -30,7 +29,8 @@
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
                 SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
             <asp:CommandField ButtonType="Button" SelectText="Register" 
-                ShowSelectButton="True" />
+                ShowSelectButton="True" CancelText="" DeleteText="" EditText="" 
+                InsertText="" NewText=""/>
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -42,5 +42,6 @@
         <SortedAscendingHeaderStyle BackColor="#506C8C" />
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-    </asp:GridView>
+        </asp:GridView>
+        <br />
     </asp:Content>

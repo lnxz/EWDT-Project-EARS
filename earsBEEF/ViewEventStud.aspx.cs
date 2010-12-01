@@ -24,7 +24,7 @@ namespace earsBEEF
         {
 
             
-
+            
 
         }
         //protected void Page_PreInit()
@@ -45,6 +45,11 @@ namespace earsBEEF
         //    int y = 0;
             int x = 0;
             int y = 0;
+
+            protected void btnReg_Click(object sender, EventArgs e)
+            {
+
+            }
 
         //    ArrayList s= new ArrayList();
 
