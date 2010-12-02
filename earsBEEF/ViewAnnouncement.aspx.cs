@@ -15,5 +15,5 @@ namespace earsBEEF
             GridView1.DataSource = EARS.DBManager.GetAllAnnouncements();//populateEventTable();
             GridView1.DataBind();           
         }
-      }
     }
+}

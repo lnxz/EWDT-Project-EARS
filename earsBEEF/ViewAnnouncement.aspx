@@ -13,8 +13,8 @@
             <asp:BoundField HeaderText="Content" DataField="Content">
             <ItemStyle Width="400px" />
             </asp:BoundField>
-            <asp:BoundField HeaderText="Date created" DataField="dateCreated" />
             <asp:BoundField HeaderText="Announcement Date" DataField="dateOfAnn" />
+            <asp:BoundField DataField="dateCreated" HeaderText="Date Created" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
