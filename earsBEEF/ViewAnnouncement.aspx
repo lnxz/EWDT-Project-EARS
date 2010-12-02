@@ -9,13 +9,12 @@
         CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField HeaderText="Title" />
-            <asp:BoundField HeaderText="Content" HtmlEncodeFormatString="False">
+            <asp:BoundField HeaderText="Title" DataField="Title" />
+            <asp:BoundField HeaderText="Content" DataField="Content">
             <ItemStyle Width="400px" />
             </asp:BoundField>
-            <asp:BoundField HeaderText="Date created" />
-            <asp:BoundField HeaderText="Announcement Date" />
-            <asp:ButtonField Text="View" />
+            <asp:BoundField HeaderText="Date created" DataField="dateCreated" />
+            <asp:BoundField HeaderText="Announcement Date" DataField="dateOfAnn" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
