@@ -29,8 +29,8 @@
                         <td class="style5">
                 <strong>
                             <asp:Panel ID="Panel1" runat="server" Width="265px" Height="325px">
-                                <asp:Image ID="lmEvent" runat="server" Height="329px" 
-    Width="258px" />
+                                <asp:Image ID="lmEvent" runat="server" Height="322px" 
+    Width="242px" />
                             </asp:Panel>
                             </strong>
                         </td>

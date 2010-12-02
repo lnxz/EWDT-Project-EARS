@@ -183,18 +183,21 @@
                         <td class="style26">
                             Registration Starts:</td>
                         <td class="style22" align="left">
-                            <span class="style25">&nbsp; </span> <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px" 
-                                AutoPostBack="True" onselectedindexchanged="DdlMonth0_SelectedIndexChanged">
+                            <span class="style25">&nbsp; </span> <asp:DropDownList ID="DdlMonth0" 
+                                runat="server" Height="22px" Width="76px" 
+                                AutoPostBack="True" 
+                                onselectedindexchanged="DdlMonth0_SelectedIndexChanged" Enabled="False">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
                             <span class="style25">&nbsp;/ 
                 </span> 
-                <asp:DropDownList ID="DdlDay0" runat="server" Height="22px" Width="76px">
+                <asp:DropDownList ID="DdlDay0" runat="server" Height="22px" Width="76px" Enabled="False">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
                             <span class="style25">&nbsp;/ 
                            </span> 
-                           <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px">
+                           <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px" 
+                                Enabled="False">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </span>

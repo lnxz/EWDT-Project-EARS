@@ -162,11 +162,10 @@
                             <span class="style25">&nbsp;&nbsp;</span><br class="style25" />
                                 <asp:Label ID="Label1" runat="server" ForeColor="Red" CssClass="style25">Please Add Event Dates</asp:Label>
                             <br />
-                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px" 
-                                Enabled="False">
+                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px">
                                         </asp:ListBox>
                                         <asp:Button ID="btnRemove" runat="server" Text="Remove" 
-                                Width="96px" onclick="btnRemove_Click" />
+                                Width="96px" onclick="btnRemove_Click" CausesValidation="False" />
                         </td>
                     </tr>
                     <tr>

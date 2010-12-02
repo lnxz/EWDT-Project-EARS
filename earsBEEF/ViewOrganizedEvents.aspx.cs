@@ -41,7 +41,7 @@ namespace earsBEEF
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             string key = GridView1.DataKeys[e.NewSelectedIndex].Value.ToString();
-            Response.Redirect("ViewOrganizedEventInfo.aspx?eid=" + key);
+            Response.Redirect("UpdateEventForm.aspx?eid=" + key);
         }
     }
 }
