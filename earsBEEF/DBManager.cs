@@ -549,14 +549,15 @@ namespace EARS
             }
             return e;
         }
-        public static Event DeleteEvent(int eID, int studID)
+        public static bool DeleteStudentEvent(int studID,int eID)
         {
 
 
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
-            Event e = null;
+            Boolean successful = false;
+
             try
             {
 
@@ -564,61 +565,61 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "DELETE * FROM StudentRegisterEvent where EventID = @e AND StudentID = @a;";
-                comm.Connection = conn;
+                comm.CommandText = "DELETE FROM StudentRegisterEvent WHERE StudentID = @a AND EventID = @e";
                 comm.Parameters.AddWithValue("@e", eID);
                 comm.Parameters.AddWithValue("@a", studID);
-                // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                comm.Connection = conn;
 
+                //while (dr.Read())   //read row by row
+                //{
 
-                while (dr.Read())   //read row by row
-                {
+                //    int eventID = Convert.ToInt32(dr["EventID"].ToString());
+                //    string name = dr["Name"].ToString();
+                //    string venue = dr["Venue"].ToString();
+                //    double registrationCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
+                //    string category = dr["CategoryID"].ToString();
+                //    string descrip = dr["Description"].ToString();
+                //    string eventDate = dr["eventDates"].ToString();
+                //    DateTime regStart = DateTime.Parse(dr["RegistrationStart"].ToString());
+                //    DateTime regend = DateTime.Parse(dr["RegistrationEnd"].ToString());
+                //    int quota = Convert.ToInt32(dr["Quota"].ToString());
+                //    int ccaID = -1;
+                //    int orgStudID = -1;
+                //    int orgStaffID = -1;
+                //    //string status = dr["Status"].ToString();
 
-                    int eventID = Convert.ToInt32(dr["EventID"].ToString());
-                    string name = dr["Name"].ToString();
-                    string venue = dr["Venue"].ToString();
-                    double registrationCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
-                    string category = dr["CategoryID"].ToString();
-                    string descrip = dr["Description"].ToString();
-                    string eventDate = dr["eventDates"].ToString();
-                    DateTime regStart = DateTime.Parse(dr["RegistrationStart"].ToString());
-                    DateTime regend = DateTime.Parse(dr["RegistrationEnd"].ToString());
-                    int quota = Convert.ToInt32(dr["Quota"].ToString());
-                    int ccaID = -1;
-                    int orgStudID = -1;
-                    int orgStaffID = -1;
-                    //string status = dr["Status"].ToString();
+                //    if (dr["CCAID"] == DBNull.Value)
+                //    {
 
-                    if (dr["CCAID"] == DBNull.Value)
-                    {
+                //    }
+                //    else
+                //    {
+                //        ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                //    }
+                //    if (dr["OrgStudentID"] == DBNull.Value)
+                //    {
+                //    }
+                //    else
+                //    {
+                //        orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
+                //    }
+                //    if (dr["OrgStaffID"] == DBNull.Value)
+                //    {
 
-                    }
-                    else
-                    {
-                        ccaID = Convert.ToInt32(dr["CCAID"].ToString());
-                    }
-                    if (dr["OrgStudentID"] == DBNull.Value)
-                    {
-                    }
-                    else
-                    {
-                        orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
-                    }
-                    if (dr["OrgStaffID"] == DBNull.Value)
-                    {
+                //    }
+                //    else
+                //    {
+                //        orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
+                //    }
+                //    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    }
-                    else
-                    {
-                        orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
-                    }
-                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
-
-                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
-
+                //    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+                   
+                    int rowsDeleted = (int)comm.ExecuteNonQuery();
+                    if (rowsDeleted > 0)
+                        successful = true;
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
-                }
+                //}
             }
             catch (SqlException ex)
             {
@@ -629,11 +630,11 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
-            return e;
+            return successful;
         }
-        public static Event GetStudentWithEvent(int studID)
+        public static ArrayList GetStudentWithEvent(int studID)
         {
-
+            ArrayList a = new ArrayList();
 
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -646,7 +647,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM   StudentRegisterEvent WHERE  StudentID IN (SELECT * FROM Event WHERE StudentID= @d);";
+                comm.CommandText = "SELECT Event.* FROM StudentRegisterEvent INNER JOIN Event ON StudentRegisterEvent.EventID = Event.EventID WHERE(StudentRegisterEvent.StudentID = @a);";
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@a", studID);
                 // Step 3: Execute the sql command
@@ -697,6 +698,7 @@ namespace EARS
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
                     e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+                    a.Add(e);
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                 }
@@ -710,7 +712,7 @@ namespace EARS
                 // Step 4: Close connection
                 conn.Close();
             }
-            return e;
+            return a;
         }
         //get organized events for Students
         public static ArrayList GetAllOrganizedEvents(int orgStudID)
@@ -1170,6 +1172,35 @@ namespace EARS
             return updateStatus;
         }
 
+        public static int GetQuotaOfEvent(int eId)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            int value = 0;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT COUNT(*) FROM StudentRegisterEvent INNER JOIN Event ON StudentRegisterEvent.EventID = Event.EventID WHERE StudentRegisterEvent.EventID = @e";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@e", eId);
+                // Step 3: Execute the sql command
+                int number = (int)comm.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return value;
+        }
 
         #endregion
 

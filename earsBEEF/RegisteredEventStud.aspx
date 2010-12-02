@@ -5,11 +5,12 @@
 <br />
 <br />
 <br />
+    <asp:Label ID="lbEvent" runat="server" Text="Label" Visible="False"></asp:Label>
 <br />
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
             Width="88%" DataKeyNames="EventID"
-        onselectedindexchanging="GridView1_SelectedIndexChanging">
+ onrowdeleting="GridView1_RowDeleting">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
         <Columns>
@@ -31,9 +32,8 @@
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
                 SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
-            <asp:CommandField ButtonType="Button" SelectText="Remove" 
-                ShowSelectButton="True" CancelText="" DeleteText="" EditText="" 
-                InsertText="" NewText=""/>
+            <asp:CommandField ButtonType="Button" DeleteText="Remove" 
+                ShowDeleteButton="True"/>
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

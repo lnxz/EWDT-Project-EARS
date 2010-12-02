@@ -85,6 +85,24 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Label lbCost;
         
         /// <summary>
+        /// lbQuota control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbQuota;
+        
+        /// <summary>
+        /// lbMax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbMax;
+        
+        /// <summary>
         /// tbxDes control.
         /// </summary>
         /// <remarks>

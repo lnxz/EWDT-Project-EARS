@@ -76,6 +76,15 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="style7">
+                                        Quota:</td>
+                                    <td>
+                                        <asp:Label ID="lbQuota" runat="server" Text="0"></asp:Label>
+                                        /
+                                        <asp:Label ID="lbMax" runat="server" Text="0"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="style7" valign="top">
                                         Description: </td>
                                     <td>
