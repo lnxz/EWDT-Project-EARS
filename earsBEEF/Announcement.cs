@@ -55,7 +55,7 @@ namespace earsBEEF
             set { content = value; }
         }
 
-        public DateTime Date
+        public DateTime DateCreated
         {
             get { return dateCreated; }
             set { dateCreated = value; }
