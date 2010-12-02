@@ -340,6 +340,43 @@ namespace EARS
             return false;
 
         }
+        public static bool CheckStaffEmail(string staffEmail)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQl command 
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff WHERE staffEmail  = @StaffEmail";
+                comm.Parameters.AddWithValue("@staffEmail", staffEmail);
+                comm.Connection = conn;
+                //Excute SQL  command 
+                SqlDataReader dr = comm.ExecuteReader();
+                if (dr.Read())
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //close connection
+                conn.Close();
+            }
+            return false;
+
+        }
 
         #endregion
 

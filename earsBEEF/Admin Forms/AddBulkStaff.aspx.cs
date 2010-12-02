@@ -10,30 +10,28 @@ using System.Collections;
 
 namespace earsBEEF.Admin_Forms
 {
-    public partial class AddBulkStudent : System.Web.UI.Page
+    public partial class AddBulkStaff : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Submitbtn_Click(object sender, EventArgs e)
         {
-
             int rowsAdded = 0;
-            ArrayList errors = earsBEEF.OLEDBManager.massStudentImport();
+            ArrayList errors = earsBEEF.OLEDBManager.massStaffImport();
             if (errors.Count != 0)
             {
                 for (int x = 0; x < errors.Count; x++)
                 {
-                    if (errors[x].ToString().Equals("Successfully Added!"))
+                    if(errors[x].ToString().Equals("Successfully Added!"))
                     {
                         rowsAdded++;
                     }
-                    else
-                    {
+                    else{
 
-                        TextBox1.Text = TextBox1.Text + errors[x].ToString() + "\n";
+                    TextBox1.Text = TextBox1.Text + errors[x].ToString() + "\n";
                     }
                 }
                 if (rowsAdded > 0)
