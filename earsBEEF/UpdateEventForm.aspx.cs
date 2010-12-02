@@ -11,8 +11,6 @@ namespace earsBEEF
 
     public partial class UpdateEventForm : System.Web.UI.Page
     {
-        public static ArrayList eventDates = new ArrayList();
-        public static int datesAdded = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -136,38 +134,49 @@ namespace earsBEEF
                 }
 
             }
-
+           int eventID = Convert.ToInt32(Request.QueryString["eid"]);
+           EARS.Event thisEvent = EARS.DBManager.RetrieveEvent(eventID);
+           tbxName.Text = thisEvent.Name;
+           tbxVenue.Text = thisEvent.Venue;
+           tbxDes.Text = thisEvent.Descrip;
+           string[] words = thisEvent.EventDate.Split(';');
+           foreach (string word in words)
+           {
+               lbDate.Items.Add(word);
+           }
+           tbxQuota.Text = thisEvent.Quota.ToString();
+           if (thisEvent.RegistrationCost == 0)
+           {
+           }
+           else
+           {
+               RadioButton2.Checked = true;
+               tbxDol.Text = thisEvent.RegistrationCost.ToString();
+           }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
             if (DdlMonth.SelectedIndex != 0)
             {
-                Boolean repeat = false;
-                string tempDate = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
-                if (eventDates.Count == 0)
+                if (lbDate.Items.Count == 0)
                 {
-                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-                    eventDates.Add(tempDate);
+                    lbDate.Items.Add(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text);
                 }
                 else
                 {
-                    for (int x = 0; x < eventDates.Count; x++)
+                    Boolean repeat = false;
+                    for (int x = 0; x < lbDate.Items.Count; x++)
+                    {
+                        if (lbDate.Items[x].Equals(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text))
+                        {
+                            repeat = true;
+                        }
+                    }
+                    if (repeat == false)
                     {
 
-                        for (int j = 0; j < eventDates.Count; j++)
-                        {
-                            if (eventDates[j].Equals(tempDate))
-                            {
-                                repeat = true;
-                            }
-                        }
-                        if (repeat == false)
-                        {
-                            eventDates.Add(tempDate);
-                            lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-                        }
+                        lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
                     }
                 }
             }

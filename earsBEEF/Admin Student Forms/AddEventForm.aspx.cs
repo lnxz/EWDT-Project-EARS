@@ -11,7 +11,7 @@ namespace earsBEEF
 
     public partial class AddEventForm : System.Web.UI.Page
     {
-        public static ArrayList eventDates = new ArrayList();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -140,37 +140,35 @@ namespace earsBEEF
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+
+
             if (DdlMonth.SelectedIndex != 0)
             {
-                Boolean repeat = false;
-                string tempDate = DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text;
-                if (eventDates.Count == 0)
+                if (lbDate.Items.Count == 0)
                 {
-                    lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-                    eventDates.Add(tempDate);
+                    lbDate.Items.Add(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text);
                 }
                 else
                 {
-                    for (int x = 0; x < eventDates.Count; x++)
+                    Boolean repeat = false;
+                    for (int x = 0; x < lbDate.Items.Count; x++)
                     {
-                       
-                        for (int j = 0; j < eventDates.Count; j++)
+                        if (lbDate.Items[x].ToString().Equals(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text))
                         {
-                            if (eventDates[j].Equals(tempDate))
-                            {
-                                repeat = true;
-                            }
+                            repeat = true;
                         }
-                        if (repeat == false)
-                        {
-                            eventDates.Add(tempDate);
-                           lbDate.Items.Add(DdlDay.Text + " " + DdlMonth.Text + " " + DdlYear.Text);
-                        }
+                    }
+                    if (repeat == false)
+                    {
+
+                        lbDate.Items.Add(DdlDay.Text + "-" + DdlMonth.Text + "-" + DdlYear.Text);
                     }
                 }
             }
-
         }
+
+
+
 
 
         protected void btnConfirm_Click(object sender, EventArgs e)
@@ -212,38 +210,38 @@ namespace earsBEEF
                     lblDateError.Visible = false;
                 }
 
-                string eventDatesString = "";
+                string eventDatesString = ";";
                 for (int x = 0; x < lbDate.Items.Count; x++)
                 {
-                    eventDatesString = eventDatesString + lbDate.Items[x].ToString();
+                    eventDatesString = eventDatesString +";"+ lbDate.Items[x].ToString();
                 }
-                 
+
 
                 if (Session["LoginType"].ToString().Equals("Staff"))
                 {
                     EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
-                  EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), 
-                      Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available") ;
-                    
-                        tbxName.Text = "";
-                        tbxVenue.Text = "";
-                        tbxDes.Text = "";
-                        tbxDol.Text = "";
-                        tbxQuota.Text = "";
+                    EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text),
+                        Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available");
 
-                    
+                    tbxName.Text = "";
+                    tbxVenue.Text = "";
+                    tbxDes.Text = "";
+                    tbxDol.Text = "";
+                    tbxQuota.Text = "";
+
+
                 }
                 else
                 {
                     EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
                     EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate,
                         Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), tempStudent.StudentID, DateTime.Today, "Available");
-               
-                        tbxName.Text = "";
-                        tbxVenue.Text = "";
-                        tbxDes.Text = "";
-                        tbxDol.Text = "";
-                        tbxQuota.Text = "";
+
+                    tbxName.Text = "";
+                    tbxVenue.Text = "";
+                    tbxDes.Text = "";
+                    tbxDol.Text = "";
+                    tbxQuota.Text = "";
 
                 }
             }
@@ -430,7 +428,9 @@ namespace earsBEEF
         {
             try
             {
-                lbDate.Items.RemoveAt(lbDate.SelectedIndex);
+                int x = lbDate.SelectedIndex;
+                lbDate.Items.RemoveAt(x);
+                
             }
             catch (Exception)
             {
