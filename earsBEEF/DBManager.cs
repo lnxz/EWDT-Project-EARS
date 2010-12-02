@@ -1163,8 +1163,6 @@ namespace EARS
                     string title = dr["Title"].ToString();
                     string content = dr["AContent"].ToString();
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
-                
-                    
                     DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
                     int createStaffID = -1;
                     int createStudID = -1;
