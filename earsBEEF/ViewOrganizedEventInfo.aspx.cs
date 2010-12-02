@@ -20,7 +20,8 @@ namespace earsBEEF
                 s =  Convert.ToInt32(Request.QueryString["eid"]);
 
                 // check event 
-                EARS.Event a  = EARS.DBManager.RetrieveEvent(s);
+                EARS.Event a = EARS.DBManager.RetrieveEvent(s);
+                EARS.DBManager.GetQuotaOfEvent(s);
 
                 if (a != null)
                 {
@@ -32,39 +33,16 @@ namespace earsBEEF
                     lbRegStart.Text = Convert.ToDateTime(a.RegistrationStart).ToString();
                     lbRegEnd.Text = Convert.ToDateTime(a.RegistrationEnd).ToString();
                     lbCost.Text = "$" + Convert.ToDouble(a.RegistrationCost).ToString() + ".00";
+                    lbMax.Text = Convert.ToString(a.Quota).ToString();
                     tbxDes.Text = a.Descrip;
                 }
+                    lbQuota.Text = Convert.ToString(s);
             }
         }
             protected void btnReg_Click(object sender, EventArgs e)
             {
                 EARS.Student stu = (EARS.Student)(this.Session["Login"]);
                 EARS.DBManager.AddStudentRegisterEvent(stu.StudentID, s);
-
-                //    if (Session["LoginType"].Equals("Student"))
-                //    {
-                //        EARS.Student s = DBManager.GetAllStudents();
-                //    }
-
-                //    ArrayList s= new ArrayList();
-
-                // get student id and event id
-
-                //foreach (EARS.Event ee in EARS.DBManager.GetAllEvents())
-                //{
-                //    foreach (EARS.Student h in EARS.DBManager.GetAllStudents())
-                //    {
-                //        x = ee.EventID;
-                //        y = h.StudentID;
-                //    }
-
-                //}
-
-                //// assign to database
-                //EARS.DBManager.AddStudentRegisterEvent(x, y);
-
-                //    // if the event date crash prompt a warning
-                //}
             }
 
             protected void btnCancel_Click(object sender, EventArgs e)
