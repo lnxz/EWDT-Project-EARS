@@ -1163,9 +1163,27 @@ namespace EARS
                     string title = dr["Title"].ToString();
                     string content = dr["AContent"].ToString();
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
-                    int createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
-                    int createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
+                
+                    
                     DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
+                    int createStaffID = -1;
+                    int createStudID = -1;
+                    if (dr["CreateStaffID"] == DBNull.Value)
+                    {
+
+                    }
+                    else
+                    {
+                        createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
+                    }
+                    if (dr["CreateStudentID"]== DBNull.Value)
+                    {
+                        
+                    }
+                    else
+                    {
+                        createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
+                    }
 
 
                     earsBEEF.Announcement a = new earsBEEF.Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
