@@ -692,13 +692,14 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Event where orgStudID = @orgStudID";
+                comm.CommandText = "SELECT * FROM Event where OrgStudentID = @orgStudID"; 
+                comm.Parameters.AddWithValue("@orgStudID",orgStudID);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-
+                   
                     int eventID = Convert.ToInt32(dr["EventID"].ToString());
                     string name = dr["Name"].ToString();
                     string venue = dr["Venue"].ToString();
