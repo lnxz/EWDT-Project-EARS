@@ -55,11 +55,11 @@
     <Content Include="ViewOrganizedEvents.aspx" />
     <Content Include="UpdateEventForm.aspx" />
     <Content Include="Admin Forms\AddBulkStudent.aspx" />
-    <Content Include="Admin Student Forms\AddAnnouncement.aspx" />
+    <Content Include="ViewAnnouncement.aspx" />
     <Content Include="Admin Student Forms\AddEventForm.aspx" />
     <Content Include="Admin Forms\AddStaffForm.aspx" />
     <Content Include="Admin Forms\AddStudentForm.aspx" />
-    <Content Include="AllAnnouncement.aspx" />
+    <Content Include="Admin Student Forms\AddAnnouncement.aspx" />
     <Content Include="DeleteUpdateStaff.aspx" />
     <Content Include="DeleteUpdateStud.aspx" />
     <Content Include="EditStaffProfile.aspx" />
@@ -149,12 +149,12 @@
     <Compile Include="Admin Forms\AddBulkStudent.aspx.designer.cs">
       <DependentUpon>AddBulkStudent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Student Forms\AddAnnouncement.aspx.cs">
-      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
+    <Compile Include="ViewAnnouncement.aspx.cs">
+      <DependentUpon>ViewAnnouncement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Student Forms\AddAnnouncement.aspx.designer.cs">
-      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
+    <Compile Include="ViewAnnouncement.aspx.designer.cs">
+      <DependentUpon>ViewAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin Student Forms\AddEventForm.aspx.cs">
       <DependentUpon>AddEventForm.aspx</DependentUpon>
@@ -177,12 +177,12 @@
     <Compile Include="Admin Forms\AddStudentForm.aspx.designer.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AllAnnouncement.aspx.cs">
-      <DependentUpon>AllAnnouncement.aspx</DependentUpon>
+    <Compile Include="Admin Student Forms\AddAnnouncement.aspx.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AllAnnouncement.aspx.designer.cs">
-      <DependentUpon>AllAnnouncement.aspx</DependentUpon>
+    <Compile Include="Admin Student Forms\AddAnnouncement.aspx.designer.cs">
+      <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="Category.cs" />
