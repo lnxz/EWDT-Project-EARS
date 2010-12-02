@@ -11,7 +11,7 @@ namespace earsBEEF
     public class OLEDBManager
     {
 
-        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\Book2.xlsx;Extended Properties=""Excel 8.0;HDR=Yes""";
+        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\Book2.xlsx;Extended Properties=""Excel 8.0;HDR=Yes""";
         public static ArrayList massStudentImport()
         {
             ArrayList errorList = new ArrayList(); 
@@ -41,7 +41,7 @@ namespace earsBEEF
                 DateTime dateOfBirth = DateTime.Today;
 
 
-                for (int i = 0; i < 13; i++)
+                for (int i = 0; i < 12; i++)
                 {
                     if (i == 0)
                     {
@@ -136,5 +136,118 @@ namespace earsBEEF
             }
             return errorList;
         }
+        
+        public static ArrayList massStaffImport()
+        {
+            ArrayList errorList = new ArrayList(); 
+            OleDbCommand myCommand = new OleDbCommand("Select * from [staff$];");
+            OleDbConnection myConnection = new OleDbConnection(connectionString);
+            try{
+            myConnection.Open();
+
+            myCommand.Connection = myConnection;
+
+            OleDbDataReader myReader = myCommand.ExecuteReader();
+            Boolean checkRepeat = false;
+            while (myReader.Read() && checkRepeat ==false)
+            {
+                string name = "";
+                string staffEmail = "";
+                string password = "";
+                char gender = 'M';
+                string school = "";
+                string contactNo = "";
+                string personalEmail = "";
+                string position = "";
+                char isAdmin = 'N';
+                DateTime dateOfBirth = DateTime.Today;
+                string officeNo = "";
+
+                for (int i = 0; i < 10; i++)
+                {
+                    if (i == 0)
+                    {
+                        name = myReader[i].ToString();
+                        if (name.Equals(""))
+                        {
+                            checkRepeat = true;
+                            break;
+                            
+                        }
+                    }
+                    else if (i == 1)
+                    {
+                        staffEmail = myReader[i].ToString();
+                    }
+                    else if (i == 2)
+                    {
+                        password = myReader[i].ToString();
+                    }
+                    else if (i == 3)
+                    {
+                        string genderTemp = myReader[i].ToString();
+                        if (genderTemp.Equals("F"))
+                        {
+                            gender = 'F';
+                        }
+                    }
+                    else if (i == 4)
+                    {
+                        school = myReader[i].ToString();
+                    }
+                    else if (i == 5)
+                    {
+                        contactNo = myReader[i].ToString();
+                    }
+                    else if (i == 6)
+                    {
+                        personalEmail = myReader[i].ToString();
+                    }
+                    else if (i == 7)
+                    {
+                        position = myReader[i].ToString();
+                    }
+                    else if (i == 8)
+                    {
+                        isAdmin = myReader[i].ToString()[0];
+                    }
+                    else if (i == 9)
+                    {
+                        dateOfBirth = DateTime.Parse(myReader[i].ToString());
+                    }
+                    else if (i == 10)
+                    {
+                        officeNo = myReader[i].ToString();
+                    }
+                
+                    } if (checkRepeat == true)
+                    {
+                    }
+                    else
+                    {
+                        if (EARS.DBManager.CheckStaffEmail(staffEmail))
+                        {
+                            EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, contactNo, personalEmail, position, isAdmin, officeNo, dateOfBirth);
+                            errorList.Add("Successfully Added!");
+                        }
+                        else
+                        {
+                            errorList.Add("Duplicate Staff Email: " + staffEmail + " already exists");
+                        }
+                    }
+                }
+
+                }
+                catch (OleDbException ex)
+                {
+
+                }
+                finally
+                {
+
+                    myConnection.Close();
+                }
+                return errorList;
+            }
     }
 }

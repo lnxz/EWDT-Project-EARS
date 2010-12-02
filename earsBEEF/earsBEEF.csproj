@@ -51,8 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCategory.aspx" />
+
+    <Content Include="Admin Forms\AddBulkStaff.aspx" />
+
     <Content Include="ViewOrganizedEventInfo.aspx" />
     <Content Include="ViewOrganizedEvents.aspx" />
+
     <Content Include="UpdateEventForm.aspx" />
     <Content Include="Admin Forms\AddBulkStudent.aspx" />
     <Content Include="ViewAnnouncement.aspx" />
@@ -121,6 +125,15 @@
     <Compile Include="AddCategory.aspx.designer.cs">
       <DependentUpon>AddCategory.aspx</DependentUpon>
     </Compile>
+<<<<<<< .mine
+    <Compile Include="Admin Forms\AddBulkStaff.aspx.cs">
+      <DependentUpon>AddBulkStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin Forms\AddBulkStaff.aspx.designer.cs">
+      <DependentUpon>AddBulkStaff.aspx</DependentUpon>
+    </Compile>
+=======
     <Compile Include="ViewOrganizedEventInfo.aspx.cs">
       <DependentUpon>ViewOrganizedEventInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,6 +148,7 @@
     <Compile Include="ViewOrganizedEvents.aspx.designer.cs">
       <DependentUpon>ViewOrganizedEvents.aspx</DependentUpon>
     </Compile>
+>>>>>>> .r337
     <Compile Include="UpdateEventForm.aspx.cs">
       <DependentUpon>UpdateEventForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
