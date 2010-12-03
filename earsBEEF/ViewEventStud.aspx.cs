@@ -21,7 +21,7 @@ namespace earsBEEF
 
                 // check event 
                 EARS.Event a = EARS.DBManager.RetrieveEvent(s);
-                EARS.DBManager.GetQuotaOfEvent(s);
+                int c = EARS.DBManager.GetQuotaOfEvent(s);
 
                 if (a != null)
                 {
@@ -36,7 +36,7 @@ namespace earsBEEF
                     lbMax.Text = Convert.ToString(a.Quota).ToString();
                     tbxDes.Text = a.Descrip;
                 }
-                    lbQuota.Text = Convert.ToString(s);
+                    lbQuota.Text = Convert.ToString(c);
             }
         }
             protected void btnReg_Click(object sender, EventArgs e)

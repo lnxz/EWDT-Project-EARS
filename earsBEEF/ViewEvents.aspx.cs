@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using System.Net;
 using System.Data;
+using System.Collections;
 
 namespace earsBEEF
 {
@@ -18,9 +19,48 @@ namespace earsBEEF
             //{
            // GridView1.Columns.RemoveAt(6);
             //}
-            GridView1.DataSource = EARS.DBManager.GetAllEvents();//populateEventTable();
 
-            GridView1.DataBind();
+            //EARS.Event e = EARS.DBManager.GetAllEvents();
+
+            /*foreach (EARS.Event ee1 in EARS.DBManager.GetAllEvents())
+            {
+                string x = ee1.RegistrationStart.ToShortDateString();
+                string y = ee1.RegistrationEnd.ToShortDateString();
+                string result = DateDifference.Datedifference(x, y); //date difference between start n enddate
+                DateTime t = DateTime.Today;
+                string today = t.ToShortDateString();
+                string result1 = DateDifference.Datedifference(x,today); //date difference between start n today
+
+                if (ee1.RegistrationStart != DateTime.Today)
+                {
+                   
+                }
+                else if (ee1.RegistrationEnd <= DateTime.Today && ee1.RegistrationEnd != DateTime.Today)
+                {
+
+                }
+                if (DateTime.Today <= ee1.RegistrationStart && DateTime.Today >= ee1.RegistrationEnd)
+                {
+                    GridView1.DataSource = EARS.DBManager.GetAllEvents(); //populateEventTable();
+                    GridView1.DataBind();
+                }
+               
+            }*/
+
+            //ArrayList a = new ArrayList();
+
+            foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
+            {
+                if (a.RegistrationStart == DateTime.Today && DateTime.Today <= a.RegistrationEnd)
+                {
+                    GridView1.DataSource = EARS.DBManager.RetrieveEvent(a.EventID);
+                    GridView1.DataBind();
+                }
+            }
+
+            //GridView1.DataSource = EARS.DBManager.GetAllEvents();//populateEventTable();
+
+            //GridView1.DataBind();
           
         }
         protected void Page_PreInit()
