@@ -47,13 +47,14 @@ namespace earsBEEF
                
             }*/
 
-            //ArrayList a = new ArrayList();
+            ArrayList a1 = new ArrayList();
 
             foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
             {
                 if (a.RegistrationStart == DateTime.Today && DateTime.Today <= a.RegistrationEnd)
                 {
-                    GridView1.DataSource = EARS.DBManager.RetrieveEvent(a.EventID);
+                    a1.Add(a);
+                    GridView1.DataSource = a1;
                     GridView1.DataBind();
                 }
             }
