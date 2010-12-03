@@ -1188,7 +1188,7 @@ namespace EARS
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@e", eId);
                 // Step 3: Execute the sql command
-                int number = (int)comm.ExecuteScalar();
+               value = (int)comm.ExecuteScalar();
             }
             catch (SqlException ex)
             {
