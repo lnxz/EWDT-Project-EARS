@@ -29,26 +29,27 @@ namespace earsBEEF
                     }
                     else
                     {
-                        
-                        GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);//populateEventTable();
-                        //int query = Convert.ToInt32(EARS.DBManager.GetStudentWithEvent(stu.StudentID));
+                        ArrayList a = new ArrayList();
+
+                        foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu.StudentID))
+                        {
+                            if ((DateTime.Today >= e1.RegistrationStart) && (DateTime.Today <= e1.RegistrationEnd))
+                            {
+                                a.Add(e);
+                            }
+
+                        }
+
+                        GridView1.DataSource = a;//populateEventTable();
+                        //GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);
                         GridView1.DataBind();
                     }
+
                 }
+
                 
             }
         }
-
-        //protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-        //{
-        //    EARS.Student stu = (EARS.Student)(this.Session["Login"]);
-
-        //    string key = GridView1.DataKeys[e.NewSelectedIndex].Value.ToString();
-
-        //    int k = Convert.ToInt32(key);
-            
-        //    EARS.DBManager.DeleteStudentEvent(stu.StudentID,k);
-        //}
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -60,16 +61,5 @@ namespace earsBEEF
             GridView1.DataBind();
  
         }
-
-        //protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
-        //if(e.CommandName=="Remove")
-        //{
-        //    EARS.Student stu = (EARS.Student)(this.Session["Login"]);
-
-        //    int k = (int)GridView1.DataKeys[e.RowIndex].Value;
-        //    EARS.DBManager.DeleteStudentEvent(stu.StudentID, k);
-        //}
-        //}
     }
 }

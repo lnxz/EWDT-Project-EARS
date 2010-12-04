@@ -14,66 +14,30 @@ namespace earsBEEF
     public partial class ViewEvents : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {  
-            //if( this.Session["LoginType"].Equals("Staff"))
-            //{
-           // GridView1.Columns.RemoveAt(6);
-            //}
-
-            //EARS.Event e = EARS.DBManager.GetAllEvents();
-
-            /*foreach (EARS.Event ee1 in EARS.DBManager.GetAllEvents())
+        {
+            if (this.Session["LoginType"].Equals("Staff"))
             {
-                string x = ee1.RegistrationStart.ToShortDateString();
-                string y = ee1.RegistrationEnd.ToShortDateString();
-                string result = DateDifference.Datedifference(x, y); //date difference between start n enddate
-                DateTime t = DateTime.Today;
-                string today = t.ToShortDateString();
-                string result1 = DateDifference.Datedifference(x,today); //date difference between start n today
-
-                if (ee1.RegistrationStart != DateTime.Today)
-                {
-                   
-                }
-                else if (ee1.RegistrationEnd <= DateTime.Today && ee1.RegistrationEnd != DateTime.Today)
-                {
-
-                }
-                if (DateTime.Today <= ee1.RegistrationStart && DateTime.Today >= ee1.RegistrationEnd)
-                {
-                    GridView1.DataSource = EARS.DBManager.GetAllEvents(); //populateEventTable();
-                    GridView1.DataBind();
-                }
-               
-            }*/
-
-            ArrayList a1 = new ArrayList();
-
-            foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
+                GridView1.Columns.RemoveAt(6);
+            }
+            else
             {
-                if (a.RegistrationStart == DateTime.Today)// && a.RegistrationEnd >= DateTime.Today || a.RegistrationEnd <= DateTime.Today)
+                ArrayList a1 = new ArrayList();
+
+                foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
                 {
-                    //today is supposed to be in the MIDDLE of start date and end datenot later than both enddate/startdate
-                    if ((a.RegistrationStart > DateTime.Today) && (DateTime.Today <= a.RegistrationEnd)) // range condition....
+                    if ((DateTime.Today >= a.RegistrationStart) && (DateTime.Today <= a.RegistrationEnd))
                     {
                         a1.Add(a);
                     }
-                    
-                    else if (a.RegistrationStart != DateTime.Today)
-                    {
-                        a1.Remove(a);
-                    }
+
                 }
+
+                GridView1.DataSource = a1;
+                GridView1.DataBind();
+            }
             }
 
-            GridView1.DataSource = a1;
-            GridView1.DataBind();
 
-            //GridView1.DataSource = EARS.DBManager.GetAllEvents();//populateEventTable();
-
-            //GridView1.DataBind();
-          
-        }
         protected void Page_PreInit()
         {
             //this.MasterPageFile = Session["MyPage_Master"].ToString();
