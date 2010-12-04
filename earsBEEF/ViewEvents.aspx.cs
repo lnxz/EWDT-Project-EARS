@@ -53,7 +53,7 @@ namespace earsBEEF
             {
                 if (a.RegistrationStart == DateTime.Today)// && a.RegistrationEnd >= DateTime.Today || a.RegistrationEnd <= DateTime.Today)
                 {
-                    if ((a.RegistrationStart < DateTime.Today) || (DateTime.Today >= a.RegistrationEnd)) // range condition....
+                    if ((a.RegistrationStart < DateTime.Today) && (DateTime.Today >= a.RegistrationEnd)) // range condition....
                     {
                         a1.Add(a);
                     }
