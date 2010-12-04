@@ -301,8 +301,20 @@
                 &nbsp;</td>
         </tr>
     </table>
-<br />
     <table style="width:100%;">
+        <tr>
+            <td class="style25">
+                Status :&nbsp;
+                <asp:DropDownList ID="ddlStatus" runat="server">
+                    <asp:ListItem Value="Available"></asp:ListItem>
+                    <asp:ListItem Value="Cancelled"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+            <td>
+            </td>
+            <td class="style25">
+                &nbsp;</td>
+        </tr>
         <tr>
             <td class="style25">
                 &nbsp;</td>
