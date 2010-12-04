@@ -14,7 +14,6 @@ namespace earsBEEF
         {
             if (Page.IsPostBack)
             {
-
             }
             else
             {
