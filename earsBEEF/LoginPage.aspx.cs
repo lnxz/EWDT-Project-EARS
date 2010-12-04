@@ -32,12 +32,12 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("ViewEvents.aspx");
+                        Response.Redirect("RegisteredEventStud.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("ViewEvents.aspx"); //home.aspx
+                        Response.Redirect("RegisteredEventStud.aspx"); //home.aspx
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
@@ -62,12 +62,12 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("ViewEvents.aspx");
+                        Response.Redirect("RegisteredEventStud.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("ViewEvents.aspx");
+                        Response.Redirect("RegisteredEventStud.aspx");
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }
