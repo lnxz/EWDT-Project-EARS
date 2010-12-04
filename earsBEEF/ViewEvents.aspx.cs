@@ -51,15 +51,18 @@ namespace earsBEEF
 
             foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
             {
-                if (a.RegistrationStart <= DateTime.Today && a.RegistrationEnd<= DateTime.Today)
+                if (a.RegistrationStart == DateTime.Today)// && a.RegistrationEnd >= DateTime.Today || a.RegistrationEnd <= DateTime.Today)
                 {
-                    a1.Add(a);
-                    if (a.RegistrationStart != DateTime.Today)
+                    if ((a.RegistrationStart < DateTime.Today) && (DateTime.Today >= a.RegistrationEnd)) // range condition....
+                    {
+                        a1.Add(a);
+                    }
+                    
+                    else if (a.RegistrationStart != DateTime.Today)
                     {
                         a1.Remove(a);
                     }
                 }
-
             }
 
             GridView1.DataSource = a1;
