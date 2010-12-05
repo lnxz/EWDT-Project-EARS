@@ -210,7 +210,7 @@ namespace earsBEEF
                     lblDateError.Visible = false;
                 }
 
-                string eventDatesString = ";";
+                string eventDatesString = "";
                 for (int x = 0; x < lbDate.Items.Count; x++)
                 {
                     eventDatesString = eventDatesString +";"+ lbDate.Items[x].ToString();

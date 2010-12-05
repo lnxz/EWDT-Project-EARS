@@ -876,7 +876,7 @@ namespace EARS
             return results;
         }
         // Overloaded AddEvent method for Staff
-        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID, string status)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime          RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID, string status)
         {
             int rowsAdded = -1;
 
@@ -921,7 +921,7 @@ namespace EARS
             return rowsAdded;
         }
         // Overloaded AddEvent method for Students
-        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime          RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status)
         {
             int rowsAdded = -1;
 
@@ -1125,7 +1125,7 @@ namespace EARS
 
         }
         // Update event
-        public static bool UpdateEvent(int eventID, string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, string status)
+        public static bool UpdateEvent(int eventID, string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime                      RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, string status)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -1173,7 +1173,7 @@ namespace EARS
             }
             return updateStatus;
         }
-
+        // Get quota of event
         public static int GetQuotaOfEvent(int eId)
         {
             // Establish connection with database

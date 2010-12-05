@@ -61,13 +61,31 @@
             width: 749px;
             height: 53px;
         }
+        .style37
+        {
+            color: #000000;
+            width: 213px;
+        }
+        .style38
+        {
+            width: 213px;
+        }
+        .style39
+        {
+            width: 227px;
+        }
+        .style40
+        {
+            color: #000000;
+            width: 227px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table style="width:100%;">
         <tr>
             <td class="style25" colspan="2">
-                <strong>Create an Event</strong></td>
+                <strong>Update Event</strong></td>
         </tr>
         <tr>
             <td class="style25" colspan="2">
@@ -162,11 +180,10 @@
                             <span class="style25">&nbsp;&nbsp;</span><br class="style25" />
                                 <asp:Label ID="Label1" runat="server" ForeColor="Red" CssClass="style25">Please Add Event Dates</asp:Label>
                             <br />
-                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px" 
-                                Enabled="False">
+                                        <asp:ListBox ID="lbDate" runat="server" Height="85px" Width="205px">
                                         </asp:ListBox>
                                         <asp:Button ID="btnRemove" runat="server" Text="Remove" 
-                                Width="96px" onclick="btnRemove_Click" />
+                                Width="96px" onclick="btnRemove_Click" CausesValidation="False" />
                         </td>
                     </tr>
                     <tr>
@@ -192,13 +209,44 @@
                             <span class="style25">&nbsp;/ 
                 </span> 
                 <asp:DropDownList ID="DdlDay0" runat="server" Height="22px" Width="76px" Enabled="False">
-                    <asp:ListItem>Day</asp:ListItem>
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>7</asp:ListItem>
+                    <asp:ListItem>8</asp:ListItem>
+                    <asp:ListItem>9</asp:ListItem>
+                    <asp:ListItem>10</asp:ListItem>
+                    <asp:ListItem>11</asp:ListItem>
+                    <asp:ListItem>12</asp:ListItem>
+                    <asp:ListItem>13</asp:ListItem>
+                    <asp:ListItem>14</asp:ListItem>
+                    <asp:ListItem>15</asp:ListItem>
+                    <asp:ListItem>16</asp:ListItem>
+                    <asp:ListItem>17</asp:ListItem>
+                    <asp:ListItem>18</asp:ListItem>
+                    <asp:ListItem>19</asp:ListItem>
+                    <asp:ListItem>20</asp:ListItem>
+                    <asp:ListItem>21</asp:ListItem>
+                    <asp:ListItem>22</asp:ListItem>
+                    <asp:ListItem>23</asp:ListItem>
+                    <asp:ListItem>24</asp:ListItem>
+                    <asp:ListItem>25</asp:ListItem>
+                    <asp:ListItem>26</asp:ListItem>
+                    <asp:ListItem>27</asp:ListItem>
+                    <asp:ListItem>28</asp:ListItem>
+                    <asp:ListItem>28</asp:ListItem>
+                    <asp:ListItem>29</asp:ListItem>
+                    <asp:ListItem>30</asp:ListItem>
                 </asp:DropDownList>
                             <span class="style25">&nbsp;/ 
                            </span> 
                            <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px" 
                                 Enabled="False">
-                    <asp:ListItem>Year</asp:ListItem>
+                    <asp:ListItem>2010</asp:ListItem>
+                               <asp:ListItem>2011</asp:ListItem>
                 </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </span>
                             <br class="style25" />
@@ -219,12 +267,42 @@
                             <span class="style25">&nbsp;/
                 </span>
                 <asp:DropDownList ID="DdlDay1" runat="server" Height="22px" Width="76px">
-                    <asp:ListItem>Day</asp:ListItem>
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>7</asp:ListItem>
+                    <asp:ListItem>8</asp:ListItem>
+                    <asp:ListItem>9</asp:ListItem>
+                    <asp:ListItem>10</asp:ListItem>
+                    <asp:ListItem>11</asp:ListItem>
+                    <asp:ListItem>12</asp:ListItem>
+                    <asp:ListItem>13</asp:ListItem>
+                    <asp:ListItem>14</asp:ListItem>
+                    <asp:ListItem>15</asp:ListItem>
+                    <asp:ListItem>16</asp:ListItem>
+                    <asp:ListItem>17</asp:ListItem>
+                    <asp:ListItem>18</asp:ListItem>
+                    <asp:ListItem>19</asp:ListItem>
+                    <asp:ListItem>20</asp:ListItem>
+                    <asp:ListItem>21</asp:ListItem>
+                    <asp:ListItem>22</asp:ListItem>
+                    <asp:ListItem>23</asp:ListItem>
+                    <asp:ListItem>24</asp:ListItem>
+                    <asp:ListItem>25</asp:ListItem>
+                    <asp:ListItem>26</asp:ListItem>
+                    <asp:ListItem>27</asp:ListItem>
+                    <asp:ListItem>28</asp:ListItem>
+                    <asp:ListItem>29</asp:ListItem>
+                    <asp:ListItem>30</asp:ListItem>
                 </asp:DropDownList>
                             <span class="style25">&nbsp;/ 
                            </span> 
                            <asp:DropDownList ID="DdlYear1" runat="server" Height="22px" Width="76px">
-                    <asp:ListItem>Year</asp:ListItem>
+                               <asp:ListItem>2010</asp:ListItem>
+                               <asp:ListItem>2011</asp:ListItem>
                 </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </span>
                             <br class="style25" />
@@ -303,29 +381,31 @@
     </table>
     <table style="width:100%;">
         <tr>
-            <td class="style25">
+            <td class="style37">
                 Status :&nbsp;
                 <asp:DropDownList ID="ddlStatus" runat="server">
                     <asp:ListItem Value="Available"></asp:ListItem>
                     <asp:ListItem Value="Cancelled"></asp:ListItem>
                 </asp:DropDownList>
             </td>
-            <td>
+            <td class="style39">
             </td>
             <td class="style25">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style25">
+            <td class="style37">
                 &nbsp;</td>
-            <td class="style25">
+            <td class="style40">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style13">
+            <td class="style38">
                 <asp:Button ID="btnConfirm" runat="server" style="text-align: right" 
                     Text="Confirm" onclick="btnConfirm_Click" />
             </td>
+            <td class="style39">
+                &nbsp;</td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
                     onclick="btnCancel_Click" />
