@@ -11,165 +11,73 @@ namespace earsBEEF
 
     public partial class UpdateEventForm : System.Web.UI.Page
     {
+        public static EARS.Event thisEvent;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Session["LoginType"].Equals("Staff"))
-            {
-
-                //initialize CCA dropdown list
-                ddlCCA.Items.Clear();
-                EARS.Staff s = (EARS.Staff)(Session["Login"]);
-                ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
-                ddlCCA.DataTextField = "Name";
-                ddlCCA.DataValueField = "CCAID";
-                ddlCCA.DataBind();
-            }
+            if (Page.IsPostBack)
+            { }
             else
             {
-                //initialize CCA dropdown list
-                ddlCCA.Items.Clear();
-                EARS.Student s = (EARS.Student)(Session["Login"]);
-                ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
-                ddlCCA.DataTextField = "Name";
-                ddlCCA.DataValueField = "CcaID";
-                ddlCCA.DataBind();
-            }
+                if (Session["LoginType"].Equals("Staff"))
+                {
+
+                    //initialize CCA dropdown list
+                    ddlCCA.Items.Clear();
+                    EARS.Staff s = (EARS.Staff)(Session["Login"]);
+                    ddlCCA.DataSource = EARS.DBManager.GetCCAofStaff(s.StaffID);
+                    ddlCCA.DataTextField = "Name";
+                    ddlCCA.DataValueField = "CCAID";
+                    ddlCCA.DataBind();
+                }
+                else
+                {
+                    //initialize CCA dropdown list
+                    ddlCCA.Items.Clear();
+                    EARS.Student s = (EARS.Student)(Session["Login"]);
+                    ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
+                    ddlCCA.DataTextField = "Name";
+                    ddlCCA.DataValueField = "CcaID";
+                    ddlCCA.DataBind();
+                }
 
 
-            //initialize category dropdown list
-            ddlCate.Items.Clear();
+                //initialize category dropdown list
+                ddlCate.Items.Clear();
 
-            ddlCate.DataSource = EARS.DBManager.GetAllCategory();
-            ddlCate.DataTextField = "Name";
-            ddlCate.DataValueField = "CategoryID";
-            ddlCate.DataBind();
-            // Load selected Event
-            int eventID = Convert.ToInt32(Request.QueryString["eid"]);
-            EARS.Event thisEvent = EARS.DBManager.RetrieveEvent(eventID);
-            tbxName.Text = thisEvent.Name;
-            tbxVenue.Text = thisEvent.Venue;
-            tbxDes.Text = thisEvent.Descrip;
-            string[] words = thisEvent.EventDate.Split(';');
-            foreach (string word in words)
-            {
-                lbDate.Items.Add(word);
-            }
-            tbxQuota.Text = thisEvent.Quota.ToString();
-            if (thisEvent.RegistrationCost == 0)
-            {
-            }
-            else
-            {
-                RadioButton2.Checked = true;
-                tbxDol.Text = thisEvent.RegistrationCost.ToString();
-            }
-
-            int regStartMonth = Convert.ToInt32(thisEvent.RegistrationStart.Month.ToString());
-            if (regStartMonth == 1)
-            {
-                DdlMonth0.SelectedValue = "Jan";
-            }
-            else if (regStartMonth == 2)
-            {
-                DdlMonth0.SelectedValue = "Feb";
-            }
-            else if (regStartMonth == 3)
-            {
-                DdlMonth0.SelectedValue = "Mar";
-            }
-            else if (regStartMonth == 4)
-            {
-                DdlMonth0.SelectedValue = "Apr";
-            }
-            else if (regStartMonth == 5)
-            {
-                DdlMonth0.SelectedValue = "May";
-            }
-            else if (regStartMonth == 6)
-            {
-                DdlMonth0.SelectedValue = "Jun";
-            }
-            else if (regStartMonth == 7)
-            {
-                DdlMonth0.SelectedValue = "Jul";
-            }
-            else if (regStartMonth == 8)
-            {
-                DdlMonth0.SelectedValue = "Aug";
-            }
-            else if (regStartMonth == 9)
-            {
-                DdlMonth0.SelectedValue = "Sep";
-            }
-            else if (regStartMonth == 10)
-            {
-                DdlMonth0.SelectedValue = "Oct";
-            }
-            else if (regStartMonth == 11)
-            {
-                DdlMonth0.SelectedValue = "Nov";
-            }
-            else if (regStartMonth == 12)
-            {
-                DdlMonth0.SelectedValue = "Dec";
-            }
+                ddlCate.DataSource = EARS.DBManager.GetAllCategory();
+                ddlCate.DataTextField = "Name";
+                ddlCate.DataValueField = "CategoryID";
+                ddlCate.DataBind();
+                // Load selected Event
+                int eventID = Convert.ToInt32(Request.QueryString["eid"]);
+                thisEvent = EARS.DBManager.RetrieveEvent(eventID);
+                tbxName.Text = thisEvent.Name;
+                tbxVenue.Text = thisEvent.Venue;
+                tbxDes.Text = thisEvent.Descrip;
+                string[] words = thisEvent.EventDate.Split(';');
+                foreach (string word in words)
+                {
+                    if (word.Equals(""))
+                    {
+                    }
+                    else
+                    {
+                        lbDate.Items.Add(word);
+                    }
+                }
+                tbxQuota.Text = thisEvent.Quota.ToString();
+                if (thisEvent.RegistrationCost == 0)
+                {
+                }
+                else
+                {
+                    RadioButton2.Checked = true;
+                    tbxDol.Text = thisEvent.RegistrationCost.ToString();
+                }
 
 
-            int regEndMonth = Convert.ToInt32(thisEvent.RegistrationEnd.Month.ToString());
-            if (regEndMonth == 1)
-            {
-                DdlMonth1.SelectedValue = "Jan";
-            }
-            else if (regEndMonth == 2)
-            {
-                DdlMonth1.SelectedValue = "Feb";
-            }
-            else if (regEndMonth == 3)
-            {
-                DdlMonth1.SelectedValue = "Mar";
-            }
-            else if (regEndMonth == 4)
-            {
-                DdlMonth1.SelectedValue = "Apr";
-            }
-            else if (regEndMonth == 5)
-            {
-                DdlMonth1.SelectedValue = "May";
-            }
-            else if (regEndMonth == 6)
-            {
-                DdlMonth1.SelectedValue = "Jun";
-            }
-            else if (regEndMonth == 7)
-            {
-                DdlMonth1.SelectedValue = "Jul";
-            }
-            else if (regEndMonth == 8)
-            {
-                DdlMonth1.SelectedValue = "Aug";
-            }
-            else if (regEndMonth == 9)
-            {
-                DdlMonth1.SelectedValue = "Sep";
-            }
-            else if (regEndMonth == 10)
-            {
-                DdlMonth1.SelectedValue = "Oct";
-            }
-            else if (regEndMonth == 11)
-            {
-                DdlMonth1.SelectedValue = "Nov";
-            }
-            else if (regEndMonth == 12)
-            {
-                DdlMonth1.SelectedValue = "Dec";
-            }
 
 
-            DdlYear0.SelectedValue = thisEvent.RegistrationStart.Year.ToString();
-            DdlYear1.SelectedValue = thisEvent.RegistrationEnd.Year.ToString();
-            {
                 DateTime tempDate = thisEvent.DateCreated;
                 for (int x = 0; x < 3; x++)
                 {
@@ -251,10 +159,44 @@ namespace earsBEEF
                     }
 
                     tempDate = tempDate.AddMonths(1);
+
                 }
 
-            }
+                int regStartMonth = Convert.ToInt32(thisEvent.RegistrationStart.Month.ToString()) - Convert.ToInt32(thisEvent.DateCreated.Month.ToString());
+                if (regStartMonth == -10)
+                {
+                    DdlMonth0.SelectedIndex = 3;
+                }
+                else if (regStartMonth == -11)
+                {
+                    DdlMonth0.SelectedIndex = 2;
+                }
+                else
+                {
 
+                    DdlMonth0.SelectedIndex = regStartMonth + 1;
+                }
+                int regEndMonth = Convert.ToInt32(thisEvent.RegistrationEnd.Month.ToString()) - Convert.ToInt32(thisEvent.DateCreated.Month.ToString());
+                if (regEndMonth == -10)
+                {
+                    DdlMonth1.SelectedIndex = 3;
+                }
+                else if (regEndMonth == -11)
+                {
+                    DdlMonth1.SelectedIndex = 2;
+                }
+                else
+                {
+
+                    DdlMonth1.SelectedIndex = regEndMonth + 1;
+                }
+                DdlDay0.SelectedIndex = thisEvent.RegistrationStart.Day - 1;
+                DdlDay1.SelectedIndex = thisEvent.RegistrationEnd.Day - 1;
+
+                DdlYear0.SelectedValue = thisEvent.RegistrationStart.Year.ToString();
+                DdlYear1.SelectedValue = thisEvent.RegistrationEnd.Year.ToString();
+
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -310,9 +252,9 @@ namespace earsBEEF
             else
             {
                 lblDateError1.Visible = false;
-                DateTime month1 = DateTime.Today.AddMonths(DdlMonth0.SelectedIndex - 1);
+                DateTime month1 = thisEvent.DateCreated.AddMonths(DdlMonth0.SelectedIndex - 1);
                 int monthStart = month1.Month;
-                DateTime month2 = DateTime.Today.AddMonths(DdlMonth1.SelectedIndex - 1);
+                DateTime month2 =  thisEvent.DateCreated.AddMonths(DdlMonth1.SelectedIndex - 1);
                 int monthEnd = month2.Month;
                 DateTime startDate = new DateTime(Convert.ToInt32(DdlYear0.Text), monthStart, DdlDay0.SelectedIndex + 1);
                 DateTime endDate = new DateTime(Convert.ToInt32(DdlYear1.Text), monthEnd, DdlDay1.SelectedIndex + 1);
@@ -332,7 +274,8 @@ namespace earsBEEF
                 }
 
                 //need add in eventID
-                EARS.DBManager.UpdateEvent(1, tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, ddlStatus.SelectedItem.Text);
+
+                EARS.DBManager.UpdateEvent(thisEvent.EventID, tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, ddlStatus.SelectedItem.Text);
 
                 tbxName.Text = "";
                 tbxVenue.Text = "";
@@ -525,14 +468,12 @@ namespace earsBEEF
 
         protected void btnRemove_Click(object sender, EventArgs e)
         {
-            try
-            {
-                lbDate.Items.RemoveAt(lbDate.SelectedIndex);
-            }
-            catch (Exception)
-            {
-            }
+
+                int x = lbDate.SelectedIndex;
+             
+            lbDate.Items.Remove(lbDate.Items[x]);
         }
+
 
     }
 }
