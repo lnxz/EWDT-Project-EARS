@@ -1240,6 +1240,89 @@ namespace EARS
             }
             return value;
         }
+        // Get Past events for Student
+        public static ArrayList GetPastEventsStudent(int studID)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * From Event where EventID IN ( Select EventID from StudentRegisterEvent where StudentID = @StudentID)";
+                comm.Parameters.AddWithValue("@StudentID", studID);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+
+                    int eventID = Convert.ToInt32(dr["EventID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string venue = dr["Venue"].ToString();
+                    double registrationCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
+                    string category = dr["CategoryID"].ToString();
+                    string descrip = dr["Description"].ToString();
+                    string eventDate = dr["eventDates"].ToString();
+                    DateTime regStart = DateTime.Parse(dr["RegistrationStart"].ToString());
+                    DateTime regend = DateTime.Parse(dr["RegistrationEnd"].ToString());
+                    int quota = Convert.ToInt32(dr["Quota"].ToString());
+                    int ccaID = -1;
+                    int orgStudID = -1;
+                    int orgStaffID = -1;
+                    //string status = dr["Status"].ToString();
+
+                    if (dr["CCAID"] == DBNull.Value)
+                    {
+
+                    }
+                    else
+                    {
+                        ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    }
+                    if (dr["OrgStudentID"] == DBNull.Value)
+                    {
+                    }
+                    else
+                    {
+                        orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
+                    }
+                    if (dr["OrgStaffID"] == DBNull.Value)
+                    {
+
+                    }
+                    else
+                    {
+                        orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
+                    }
+                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
+
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+
+                    //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
+
+
+                    results.Add(b);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
 
         #endregion
 

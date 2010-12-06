@@ -11,15 +11,16 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // if (this.Session["LoginType"].Equals("Student"))
-           // {
-                //EARS.Student s = (EARS.Student)(this.Session["Login"]);
-                GridView1.DataSource = EARS.DBManager.GetAllEvents();
+            if (this.Session["LoginType"].Equals("Student"))
+            {
+                EARS.Student s = (EARS.Student)(this.Session["Login"]);
+                GridView1.DataSource = EARS.DBManager.GetPastEventsStudent(s.StudentID);
                 GridView1.DataBind();
                 if (GridView1.Rows.Count == 0)
                 {
+                    lblNoPast.Visible = true;
                 }
-           // }
+            }
 
 
         }

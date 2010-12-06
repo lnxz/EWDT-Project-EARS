@@ -5,6 +5,8 @@
     <asp:Label ID="Label1" runat="server" Font-Size="16pt" Text="Past Event "></asp:Label>
 <br />
 <br />
+    <asp:Label ID="lblNoPast" runat="server" Text=" No Past Events found" 
+        Visible="False"></asp:Label>
 <br />
 <br />
 <br />
