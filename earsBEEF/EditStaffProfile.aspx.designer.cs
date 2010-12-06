@@ -13,13 +13,13 @@ namespace earsBEEF {
     public partial class EditStaffProfile {
         
         /// <summary>
-        /// lbSchool control.
+        /// DdlSch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSchool;
+        protected global::System.Web.UI.WebControls.DropDownList DdlSch;
         
         /// <summary>
         /// Label1 control.
@@ -58,13 +58,13 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
-        /// lbPost control.
+        /// DdlPosit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPost;
+        protected global::System.Web.UI.WebControls.DropDownList DdlPosit;
         
         /// <summary>
         /// tbxPersonalEmail control.

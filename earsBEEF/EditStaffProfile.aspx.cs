@@ -12,12 +12,12 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             EARS.Staff s = (EARS.Staff)Session["Login"];
-            lbSchool.Text = s.School;
+            DdlSch.Text = s.School;
             lbDOB.Text = Convert.ToString(s.DateOfBirth);
             lbEmail.Text = s.StaffEmail;
             lbGender.Text = Convert.ToString( s.Gender);
             lbName.Text = s.Name;
-            lbPost.Text = s.Position;
+            DdlPosit.Text = s.Position;
             lbAdmin.Text = Convert.ToString( s.Admin);
             tbxMoblie.Text = s.ContactNo;
             tbxOffic.Text = s.OfficeNo;
