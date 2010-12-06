@@ -109,16 +109,12 @@ namespace earsBEEF
             tempMonthDate = tempMonthDate.AddMonths(ddlMonth.SelectedIndex - 1);
             DateTime tempDate = new DateTime(DateTime.Today.Year, tempMonthDate.Month, 1);
             int noDaysinMonth = DateTime.DaysInMonth(DateTime.Today.Year, tempMonthDate.Month);
-            //do
-            //{
-            //    ddlDay.Items.Add(tempDate.Day.ToString());
-            //    tempDate = tempDate.AddDays(1);
-            //}
-            //while (tempDate.Month == tempMonthDate.Month);
-            while (noDaysinMonth != tempMonthDate.Month)
+
+            for (int x = 1; x <= noDaysinMonth; x++)
             {
-                ddlDay.
+                ddlDay.Items.Add(x.ToString());
             }
+
 
             DateTime tempMonth = DateTime.Today;
             if (tempMonth.Month <= 10)
