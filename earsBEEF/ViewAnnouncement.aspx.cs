@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Net;
+using System.Data;
+using System.Collections;
 
 namespace earsBEEF
 {
@@ -17,8 +20,26 @@ namespace earsBEEF
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = EARS.DBManager.GetAllAnnouncements();//populateEventTable();
-            GridView1.DataBind();           
+        
+
+            DateTime a = DateTime.Today.AddMonths(-1);
+
+            ArrayList fk = new ArrayList();
+            foreach (earsBEEF.Announcement x in EARS.DBManager.GetAllAnnouncements())
+            {
+                if (x.DateOfAnn >= a)
+                {
+
+                }
+                else
+                {
+                    fk.Add(x);
+                }
+            }
+            GridView1.DataSource = fk;
+            GridView1.DataBind();
+
         }
+
     }
 }

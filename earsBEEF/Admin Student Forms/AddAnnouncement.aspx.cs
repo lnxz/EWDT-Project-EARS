@@ -78,10 +78,10 @@ namespace earsBEEF
             }
         }
 
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -108,12 +108,17 @@ namespace earsBEEF
             DateTime tempMonthDate = DateTime.Today;
             tempMonthDate = tempMonthDate.AddMonths(ddlMonth.SelectedIndex - 1);
             DateTime tempDate = new DateTime(DateTime.Today.Year, tempMonthDate.Month, 1);
-            do
+            int noDaysinMonth = DateTime.DaysInMonth(DateTime.Today.Year, tempMonthDate.Month);
+            //do
+            //{
+            //    ddlDay.Items.Add(tempDate.Day.ToString());
+            //    tempDate = tempDate.AddDays(1);
+            //}
+            //while (tempDate.Month == tempMonthDate.Month);
+            while (noDaysinMonth != tempMonthDate.Month)
             {
-                ddlDay.Items.Add(tempDate.Day.ToString());
-                tempDate = tempDate.AddDays(1);
+                ddlDay.
             }
-            while (tempDate.Month == tempMonthDate.Month);
 
             DateTime tempMonth = DateTime.Today;
             if (tempMonth.Month <= 10)
