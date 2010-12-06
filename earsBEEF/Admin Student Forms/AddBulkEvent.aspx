@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedOut.Master" AutoEventWireup="true" CodeBehind="AddBulkStudent.aspx.cs" Inherits="earsBEEF.Admin_Forms.AddBulkStudent" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedOut.Master" AutoEventWireup="true" CodeBehind="AddBulkEvent.aspx.cs" Inherits="earsBEEF.Admin_Student_Forms.AddBulkEvent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,5 +7,4 @@
     <asp:FileUpload ID="FileUpload1" runat="server" />
     <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
         Text="Submit" />
-    <br />
 </asp:Content>

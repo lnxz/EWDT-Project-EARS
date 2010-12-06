@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace earsBEEF.Admin_Forms {
+namespace earsBEEF.Admin_Student_Forms {
     
     
-    public partial class AddBulkStudent {
+    public partial class AddBulkEvent {
         
         /// <summary>
         /// TextBox1 control.
