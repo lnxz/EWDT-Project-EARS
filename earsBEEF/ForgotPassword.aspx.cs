@@ -41,7 +41,7 @@ namespace EARS
 
                     string password = p;
 
-                    EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
+                    DBManager.UpdatePasswordStud(id, p);
 
                     earsBEEF.SendEmail.sendingEmail(email, "Password for EARs System", "Here is your email Password for ur account :" + p);
                     mv.ActiveViewIndex = 1;
@@ -120,7 +120,7 @@ namespace EARS
 
                 if (stu != null)
                 {
-                    EARS.Student stu1 = DBManager.UpdatePasswordStud(id, p);
+                    DBManager.UpdatePasswordStud(id,p);
                     Label7.Text = "Change Password Successful";
                     mv.ActiveViewIndex = 3;
                 }
