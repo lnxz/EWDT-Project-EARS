@@ -28,6 +28,10 @@ namespace earsBEEF
             Response.Redirect("Home.aspx");
         }
 
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
       
       
     }

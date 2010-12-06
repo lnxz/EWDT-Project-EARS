@@ -50,6 +50,11 @@ namespace earsBEEF
                 Response.Redirect("VewEvent.aspx");
             }
 
+            protected void Page_PreInit()
+            {
+                this.MasterPageFile = Session["MyPage_Master"].ToString();
+            }
+
 
     }
 }
