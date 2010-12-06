@@ -138,11 +138,6 @@ namespace earsBEEF
 
         }
 
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
-
         protected void Button2_Click(object sender, EventArgs e)
         {
 
@@ -410,13 +405,12 @@ namespace earsBEEF
         protected void ddlCate_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-<<<<<<< .mine
+
         protected void Page_PreInit()
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
-=======
->>>>>>> .r361
+
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
