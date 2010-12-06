@@ -11,7 +11,10 @@ namespace earsBEEF
     public partial class ViewEventStud : System.Web.UI.Page
     {
         public static int s;
-
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

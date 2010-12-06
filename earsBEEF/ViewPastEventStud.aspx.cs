@@ -18,5 +18,9 @@ namespace earsBEEF
         {
             //GridView1.DataSource = EARS.DBManager.
         }
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
     }
 }

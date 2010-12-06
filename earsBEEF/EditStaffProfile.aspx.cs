@@ -30,5 +30,10 @@ namespace earsBEEF
             int officeNo = Convert.ToInt32( tbxOffic.Text);
             string personalEmail = tbxPersonalEmail.Text;
         }
+
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
     }
 }

@@ -9,6 +9,11 @@ namespace earsBEEF
 {
     public partial class SiteMapAdmin : System.Web.UI.Page
     {
+
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["LoginType"].Equals("Student"))
