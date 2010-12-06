@@ -34,7 +34,7 @@ namespace earsBEEF
                         {
                             if ((DateTime.Today >= e1.RegistrationStart) && (DateTime.Today <= e1.RegistrationEnd))
                             {
-                                a.Add(e);
+                                a.Add(e1);
                             }
 
                         }
@@ -59,6 +59,11 @@ namespace earsBEEF
             GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);//populateEventTable();
             GridView1.DataBind();
  
+        }
+
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
     }
 }

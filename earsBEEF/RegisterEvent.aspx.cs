@@ -23,6 +23,11 @@ namespace earsBEEF
 
         }
 
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+
         protected void btnReg_Click(object sender, EventArgs e)
         {
             int eventID = 0;//edit as necessary
