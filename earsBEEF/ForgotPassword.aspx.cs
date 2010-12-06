@@ -132,11 +132,11 @@ namespace EARS
           
 
                 // change staff password
-                EARS.Staff staff = DBManager.GetPasswordStaff(id, p);
+             EARS.Staff staff = DBManager.GetPasswordStaff(id, pe);
 
                 if (staff != null)
                 {
-                    EARS.Staff sta1 = DBManager.ValidatePasswordStaff(id, p);
+                    DBManager.UpdatePasswordStaff(id, p);
                     Label7.Text = "Change Password Successful";
                     mv.ActiveViewIndex = 3;
                 }
