@@ -410,6 +410,13 @@ namespace earsBEEF
         protected void ddlCate_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+<<<<<<< .mine
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+=======
+>>>>>>> .r361
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
