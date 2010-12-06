@@ -43,34 +43,9 @@ namespace EARS
 
                     EARS.Student stu = DBManager.UpdatePasswordStud(id, p);
 
-                    earsBEEF.SendEmail.sendingEmail(email, "Password for EARs System", "Here is your email Password for ur account" + p);
-
-                    ////create a email object
-                    //MailMessage mail = new System.Net.Mail.MailMessage();
-                    //// set the log in authentication for the email so that can send email to others
-                    //// login and password for email.
-                    //NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "ewdtears");
-
-                    //mail.To.Add(email); // add the receipt email
-                    //mail.Subject = "Password for EARs System"; // add email subject
-                    //mail.From = new System.Net.Mail.MailAddress("earsbeef@gmail.com"); // sender
-                    //mail.IsBodyHtml = true; // if there is a hyperlink set to true
-                    //mail.Body = "Here is your email password for your account :" + p;
-
-                    ////gateway for email to be send
-                    //System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
-                    //smtp.UseDefaultCredentials = false;
-                    //smtp.EnableSsl = true;
-                    //smtp.Credentials = cred;
-                    //smtp.Port = 587;
-                    //smtp.Send(mail);
-
-                    //MailMessage mail1 = new MailMessage("earsbeef@gmail.com",email,"Reset Password","Here is your new password");
-                    //SmtpClient client = new SmtpClient("earsbeef@gmail.com",25);
-                    //client.UseDefaultCredentials = true;
-                    //client.Send(mail);
-                    ////http://www.c-sharpcorner.com/uploadfile/scottlysle/emailattachmentscs08052008234321pm/emailattachmentscs.aspx
+                    earsBEEF.SendEmail.sendingEmail(email, "Password for EARs System", "Here is your email Password for ur account :" + p);
                     mv.ActiveViewIndex = 1;
+                    // working.. ^^^^^
 
                 }
                 else
@@ -89,35 +64,18 @@ namespace EARS
                     Random ra = new Random();
                     for (int i = 0; i < 8; i++)
                     {
-                        value = value + passString.Substring(ra.Next(0, value.Length - 1), 1);
+                        value = value + passString.Substring(ra.Next(0, passString.Length - 1), 1);
                     }
 
                     string password1 = value;
-                    earsBEEF.SendEmail.sendingEmail(email, "Password for EARs System", "Here is your email Password for ur account" + value);
-                    //// create a email object
-                    //MailMessage mail = new System.Net.Mail.MailMessage();
-                    //// set the log in authentication for the email so that can send email to others
-                    //// login and password for email.
-                    //NetworkCredential cred = new System.Net.NetworkCredential("earsbeef@gmail.com", "ewdtears");
 
-                    //mail.To.Add(email); // add the receipt email
-                    //mail.Subject = "Password for EARs System"; // add email subject
-                    //mail.From = new System.Net.Mail.MailAddress("earsbeef@gmail.com"); // sender
-                    //mail.IsBodyHtml = true; // if there is a hyperlink set to true
-                    //mail.Body = "Here is your email password for your account :" + value;
-
-                    ////gateway for email to be send
-                    //System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
-                    //smtp.UseDefaultCredentials = false;
-                    //smtp.EnableSsl = true;
-                    //smtp.Credentials = cred;
-                    //smtp.Port = 587;
-                    //smtp.Send(mail);
-
+                    DBManager.UpdatePasswordStaff(id,value);
+                    earsBEEF.SendEmail.sendingEmail(email, "Password for EARs System", "Here is your email Password for ur account :" + value);
                     mv.ActiveViewIndex = 1;
                 }
                 else
                 {
+                    Label5.Visible = true;
                     Label5.Text = "Login ID and Email Unmatch";
                 }
             }
@@ -168,6 +126,7 @@ namespace EARS
                 }
                 else
                 {
+                    Label7.Visible = true;
                     Label7.Text = "Error";
                 }
           
@@ -183,13 +142,14 @@ namespace EARS
                 }
                 else
                 {
+                    Label7.Visible = true;
                     Label7.Text = "Error";
                 }
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            Response.Redirect("LoginPage.aspx");
         }
 
 
