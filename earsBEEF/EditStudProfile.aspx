@@ -179,7 +179,7 @@
             <td class="style4" valign="top" align="right">
                 Contact :</td>
             <td class="style3" align="left" valign="top">
-                <asp:TextBox ID="tbxContact" runat="server" Width="158px" Height="27px"></asp:TextBox>
+                <asp:TextBox ID="tbxContact" runat="server" Width="158px" Height="22px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
                     ControlToValidate="tbxContact" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
