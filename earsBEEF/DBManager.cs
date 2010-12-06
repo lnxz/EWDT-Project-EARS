@@ -421,7 +421,7 @@ namespace EARS
             return successful;
 
         }
-        public static bool UpdateStudent(int studentID, Student updatedStudent)
+        public static bool UpdateStudent(int studentID, string school, string courseCode, int contactNo, int emergCont, string tShirtSize)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -431,20 +431,13 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET Name=@a, AdminNo=@b, Password=@c, gender=@d, School=@e, CourseCode=@f, ContactNo=@g, EmergCont=@h, Email=@i, TShirtSize=@j, StudentType=@k, DateOfBirth=@l WHERE studentID=@studentID";
+                comm.CommandText = "UPDATE Student SET School=@a, CourseCode=@b, ContactNo=@c, EmergCont=@d, TShirtSize=@e WHERE studentID=@studentID";
                 comm.Parameters.AddWithValue("@studentID", studentID);
-                comm.Parameters.AddWithValue("@a", updatedStudent.Name);
-                comm.Parameters.AddWithValue("@b", updatedStudent.AdminNo);
-                comm.Parameters.AddWithValue("@c", updatedStudent.Password);
-                comm.Parameters.AddWithValue("@d", updatedStudent.Gender);
-                comm.Parameters.AddWithValue("@e", updatedStudent.School);
-                comm.Parameters.AddWithValue("@f", updatedStudent.CourseCode);
-                comm.Parameters.AddWithValue("@g", updatedStudent.ContactNo);
-                comm.Parameters.AddWithValue("@h", updatedStudent.EmergCont);
-                comm.Parameters.AddWithValue("@i", updatedStudent.Email);
-                comm.Parameters.AddWithValue("@j", updatedStudent.TShirtSize);
-                comm.Parameters.AddWithValue("@k", updatedStudent.StudentType);
-                comm.Parameters.AddWithValue("@l", updatedStudent.DateOfBirth);
+                comm.Parameters.AddWithValue("@a", school);
+                comm.Parameters.AddWithValue("@b", courseCode);
+                comm.Parameters.AddWithValue("@c", contactNo);
+                comm.Parameters.AddWithValue("@d", emergCont);
+                comm.Parameters.AddWithValue("@e", tShirtSize);
 
 
                 comm.Connection = conn;
@@ -469,6 +462,46 @@ namespace EARS
             return false;
 
 
+        }
+        public static bool UpdateStaff(int staffID, string school, string position, int contactNo, int officeNo, string personalEmail)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQL Commmand
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "UPDATE Student SET School=@a, ContactNo=@b, PersonalEmail=@c, Position=@d, OfficeNo=@e WHERE staffID=@staffID";
+                comm.Parameters.AddWithValue("@staffID", staffID);
+                comm.Parameters.AddWithValue("@a", school);
+                comm.Parameters.AddWithValue("@b", contactNo);
+                comm.Parameters.AddWithValue("@c", personalEmail);
+                comm.Parameters.AddWithValue("@d", position);
+                comm.Parameters.AddWithValue("@e", officeNo);
+
+
+                comm.Connection = conn;
+
+                //Execute SQL Command
+                int rowsUpdated = (int)comm.ExecuteNonQuery();
+
+                if (rowsUpdated > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //Close
+                conn.Close();
+            }
+            return false;
         }
 
 

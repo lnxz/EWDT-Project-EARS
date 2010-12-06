@@ -27,11 +27,13 @@ namespace earsBEEF
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            string school = ddlSchool.Text;
+            string course = DdlCourse.Text;
             int contact = Convert.ToInt32(tbxContact.Text);
             int emgContact = Convert.ToInt32(tbxEmergContact.Text);
             string size = ddlsize.Text;
-
-            //EARS.DBManager.AddStudent
+            EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
+            EARS.DBManager.UpdateStudent(tempStudent.StudentID, school, course, contact, emgContact, size);
         }
 
         protected void ddlSchool_SelectedIndexChanged(object sender, EventArgs e)

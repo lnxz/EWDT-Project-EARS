@@ -12,6 +12,7 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             EARS.Staff s = (EARS.Staff)Session["Login"];
+
             DdlSch.Text = s.School;
             lbDOB.Text = Convert.ToString(s.DateOfBirth);
             lbEmail.Text = s.StaffEmail;
@@ -26,9 +27,14 @@ namespace earsBEEF
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            string school = DdlSch.Text;
+            string position = DdlPosit.Text;
             int contactNo = Convert.ToInt32(tbxMoblie.Text);
             int officeNo = Convert.ToInt32( tbxOffic.Text);
             string personalEmail = tbxPersonalEmail.Text;
+            EARS.Staff tempStaff =  (EARS.Staff)this.Session["Login"];
+            EARS.DBManager.UpdateStaff(tempStaff.StaffID, school, position, contactNo, officeNo, personalEmail);
+          
         }
 
         protected void Page_PreInit()
