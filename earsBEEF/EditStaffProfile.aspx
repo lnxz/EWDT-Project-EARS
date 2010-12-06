@@ -36,7 +36,15 @@
             <td class="style2" align="right">
                 School:</td>
             <td class="style2" align="left">
-                <asp:Label ID="lbSchool" runat="server" Text="Label"></asp:Label>
+                <asp:DropDownList ID="DdlSch" runat="server" Height="22px" Width="248px" 
+                    onselectedindexchanged="DdlSch_SelectedIndexChanged">
+                    <asp:ListItem Value="AS">Applied Science</asp:ListItem>
+                    <asp:ListItem Value="BS">Business </asp:ListItem>
+                    <asp:ListItem Value="DS">Design</asp:ListItem>
+                    <asp:ListItem Value="EN">Engine</asp:ListItem>
+                    <asp:ListItem Value="HSS">Humanities &amp; Social Science</asp:ListItem>
+                    <asp:ListItem Value="IIT">Informatics &amp; IT </asp:ListItem>
+                </asp:DropDownList>
             </td>
             <td class="style2" align="right">
                 Office No:</td>
@@ -54,7 +62,10 @@
             <td class="style5" align="right">
                 Position:</td>
             <td class="style2" align="left">
-                <asp:Label ID="lbPost" runat="server" Text="Label"></asp:Label>
+                <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="247px">
+                    <asp:ListItem>Lecturer</asp:ListItem>
+                    <asp:ListItem>Subject Leader</asp:ListItem>
+                </asp:DropDownList>
             </td>
             <td class="style11" align="right">
                 Personal

@@ -106,7 +106,6 @@
                 <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="202px" 
                     AutoPostBack="True" 
                     onselectedindexchanged="ddlSchool_SelectedIndexChanged">
-                    <asp:ListItem>School</asp:ListItem>
                     <asp:ListItem Value="AS">Applied Science</asp:ListItem>
                     <asp:ListItem Value="BS">Business</asp:ListItem>
                     <asp:ListItem Value="DS">Design</asp:ListItem>
