@@ -34,6 +34,10 @@ namespace earsBEEF
                 tempDatet = tempDatet.AddYears(1);
             }
         }
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
