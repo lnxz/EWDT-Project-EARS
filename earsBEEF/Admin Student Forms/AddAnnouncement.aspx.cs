@@ -78,6 +78,11 @@ namespace earsBEEF
             }
         }
 
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string forwho = ddlFor.Text;
