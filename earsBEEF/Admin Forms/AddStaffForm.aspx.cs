@@ -35,6 +35,11 @@ namespace earsBEEF
             }
         }
 
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
