@@ -20,12 +20,6 @@ namespace EARS
         {
             mv.ActiveViewIndex = 0;
         }
-
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             id = tbxId.Text;
