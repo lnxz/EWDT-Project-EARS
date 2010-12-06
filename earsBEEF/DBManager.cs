@@ -1838,103 +1838,6 @@ namespace EARS
             }
             return s;
         }
-        // Validate email and personal email for staff
-        public static Staff ValidatePasswordStaff(string email, string pemail)
-        {
-            // Establish connection with database
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-            Staff s = null;
-            try
-            {
-
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Staff where StaffEmail = @staffEmail and PersonalEmail = @p";
-                comm.Connection = conn;
-                comm.Parameters.AddWithValue("@staffEmail", email);
-                comm.Parameters.AddWithValue("@p", pemail);
-                // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
-                while (dr.Read())   //read row by row
-                {
-                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
-                    string name = dr["Name"].ToString();
-                    string staffEmail = dr["StaffEmail"].ToString();
-                    string password = dr["Password"].ToString();
-                    char gender = dr["Gender"].ToString()[0];
-                    string school = dr["School"].ToString();
-                    string mobileNo = dr["ContactNo"].ToString();
-                    string personalEmail = dr["PersonalEmail"].ToString();
-                    string position = dr["Position"].ToString();
-                    char admin = dr["isAdmin"].ToString()[0];
-                    string officeNo = dr["OfficeNumber"].ToString();
-                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
-
-                    s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return s;
-        }
-        // Update Password for staff
-        public static Staff UpdatePasswordStaff(string pass)
-        {
-            // Establish connection with database
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = DBCONNSTR;
-            Staff s = null;
-            try
-            {
-
-                // Step 1: Open connection
-                conn.Open();
-                // Step 2: Prepare the sql command
-                SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Staff SET Password = @p;";
-                comm.Connection = conn;
-                comm.Parameters.AddWithValue("@p", pass);
-                // Step 3: Execute the sql command
-                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
-                while (dr.Read())   //read row by row
-                {
-                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
-                    string name = dr["Name"].ToString();
-                    string staffEmail = dr["StaffEmail"].ToString();
-                    string password = dr["Password"].ToString();
-                    char gender = dr["Gender"].ToString()[0];
-                    string school = dr["School"].ToString();
-                    string mobileNo = dr["ContactNo"].ToString();
-                    string personalEmail = dr["PersonalEmail"].ToString();
-                    string position = dr["Position"].ToString();
-                    char admin = dr["isAdmin"].ToString()[0];
-                    string officeNo = dr["OfficeNumber"].ToString();
-                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
-
-                    s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                // Step 4: Close connection
-                conn.Close();
-            }
-            return s;
-        }
         // Update Password for Student
         public static Student UpdatePasswordStud(string admin, string pass)
         {
@@ -2035,6 +1938,91 @@ namespace EARS
             }
             return s;
 
+        }
+
+        // Validate email and personal email for staff
+        public static Staff ValidatePasswordStaff(string email, string pemail)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Staff s = null;
+            try
+            {
+
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff where StaffEmail = @staffEmail and PersonalEmail = @p";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@staffEmail", email);
+                comm.Parameters.AddWithValue("@p", pemail);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    char admin = dr["isAdmin"].ToString()[0];
+                    string officeNo = dr["OfficeNumber"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+
+                    s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return s;
+        }
+        // Update Password for staff
+        public static bool UpdatePasswordStaff(string semail , string pass)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQL Commmand
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "UPDATE Staff SET Password = @p WHERE StaffEmail = @se;";
+                comm.Parameters.AddWithValue("@p", pass);
+                comm.Parameters.AddWithValue("@se", semail);
+                comm.Connection = conn;
+
+                //Execute SQL Command
+                int rowsUpdated = (int)comm.ExecuteNonQuery();
+
+                if (rowsUpdated > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //Close
+                conn.Close();
+            }
+            return false;
         }
         // Retrieve password from Staff  
         public static Staff GetPasswordStaff(string email, string pass)
