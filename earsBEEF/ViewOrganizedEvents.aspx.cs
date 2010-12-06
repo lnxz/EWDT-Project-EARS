@@ -38,5 +38,21 @@ namespace earsBEEF
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
+
+        protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            string key = GridView1.DataKeys[e.NewSelectedIndex].Value.ToString();
+            Response.Redirect("UpdateEventForm.aspx?eid=" + key);
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
+
     }
 }

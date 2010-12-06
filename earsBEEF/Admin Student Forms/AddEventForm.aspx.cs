@@ -406,10 +406,17 @@ namespace earsBEEF
         {
         }
 
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
+
+
         protected void Page_PreInit()
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+
 
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
