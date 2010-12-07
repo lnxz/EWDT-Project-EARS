@@ -19,7 +19,7 @@
         		width: 930px;
 	height: 80px;
 	background-color: #FFFFFF;
-	margin-top: -390px;
+	margin-top: -340px;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <a href="../ViewEvents.aspx"><img src="../Images/Stub1.png" /></a>
         <a href="../Admin Student Forms/AddEventForm.aspx"><img src="../Images/Stub2.png" /></a>
-        <a href="../ViewOrganizedEvents.aspx"><img src="../Images/Stub3.png" /></a>&nbsp;&nbsp;
+        <a href="../ViewOrganizedEvents.aspx"><img src="../Images/Stub3.png" /></a>
         <img src="../Images/Stub6.png" />
         <a href="../Admin Student Forms/AddAnnouncement.aspx"><img src="../Images/Stub7.png" /></a>
         <a href="../ViewAnnouncement.aspx"><img src="../Images/Stub8.png" /></a>
@@ -41,12 +41,12 @@
     <div class="announcementBox">
         <div class="innerBox">
         </div>
-    </div>
+   </div>
     <div class="contentBox">
         <div class="innerBox">
             <div class="contentTitle">
-                Logged In as 
-                       <div class="contentText">
+            </div>
+            <div class="contentText">
                 <form id="form1" runat="server" align="center">
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

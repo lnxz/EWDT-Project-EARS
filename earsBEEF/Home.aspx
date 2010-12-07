@@ -3,15 +3,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-        <br />
-        <br />
-        <br />
         <asp:MultiView ID="MultiView1" runat="server">
             <asp:View ID="StudentView" runat="server">
         <br />
+                <asp:Label ID="Label5" runat="server" CssClass="viewHeader" Font-Bold="True" 
+                    Text="Announcements"></asp:Label>
         <br />
         <asp:Panel ID="Panel1" runat="server" BackColor="#FF6666" ForeColor="#CCCC00">
-            <asp:Label ID="Label5" runat="server" CssClass="style22" Text="Announcements"></asp:Label>
             <br />
             <table style="width:100%;">
                 <tr>
@@ -44,67 +42,24 @@
             </table>
         </asp:Panel>
                 <br />
-                <a href="../LoginPage.aspx">
-                <asp:Panel ID="Panel5" runat="server" BackColor="#FFFF99">
-                    <asp:Label ID="Label4" runat="server" CssClass="style23" Text="Upcoming Events"></asp:Label>
-                    <br />
-                    <table style="width:100%;">
-                        <tr>
-                            <td class="style14">
-                                Event Date</td>
-                            <td class="style15">
-                                Registration Ends</td>
-                            <td class="style18">
-                                Name</td>
-                            <td class="style17">
-                                Category</td>
-                            <td>
-                                Organizer</td>
-                        </tr>
-                        <tr>
-                            <td class="style14">
-                                Nov 18</td>
-                            <td class="style15">
-                                Nov 16</td>
-                            <td class="style18">
-                                TPRawks</td>
-                            <td class="style17">
-                                Campus-Wide</td>
-                            <td>
-                                Pua Yeow Cheong</td>
-                        </tr>
-                        <tr>
-                            <td class="style14">
-                                Nov 19</td>
-                            <td class="style15">
-                                Nov 19</td>
-                            <td class="style18">
-                                CCN Day</td>
-                            <td class="style17">
-                                Campus-Wide</td>
-                            <td>
-                                Yeak Shaw Wen</td>
-                        </tr>
-                        <tr>
-                            <td class="style14">
-                                Dec 27</td>
-                            <td class="style15">
-                                Nov 30</td>
-                            <td class="style18">
-                                Orientation Training Camp</td>
-                            <td class="style17">
-                                Leadership</td>
-                            <td>
-                                TPSU</td>
-                        </tr>
-                    </table>
-                </asp:Panel>
-                </a>
+                <asp:Label ID="Label11" runat="server" CssClass="viewHeader" Font-Bold="True" 
+                    Text="Current Events"></asp:Label>
                 <br />
+                <asp:GridView ID="gvStudentCurrentEvent" runat="server" 
+                    AutoGenerateColumns="False" Height="69px" Width="870px">
+                    <Columns>
+                        <asp:BoundField DataField="EventDates" HeaderText="Event Dates" />
+                        <asp:BoundField DataField="RegistrationEnd" HeaderText="Registration End" />
+                        <asp:BoundField DataField="Name" HeaderText="Name" />
+                        <asp:BoundField DataField="Category" HeaderText="Category" />
+                        <asp:ButtonField Text="Register" />
+                    </Columns>
+                </asp:GridView>
+                <br />
+                <asp:Label ID="Label13" runat="server" CssClass="viewHeader" Font-Bold="True" 
+                    Text="Registered Events"></asp:Label>
                 <a href="../LoginPage.aspx">
                 <asp:Panel ID="Panel6" runat="server" BackColor="#66FF66">
-                    <asp:Label ID="Label10" runat="server" CssClass="style24" 
-                        Text="Registered Events"></asp:Label>
                     <br />
                     <table style="width: 100%;">
                         <tr>
