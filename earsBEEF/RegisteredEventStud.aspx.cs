@@ -58,12 +58,14 @@ namespace earsBEEF
                 {
                     if (word.Equals(""))
                     {
+
                     }
                     else
                     {
-                        lbDate.Items.Add(word);
+                        
                     }
-            }
+
+                }
             }
 
 
