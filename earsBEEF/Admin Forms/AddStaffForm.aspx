@@ -24,6 +24,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <asp:Label ID="lbNote" runat="server" Text="Label" Visible="False"></asp:Label>
+    <br />
+
     <table style="width:100%;">
         <tr>
             <td class="style5" colspan="3" align="left">
@@ -247,7 +250,7 @@
         <tr>
             <td style="text-align: right">
                 <asp:Button ID="btnConfirm" runat="server" 
-                    Text="Confirm" onclick="Button1_Click" />
+                    Text="Confirm" onclick="btnConfirm_Click" />
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />

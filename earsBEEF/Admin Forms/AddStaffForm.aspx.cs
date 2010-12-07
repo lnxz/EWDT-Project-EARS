@@ -37,46 +37,7 @@ namespace earsBEEF
 
         protected void Page_PreInit()
         {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            string p = "";
-            Random r = new Random();
-            for (int i = 0; i < 8; i++)
-            {
-                p = p + s.Substring(r.Next(0, s.Length - 1), 1);
-            }
-
-            string password = p;
-            string school = DdlSch.Text;
-            string position = DdlPosit.Text;
-            string offContact = tbxOffic.Text;
-            string Mobile = tbxMoblie.Text;
-            string perEmail = tbxPersonalEmail.Text;
-            string staffEmail = tbxWorkEmail.Text;
-
-            char gender;
-            if (rbMale.Checked) { gender = 'M'; }
-            else { gender = 'F'; }
-
-            char admin;
-            if (rbYes.Checked) { admin = 'Y'; }
-            else { admin = 'N'; }
-
-            string name = tbxName.Text;
-            int day = Convert.ToInt32(DdlDay.Text);
-            int month = Convert.ToInt32(DdlMonth.SelectedValue);
-            int year = Convert.ToInt32(DdlYear.Text);
-            
-            string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
-
-            DateTime dateOfBirth = new DateTime(year, month, day);
-
-            EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, Mobile,
-                                        perEmail, position, admin, offContact, dateOfBirth);
+            //this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,5 +61,60 @@ namespace earsBEEF
 
             }
         }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+            //ArrayList st = new ArrayList();
+            //st = EARS.DBManager.GetAllStaff();
+
+            //if ()
+            //foreach (EARS.Staff sta in st)
+            //{
+            //    if (sta.StaffEmail.Equals(tbxWorkEmail.Text))
+            //    {
+            //        lbNote.Text = "Email is been used";
+            //    }
+            //}
+            
+                    string s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                    string p = "";
+                    Random r = new Random();
+                    for (int i = 0; i < 8; i++)
+                    {
+                        p = p + s.Substring(r.Next(0, s.Length - 1), 1);
+                    }
+
+                    string password = p;
+                    string school = DdlSch.Text;
+                    string position = DdlPosit.Text;
+                    string offContact = tbxOffic.Text;
+                    string Mobile = tbxMoblie.Text;
+                    string perEmail = tbxPersonalEmail.Text;
+                    string staffEmail = tbxWorkEmail.Text;
+
+                    char gender;
+                    if (rbMale.Checked) { gender = 'M'; }
+                    else { gender = 'F'; }
+
+                    char admin;
+                    if (rbYes.Checked) { admin = 'Y'; }
+                    else { admin = 'N'; }
+
+                    string name = tbxName.Text;
+                    int day = Convert.ToInt32(DdlDay.Text);
+                    int month = Convert.ToInt32(DdlMonth.SelectedValue);
+                    int year = Convert.ToInt32(DdlYear.Text);
+
+                    string dob = DdlDay.Text + "" + DdlMonth.Text + "" + DdlMonth.Text;
+
+                    DateTime dateOfBirth = new DateTime(year, month, day);
+
+                    EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, Mobile,
+                                                perEmail, position, admin, offContact, dateOfBirth);
+                }
+            
+            
+        
     }
 }
