@@ -32,12 +32,12 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("EditStaffProfile.aspx");
+                        Response.Redirect("home.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("EditStaffProfile.aspx"); //home.aspx
+                        Response.Redirect("home.aspx"); //home.aspx
                         //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
                     }
                 }

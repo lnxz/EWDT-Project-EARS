@@ -1494,6 +1494,68 @@ namespace EARS
             }
             return rowsAdded;
         }
+        public static ArrayList GetTop3Announcment()
+        {
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT top 3 * FROM Announcement order by DateCreated desc";
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int announceID = Convert.ToInt32(dr["AnnouncementID"].ToString());
+                    string title = dr["Title"].ToString();
+                    string content = dr["AContent"].ToString();
+                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
+                    DateTime dateOfAnn = DateTime.Parse(dr["DateOfAnnouncement"].ToString());
+                    int createStaffID = -1;
+                    int createStudID = -1;
+                    if (dr["CreateStaffID"] == DBNull.Value)
+                    {
+
+                    }
+                    else
+                    {
+                        createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
+                    }
+                    if (dr["CreateStudentID"] == DBNull.Value)
+                    {
+
+                    }
+                    else
+                    {
+                        createStudID = Convert.ToInt32(dr["CreateStudentID"].ToString());
+                    }
+
+
+                    earsBEEF.Announcement a = new earsBEEF.Announcement(announceID, title, content, dateCreated, createStaffID, createStudID, dateOfAnn);
+                    results.Add(a);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
         #endregion
 
         #region Category

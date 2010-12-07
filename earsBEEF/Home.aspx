@@ -8,50 +8,26 @@
         <br />
                 <asp:Label ID="Label5" runat="server" CssClass="viewHeader" Font-Bold="True" 
                     Text="Announcements"></asp:Label>
-        <br />
-        <asp:Panel ID="Panel1" runat="server" BackColor="#FF6666" ForeColor="#CCCC00">
-            <br />
-            <table style="width:100%;">
-                <tr>
-                    <td class="style5">
-                        Nov 11</td>
-                    <td class="style6">
-                        Yeak Shaw Wen</td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink4" runat="server">EWDT Project submission due in 4 weeks </asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style5">
-                        Nov 15</td>
-                    <td class="style6">
-                        Shaun</td>
-                    <td>
-                        &nbsp;<asp:HyperLink ID="HyperLink5" runat="server">Sign up for TP Cyber Games 2010 !</asp:HyperLink>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style5">
-                        Nov 16</td>
-                    <td class="style6">
-                        Nicholas Shen</td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink6" runat="server">C219 Booth for CCN day  ! Cookies for $2</asp:HyperLink>
-                    </td>
-                </tr>
-            </table>
-        </asp:Panel>
+                <br />
+                <asp:GridView ID="gvStudentAnn" runat="server" AutoGenerateColumns="False" 
+                    Height="154px" Width="871px">
+                    <Columns>
+                        <asp:BoundField DataField="dateOfAnn" HeaderText="Date " />
+                        <asp:BoundField DataField="title" HeaderText="Title" />
+                        <asp:BoundField DataField="content" HeaderText="Content" />
+                    </Columns>
+                </asp:GridView>
                 <br />
                 <asp:Label ID="Label11" runat="server" CssClass="viewHeader" Font-Bold="True" 
                     Text="Current Events"></asp:Label>
                 <br />
+                <br />
                 <asp:GridView ID="gvStudentCurrentEvent" runat="server" 
                     AutoGenerateColumns="False" Height="69px" Width="870px">
                     <Columns>
-                        <asp:BoundField DataField="EventDates" HeaderText="Event Dates" />
-                        <asp:BoundField DataField="RegistrationEnd" HeaderText="Registration End" />
-                        <asp:BoundField DataField="Name" HeaderText="Name" />
-                        <asp:BoundField DataField="Category" HeaderText="Category" />
+                        <asp:BoundField DataField="eventDate" HeaderText="Event Dates" />
+                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration End" />
+                        <asp:BoundField DataField="name" HeaderText="Name" />
                         <asp:ButtonField Text="Register" />
                     </Columns>
                 </asp:GridView>
