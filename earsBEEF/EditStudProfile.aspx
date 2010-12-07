@@ -22,6 +22,26 @@
         {
             width: 103px;
         }
+        .style7
+        {
+            width: 173px;
+            text-align: right;
+            height: 28px;
+        }
+        .style8
+        {
+            width: 290px;
+            height: 28px;
+        }
+        .style9
+        {
+            width: 103px;
+            height: 28px;
+        }
+        .style10
+        {
+            height: 28px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -67,6 +87,7 @@
             <td class="style4" align="right">
                 Student Type:</td>
             <td class="style3" align="left">
+                &nbsp;
                 <asp:Label ID="lbST" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style6">
@@ -78,16 +99,8 @@
             <td class="style4" align="right">
                 School:</td>
             <td class="style3" align="left">
-                <asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="202px" 
-                    AutoPostBack="True" 
-                    onselectedindexchanged="ddlSchool_SelectedIndexChanged">
-                    <asp:ListItem Value="AS">Applied Science</asp:ListItem>
-                    <asp:ListItem Value="BS">Business</asp:ListItem>
-                    <asp:ListItem Value="DS">Design</asp:ListItem>
-                    <asp:ListItem Value="EN">Engineering</asp:ListItem>
-                    <asp:ListItem Value="HSS">Humanities &amp; Social Science</asp:ListItem>
-                    <asp:ListItem Value="IIT">Informatics &amp; IT </asp:ListItem>
-                </asp:DropDownList>
+                &nbsp;
+                <asp:Label ID="lbSch" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style6">
                 </td>
@@ -95,15 +108,15 @@
                 </td>
         </tr>
         <tr>
-            <td class="style4" align="right">
+            <td class="style7" align="right">
                 Course:</td>
-            <td class="style3" align="left">
-                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="155px">
-                </asp:DropDownList>
+            <td class="style8" align="left">
+                &nbsp;
+                <asp:Label ID="lbCourse" runat="server" Text="Label"></asp:Label>
             </td>
-            <td class="style6">
+            <td class="style9">
                 </td>
-            <td class="style11">
+            <td class="style10">
                 </td>
         </tr>
         <tr>
@@ -128,6 +141,7 @@
             <td class="style4" align="right">
                 Name:</td>
             <td class="style3" align="left">
+                &nbsp;
                 <asp:Label ID="lbName" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style6" align="right">
@@ -147,6 +161,7 @@
             <td class="style4" align="right">
                 Date Of Birth:</td>
             <td class="style3" align="left">
+                &nbsp;
                 <asp:Label ID="lbDOB" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style6">
@@ -158,6 +173,7 @@
             <td class="style4" align="right">
                 Gender:</td>
             <td class="style3" align="left">
+                &nbsp;
                 <asp:Label ID="lbGender" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style6">
@@ -213,6 +229,7 @@
                 TP
                 Email:</td>
             <td class="style3">
+                &nbsp;
                 <asp:Label ID="lbTpEmail" runat="server" Text="Label"></asp:Label>
                 </td>
             <td class="style27" align="left" colspan="2">

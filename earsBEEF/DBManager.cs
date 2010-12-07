@@ -421,7 +421,7 @@ namespace EARS
             return successful;
 
         }
-        public static bool UpdateStudent(int studentID, string school, string courseCode, int contactNo, int emergCont, string tShirtSize)
+        public static bool UpdateStudent(int studentID, int contactNo, int emergCont, string tShirtSize)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -431,10 +431,8 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET School=@a, CourseCode=@b, ContactNo=@c, EmergCont=@d, TShirtSize=@e WHERE studentID=@studentID";
+                comm.CommandText = "UPDATE Student SET ContactNo=@c, EmergCont=@d, TShirtSize=@e WHERE studentID=@studentID";
                 comm.Parameters.AddWithValue("@studentID", studentID);
-                comm.Parameters.AddWithValue("@a", school);
-                comm.Parameters.AddWithValue("@b", courseCode);
                 comm.Parameters.AddWithValue("@c", contactNo);
                 comm.Parameters.AddWithValue("@d", emergCont);
                 comm.Parameters.AddWithValue("@e", tShirtSize);
