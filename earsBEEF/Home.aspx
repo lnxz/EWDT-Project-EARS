@@ -34,31 +34,14 @@
                 <br />
                 <asp:Label ID="Label13" runat="server" CssClass="viewHeader" Font-Bold="True" 
                     Text="Registered Events"></asp:Label>
-                <a href="../LoginPage.aspx">
-                <asp:Panel ID="Panel6" runat="server" BackColor="#66FF66">
-                    <br />
-                    <table style="width: 100%;">
-                        <tr>
-                            <td class="style28">
-                                Event Starting Date</td>
-                            <td class="style20">
-                                Name</td>
-                        </tr>
-                        <tr>
-                            <td class="style28">
-                                Dec 27</td>
-                            <td class="style20">
-                                Orientation Training Camp</td>
-                        </tr>
-                        <tr>
-                            <td class="style28">
-                                Dec 30</td>
-                            <td class="style20">
-                                Run for Hope helpers</td>
-                        </tr>
-                    </table>
-                </asp:Panel>
-                </a>
+                <br />
+                <asp:GridView ID="gvStudentRegistered" runat="server" 
+                    AutoGenerateColumns="False" Height="139px" Width="862px">
+                    <Columns>
+                        <asp:BoundField DataField="eventDates" HeaderText="Event Dates" />
+                        <asp:BoundField DataField="name" HeaderText="Name" />
+                    </Columns>
+                </asp:GridView>
         <br />
         <br />
             </asp:View>
