@@ -36,8 +36,7 @@
             <td class="style2" align="right">
                 School:</td>
             <td class="style2" align="left">
-                <asp:DropDownList ID="DdlSch" runat="server" Height="22px" Width="248px" 
-                    onselectedindexchanged="DdlSch_SelectedIndexChanged">
+                <asp:DropDownList ID="DdlSch" runat="server" Height="22px" Width="248px" >
                     <asp:ListItem Value="AS">Applied Science</asp:ListItem>
                     <asp:ListItem Value="BS">Business </asp:ListItem>
                     <asp:ListItem Value="DS">Design</asp:ListItem>
