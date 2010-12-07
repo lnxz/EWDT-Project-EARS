@@ -31,7 +31,11 @@ namespace earsBEEF
                 {
                 }
             }
-          
+            lblNoPast.Visible = false;
+            if (GridView1.Rows.Count == 0)
+            {
+                lblNoPast.Visible = true;
+            }
         }
         protected void Page_PreInit()
         {
