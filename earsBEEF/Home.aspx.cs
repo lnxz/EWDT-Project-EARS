@@ -17,15 +17,18 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["login"].Equals("Student"))
+            if (Session["LoginType"].Equals("Student"))
             {
                 MultiView1.ActiveViewIndex = 0;
+
+                gvStudentAnn.DataSource = EARS.DBManager.GetTop3Announcment();
+                gvStudentAnn.DataBind();
                 ArrayList studentCurrentEvent = new ArrayList();
                 int counter = 0;
 
                 foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
                 {
-                    while (counter != 3)
+                    if (counter != 3)
                     {
                         if ((DateTime.Today >= a.RegistrationStart) && (DateTime.Today <= a.RegistrationEnd))
                         {
@@ -36,6 +39,7 @@ namespace earsBEEF
 
                 }
                 gvStudentCurrentEvent.DataSource = studentCurrentEvent;
+                gvStudentCurrentEvent.DataBind();
             }
             else if (Session["LoginType"].Equals(null))
             {
