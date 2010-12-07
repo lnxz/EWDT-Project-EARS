@@ -48,8 +48,7 @@
             <td class="style2" align="right">
                 Office No:</td>
             <td class="style2" align="left">
-                <asp:Label ID="Label1" runat="server" Text="6780"></asp:Label>
-&nbsp;<asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
+                <asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                     ControlToValidate="tbxOffic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
@@ -62,8 +61,10 @@
                 Position:</td>
             <td class="style2" align="left">
                 <asp:DropDownList ID="DdlPosit" runat="server" Height="22px" Width="247px">
+                    <asp:ListItem>Course Manager</asp:ListItem>
                     <asp:ListItem>Lecturer</asp:ListItem>
-                    <asp:ListItem>Subject Leader</asp:ListItem>
+                    <asp:ListItem>Part-Time lecturer</asp:ListItem>
+                    <asp:ListItem>Subject Head</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td class="style11" align="right">
