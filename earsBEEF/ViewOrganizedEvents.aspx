@@ -5,6 +5,12 @@
         
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
+    <asp:Label ID="Label1" runat="server" Font-Size="16pt" Text="Organized Events"></asp:Label>
+        <br />
+    <asp:Label ID="lblNoPast" runat="server" Text=" No Organized Events found"></asp:Label>
+        <br />
+        <br />
+
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
             Width="88%" DataKeyNames="EventID" 
