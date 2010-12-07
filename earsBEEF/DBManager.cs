@@ -923,7 +923,7 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Event(Name,Venue,RegistrationCost,CategoryID,Description,EventDates,RegistrationStart,RegistrationEnd,Quota,CCAID, DateCreated, OrgStaffID, Status) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@m,@n,@o)";
+                comm.CommandText = "INSERT INTO Event(Name,Venue,RegistrationCost,CategoryID,Description,EventDates,RegistrationStart,RegistrationEnd,Quota,CCAID, DateCreated, OrgStaffID) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@m,@n)";
 
                 comm.Parameters.AddWithValue("@b", Name);
                 comm.Parameters.AddWithValue("@c", Venue);
@@ -937,9 +937,6 @@ namespace EARS
                 comm.Parameters.AddWithValue("@k", CCAID);
                 comm.Parameters.AddWithValue("@n", OrgStaffID);
                 comm.Parameters.AddWithValue("@m", DateCreated);
-                comm.Parameters.AddWithValue("@o", status);
-
-
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();

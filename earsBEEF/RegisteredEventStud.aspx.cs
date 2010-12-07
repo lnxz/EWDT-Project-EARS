@@ -29,6 +29,7 @@ namespace earsBEEF
                     else
                     {
                         ArrayList a = new ArrayList();
+                        //EARS.Event [] e = new ArrayList;
 
                         foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu.StudentID))
                         {
@@ -42,12 +43,33 @@ namespace earsBEEF
                         GridView1.DataSource = a;//populateEventTable();
                         //GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);
                         GridView1.DataBind();
+
                     }
 
                 }
-
-                
             }
+
+            EARS.Student stu1 = (EARS.Student)(this.Session["Login"]);
+            //EARS.Event ev = EARS.DBManager.GetStudentWithEvent(stu1.StudentID);
+            foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu1.StudentID))
+            {
+                string[] words = e1.EventDate.Split(';');
+                foreach (string word in words)
+                {
+                    if (word.Equals(""))
+                    {
+                    }
+                    else
+                    {
+                        lbDate.Items.Add(word);
+                    }
+            }
+            }
+
+
+
+
+
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
