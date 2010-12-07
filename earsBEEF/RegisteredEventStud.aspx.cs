@@ -10,6 +10,10 @@ namespace earsBEEF
 {
     public partial class RegisteredEventStud : System.Web.UI.Page
     {
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack)
@@ -108,9 +112,6 @@ namespace earsBEEF
 
         }
 
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
+
     }
 }
