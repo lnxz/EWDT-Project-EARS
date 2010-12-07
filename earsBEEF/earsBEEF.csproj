@@ -391,6 +391,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Default Forms\" />
+    <Folder Include="temp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\LoggedIn.Master" />
