@@ -11,11 +11,13 @@ namespace earsBEEF
     public class OLEDBManager
     {
 
-        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\Book2.xlsx;Extended Properties=""Excel 8.0;HDR=Yes""";
-        public static ArrayList massStudentImport()
+        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=e:\Book2.xlsx;Extended Properties=""Excel 12.0;HDR=Yes""";
+        public static ArrayList massStudentImport(string filePath)
         {
+            
+           connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+filePath+";Extended Properties=\"Excel 8.0;HDR=Yes\"";
             ArrayList errorList = new ArrayList();
-            OleDbCommand myCommand = new OleDbCommand("Select * from [student$];");
+            OleDbCommand myCommand = new OleDbCommand("Select * from [Student$];");
             OleDbConnection myConnection = new OleDbConnection(connectionString);
             try
             {
@@ -130,7 +132,7 @@ namespace earsBEEF
             }
             catch (OleDbException ex)
             {
-
+                string exceptionOle = ex.ToString();
             }
             finally
             {

@@ -19,14 +19,25 @@ namespace earsBEEF.Admin_Forms
 
         protected void Page_PreInit()
         {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
+         //   this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string filePath = "";
+            if (FileUpload1.PostedFile.ContentLength == 0)
+            {
+                Label1.Text = "Cannot upload file with 0 length";
+            }
+            else
+            {
+                Label1.Text = FileUpload1.PostedFile.FileName;
+                filePath = @"c:\temp\" + Label1.Text;
+                FileUpload1.PostedFile.SaveAs(@filePath);
+            }
 
-            int rowsAdded = 0;
-            ArrayList errors = earsBEEF.OLEDBManager.massStudentImport();
+           int rowsAdded = 0;
+            ArrayList errors = earsBEEF.OLEDBManager.massStudentImport(filePath);
             if (errors.Count != 0)
             {
                 for (int x = 0; x < errors.Count; x++)

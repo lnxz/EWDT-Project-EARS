@@ -5,7 +5,8 @@
     <asp:TextBox ID="TextBox1" runat="server" Height="379px" TextMode="MultiLine" 
         Width="885px" Enabled="False"></asp:TextBox>
     <asp:FileUpload ID="FileUpload1" runat="server" />
-    <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
+    <asp:Button ID="btnSubmit" runat="server" onclick="Button1_Click" 
         Text="Submit" />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <br />
 </asp:Content>
