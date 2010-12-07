@@ -7,7 +7,8 @@
 
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
-            Width="88%" DataKeyNames="EventID">
+            Width="88%" DataKeyNames="EventID" 
+            onselectedindexchanging="GridView1_SelectedIndexChanging">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
         <Columns>

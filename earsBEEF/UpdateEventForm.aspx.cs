@@ -287,7 +287,7 @@ namespace earsBEEF
                 tbxDes.Text = "";
                 tbxDol.Text = "";
                 tbxQuota.Text = "";
-
+                Response.Redirect("SuccessPage.aspx");
 
 
 
