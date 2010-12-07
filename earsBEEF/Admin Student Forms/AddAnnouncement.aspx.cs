@@ -91,14 +91,20 @@ namespace earsBEEF
             int day = Convert.ToInt32(ddlDay.Text);
             int month = Convert.ToInt32(ddlMonth.SelectedValue);
             int year = Convert.ToInt32(ddlYear.Text);
-            DateTime datecreated = DateTime.Today;
+            DateTime datecreate = DateTime.Today;
             DateTime annDate = new DateTime(year, month, day);
+            
 
             // indicate staff or student who post the announcemnet
 
-            //EARS.Student s = EARS.DBManager.GetAllStudentAnnouncement(Session["LoginType"].Equals(Student));
+            //EARS.Student b = EARS.DBManager.GetAllStudentAnnouncement(Session["LoginType"].Equals(Student));
+            
+            EARS.Staff p = (EARS.Staff)(Session["login"]);
+            EARS.Student s = (EARS.Student)(Session["Login"]);
+            int a= Convert.ToInt32(p.StaffID);
+            int b=Convert.ToInt32(s.StudentID);
 
-            //EARS.DBManager.AddAnnouncement(title, content datecreated,"","",annDate);
+            EARS.DBManager.AddAnnouncement(title, content,datecreate,a,b,annDate);
         }
 
         protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
