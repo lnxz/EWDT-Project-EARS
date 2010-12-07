@@ -30,7 +30,7 @@
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <a href = "../ViewEvents.aspx"><img src="../Images/Stub1.png" /></a>
-        <a href = "../RegisteredEventStud.aspx"><img src="../Images/Stub4.png" /></a>
+        <a href = "../RegisteredEvent.aspx"><img src="../Images/Stub4.png" /></a>
         <a href = "../ViewOrganizedEvents.aspx"><img src="../Images/Stub5.png" /></a>
         <img src="../Images/Stub6.png" />
         <a href="../ViewAnnouncement.aspx"><img src="../Images/Stub8.png" /></a>
