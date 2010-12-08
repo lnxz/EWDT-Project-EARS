@@ -7,5 +7,6 @@
     <asp:FileUpload ID="FileUpload1" runat="server" />
     <asp:Button ID="Submitbtn" runat="server" onclick="Submitbtn_Click" 
         Text="Submit" />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <br />
 </asp:Content>
