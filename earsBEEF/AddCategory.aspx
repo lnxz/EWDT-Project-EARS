@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedOut.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="earsBEEF.AddCategory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/LoggedInStudent.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="earsBEEF.AddCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
         .style2
@@ -25,7 +25,7 @@
         BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
         ForeColor="Black" GridLines="Horizontal" Width="452px" 
     AutoGenerateColumns="False" Height="215px" 
-                    onselectedindexchanged="GridView1_SelectedIndexChanged">
+                    >
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" />
@@ -43,16 +43,21 @@
             <td class="style4" colspan="2">
                     </br>
                     </br>
-                </br>
-                </br>
-                <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged" 
-                    Width="296px" Height="27px"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;
                     </br>
+                    <asp:TextBox ID="tbxCat" runat="server" Width="293px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="tbxCat" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     </br>
+                
+                <asp:Button ID="btnCfm" runat="server" Text="Confirm" Height="25px" 
+                    Width="95px" onclick="btnAdd_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 <br />
                 <br />
-                <br />
+                    <asp:Label ID="lbWarning" runat="server" ForeColor="Red" Text="Label" 
+                        Visible="False"></asp:Label>
                 <br />
                 <br />
                 <br />
@@ -65,14 +70,12 @@
                 &nbsp;</td>
             <td class="style4">
                 
-                <asp:Button ID="btnCfm" runat="server" Text="Confirm" Height="25px" 
-                    Width="95px" onclick="btnAdd_Click" />
+                <asp:Button ID="Cancel" runat="server" Text="Cancel" 
+                    Width="80px" onclick="Button2_Click" CausesValidation="False" />
                 </td>
             <td>
                 
-                <asp:Button ID="Cancel" runat="server" Text="Cancel" 
-                    Width="80px" onclick="Button2_Click" />
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>

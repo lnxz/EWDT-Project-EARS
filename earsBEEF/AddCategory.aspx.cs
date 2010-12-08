@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using System.Net;
 using System.Data;
+using System.Collections;
 
 namespace earsBEEF
 {
@@ -20,6 +21,31 @@ namespace earsBEEF
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //ArrayList c = new ArrayList();
+            //c = EARS.DBManager.GetAllCategory();
+
+            string cat = tbxCat.Text;
+
+            foreach (Category c1 in EARS.DBManager.GetAllCategory())
+            {
+                if (c1.Name.Equals(cat))
+                {
+                     lbWarning.Visible = true;
+                     lbWarning.Text = "Category name Existed";
+                 }
+            }
+            
+
+                //if (cat != c1.Name)
+                //{
+                //    EARS.DBManager.AddCategory(cat);
+                //}
+                
+                GridView1.DataSource = EARS.DBManager.GetAllCategory();//populateCategoryTable();
+                GridView1.DataBind();
+
+
+
 
         }
 
@@ -28,10 +54,10 @@ namespace earsBEEF
             Response.Redirect("Home.aspx");
         }
 
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
       
       
     }
