@@ -71,6 +71,8 @@ namespace earsBEEF
 
                     SendEmail.sendingEmail(emailadd, "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
                 }
+
+                Response.Redirect("VewEvent.aspx");
             }
 
             protected void btnCancel_Click(object sender, EventArgs e)
