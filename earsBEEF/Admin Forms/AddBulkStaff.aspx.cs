@@ -23,6 +23,18 @@ namespace earsBEEF.Admin_Forms
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
+            string filePath = "";
+            if (FileUpload1.PostedFile.ContentLength == 0)
+            {
+                Label1.Text = "Cannot upload file with 0 length";
+            }
+            else
+            {
+                Label1.Text = FileUpload1.PostedFile.FileName;
+                filePath = @"c:\temp\" + Label1.Text;
+                FileUpload1.PostedFile.SaveAs(@filePath);
+            }
+
             int rowsAdded = 0;
             ArrayList errors = earsBEEF.OLEDBManager.massStaffImport();
             if (errors.Count != 0)

@@ -141,9 +141,9 @@ namespace earsBEEF
             }
             return errorList;
         }
-
-        public static ArrayList massStaffImport()
+        public static ArrayList massStaffImport(string filePath)
         {
+            connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filePath + ";Extended Properties=\"Excel 8.0;HDR=Yes\"";
             ArrayList errorList = new ArrayList();
             OleDbCommand myCommand = new OleDbCommand("Select * from [staff$];");
             OleDbConnection myConnection = new OleDbConnection(connectionString);
@@ -255,8 +255,9 @@ namespace earsBEEF
             }
             return errorList;
         }
-        public static ArrayList massEventImport()
+        public static ArrayList massEventImport(string filePath)
         {
+            connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + filePath + ";Extended Properties=\"Excel 8.0;HDR=Yes\"";
             ArrayList errorList = new ArrayList();
             OleDbCommand myCommand = new OleDbCommand("Select * from [event$];");
             OleDbConnection myConnection = new OleDbConnection(connectionString);
