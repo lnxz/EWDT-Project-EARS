@@ -53,13 +53,13 @@ namespace earsBEEF
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            Response.Redirect("Admin Student Forms/AddEventForm.aspx");
         }
 
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
       
       
     }

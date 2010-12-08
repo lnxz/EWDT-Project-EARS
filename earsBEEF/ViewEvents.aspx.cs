@@ -35,7 +35,16 @@ namespace earsBEEF
                 GridView1.DataSource = a1;
                 GridView1.DataBind();
             }
+            if (GridView1.Rows.Count == 0)
+            {
+                Label2.Visible = true;
             }
+            else
+            {
+                Label2.Visible = false;
+            }
+        }
+
 
 
         protected void Page_PreInit()
@@ -45,8 +54,8 @@ namespace earsBEEF
 
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-                string key = GridView1.DataKeys[e.NewSelectedIndex].Value.ToString();
-                Response.Redirect("ViewEventStud.aspx?eid=" + key);
+            string key = GridView1.DataKeys[e.NewSelectedIndex].Value.ToString();
+            Response.Redirect("ViewEventStud.aspx?eid=" + key);
         }
     }
 }
