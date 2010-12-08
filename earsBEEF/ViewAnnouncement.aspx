@@ -5,6 +5,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<br />
+    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
+        Text="View All Announcements"></asp:Label>
+<br />
+<br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
