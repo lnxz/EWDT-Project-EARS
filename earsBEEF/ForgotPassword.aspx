@@ -151,7 +151,7 @@
                             Password Email&nbsp;
                         </td>
                         <td class="style8">
-                            <asp:TextBox ID="tbxPEmail" runat="server" Width="202px"></asp:TextBox>
+                            <asp:TextBox ID="tbxPEmail" runat="server" Width="202px" TextMode="Password"></asp:TextBox>
                             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                 ControlToValidate="tbxPEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
@@ -174,14 +174,14 @@
                 <br />
                 <asp:Label ID="lblPwChange1" runat="server" Text="New Password"></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="tbxPwC1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbxPwC1" runat="server" TextMode="Password" Width="175px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvNewPw" runat="server" 
                     ControlToValidate="tbxPwC1" ErrorMessage="Enter New Password" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />
                 &nbsp;<br />
                 <asp:Label ID="lblPwChange2" runat="server" Text="Retype New Password"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="tbxPwC2" runat="server"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="tbxPwC2" runat="server" TextMode="Password" Width="172px"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvNewPw2" runat="server" 
                     ControlToValidate="tbxPwC2" ErrorMessage="Re-Enter New Password" 
                     ForeColor="Red"></asp:RequiredFieldValidator>
