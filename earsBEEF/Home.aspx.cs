@@ -77,5 +77,16 @@ namespace earsBEEF
                 DataBind();
             }
         }
+
+        protected void gvStudentCurrentEvent_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            string key = gvStudentCurrentEvent.DataKeys[e.NewSelectedIndex].Value.ToString();
+            Response.Redirect("ViewEventStud.aspx?eid=" + key);
+        }
+
+        protected void gvStudentRegistered_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+
+        }
     }
 }

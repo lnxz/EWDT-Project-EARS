@@ -230,7 +230,7 @@ namespace earsBEEF
                     tbxQuota.Text = "";
 
                     string successAdd = "Successfully added an event";
-                    Response.Redirect("SuccessPage.aspx?successAdd"+successAdd);
+                    Response.Redirect("SuccessPage.aspx?successAdd="+successAdd);
                 }
                 else
                 {
@@ -244,7 +244,7 @@ namespace earsBEEF
                     tbxDol.Text = "";
                     tbxQuota.Text = "";
                     string successAdd = "Successfully added an event";
-                    Response.Redirect("SuccessPage.aspx?successAdd" + successAdd);
+                    Response.Redirect("../SuccessPage.aspx?successAdd=" + successAdd);
                 }
             }
 
@@ -441,6 +441,11 @@ namespace earsBEEF
             catch (Exception)
             {
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../AddCategory.aspx");
         }
 
     }

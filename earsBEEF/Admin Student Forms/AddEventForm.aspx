@@ -111,7 +111,7 @@
                               <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               </span>
                               <asp:Button ID="Button1" runat="server" Text="Add Category" 
-                                CausesValidation="False" />
+                                CausesValidation="False" onclick="Button1_Click" />
                         </td>
                     </tr>
                     <tr>

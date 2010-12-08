@@ -22,12 +22,14 @@
                     Text="Current Events"></asp:Label>
                 <br />
                 <asp:GridView ID="gvStudentCurrentEvent" runat="server" 
-                    AutoGenerateColumns="False" Height="69px" Width="870px">
+                    AutoGenerateColumns="False" Height="69px" Width="870px" 
+                    DataKeyNames="EventID" 
+                    onselectedindexchanging="gvStudentCurrentEvent_SelectedIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="eventDate" HeaderText="Event Dates" />
                         <asp:BoundField DataField="registrationEnd" HeaderText="Registration End" />
                         <asp:BoundField DataField="name" HeaderText="Name" />
-                        <asp:ButtonField Text="Register" />
+                        <asp:CommandField ShowSelectButton="True" />
                     </Columns>
                 </asp:GridView>
                 <br />
@@ -35,11 +37,12 @@
                     Text="Registered Events"></asp:Label>
                 <br />
                 <asp:GridView ID="gvStudentRegistered" runat="server" 
-                    AutoGenerateColumns="False" Height="139px" Width="862px">
+                    AutoGenerateColumns="False" Height="139px" Width="862px" 
+                    DataKeyNames="EventID" 
+                    onselectedindexchanging="gvStudentRegistered_SelectedIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="eventDate" HeaderText="Event Dates" />
                         <asp:BoundField DataField="name" HeaderText="Name" />
-                        <asp:ButtonField Text="View" />
                     </Columns>
                 </asp:GridView>
         <br />

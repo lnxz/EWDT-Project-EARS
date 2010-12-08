@@ -6,6 +6,10 @@
         &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
             Text="View All Events"></asp:Label>
         <br />
+        <asp:Label ID="Label2" runat="server" 
+            Text="There are currently no events open for registration" Visible="False"></asp:Label>
+        <br />
+        <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
             Width="88%" DataKeyNames="EventID"

@@ -36,7 +36,7 @@ namespace earsBEEF
                     lbMax.Text = Convert.ToString(a.Quota).ToString();
                     tbxDes.Text = a.Descrip;
                 }
-                    lbQuota.Text = Convert.ToString(s);
+                lbQuota.Text = Convert.ToString(EARS.DBManager.GetQuotaOfEvent(a.EventID));
             }
         }
             protected void btnReg_Click(object sender, EventArgs e)
