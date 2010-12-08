@@ -4,11 +4,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
 <br />
+ <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
+        Text="Registered Events"></asp:Label>
 <br />
     <asp:Label ID="lbEvent" runat="server" Text="Label" Visible="False"></asp:Label>
     <br />
-<asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False" 
-        ForeColor="Red"></asp:Label>
 <br />
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
@@ -50,6 +50,8 @@
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
 <br />
+<asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False" 
+        ForeColor="Red"></asp:Label>
 <br />
 <br />
 <br />
