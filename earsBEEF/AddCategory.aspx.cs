@@ -21,6 +21,7 @@ namespace earsBEEF
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            int x = 0;
             //ArrayList c = new ArrayList();
             //c = EARS.DBManager.GetAllCategory();
 
@@ -30,16 +31,17 @@ namespace earsBEEF
             {
                 if (c1.Name.Equals(cat))
                 {
-                     lbWarning.Visible = true;
-                     lbWarning.Text = "Category name Existed";
-                 }
+                    lbWarning.Visible = true;
+                    lbWarning.Text = "Category name Existed";
+                    x--;
+                }
             }
-            
 
-                //if (cat != c1.Name)
-                //{
-                //    EARS.DBManager.AddCategory(cat);
-                //}
+
+            if (x == 0)
+            {
+                EARS.DBManager.AddCategory(cat);
+            }
                 
                 GridView1.DataSource = EARS.DBManager.GetAllCategory();//populateCategoryTable();
                 GridView1.DataBind();
