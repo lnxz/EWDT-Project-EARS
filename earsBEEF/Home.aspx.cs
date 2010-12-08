@@ -88,5 +88,11 @@ namespace earsBEEF
         {
 
         }
+
+        protected void gvStaffOrganized_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            string key = gvStaffOrganized.DataKeys[e.NewSelectedIndex].Value.ToString();
+            Response.Redirect("ViewOrganizedEventInfo.aspx?eid=" + key);
+        }
     }
 }
