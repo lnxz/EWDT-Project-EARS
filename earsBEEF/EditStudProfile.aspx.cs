@@ -54,11 +54,11 @@ namespace earsBEEF
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            int contact = Convert.ToInt32(tbxContact.Text);
-            int emgContact = Convert.ToInt32(tbxEmergContact.Text);
+            string contact = tbxContact.Text;
+            string emgContact = tbxEmergContact.Text;
             string size = ddlsize.Text;
             EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
-            EARS.DBManager.UpdateStudent(tempStudent.StudentID,  contact, emgContact, size);
+            EARS.DBManager.UpdateStudent(tempStudent.StudentID,  Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
         }
 
         //protected void ddlSchool_SelectedIndexChanged(object sender, EventArgs e)
