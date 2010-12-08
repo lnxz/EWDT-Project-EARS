@@ -6,6 +6,9 @@
 <br />
 <br />
     <asp:Label ID="lbEvent" runat="server" Text="Label" Visible="False"></asp:Label>
+    <br />
+<asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False" 
+        ForeColor="Red"></asp:Label>
 <br />
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
@@ -48,8 +51,6 @@
         </asp:GridView>
 <br />
 <br />
-<asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False" 
-        ForeColor="Red"></asp:Label>
 <br />
 <br />
 <br />
