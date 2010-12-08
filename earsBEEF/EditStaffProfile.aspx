@@ -48,13 +48,11 @@
             <td class="style2" align="right">
                 Office No:</td>
             <td class="style2" align="left">
-                <asp:TextBox ID="tbxOffic" runat="server" Height="19px" Width="95px"></asp:TextBox>
+                <asp:TextBox ID="tbxOffic" runat="server" Height="27px" Width="135px" 
+                    ontextchanged="tbxOffic_TextChanged"></asp:TextBox>
             &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                     ControlToValidate="tbxOffic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
-                    runat="server" ControlToValidate="tbxOffic" ErrorMessage="Invaild Contact" 
-                    ForeColor="Red" ValidationExpression="\d{4}"></asp:RegularExpressionValidator>
-            </td>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="style5" align="right">

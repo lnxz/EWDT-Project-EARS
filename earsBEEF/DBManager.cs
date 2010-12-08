@@ -431,7 +431,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET ContactNo=@c, EmergCont=@d, TShirtSize=@e WHERE studentID=@studentID";
+                comm.CommandText = "UPDATE Student SET ContactNo=@c, EmergencyContact=@d, TShirtSize=@e WHERE studentID=@studentID";
                 comm.Parameters.AddWithValue("@studentID", studentID);
                 comm.Parameters.AddWithValue("@c", contactNo);
                 comm.Parameters.AddWithValue("@d", emergCont);
@@ -461,7 +461,7 @@ namespace EARS
 
 
         }
-        public static bool UpdateStaff(int staffID, string school, string position, int contactNo, int officeNo, string personalEmail)
+        public static bool UpdateStaff(int staffID, string school, string position, string contactNo, string officeNo, string personalEmail)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -471,7 +471,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET School=@a, ContactNo=@b, PersonalEmail=@c, Position=@d, OfficeNo=@e WHERE staffID=@staffID";
+                comm.CommandText = "UPDATE Staff SET School=@a, ContactNo=@b, PersonalEmail=@c, Position=@d, OfficeNumber=@e WHERE StaffID=@staffID";
                 comm.Parameters.AddWithValue("@staffID", staffID);
                 comm.Parameters.AddWithValue("@a", school);
                 comm.Parameters.AddWithValue("@b", contactNo);

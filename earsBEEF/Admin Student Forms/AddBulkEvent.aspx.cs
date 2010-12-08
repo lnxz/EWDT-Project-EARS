@@ -36,7 +36,7 @@ namespace earsBEEF.Admin_Student_Forms
             }
 
             int rowsAdded = 0;
-            ArrayList errors = earsBEEF.OLEDBManager.massEventImport();
+            ArrayList errors = earsBEEF.OLEDBManager.massEventImport(filePath);
             if (errors.Count != 0)
             {
                 for (int x = 0; x < errors.Count; x++)
