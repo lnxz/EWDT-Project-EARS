@@ -48,7 +48,8 @@
         </asp:GridView>
 <br />
 <br />
-<asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False"></asp:Label>
+<asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False" 
+        ForeColor="Red"></asp:Label>
 <br />
 <br />
 <br />
