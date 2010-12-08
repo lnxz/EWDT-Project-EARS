@@ -76,7 +76,8 @@
                 <asp:Label ID="Label16" runat="server" CssClass="viewHeader" Font-Bold="True" 
                     Text="Organized Events"></asp:Label>
                 <asp:GridView ID="gvStaffOrganized" runat="server" AutoGenerateColumns="False" 
-                    Height="139px" Width="862px">
+                    Height="139px" Width="862px" 
+                    onselectedindexchanging="gvStaffOrganized_SelectedIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="registrationEnd" HeaderText="Registration Ends" />
                         <asp:BoundField DataField="name" HeaderText="Name" />
