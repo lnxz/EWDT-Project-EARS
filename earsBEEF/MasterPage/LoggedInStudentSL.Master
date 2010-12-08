@@ -31,7 +31,7 @@
 
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
-        <img src="../Images/Stub1.png" />
+        <a href="../ViewEvents.aspx"><img src="../Images/Stub1.png" /></a>
         <a href="../Admin Student Forms/AddEventForm.aspx"><img src="../Images/Stub2.png" /></a>
         <a href="../ViewOrganizedEvents.aspx"><img src="../Images/Stub3.png" /></a>
         <a href="../RegisteredEventStud.aspx"><img src="../Images/Stub4.png" /></a>
