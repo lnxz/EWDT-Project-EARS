@@ -69,7 +69,7 @@ namespace earsBEEF
                     string emailadd = stu.Email;
                     string name = stu.Name;
 
-                    SendEmail.sendingEmail("sessykiller@hotmail.com", "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
+                    SendEmail.sendingEmail(emailadd, "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
                 }
             }
 
