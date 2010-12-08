@@ -53,47 +53,47 @@ namespace earsBEEF
                 }
             }
 
-            //ArrayList date1 = new ArrayList();
-      
-            //Boolean clash = false;
+            ArrayList date1 = new ArrayList();
 
-            //EARS.Student stu1 = (EARS.Student)(this.Session["Login"]);
-            ////EARS.Event ev = EARS.DBManager.GetStudentWithEvent(stu1.StudentID);
-            //foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu1.StudentID))
-            //{
-            //    string[] words = e1.EventDate.Split(';');
-            //    foreach (string word in words)
-            //    {
-            //        if (words.Equals(""))
-            //        {
-            //        }
-            //        else
-            //        {
+            Boolean clash = false;
 
-            //            if (date1.Count == 0)
-            //            {
-            //                date1.Add(word);
-            //            }
-            //            else
-            //            {
-            //                for (int x = 0; x < date1.Count; x++)
-            //                {
-            //                    if(date1[x].Equals(word))
-            //                    {
-            //                        clash = true;
-            //                        lbWarning.Text = "Warning there is crash date between both event";
-            //                        break;
-            //                    }
-            //                    if (x == date1.Count && clash == false)
-            //                    {
-            //                        date1.Add(word);
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    }
+            EARS.Student stu1 = (EARS.Student)(this.Session["Login"]);
+            //EARS.Event ev = EARS.DBManager.GetStudentWithEvent(stu1.StudentID);
+            foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu1.StudentID))
+            {
+                string[] words = e1.EventDate.Split(';');
+                foreach (string word in words)
+                {
+                    if (words.Equals(""))
+                    {
+                    }
+                    else
+                    {
 
-            //}
+                        if (date1.Count == 0)
+                        {
+                            date1.Add(word);
+                        }
+                        else
+                        {
+                            for (int x = 0; x < date1.Count; x++)
+                            {
+                                if (date1[x].Equals(word))
+                                {
+                                    clash = true;
+                                    lbWarning.Text = "Warning there is crash date between both event";
+                                    break;
+                                }
+                                if (x == date1.Count && clash == false)
+                                {
+                                    date1.Add(word);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
 
 
 
