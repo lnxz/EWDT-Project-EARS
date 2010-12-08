@@ -40,6 +40,10 @@ namespace earsBEEF
                 }
                 gvStudentCurrentEvent.DataSource = studentCurrentEvent;
                 gvStudentCurrentEvent.DataBind();
+                EARS.Student s1 = (EARS.Student)(Session["Login"]);
+                gvStudentRegistered.DataSource = EARS.DBManager.GetTop3RegisteredEvent(s1.StudentID);
+                gvStudentRegistered.DataBind();
+
             }
             else if (Session["LoginType"].Equals(null))
             {
@@ -48,6 +52,29 @@ namespace earsBEEF
             else
             {
                 MultiView1.ActiveViewIndex = 1;
+                
+                gvStudentAnn0.DataSource = EARS.DBManager.GetTop3Announcment();
+                gvStudentAnn0.DataBind();
+                ArrayList staffCurrentEvent = new ArrayList();
+                int counter = 0;
+
+                foreach (EARS.Event a in EARS.DBManager.GetAllEvents())
+                {
+                    if (counter != 3)
+                    {
+                        if ((DateTime.Today >= a.RegistrationStart) && (DateTime.Today <= a.RegistrationEnd))
+                        {
+                            staffCurrentEvent.Add(a);
+                            counter++;
+                        }
+                    }
+
+                }
+                gvStaffCurrentEvent.DataSource = staffCurrentEvent;
+                gvStaffCurrentEvent.DataBind();
+                EARS.Staff s2 = (EARS.Staff)(Session["Login"]);
+                gvStaffOrganized.DataSource = EARS.DBManager.GetTop3OrganizdEvent(s2.StaffID);
+                DataBind();
             }
         }
     }

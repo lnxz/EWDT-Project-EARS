@@ -138,6 +138,7 @@
     <Compile Include="Admin Student Forms\AddBulkEvent.aspx.designer.cs">
       <DependentUpon>AddBulkEvent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="orgEvent.cs" />
     <Compile Include="ViewPastEventInfo.aspx.cs">
       <DependentUpon>ViewPastEventInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
