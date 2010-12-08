@@ -95,7 +95,7 @@ namespace earsBEEF
 
             }
 
-            if (clash == false)
+            if (clash == true)
             {
                 lbWarning.Visible = true;
                 lbWarning.Text = "Warning there is crash date between both event";

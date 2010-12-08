@@ -149,8 +149,8 @@ namespace earsBEEF
         //    }
         }
 
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
     }
