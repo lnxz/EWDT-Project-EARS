@@ -431,7 +431,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET ContactNo=@c, EmergencyContact=@d, TShirtSize=@e WHERE studentID=@studentID";
+                comm.CommandText = "UPDATE Student SET ContactNo=@c, EmergencyContact=@d, TShirtSize=@e WHERE StudentID=@studentID";
                 comm.Parameters.AddWithValue("@studentID", studentID);
                 comm.Parameters.AddWithValue("@c", contactNo);
                 comm.Parameters.AddWithValue("@d", emergCont);
