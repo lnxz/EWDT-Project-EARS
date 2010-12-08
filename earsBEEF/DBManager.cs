@@ -383,7 +383,8 @@ namespace EARS
             return false;
 
         }
-
+        //get student, pass in studID
+        //get staff, pass in staffID
         #endregion
 
 

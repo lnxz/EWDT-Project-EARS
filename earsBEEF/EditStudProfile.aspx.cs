@@ -11,45 +11,51 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EARS.Student s = (EARS.Student)Session["Login"];
+            if (IsPostBack)
+            {
+            }
+            else
+            {
+                EARS.Student s = (EARS.Student)Session["Login"];
 
-            lbAdmin.Text = s.AdminNo;
-            lbST.Text = s.StudentType;
-            lbSch.Text = s.School;
-            lbCourse.Text = s.CourseCode;
-            lbName.Text = s.Name;
-            lbDOB.Text = Convert.ToString(s.DateOfBirth);
-            lbGender.Text = Convert.ToString(s.Gender);
-            tbxContact.Text = s.ContactNo;
-            tbxEmergContact.Text = s.EmergCont;
-            lbTpEmail.Text = s.Email;
-            //ddlsize.SelectedValue = s.TShirtSize;
+                lbAdmin.Text = s.AdminNo;
+                lbST.Text = s.StudentType;
+                lbSch.Text = s.School;
+                lbCourse.Text = s.CourseCode;
+                lbName.Text = s.Name;
+                lbDOB.Text = Convert.ToString(s.DateOfBirth);
+                lbGender.Text = Convert.ToString(s.Gender);
+                tbxContact.Text = s.ContactNo;
+                tbxEmergContact.Text = s.EmergCont;
+                lbTpEmail.Text = s.Email;
+                //ddlsize.SelectedValue = s.TShirtSize;
 
-            if (s.TShirtSize.Equals("XS  "))
-            {
-                ddlsize.SelectedIndex = 0;
+                if (s.TShirtSize.Equals("XS  "))
+                {
+                    ddlsize.SelectedIndex = 0;
+                }
+                else if (s.TShirtSize.Equals("S   "))
+                {
+                    ddlsize.SelectedIndex = 1;
+                }
+                else if (s.TShirtSize.Equals("M   "))
+                {
+                    ddlsize.SelectedIndex = 2;
+                }
+                else if (s.TShirtSize.Equals("L   "))
+                {
+                    ddlsize.SelectedIndex = 3;
+                }
+                else if (s.TShirtSize.Equals("XL  "))
+                {
+                    ddlsize.SelectedIndex = 4;
+                }
+                else if (s.TShirtSize.Equals("XXL "))
+                {
+                    ddlsize.SelectedIndex = 5;
+                }
+
             }
-            else if (s.TShirtSize.Equals("S   "))
-            {
-                ddlsize.SelectedIndex = 1;
-            }
-            else if (s.TShirtSize.Equals("M   "))
-            {
-                ddlsize.SelectedIndex = 2;
-            }
-            else if (s.TShirtSize.Equals("L   "))
-            {
-                ddlsize.SelectedIndex = 3;
-            }
-            else if (s.TShirtSize.Equals("XL  "))
-            {
-                ddlsize.SelectedIndex = 4;
-            }
-            else if (s.TShirtSize.Equals("XXL "))
-            {
-                ddlsize.SelectedIndex = 5;
-            }
-            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -59,6 +65,7 @@ namespace earsBEEF
             string size = ddlsize.Text;
             EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
             EARS.DBManager.UpdateStudent(tempStudent.StudentID,  Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
+          //  this.Session["Login"] = ____
         }
 
         //protected void ddlSchool_SelectedIndexChanged(object sender, EventArgs e)
@@ -142,8 +149,8 @@ namespace earsBEEF
         //    }
         }
 
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
     }

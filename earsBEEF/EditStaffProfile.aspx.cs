@@ -76,7 +76,7 @@ namespace earsBEEF
             string personalEmail = tbxPersonalEmail.Text;
             EARS.Staff tempStaff =  (EARS.Staff)this.Session["Login"];
             EARS.DBManager.UpdateStaff(tempStaff.StaffID, school, position, contactNo, officeNo, personalEmail);
-          
+            //  this.Session["Login"] = ____
         }
 
         protected void Page_PreInit()
