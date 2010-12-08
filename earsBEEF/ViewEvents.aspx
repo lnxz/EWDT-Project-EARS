@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         
-        &nbsp;<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+        &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
+            Text="View All Events"></asp:Label>
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
             Width="88%" DataKeyNames="EventID"
         onselectedindexchanging="GridView1_SelectedIndexChanging">
