@@ -11,7 +11,7 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblText.Text = Request.QueryString["successAdd"].ToString();
         }
         protected void Page_PreInit()
         {

@@ -22,12 +22,12 @@ namespace EARS
         private int orgStudID;
         private int orgStaffID;
         private DateTime dateCreated;
-        //private string status;
+        private string status;
 
    
         //private Image picture;
 
-        public Event(string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        public Event(string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated, string status)
         {
            
             this.name = name;
@@ -43,10 +43,10 @@ namespace EARS
             this.orgStaffID = orgstaffID;
             this.orgStudID = orgstudID;
             this.dateCreated = dateCreated;
-            //this.status = status;
+            this.status = status;
         }
 
-        public Event(int eventID, string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated)
+        public Event(int eventID, string name, string venue, double registrationCost, string category, string descrip, string eventdate, DateTime registrationStart, DateTime registrationEnd, int quota, int ccaID, int orgstudID, int orgstaffID, DateTime dateCreated,string status)
         {
             this.eventID = eventID;
             this.name = name;
@@ -62,15 +62,15 @@ namespace EARS
             this.orgStaffID = orgstaffID;
             this.orgStudID = orgstudID;
             this.dateCreated = dateCreated;
-            //this.status = status;
+            this.status = status;
         }
 
-      
-        //   public string Status
-        //{
-        //    get { return status; }
-        //    set { status = value; }
-        //}
+
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
         public int EventID
         {
             get { return eventID; }

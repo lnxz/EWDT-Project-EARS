@@ -10,7 +10,7 @@
 namespace earsBEEF {
     
     
-    public partial class Site1 {
+    public partial class LoggedIn {
         
         /// <summary>
         /// Head control.

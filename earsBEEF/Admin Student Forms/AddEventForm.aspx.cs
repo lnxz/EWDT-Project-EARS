@@ -229,7 +229,8 @@ namespace earsBEEF
                     tbxDol.Text = "";
                     tbxQuota.Text = "";
 
-
+                    string successAdd = "Successfully added an event";
+                    Response.Redirect("SuccessPage.aspx?successAdd"+successAdd);
                 }
                 else
                 {
@@ -242,7 +243,8 @@ namespace earsBEEF
                     tbxDes.Text = "";
                     tbxDol.Text = "";
                     tbxQuota.Text = "";
-
+                    string successAdd = "Successfully added an event";
+                    Response.Redirect("SuccessPage.aspx?successAdd" + successAdd);
                 }
             }
 
@@ -407,10 +409,10 @@ namespace earsBEEF
         }
 
 
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
 
 
 

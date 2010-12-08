@@ -37,10 +37,10 @@ namespace earsBEEF
                 lblNoPast.Visible = true;
             }
         }
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
 
 
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
