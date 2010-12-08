@@ -11,11 +11,11 @@ namespace earsBEEF
     public class OLEDBManager
     {
 
-        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=e:\Book2.xlsx;Extended Properties=""Excel 12.0;HDR=Yes""";
+        static string connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=f:\Book2.xlsx;Extended Properties=""Excel 12.0;HDR=Yes""";
         public static ArrayList massStudentImport(string filePath)
         {
             
-           connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+filePath+";Extended Properties=\"Excel 8.0;HDR=Yes\"";
+           //connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+filePath+";Extended Properties=\"Excel 8.0;HDR=Yes\"";
             ArrayList errorList = new ArrayList();
             OleDbCommand myCommand = new OleDbCommand("Select * from [Student$];");
             OleDbConnection myConnection = new OleDbConnection(connectionString);

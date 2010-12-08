@@ -71,8 +71,8 @@ namespace earsBEEF
         {
             string school = DdlSch.Text;
             string position = DdlPosit.Text;
-            int contactNo = Convert.ToInt32(tbxMoblie.Text);
-            int officeNo = Convert.ToInt32( tbxOffic.Text);
+            string contactNo = tbxMoblie.Text;
+            string officeNo = tbxOffic.Text;
             string personalEmail = tbxPersonalEmail.Text;
             EARS.Staff tempStaff =  (EARS.Staff)this.Session["Login"];
             EARS.DBManager.UpdateStaff(tempStaff.StaffID, school, position, contactNo, officeNo, personalEmail);
@@ -82,6 +82,11 @@ namespace earsBEEF
         protected void Page_PreInit()
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+
+        protected void tbxOffic_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
