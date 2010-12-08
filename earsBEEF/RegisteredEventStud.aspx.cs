@@ -81,7 +81,7 @@ namespace earsBEEF
                                 if (date1[x].Equals(word))
                                 {
                                     clash = true;
-                                    lbWarning.Text = "Warning there is crash date between both event";
+                                    
                                     break;
                                 }
                                 if (x == date1.Count && clash == false)
@@ -93,6 +93,12 @@ namespace earsBEEF
                     }
                 }
 
+            }
+
+            if (clash == false)
+            {
+                lbWarning.Visible = true;
+                lbWarning.Text = "Warning there is crash date between both event";
             }
 
 
