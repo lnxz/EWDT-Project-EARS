@@ -15,6 +15,7 @@ namespace earsBEEF
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,8 +29,6 @@ namespace earsBEEF
 
                 if (a != null)
                 {
-                    
-
                     lbName.Text = a.Name;
                     lbPlace.Text = a.Venue;
                     lbStartDate.Text = a.EventDate;
@@ -38,14 +37,40 @@ namespace earsBEEF
                     lbCost.Text = "$" + Convert.ToDouble(a.RegistrationCost).ToString() + ".00";
                     lbMax.Text = Convert.ToString(a.Quota).ToString();
                     tbxDes.Text = a.Descrip;
+
                 }
                     lbQuota.Text = Convert.ToString(c);
             }
         }
             protected void btnReg_Click(object sender, EventArgs e)
             {
+                int x = 0;
                 EARS.Student stu = (EARS.Student)(this.Session["Login"]);
-                EARS.DBManager.AddStudentRegisterEvent(stu.StudentID, s);
+
+                //check student registered for the event 
+                ArrayList sr = new ArrayList();
+                sr = EARS.DBManager.GetStudentWithEvent(stu.StudentID);
+
+                foreach (EARS.Event er in sr)
+                {
+                    if (er.EventID.Equals(s))
+                    {
+                        lbWarning.Visible = true;
+                        lbWarning.Text = "You have been Registered for this Event";
+                        x--;
+                    }
+                }
+
+                if (x == 0)
+                {
+                    // add the student to the event and send a mail to the student
+                    EARS.DBManager.AddStudentRegisterEvent(stu.StudentID, s);
+
+                    string emailadd = stu.Email;
+                    string name = stu.Name;
+
+                    SendEmail.sendingEmail("sessykiller@hotmail.com", "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
+                }
             }
 
             protected void btnCancel_Click(object sender, EventArgs e)
