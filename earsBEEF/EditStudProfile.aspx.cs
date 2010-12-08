@@ -65,7 +65,7 @@ namespace earsBEEF
             string size = ddlsize.Text;
             EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
             EARS.DBManager.UpdateStudent(tempStudent.StudentID,  Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
-          //  this.Session["Login"] = ____
+            EARS.Student s = (EARS.Student)(Session["Login"]);
         }
 
         //protected void ddlSchool_SelectedIndexChanged(object sender, EventArgs e)
