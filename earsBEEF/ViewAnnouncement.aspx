@@ -14,7 +14,9 @@
         AllowSorting="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" 
         CellPadding="4" DataKeyNames="AnnounceID" ForeColor="#333333" GridLines="None" 
         onrowcancelingedit="GridView1_RowCancelingEdit" 
-        onrowediting="GridView1_RowEditing" onrowupdating="GridView1_RowUpdating">
+        onrowediting="GridView1_RowEditing" 
+        onpageindexchanging="GridView1_PageIndexChanging" 
+        onrowupdating="GridView1_RowUpdating">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:TemplateField HeaderText="ID" SortExpression="AnnounceID">

@@ -64,10 +64,26 @@ namespace earsBEEF
 
              TextBox ContentBox = (TextBox)GridView1.Rows[e.RowIndex].FindControl("contenttbx"); 
 
-             TextBox dateOfAnn = (TextBox)GridView1.Rows[e.RowIndex].FindControl("annDatetbx"); 
-                
-             EARS.DBManager.
+             TextBox dateOfAnn = (TextBox)GridView1.Rows[e.RowIndex].FindControl("annDatetbx");
+            
+             int a = Convert.ToInt32(IdLbl.Text);
+             string b = Titlebox.Text;
+             string c = ContentBox.Text;
+             DateTime d =Convert.ToDateTime(dateOfAnn.Text);
+
+             EARS.DBManager.UpdateAnnouncment(a, b, c, d);
+             GridView1.EditIndex = -1;
+             GridView1.DataBind();
      
+
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+
+            GridView1.DataBind();
+
 
         }
 
