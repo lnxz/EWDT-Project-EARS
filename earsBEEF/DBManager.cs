@@ -1960,6 +1960,38 @@ namespace EARS
         #endregion
 
         #region Announcements
+        public static bool DeleteAnnouncement(int AnnounceID)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Boolean successful = false;
+            try
+            {
+                //Connect
+                conn.Open();
+                //prepare SQl command 
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Announcement WHERE AnnouncementID  = @AnnouncementID";
+                comm.Parameters.AddWithValue("@AnnouncementID", AnnounceID);
+                comm.Connection = conn;
+                //Excute SQL  command 
+                int rowsDeleted = (int)comm.ExecuteNonQuery();
+                if (rowsDeleted > 0)
+                    successful = true;
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                //close connection
+                conn.Close();
+            }
+            return successful;
+
+        }
         public static bool UpdateAnnouncment(int AnnounceID, string title , string content, DateTime dateOfAnn)
         {
             SqlConnection conn = new SqlConnection();
@@ -2137,7 +2169,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddStudentAnnouncement(int studentID, int announcementID)
+        public static int AddStudentAnnouncement(int studentID, int announceID)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
@@ -2151,7 +2183,7 @@ namespace EARS
                 comm.CommandText = "INSERT INTO StudentAnnouncement(studentID,announcementID) VALUES(@b,@c)";
 
                 comm.Parameters.AddWithValue("@b", studentID);
-                comm.Parameters.AddWithValue("@c", announcementID);
+                comm.Parameters.AddWithValue("@c", announceID);
 
 
 
