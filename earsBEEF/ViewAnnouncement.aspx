@@ -16,9 +16,11 @@
         onrowcancelingedit="GridView1_RowCancelingEdit" 
         onrowediting="GridView1_RowEditing" 
         onpageindexchanging="GridView1_PageIndexChanging" 
-        onrowupdating="GridView1_RowUpdating">
+        onrowupdating="GridView1_RowUpdating" 
+        onrowdeleting="GridView1_RowDeleting">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
+            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
             <asp:TemplateField HeaderText="ID" SortExpression="AnnounceID">
                 <EditItemTemplate>
                     <asp:Label ID="AnnID" runat="server" Text='<%# Eval("AnnounceID") %>'></asp:Label>

@@ -58,20 +58,20 @@ namespace earsBEEF
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-             Label IdLbl = (Label)GridView1.Rows[e.RowIndex].FindControl("AnnID"); 
-
+             //Label IdLbl = (Label)GridView1.Rows[e.RowIndex].FindControl("AnnID");
+             int ba = (int)GridView1.DataKeys[GridView1.EditIndex].Value;
              TextBox Titlebox = (TextBox)GridView1.Rows[e.RowIndex].FindControl("Titletbx"); 
 
              TextBox ContentBox = (TextBox)GridView1.Rows[e.RowIndex].FindControl("contenttbx"); 
 
              TextBox dateOfAnn = (TextBox)GridView1.Rows[e.RowIndex].FindControl("annDatetbx");
             
-             int a = Convert.ToInt32(IdLbl.Text);
+             //int a = Convert.ToInt32(IdLbl.Text);
              string b = Titlebox.Text;
              string c = ContentBox.Text;
              DateTime d =Convert.ToDateTime(dateOfAnn.Text);
 
-             EARS.DBManager.UpdateAnnouncment(a, b, c, d);
+             EARS.DBManager.UpdateAnnouncment(ba, b, c, d);
              GridView1.EditIndex = -1;
              GridView1.DataBind();
      
@@ -85,6 +85,12 @@ namespace earsBEEF
             GridView1.DataBind();
 
 
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int ba = (int)GridView1.DataKeys[GridView1.EditIndex].Value;
+            EARS.DBManager.DeleteAnnouncement(ba);
         }
 
 
