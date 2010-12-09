@@ -120,7 +120,8 @@
             <td class="style7" align="right">
                 Course:</td>
             <td class="style8" align="left">
-                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="155px">
+                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="155px" 
+                    onselectedindexchanged="DdlCourse_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td class="style9">
