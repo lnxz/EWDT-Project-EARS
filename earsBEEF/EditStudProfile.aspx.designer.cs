@@ -31,22 +31,22 @@ namespace earsBEEF {
         protected global::System.Web.UI.WebControls.Label lbST;
         
         /// <summary>
-        /// ddlSchool control.
+        /// lbSch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSchool;
+        protected global::System.Web.UI.WebControls.Label lbSch;
         
         /// <summary>
-        /// DdlCourse control.
+        /// lbCourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DdlCourse;
+        protected global::System.Web.UI.WebControls.Label lbCourse;
         
         /// <summary>
         /// lbName control.
