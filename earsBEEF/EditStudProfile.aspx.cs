@@ -64,7 +64,7 @@ namespace earsBEEF
             string emgContact = tbxEmergContact.Text;
             string size = ddlsize.Text;
             EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
-            EARS.DBManager.UpdateStudent(tempStudent.StudentID,  Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
+            EARS.DBManager.UpdateStudent(tempStudent.StudentID, Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
             EARS.Student s = (EARS.Student)(Session["Login"]);
         }
 
@@ -147,10 +147,11 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T34");
                 DdlCourse.Items.Add("T24");
             }
-    }
+        }
 
-    protected void Page_PreInit()
-    {
-        this.MasterPageFile = Session["MyPage_Master"].ToString();
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
     }
-    }
+}
