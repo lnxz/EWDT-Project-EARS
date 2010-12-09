@@ -97,7 +97,7 @@ namespace earsBEEF
         {
             DdlCourse.Items.Clear();
 
-            if (ddlSchool.SelectedIndex == 1)
+            if (DdlSch.SelectedIndex == 1)
             {
                 DdlCourse.Items.Clear();
                 DdlCourse.Items.Add("T26");
@@ -108,7 +108,7 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T25");
                 DdlCourse.Items.Add("T45");
             }
-            else if (ddlSchool.SelectedIndex == 2)
+            else if (DdlSch.SelectedIndex == 2)
             {
                 DdlCourse.Items.Clear();
                 DdlCourse.Items.Add("T02");
@@ -122,7 +122,7 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T01");
                 DdlCourse.Items.Add("T39");
             }
-            else if (ddlSchool.SelectedIndex == 3)
+            else if (DdlSch.SelectedIndex == 3)
             {
                 DdlCourse.Items.Clear();
                 DdlCourse.Items.Add("T20");
@@ -134,7 +134,7 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T47");
                 DdlCourse.Items.Add("T24");
             }
-            else if (ddlSchool.SelectedIndex == 4)
+            else if (DdlSch.SelectedIndex == 4)
             {
                 DdlCourse.Items.Clear();
                 DdlCourse.Items.Add("T56");
@@ -155,14 +155,14 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T05");
                 DdlCourse.Items.Add("T05");
             }
-            else if (ddlSchool.SelectedIndex == 5)
+            else if (DdlSch.SelectedIndex == 5)
             {
                 DdlCourse.Items.Clear();
                 DdlCourse.Items.Add("T54");
                 DdlCourse.Items.Add("T53");
                 DdlCourse.Items.Add("T48");
             }
-            else if (ddlSchool.SelectedIndex == 6)
+            else if (DdlSch.SelectedIndex == 6)
             {
                 DdlCourse.Items.Clear();
                 DdlCourse.Items.Add("T55");
