@@ -580,6 +580,78 @@ namespace EARS
             }
             return results;
         }
+        //get staffID from staff email
+        public static int GetStaffIDfromEmail(string staffemail)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            int staffID = 0;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT StaffID FROM Staff where StaffEmail = @StaffEmail";
+                comm.Parameters.AddWithValue("@StaffEmail", staffemail);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return staffID;
+        }
+        //get staffID from name
+        public static int GetStaffIDfromName(string name)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            int staffID = 0;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT StaffID FROM Staff where Name = @Name";
+                comm.Parameters.AddWithValue("@Name", name);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return staffID;
+        }
         //get studentID from adminno
         public static int GetStudentIDfromAdmin(string admin)
         {
