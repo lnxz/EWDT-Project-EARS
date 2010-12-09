@@ -15,27 +15,27 @@ namespace earsBEEF
 
             if (s.School.Equals("AS "))
             {
-                DdlPosit.SelectedIndex = 0;
+                DdlSch.SelectedIndex = 0;
             }
             else if (s.School.Equals("BS "))
             {
-                DdlPosit.SelectedIndex = 1;
+                DdlSch.SelectedIndex = 1;
             }
             else if (s.School.Equals("DS "))
             {
-                DdlPosit.SelectedIndex = 2;
+                DdlSch.SelectedIndex = 2;
             }
             else if (s.School.Equals("EN "))
             {
-                DdlPosit.SelectedIndex = 3;
+                DdlSch.SelectedIndex = 3;
             }
             else if (s.School.Equals("HSS"))
             {
-                DdlPosit.SelectedIndex = 4;
+                DdlSch.SelectedIndex = 4;
             }
             else if (s.School.Equals("IIT"))
             {
-                DdlPosit.SelectedIndex = 5;
+                DdlSch.SelectedIndex = 5;
             }
 
             DdlSch.Text = s.School;

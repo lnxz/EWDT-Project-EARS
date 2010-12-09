@@ -45,7 +45,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table style="width: 99%;">
+    <table style="width: 99%;">
         <tr>
             <td class="style12" colspan="2">
                 <strong style="text-align: left">Student Profile</strong></td>
@@ -99,7 +99,17 @@
             <td class="style4" align="right">
                 School:</td>
             <td class="style3" align="left">
-                <asp:Label ID="lbSch" runat="server" Text="Label"></asp:Label>
+                &nbsp;<asp:DropDownList ID="DdlSch" runat="server" 
+                    Height="22px" Width="202px" 
+                    AutoPostBack="True" 
+                    onselectedindexchanged="ddlSchool_SelectedIndexChanged">
+                    <asp:ListItem Value="AS">Applied Science</asp:ListItem>
+                    <asp:ListItem Value="BS">Business</asp:ListItem>
+                    <asp:ListItem Value="DS">Design</asp:ListItem>
+                    <asp:ListItem Value="EN">Engineering</asp:ListItem>
+                    <asp:ListItem Value="HSS">Humanities &amp; Social Science</asp:ListItem>
+                    <asp:ListItem Value="IIT">Informatics &amp; IT </asp:ListItem>
+                </asp:DropDownList>
             </td>
             <td class="style6">
                 </td>
@@ -110,7 +120,8 @@
             <td class="style7" align="right">
                 Course:</td>
             <td class="style8" align="left">
-                <asp:Label ID="lbCourse" runat="server" Text="Label"></asp:Label>
+                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="155px">
+                </asp:DropDownList>
             </td>
             <td class="style9">
                 </td>
