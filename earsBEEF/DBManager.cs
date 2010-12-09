@@ -380,7 +380,101 @@ namespace EARS
 
         }
         //get student, pass in studID
+        public static Student GetStudent(int studID)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Student s = null;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Student where StudentID =@studentID";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@studentID", studID);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    char isStudentLeader = dr["IsStudentLeader"].ToString()[0];
+                    int studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string adminNo = dr["AdminNo"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string courseCode = dr["CourseCode"].ToString();
+                    string contactNo = dr["ContactNo"].ToString();
+                    string emergCont = dr["EmergencyContact"].ToString();
+                    string email = dr["Email"].ToString();
+                    string tShirtSize = dr["TShirtSize"].ToString();
+                    DateTime dateofbirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    string studentType = dr["StudentType"].ToString();
+
+                    s = new Student(studentID, name, adminNo, password, gender, school, courseCode, contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return s;
+        }
         //get staff, pass in staffID
+        public static Staff GetStaff(int staffid)
+        {
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Staff s = null;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff where StaffID =@staffID";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@staffID", staffid);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    char admin = dr["isAdmin"].ToString()[0];
+                    string officeNo = dr["OfficeNumber"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+
+                    s = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return s;
+        }
         #endregion
         //search for student by adminno
         public static ArrayList SearchByAdmin(string admin)
