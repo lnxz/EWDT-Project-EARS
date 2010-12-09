@@ -14,10 +14,10 @@ namespace earsBEEF
     public partial class AddAnnouncement : System.Web.UI.Page
     {
 
-        protected void Page_PreInit()
-        {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
-        }
+        //protected void Page_PreInit()
+        //{
+        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
+        //}
         protected void Page_Load(object sender, EventArgs e)
         {
            
@@ -42,6 +42,21 @@ namespace earsBEEF
             GridView1.DataBind();
 
         }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+            GridView1.DataBind();
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            GridView1.DataBind();
+            //http://www.c-sharpcorner.com/uploadfile/anjudidi/108062009005713am/1.aspx
+        }
+
+
 
     }
 }
