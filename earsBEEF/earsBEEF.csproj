@@ -52,6 +52,7 @@
   <ItemGroup>
     <Content Include="AddCategory.aspx" />
     <Content Include="Admin Forms\AddBulkStaff.aspx" />
+    <Content Include="Admin Forms\SearchStudent.aspx" />
     <Content Include="Admin Student Forms\AddBulkEvent.aspx" />
     <Content Include="ViewPastEventInfo.aspx" />
     <Content Include="SuccessPage.aspx" />
@@ -130,6 +131,13 @@
     </Compile>
     <Compile Include="Admin Forms\AddBulkStaff.aspx.designer.cs">
       <DependentUpon>AddBulkStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Forms\SearchStudent.aspx.cs">
+      <DependentUpon>SearchStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin Forms\SearchStudent.aspx.designer.cs">
+      <DependentUpon>SearchStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin Student Forms\AddBulkEvent.aspx.cs">
       <DependentUpon>AddBulkEvent.aspx</DependentUpon>

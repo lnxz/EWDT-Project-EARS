@@ -19,29 +19,29 @@ namespace earsBEEF
                 EARS.Student s = (EARS.Student)Session["Login"];
 
                 if (s.School.Equals("AS "))
-            {
-                DdlSch.SelectedIndex = 0;
-            }
-            else if (s.School.Equals("BS "))
-            {
-                DdlSch.SelectedIndex = 1;
-            }
-            else if (s.School.Equals("DS "))
-            {
-                DdlSch.SelectedIndex = 2;
-            }
-            else if (s.School.Equals("EN "))
-            {
-                DdlSch.SelectedIndex = 3;
-            }
-            else if (s.School.Equals("HSS"))
-            {
-                DdlSch.SelectedIndex = 4;
-            }
-            else if (s.School.Equals("IIT"))
-            {
-                DdlSch.SelectedIndex = 5;
-            }
+                {
+                    DdlSch.SelectedIndex = 0;
+                }
+                else if (s.School.Equals("BS "))
+                {
+                    DdlSch.SelectedIndex = 1;
+                }
+                else if (s.School.Equals("DS "))
+                {
+                    DdlSch.SelectedIndex = 2;
+                }
+                else if (s.School.Equals("EN "))
+                {
+                    DdlSch.SelectedIndex = 3;
+                }
+                else if (s.School.Equals("HSS"))
+                {
+                    DdlSch.SelectedIndex = 4;
+                }
+                else if (s.School.Equals("IIT"))
+                {
+                    DdlSch.SelectedIndex = 5;
+                }
 
                 lbAdmin.Text = s.AdminNo;
                 lbST.Text = s.StudentType;
@@ -89,7 +89,7 @@ namespace earsBEEF
             string emgContact = tbxEmergContact.Text;
             string size = ddlsize.Text;
             EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
-            EARS.DBManager.UpdateStudent(tempStudent.StudentID, tempStudent.School, tempStudent.CourseCode,  Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
+            EARS.DBManager.UpdateStudent(tempStudent.StudentID, tempStudent.School, tempStudent.CourseCode, Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
             EARS.Student s = (EARS.Student)(Session["Login"]);
         }
 
@@ -172,10 +172,11 @@ namespace earsBEEF
                 DdlCourse.Items.Add("T34");
                 DdlCourse.Items.Add("T24");
             }
-    }
+        }
 
-    protected void Page_PreInit()
-    {
-        this.MasterPageFile = Session["MyPage_Master"].ToString();
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
     }
-    }
+}
