@@ -62,7 +62,8 @@ namespace earsBEEF
             //EARS.Event ev = EARS.DBManager.GetStudentWithEvent(stu1.StudentID);
             foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu1.StudentID))
             {
-
+                if ((DateTime.Today >= e1.RegistrationStart) && (DateTime.Today <= e1.RegistrationEnd))
+                {
                     string[] words = e1.EventDate.Split(';');
                     foreach (string word in words)
                     {
@@ -72,32 +73,34 @@ namespace earsBEEF
                         else
                         {
                             date1.Add(word);
-                            //if (date1.Count == 0)
-                            //{
-                             //   date1.Add(word);
-                            //}
-                            //else
-                            //{
-                                //for (int x = 0; x < date1.Count; x++)
-                                //{
-                                //    if (date1[x] != (word))
-                                //    {
-                                //        clash = false;
-                                //    }
-                                //    else if (date1[x].Equals(word))
-                                //    {
-                                //        clash = true;
-                                //        break;
-                                //    }
-                                //    if (x == date1.Count -1)
-                                //    {
-                                //        date1.Add(word);
-                                //        clash = false; 
-                                //    }
-                                //}
-                            }
-                      }
+                        }
+                    }
                 }
+            }
+
+            //if (date1.Count == 0)
+            //{
+            //   date1.Add(word);
+            //}
+            //else
+            //{
+            //for (int x = 0; x < date1.Count; x++)
+            //{
+            //    if (date1[x] != (word))
+            //    {
+            //        clash = false;
+            //    }
+            //    else if (date1[x].Equals(word))
+            //    {
+            //        clash = true;
+            //        break;
+            //    }
+            //    if (x == date1.Count -1)
+            //    {
+            //        date1.Add(word);
+            //        clash = false; 
+            //    }
+            //}
 
 
             if (clash == true)
