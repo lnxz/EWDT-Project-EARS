@@ -16,8 +16,16 @@ namespace earsBEEF
             }
             else
             {
-                EARS.Student s = (EARS.Student)Session["Login"];
+                EARS.Student s = null;
+                if (Session["LoginType"].Equals("Staff"))
+                {
+                    s = EARS.DBManager.GetStudent(Convert.ToInt32(Request.QueryString["ID"]));
 
+                }
+                else
+                {
+                    s = (EARS.Student)Session["Login"];
+                }
                 if (s.School.Equals("AS "))
                 {
                     DdlSch.SelectedIndex = 0;

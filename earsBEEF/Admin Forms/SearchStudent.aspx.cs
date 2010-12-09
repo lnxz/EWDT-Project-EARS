@@ -17,20 +17,37 @@ namespace earsBEEF.Admin_Forms
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
+            lbStudents.Items.Clear();
             if (ddlSearchType.SelectedIndex == 0)
             {
-                lbStudents.Items.Clear();
-                foreach(EARS.Student s in EARS.DBManager.searchByAdmin(tbxSearch.Text))
+                foreach(EARS.Student s in EARS.DBManager.SearchByAdmin(tbxSearch.Text))
                 {
                     lbStudents.Items.Add(s.AdminNo);
                 }
                 
             }
+            else if (ddlSearchType.SelectedIndex == 1)
+            {
+                foreach (EARS.Student s1 in EARS.DBManager.SearchByNameStud(tbxSearch.Text))
+                {
+                    lbStudents.Items.Add(s1.Name);
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            int studID = 0;
+            if (ddlSearchType.SelectedIndex == 0)
+            {
+                studID = EARS.DBManager.GetStudentIDfromAdmin(lbStudents.SelectedValue);
+                Response.Redirect("../EditStudProfile.aspx?id="+studID);
+            }
+            else
+            {
+                studID = EARS.DBManager.GetStudentIDfromName(lbStudents.SelectedValue);
+                Response.Redirect("../EditStudProfile.aspx?id="+studID);
+            }
         }
     }
 }
