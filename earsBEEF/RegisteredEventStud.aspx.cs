@@ -64,12 +64,11 @@ namespace earsBEEF
                 string[] words = e1.EventDate.Split(';');
                 foreach (string word in words)
                 {
-                    if (words.Equals(""))
+                    if (word.Equals(""))
                     {
                     }
                     else
                     {
-
                         if (date1.Count == 0)
                         {
                             date1.Add(word);
@@ -84,10 +83,11 @@ namespace earsBEEF
                                     
                                     break;
                                 }
-                                if (x == date1.Count && clash == false)
+                                if (x == date1.Count)
                                 {
                                     date1.Add(word);
                                 }
+                                
                             }
                         }
                     }
@@ -98,7 +98,7 @@ namespace earsBEEF
             if (clash == true)
             {
                 lbWarning.Visible = true;
-                lbWarning.Text = "Warning there is crash date between both event";
+                lbWarning.Text = "Note : There is two Event that Crash on same date";
             }
 
 
