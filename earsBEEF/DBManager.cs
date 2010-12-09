@@ -476,6 +476,104 @@ namespace EARS
             return s;
         }
         #endregion
+
+        public static ArrayList SearchByNameStaff(string nameStaff)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff where Name LIKE @name";
+                comm.Parameters.AddWithValue("@name", "%" + nameStaff + "%");
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    char admin = dr["IsAdmin"].ToString()[0];
+                    string officeNo = dr["OfficeNumber"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    Staff st = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                    results.Add(st);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+        public static ArrayList SearchByStaffEmail(string StaffEmail)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Staff where StaffEmail LIKE @staffEmail";
+                comm.Parameters.AddWithValue("@staffEmail", "%" + StaffEmail + "%");
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    int staffID = Convert.ToInt32(dr["StaffID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string staffEmail = dr["StaffEmail"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string mobileNo = dr["ContactNo"].ToString();
+                    string personalEmail = dr["PersonalEmail"].ToString();
+                    string position = dr["Position"].ToString();
+                    char admin = dr["IsAdmin"].ToString()[0];
+                    string officeNo = dr["OfficeNumber"].ToString();
+                    DateTime dateofBirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    Staff st = new Staff(staffID, name, staffEmail, password, gender, school, mobileNo, personalEmail, position, admin, officeNo, dateofBirth);
+                    results.Add(st);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+
         //search for student by adminno
         public static ArrayList SearchByAdmin(string admin)
         {
