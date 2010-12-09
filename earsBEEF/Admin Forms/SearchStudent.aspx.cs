@@ -17,6 +17,15 @@ namespace earsBEEF.Admin_Forms
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
+<<<<<<< .mine
+            //if (ddlSearchType.SelectedIndex == 0)
+            //{
+            //    lbStudents.Items.Clear();
+            //    foreach(EARS.Student s in EARS.DBManager.searchByAdmin(tbxSearch.Text))
+            //    {
+            //        lbStudents.Items.Add(s.AdminNo);
+            //    }
+=======
             lbStudents.Items.Clear();
             if (ddlSearchType.SelectedIndex == 0)
             {
@@ -24,8 +33,9 @@ namespace earsBEEF.Admin_Forms
                 {
                     lbStudents.Items.Add(s.AdminNo);
                 }
+>>>>>>> .r433
                 
-            }
+            //}
             else if (ddlSearchType.SelectedIndex == 1)
             {
                 foreach (EARS.Student s1 in EARS.DBManager.SearchByNameStud(tbxSearch.Text))
