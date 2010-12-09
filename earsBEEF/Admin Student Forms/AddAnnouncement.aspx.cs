@@ -89,9 +89,59 @@ namespace earsBEEF
             string title = tbxTitle.Text;
             string content = tbxCon.Text;
             int day = Convert.ToInt32(ddlDay.Text);
-            int month = Convert.ToInt32(ddlMonth.SelectedValue);
+            string fmonth = ddlMonth.SelectedValue;
+            int month = 0;
             int year = Convert.ToInt32(ddlYear.Text);
             DateTime datecreate = DateTime.Today;
+            if (fmonth == "Jan")
+            {
+                month = 1;
+            }
+            else if (fmonth == "Feb")
+            {
+                month = 2;
+            }
+            else if (fmonth == "Mar")
+            {
+                month = 3;
+            }
+            else if (fmonth == "Apr")
+            {
+                month = 4;
+            }
+            else if (fmonth == "May")
+            {
+                month = 5;
+            }
+            else if (fmonth == "Jun")
+            {
+                month = 6;
+            }
+            else if (fmonth == "Jul")
+            {
+                month = 7;
+            }
+            else if (fmonth == "Aug")
+            {
+                month = 8;
+            }
+            else if (fmonth == "Sep")
+            {
+                month = 9;
+            }
+            else if (fmonth == "Oct")
+            {
+                month = 10;
+            }
+            else if (fmonth == "Nov")
+            {
+                month = 11;
+            }
+            else if (fmonth == "Dec")
+            {
+                month = 12;
+            }
+
             DateTime annDate = new DateTime(year, month, day);
             
 
