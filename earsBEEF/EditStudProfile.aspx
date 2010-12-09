@@ -99,16 +99,7 @@
             <td class="style4" align="right">
                 School:</td>
             <td class="style3" align="left">
-                &nbsp;<asp:DropDownList ID="ddlSchool" runat="server" Height="22px" Width="202px" 
-                    AutoPostBack="True" 
-                    onselectedindexchanged="ddlSchool_SelectedIndexChanged">
-                    <asp:ListItem Value="AS">Applied Science</asp:ListItem>
-                    <asp:ListItem Value="BS">Business</asp:ListItem>
-                    <asp:ListItem Value="DS">Design</asp:ListItem>
-                    <asp:ListItem Value="EN">Engineering</asp:ListItem>
-                    <asp:ListItem Value="HSS">Humanities &amp; Social Science</asp:ListItem>
-                    <asp:ListItem Value="IIT">Informatics &amp; IT </asp:ListItem>
-                </asp:DropDownList>
+                <asp:Label ID="lbSch" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style6">
                 </td>
@@ -119,8 +110,7 @@
             <td class="style7" align="right">
                 Course:</td>
             <td class="style8" align="left">
-                <asp:DropDownList ID="DdlCourse" runat="server" Height="24px" Width="155px">
-                </asp:DropDownList>
+                <asp:Label ID="lbCourse" runat="server" Text="Label"></asp:Label>
             </td>
             <td class="style9">
                 </td>
