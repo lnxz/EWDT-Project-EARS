@@ -79,7 +79,85 @@ namespace earsBEEF
                 {
                     ddlsize.SelectedIndex = 5;
                 }
+                DdlCourse.Items.Clear();
 
+                if (DdlSch.SelectedIndex == 1)
+                {
+                    DdlCourse.Items.Clear();
+                    DdlCourse.Items.Add("T26");
+                    DdlCourse.Items.Add("T44");
+                    DdlCourse.Items.Add("T27");
+                    DdlCourse.Items.Add("T31");
+                    DdlCourse.Items.Add("T33");
+                    DdlCourse.Items.Add("T25");
+                    DdlCourse.Items.Add("T45");
+                }
+                else if (DdlSch.SelectedIndex == 2)
+                {
+                    DdlCourse.Items.Clear();
+                    DdlCourse.Items.Add("T02");
+                    DdlCourse.Items.Add("T01");
+                    DdlCourse.Items.Add("T36");
+                    DdlCourse.Items.Add("T40");
+                    DdlCourse.Items.Add("T18");
+                    DdlCourse.Items.Add("T08");
+                    DdlCourse.Items.Add("T09");
+                    DdlCourse.Items.Add("T19");
+                    DdlCourse.Items.Add("T01");
+                    DdlCourse.Items.Add("T39");
+                }
+                else if (DdlSch.SelectedIndex == 3)
+                {
+                    DdlCourse.Items.Clear();
+                    DdlCourse.Items.Add("T20");
+                    DdlCourse.Items.Add("T46");
+                    DdlCourse.Items.Add("T22");
+                    DdlCourse.Items.Add("T21");
+                    DdlCourse.Items.Add("T23");
+                    DdlCourse.Items.Add("T35");
+                    DdlCourse.Items.Add("T47");
+                    DdlCourse.Items.Add("T24");
+                }
+                else if (DdlSch.SelectedIndex == 4)
+                {
+                    DdlCourse.Items.Clear();
+                    DdlCourse.Items.Add("T56");
+                    DdlCourse.Items.Add("T05");
+                    DdlCourse.Items.Add("T06");
+                    DdlCourse.Items.Add("T49");
+                    DdlCourse.Items.Add("T37");
+                    DdlCourse.Items.Add("T50");
+                    DdlCourse.Items.Add("T51");
+                    DdlCourse.Items.Add("T04");
+                    DdlCourse.Items.Add("T38");
+                    DdlCourse.Items.Add("T43");
+                    DdlCourse.Items.Add("T52");
+                    DdlCourse.Items.Add("T13");
+                    DdlCourse.Items.Add("T05");
+                    DdlCourse.Items.Add("T29");
+                    DdlCourse.Items.Add("T28");
+                    DdlCourse.Items.Add("T05");
+                    DdlCourse.Items.Add("T05");
+                }
+                else if (DdlSch.SelectedIndex == 5)
+                {
+                    DdlCourse.Items.Clear();
+                    DdlCourse.Items.Add("T54");
+                    DdlCourse.Items.Add("T53");
+                    DdlCourse.Items.Add("T48");
+                }
+                else if (DdlSch.SelectedIndex == 6)
+                {
+                    DdlCourse.Items.Clear();
+                    DdlCourse.Items.Add("T55");
+                    DdlCourse.Items.Add("T15");
+                    DdlCourse.Items.Add("T16");
+                    DdlCourse.Items.Add("T30");
+                    DdlCourse.Items.Add("T34");
+                    DdlCourse.Items.Add("T24");
+                }
+
+                DdlCourse.SelectedValue = s.CourseCode;
             }
         }
 
@@ -177,6 +255,11 @@ namespace earsBEEF
         protected void Page_PreInit()
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
+
+        protected void DdlCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
