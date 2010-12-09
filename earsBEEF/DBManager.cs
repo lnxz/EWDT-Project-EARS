@@ -16,19 +16,11 @@ namespace EARS
         // GWEN LAPTOP
         //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP
-<<<<<<< .mine
-        // public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
-=======
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
->>>>>>> .r420
         // Joshua LAPTOP
         // public const string DBCONNSTR = @"Data Source=Yuri-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-<<<<<<< .mine
          public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
-=======
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
->>>>>>> .r420
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
         #endregion
 
@@ -577,7 +569,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);//,status);
+                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated,status);
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                 }
@@ -714,7 +706,7 @@ namespace EARS
                     int ccaID = -1;
                     int orgStudID = -1;
                     int orgStaffID = -1;
-                    //string status = dr["Status"].ToString();
+                    string status = dr["Status"].ToString();
 
                     if (dr["CCAID"] == DBNull.Value)
                     {
@@ -741,7 +733,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);//,status);
+                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated,status);
                     a.Add(e);
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
@@ -820,7 +812,76 @@ namespace EARS
 
                 
 
-                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);//, status);
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
+                    //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
+
+
+                    results.Add(b);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+        public static ArrayList GetAllOrganizedEventStaff(int orgStaffID)
+        {
+
+
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Event where OrgStaffID = @orgStaffID";
+                comm.Parameters.AddWithValue("@orgStaffID", orgStaffID);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+
+                    int eventID = Convert.ToInt32(dr["EventID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string venue = dr["Venue"].ToString();
+                    double registrationCost = Convert.ToDouble(dr["RegistrationCost"].ToString());
+                    string category = dr["CategoryID"].ToString();
+                    string descrip = dr["Description"].ToString();
+                    string eventDate = dr["eventDates"].ToString();
+                    DateTime regStart = DateTime.Parse(dr["RegistrationStart"].ToString());
+                    DateTime regend = DateTime.Parse(dr["RegistrationEnd"].ToString());
+                    int quota = Convert.ToInt32(dr["Quota"].ToString());
+                    int ccaID = -1;
+                    int orgStudID = -1;
+                    string status = dr["Status"].ToString();
+
+                    if (dr["CCAID"] == DBNull.Value)
+                    {
+
+                    }
+                    else
+                    {
+                        ccaID = Convert.ToInt32(dr["CCAID"].ToString());
+                    }
+                    orgStaffID = Convert.ToInt32(dr["OrgStaffID"].ToString());
+                    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
+
+
+
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
 
 
@@ -874,7 +935,7 @@ namespace EARS
                     int ccaID = -1;
                     int orgStudID = -1;
                     int orgStaffID = -1;
-                    //string status = dr["Status"].ToString();
+                    string status = dr["Status"].ToString();
 
                     if (dr["CCAID"] == DBNull.Value)
                     {
@@ -903,7 +964,7 @@ namespace EARS
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
 
-                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);//, status);
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
 
 
                     results.Add(b);
@@ -1310,7 +1371,7 @@ namespace EARS
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
 
-                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);//, status);
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
 
 
@@ -1365,7 +1426,7 @@ namespace EARS
                     int ccaID = -1;
                     int orgStudID = -1;
                     int orgStaffID = -1;
-                    //string status = dr["Status"].ToString();
+                    string status = dr["Status"].ToString();
 
                     if (dr["CCAID"] == DBNull.Value)
                     {
@@ -1394,7 +1455,7 @@ namespace EARS
 
                  //   EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
 
-                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);//, status);
+                    EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
 
 
                     results.Add(b);
