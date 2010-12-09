@@ -16,11 +16,19 @@ namespace EARS
         // GWEN LAPTOP
         //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP
+<<<<<<< .mine
+        // public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
+=======
         //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
+>>>>>>> .r420
         // Joshua LAPTOP
         // public const string DBCONNSTR = @"Data Source=Yuri-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
+<<<<<<< .mine
+         public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+=======
         public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+>>>>>>> .r420
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
         #endregion
 
