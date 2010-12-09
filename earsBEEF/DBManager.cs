@@ -382,9 +382,10 @@ namespace EARS
         //get student, pass in studID
         //get staff, pass in staffID
         #endregion
-        public static ArrayList searchByAdmin(string admin)
+        //search for student by adminno
+        public static ArrayList SearchByAdmin(string admin)
         {
-                 ArrayList results = new ArrayList();
+            ArrayList results = new ArrayList();
 
             // Establish connection with database
             SqlConnection conn = new SqlConnection();
@@ -397,7 +398,7 @@ namespace EARS
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
                 comm.CommandText = "SELECT * FROM Student where AdminNo LIKE @AdminNo";
-                comm.Parameters.AddWithValue("@AdminNo", admin+"%");
+                comm.Parameters.AddWithValue("@AdminNo", admin + "%");
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
@@ -433,8 +434,130 @@ namespace EARS
             }
             return results;
         }
+        //search for student by name
+        public static ArrayList SearchByNameStud(string Name)
+        {
+            ArrayList results = new ArrayList();
 
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
 
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Student where Name LIKE @Name";
+                comm.Parameters.AddWithValue("@Name", "%" + Name + "%");
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    char isStudentLeader = dr["IsStudentLeader"].ToString()[0];
+                    int studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string adminNo = dr["AdminNo"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string courseCode = dr["CourseCode"].ToString();
+                    string contactNo = dr["ContactNo"].ToString();
+                    string emergCont = dr["EmergencyContact"].ToString();
+                    string email = dr["Email"].ToString();
+                    string tShirtSize = dr["TShirtSize"].ToString();
+                    DateTime dateofbirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    string studentType = dr["StudentType"].ToString();
+
+                    Student s = new Student(studentID, name, adminNo, password, gender, school, courseCode, contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
+                    results.Add(s);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
+        //get studentID from adminno
+        public static int GetStudentIDfromAdmin(string admin)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            int studentID = 0;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT StudentID FROM Student where AdminNo = @AdminNo";
+                comm.Parameters.AddWithValue("@AdminNo", admin);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return studentID;
+        }
+        //get studentID from name
+        public static int GetStudentIDfromName(string Name)
+        {
+            ArrayList results = new ArrayList();
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            int studentID = 0;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT StudentID FROM Student where Name = @Name";
+                comm.Parameters.AddWithValue("@Name", Name);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return studentID;
+        }
 
         public static bool DeleteStudent(int studentID)
         {
@@ -619,7 +742,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated,status);
+                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                 }
@@ -635,7 +758,7 @@ namespace EARS
             }
             return e;
         }
-        public static bool DeleteStudentEvent(int studID,int eID)
+        public static bool DeleteStudentEvent(int studID, int eID)
         {
 
 
@@ -700,11 +823,11 @@ namespace EARS
                 //    DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
                 //    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
-                   
-                    int rowsDeleted = (int)comm.ExecuteNonQuery();
-                    if (rowsDeleted > 0)
-                        successful = true;
-                    //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
+
+                int rowsDeleted = (int)comm.ExecuteNonQuery();
+                if (rowsDeleted > 0)
+                    successful = true;
+                //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                 //}
             }
             catch (SqlException ex)
@@ -783,7 +906,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated,status);
+                    e = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                     a.Add(e);
 
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
@@ -800,7 +923,7 @@ namespace EARS
             }
             return a;
         }
-        
+
 
         //get organized events for Students
         public static ArrayList GetAllOrganizedEvents(int orgStudID)
@@ -819,14 +942,14 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Event where OrgStudentID = @orgStudID"; 
-                comm.Parameters.AddWithValue("@orgStudID",orgStudID);
+                comm.CommandText = "SELECT * FROM Event where OrgStudentID = @orgStudID";
+                comm.Parameters.AddWithValue("@orgStudID", orgStudID);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
                 while (dr.Read())   //read row by row
                 {
-                   
+
                     int eventID = Convert.ToInt32(dr["EventID"].ToString());
                     string name = dr["Name"].ToString();
                     string venue = dr["Venue"].ToString();
@@ -848,8 +971,8 @@ namespace EARS
                     else
                     {
                         ccaID = Convert.ToInt32(dr["CCAID"].ToString());
-                    }            
-                        orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
+                    }
+                    orgStudID = Convert.ToInt32(dr["OrgStudentID"].ToString());
                     if (dr["OrgStaffID"] == DBNull.Value)
                     {
 
@@ -860,7 +983,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                
+
 
                     EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
                     //EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
@@ -1032,7 +1155,7 @@ namespace EARS
             return results;
         }
         // Overloaded AddEvent method for Staff
-        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime          RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID, string status)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID, string status)
         {
             int rowsAdded = -1;
 
@@ -1074,7 +1197,7 @@ namespace EARS
             return rowsAdded;
         }
         // Overloaded AddEvent method for Students
-        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime          RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status)
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status)
         {
             int rowsAdded = -1;
 
@@ -1278,7 +1401,7 @@ namespace EARS
 
         }
         // Update event
-        public static bool UpdateEvent(int eventID, string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime                      RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, string status)
+        public static bool UpdateEvent(int eventID, string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, string status)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -1293,7 +1416,7 @@ namespace EARS
                 comm.Parameters.AddWithValue("@eventID", eventID);
                 comm.Parameters.AddWithValue("@a", Name);
                 comm.Parameters.AddWithValue("@b", Venue);
-                comm.Parameters.AddWithValue("@c",RegistrationCost);
+                comm.Parameters.AddWithValue("@c", RegistrationCost);
                 comm.Parameters.AddWithValue("@d", CategoryID);
                 comm.Parameters.AddWithValue("@e", Description);
                 comm.Parameters.AddWithValue("@f", EventDates);
@@ -1343,7 +1466,7 @@ namespace EARS
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@e", eId);
                 // Step 3: Execute the sql command
-               value = (int)comm.ExecuteScalar();
+                value = (int)comm.ExecuteScalar();
             }
             catch (SqlException ex)
             {
@@ -1503,7 +1626,7 @@ namespace EARS
                     }
                     DateTime dateCreated = DateTime.Parse(dr["DateCreated"].ToString());
 
-                 //   EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
+                    //   EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated);
 
                     EARS.Event b = new EARS.Event(eventID, name, venue, registrationCost, category, descrip, eventDate, regStart, regend, quota, ccaID, orgStudID, orgStaffID, dateCreated, status);
 
@@ -1609,9 +1732,9 @@ namespace EARS
                     {
                         createStaffID = Convert.ToInt32(dr["CreateStaffID"].ToString());
                     }
-                    if (dr["CreateStudentID"]== DBNull.Value)
+                    if (dr["CreateStudentID"] == DBNull.Value)
                     {
-                        
+
                     }
                     else
                     {
@@ -1653,7 +1776,7 @@ namespace EARS
                 comm.Parameters.AddWithValue("@e", createStaffID);
                 comm.Parameters.AddWithValue("@f", createStudID);
                 comm.Parameters.AddWithValue("@g", dateOfAnn);
-               
+
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();
@@ -2289,7 +2412,7 @@ namespace EARS
                 else
                     return false;
             }
-            
+
             catch (SqlException ex)
             {
                 Console.WriteLine(ex.Message);
@@ -2403,7 +2526,7 @@ namespace EARS
             return s;
         }
         // Update Password for staff
-        public static bool UpdatePasswordStaff(string semail , string pass)
+        public static bool UpdatePasswordStaff(string semail, string pass)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -2432,7 +2555,7 @@ namespace EARS
             }
             finally
             {
-            
+
                 //Close
                 conn.Close();
             }

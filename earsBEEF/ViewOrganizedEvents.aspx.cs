@@ -25,7 +25,7 @@ namespace earsBEEF
             }
             else{
             EARS.Staff st = (EARS.Staff)(this.Session["Login"]);
-                GridView1.DataSource = EARS.DBManager.GetAllOrganizedEvents(st.StaffID);
+                GridView1.DataSource = EARS.DBManager.GetAllOrganizedEventStaff(st.StaffID);
                 GridView1.DataBind();
                 if(GridView1.Rows.Count ==0)
                 {
