@@ -56,6 +56,21 @@ namespace earsBEEF
             //http://www.c-sharpcorner.com/uploadfile/anjudidi/108062009005713am/1.aspx
         }
 
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+             Label IdLbl = (Label)GridView1.Rows[e.RowIndex].FindControl("AnnID"); 
+
+             TextBox Titlebox = (TextBox)GridView1.Rows[e.RowIndex].FindControl("Titletbx"); 
+
+             TextBox ContentBox = (TextBox)GridView1.Rows[e.RowIndex].FindControl("contenttbx"); 
+
+             TextBox dateOfAnn = (TextBox)GridView1.Rows[e.RowIndex].FindControl("annDatetbx"); 
+                
+             EARS.DBManager.
+     
+
+        }
+
 
 
     }
