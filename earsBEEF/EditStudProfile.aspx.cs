@@ -174,9 +174,17 @@ namespace earsBEEF
             string contact = tbxContact.Text;
             string emgContact = tbxEmergContact.Text;
             string size = ddlsize.Text;
-            EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
-            EARS.DBManager.UpdateStudent(tempStudent.StudentID, tempStudent.School, tempStudent.CourseCode, Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
-            EARS.Student s = (EARS.Student)(Session["Login"]);
+            if (Session["LoginType"].Equals("Staff"))
+            {
+                EARS.DBManager.UpdateStudent(Convert.ToInt32(Request.QueryString["ID"]),DdlSch.Text,DdlCourse.Text, Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
+              
+            }
+            else
+            {
+                EARS.Student tempStudent = (EARS.Student)this.Session["Login"];
+                EARS.DBManager.UpdateStudent(tempStudent.StudentID, DdlSch.Text, DdlCourse.Text, Convert.ToInt32(contact), Convert.ToInt32(emgContact), size);
+                Session["Login"] = EARS.DBManager.GetStudent(tempStudent.StudentID);
+            }
         }
 
         protected void ddlSchool_SelectedIndexChanged(object sender, EventArgs e)
