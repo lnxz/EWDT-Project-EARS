@@ -20,7 +20,7 @@ namespace EARS
         // Joshua LAPTOP
         // public const string DBCONNSTR = @"Data Source=Yuri-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-         public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
         #endregion
 
@@ -382,7 +382,57 @@ namespace EARS
         //get student, pass in studID
         //get staff, pass in staffID
         #endregion
+        public static ArrayList searchByAdmin(string admin)
+        {
+                 ArrayList results = new ArrayList();
 
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT * FROM Student where AdminNo LIKE @AdminNo";
+                comm.Parameters.AddWithValue("@AdminNo", admin+"%");
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    char isStudentLeader = dr["IsStudentLeader"].ToString()[0];
+                    int studentID = Convert.ToInt32(dr["StudentID"].ToString());
+                    string name = dr["Name"].ToString();
+                    string adminNo = dr["AdminNo"].ToString();
+                    string password = dr["Password"].ToString();
+                    char gender = dr["Gender"].ToString()[0];
+                    string school = dr["School"].ToString();
+                    string courseCode = dr["CourseCode"].ToString();
+                    string contactNo = dr["ContactNo"].ToString();
+                    string emergCont = dr["EmergencyContact"].ToString();
+                    string email = dr["Email"].ToString();
+                    string tShirtSize = dr["TShirtSize"].ToString();
+                    DateTime dateofbirth = DateTime.Parse(dr["DateOfBirth"].ToString());
+                    string studentType = dr["StudentType"].ToString();
+
+                    Student s = new Student(studentID, name, adminNo, password, gender, school, courseCode, contactNo, emergCont, email, isStudentLeader, tShirtSize, studentType, dateofbirth);
+                    results.Add(s);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return results;
+        }
 
 
 
