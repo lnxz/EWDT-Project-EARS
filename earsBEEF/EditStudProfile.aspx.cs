@@ -20,8 +20,8 @@ namespace earsBEEF
 
                 lbAdmin.Text = s.AdminNo;
                 lbST.Text = s.StudentType;
-                lbSch.Text = s.School;
-                lbCourse.Text = s.CourseCode;
+                //lbSch.Text = s.School;
+                //lbCourse.Text = s.CourseCode;
                 lbName.Text = s.Name;
                 lbDOB.Text = Convert.ToString(s.DateOfBirth);
                 lbGender.Text = Convert.ToString(s.Gender);
