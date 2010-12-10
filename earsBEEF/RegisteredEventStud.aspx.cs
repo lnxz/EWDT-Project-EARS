@@ -33,43 +33,40 @@ namespace earsBEEF
                     else
                     {
                         ArrayList a = new ArrayList();
-                        //EARS.Event [] e = new ArrayList;
-
                         foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu.StudentID))
                         {
                             if ((DateTime.Today >= e1.RegistrationStart) && (DateTime.Today <= e1.RegistrationEnd))
                             {
                                 a.Add(e1);
                             }
-
                         }
 
                         GridView1.DataSource = a;//populateEventTable();
-                        //GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);
                         GridView1.DataBind();
 
                     }
 
                 }
+                if (GridView1.Rows.Count == 0)
+                {
+                    lbEvent.Visible = true;
+                    lbEvent.Text = "No Registered Events found";
+                }
             }
 
             ArrayList date1 = new ArrayList();
-            //date1 = null;
-
             Boolean clash = false;
 
             EARS.Student stu1 = (EARS.Student)(this.Session["Login"]);
-            //EARS.Event ev = EARS.DBManager.GetStudentWithEvent(stu1.StudentID);
             foreach (EARS.Event e1 in EARS.DBManager.GetStudentWithEvent(stu1.StudentID))
             {
-                if ((DateTime.Today >= e1.RegistrationStart) && (DateTime.Today <= e1.RegistrationEnd))
+                if ((DateTime.Today >= e1.RegistrationStart) && (DateTime.Today <= e1.RegistrationEnd)) //  compairing the dates
                 {
                     string[] words = e1.EventDate.Split(';');
                     foreach (string word in words)
                     {
                         if (word.Equals(""))
-                        {
-                        }
+                        {}
                         else
                         {
                             date1.Add(word);
@@ -78,34 +75,21 @@ namespace earsBEEF
                 }
             }
 
-            //if (date1.Count == 0)
-            //{
-            //   date1.Add(word);
-            //}
-            //else
-            //{
-            //for (int x = 0; x < date1.Count; x++)
-            //{
-            //    if (date1[x] != (word))
-            //    {
-            //        clash = false;
-            //    }
-            //    else if (date1[x].Equals(word))
-            //    {
-            //        clash = true;
-            //        break;
-            //    }
-            //    if (x == date1.Count -1)
-            //    {
-            //        date1.Add(word);
-            //        clash = false; 
-            //    }
-            //}
-
-
-            if (clash == true)
+            if (date1.Count != 0) // check if not empty
             {
-                lbWarning.Visible = true;
+                for (int i = 0; i < date1.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < date1.Count; j++)
+                    {
+                        if (date1[i].Equals(date1[j]))// if there is the crash return true
+                            clash = true;
+                    }
+                }
+            }              
+
+            if (clash == true) 
+            {
+                lbWarning.Visible = true; // set to visible
                 lbWarning.Text = "Note : There is two Event that Crash on same date";
             }
         }
@@ -115,8 +99,8 @@ namespace earsBEEF
             EARS.Student stu = (EARS.Student)(this.Session["Login"]);
 
             int k = (int)GridView1.DataKeys[e.RowIndex].Value;
-            EARS.DBManager.DeleteStudentEvent(stu.StudentID, k);
-            GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);//populateEventTable();
+            EARS.DBManager.DeleteStudentEvent(stu.StudentID, k); // get the gridview key to delete an event
+            GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);//repopulatestudentEventTable();
             GridView1.DataBind();
 
         }
