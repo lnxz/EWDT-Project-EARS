@@ -90,7 +90,7 @@ namespace earsBEEF
             if (clash == true) 
             {
                 lbWarning.Visible = true; // set to visible
-                lbWarning.Text = "Note : There is two Event that Crash on same date";
+                lbWarning.Text = "Note : There is an crash on Event that you had registered";
             }
         }
 
@@ -98,9 +98,6 @@ namespace earsBEEF
         {
             EARS.Student stu = (EARS.Student)(this.Session["Login"]);
             int k = (int)GridView1.DataKeys[e.RowIndex].Value;
-
-
-
             EARS.DBManager.DeleteStudentEvent(stu.StudentID, k); // get the gridview key to delete an event
             GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);//repopulatestudentEventTable();
             GridView1.DataBind();
