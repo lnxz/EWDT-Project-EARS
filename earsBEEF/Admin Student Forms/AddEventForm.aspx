@@ -87,7 +87,7 @@
                             Event Name:</td>
                         <td class="style20" align="left">
                             <asp:TextBox ID="tbxName" runat="server" Width="224px"></asp:TextBox>
-                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        &nbsp; <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                 ControlToValidate="tbxName" ErrorMessage="Please input Event Name" 
                                 ForeColor="Red" CssClass="style25"></asp:RequiredFieldValidator>
                         </td>
@@ -96,7 +96,7 @@
                         <td class="style25">
                             CCA involved:</td>
                         <td class="style18" align="left">
-                            <asp:DropDownList ID="ddlCCA" runat="server" Height="31px" Width="219px">
+                            <asp:DropDownList ID="ddlCCA" runat="server" Height="22px" Width="219px">
                                 <asp:ListItem>No CCA</asp:ListItem>
                             </asp:DropDownList>
                         </td>
@@ -105,7 +105,7 @@
                         <td class="style25">
                             Category:</td>
                         <td class="style18" align="left">
-                            <asp:DropDownList ID="ddlCate" runat="server" Height="33px" Width="220px" 
+                            <asp:DropDownList ID="ddlCate" runat="server" Height="22px" Width="220px" 
                                 onselectedindexchanged="ddlCate_SelectedIndexChanged">
                             </asp:DropDownList>
                               <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -120,6 +120,7 @@
                         <td class="style18" rowspan="2" align="left">
                             <asp:TextBox ID="tbxVenue" runat="server" TextMode="MultiLine" Width="219px" 
                                 CssClass="style25"></asp:TextBox>
+                            &nbsp;&nbsp;
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                                 ControlToValidate="tbxVenue" ErrorMessage="Please input venue" 
                                 ForeColor="Red" CssClass="style25"></asp:RequiredFieldValidator>
@@ -179,7 +180,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="style26">
+                        <td class="style26" valign="top">
                             Registration Starts:</td>
                         <td class="style22" align="left">
                             <span class="style25">&nbsp; </span> <asp:DropDownList ID="DdlMonth0" runat="server" Height="22px" Width="76px" 
@@ -195,17 +196,14 @@
                            </span> 
                            <asp:DropDownList ID="DdlYear0" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </span>
-                            <br class="style25" />
-                            <span class="style25">&nbsp;&nbsp;&nbsp;
+                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;
                             </span>
                             <asp:Label ID="lblDateError1" runat="server" ForeColor="Red" 
                                 Text="Please select Dates" Visible="False" CssClass="style25"></asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <td class="style14">
+                        <td class="style14" valign="top">
                             Registration Ends:</td>
                         <td class="style15" align="left">
                             <span class="style25">&nbsp; </span> <asp:DropDownList ID="DdlMonth1" runat="server" Height="22px" Width="76px" 
@@ -221,10 +219,7 @@
                            </span> 
                            <asp:DropDownList ID="DdlYear1" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
-                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </span>
-                            <br class="style25" />
-                            <span class="style25">&nbsp;&nbsp;&nbsp;
+                </asp:DropDownList> <span class="style25">&nbsp;&nbsp;
                             </span>
                             <asp:Label ID="lblDateError" runat="server" ForeColor="Red" 
                                 Text="End Date earlier than Start Date" Visible="False" CssClass="style25"></asp:Label>
@@ -297,23 +292,11 @@
                 &nbsp;</td>
         </tr>
     </table>
-<br />
-    <table style="width:100%;">
-        <tr>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style13">
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnConfirm" runat="server" style="text-align: right" 
                     Text="Confirm" onclick="btnConfirm_Click" />
-            </td>
-            <td>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
                     onclick="btnCancel_Click" />
-            </td>
-        </tr>
-    </table>
-</asp:Content>
+            </asp:Content>
