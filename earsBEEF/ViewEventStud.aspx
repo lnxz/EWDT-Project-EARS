@@ -19,19 +19,17 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<table style="width:100%;">
+<table style="width:88%; height: 473px;">
         <tr>
             <td class="style2" colspan="2">
                 <strong>
                 <br />
-                <table style="width:100%;">
+                <table style="width:105%; height: 377px;">
                     <tr>
                         <td class="style5">
-                <strong>
-                            <asp:Panel ID="Panel1" runat="server" Width="265px" Height="325px">
-                                <asp:Image ID="lmEvent" runat="server" Height="329px" 
-    Width="258px" />
-                            </asp:Panel>
+                <strong __designer:mapid="177">
+                                <asp:Image ID="lmEvent" runat="server" Height="293px" 
+    Width="168px" />
                             </strong>
                         </td>
                         </strong>

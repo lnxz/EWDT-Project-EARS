@@ -45,6 +45,7 @@ namespace earsBEEF
             protected void btnReg_Click(object sender, EventArgs e)
             {
                 int x = 0;
+                int y = 0;
                 EARS.Student stu = (EARS.Student)(this.Session["Login"]);
 
                 //check student registered for the event 
@@ -71,13 +72,18 @@ namespace earsBEEF
 
                     SendEmail.sendingEmail(emailadd, "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
                 }
-
-                Response.Redirect("VewEvent.aspx");
+                // add a message box
+                //Response.Write("<script>window.alert('Registeration Sucessfully')</script>");
+                if (lbWarning.Visible.Equals(false))
+                {
+                    Response.Redirect("ViewEvents.aspx");
+                }
+                
             }
 
             protected void btnCancel_Click(object sender, EventArgs e)
             {
-                Response.Redirect("VewEvent.aspx");
+                Response.Redirect("ViewEvents.aspx");
             }
 
 

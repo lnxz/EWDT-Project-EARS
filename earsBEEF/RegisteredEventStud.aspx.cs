@@ -97,14 +97,15 @@ namespace earsBEEF
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             EARS.Student stu = (EARS.Student)(this.Session["Login"]);
-
             int k = (int)GridView1.DataKeys[e.RowIndex].Value;
+
+
+
             EARS.DBManager.DeleteStudentEvent(stu.StudentID, k); // get the gridview key to delete an event
             GridView1.DataSource = EARS.DBManager.GetStudentWithEvent(stu.StudentID);//repopulatestudentEventTable();
             GridView1.DataBind();
 
         }
-
+        }
 
     }
-}

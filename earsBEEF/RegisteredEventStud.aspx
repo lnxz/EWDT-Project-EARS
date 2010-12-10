@@ -13,7 +13,9 @@
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="185px" 
             Width="88%" DataKeyNames="EventID"
- onrowdeleting="GridView1_RowDeleting">
+ onrowdeleting="GridView1_RowDeleting" OnClientClick="return confirm('Are you sure you 
+want to remove this Evnet?');"
+>
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
         <Columns>
@@ -35,8 +37,8 @@
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
                 SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
-            <asp:CommandField ButtonType="Button" DeleteText="Remove" 
-                ShowDeleteButton="True"/>
+            <asp:CommandField DeleteText="Remove" 
+                ShowDeleteButton="True" ButtonType="Button"/>
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -52,8 +54,9 @@
 <br />
 <asp:Label ID="lbWarning" runat="server" Text="Label" Visible="False" 
         ForeColor="Red"></asp:Label>
+    <br />
 <br />
-<br />
-<br />
-<br />
+    <br />
+    
+
 </asp:Content>
