@@ -17,7 +17,7 @@ namespace earsBEEF
         {
             if (this.Session["LoginType"].Equals("Staff"))
             {
-                GridView1.Columns.RemoveAt(6);
+                EventView.Columns.RemoveAt(6);
             }
             else
             {
@@ -32,10 +32,10 @@ namespace earsBEEF
 
                 }
 
-                GridView1.DataSource = a1;
-                GridView1.DataBind();
+                EventView.DataSource = a1;
+                EventView.DataBind();
             }
-            if (GridView1.Rows.Count == 0)
+            if (EventView.Rows.Count == 0)
             {
                 Label2.Visible = true;
             }
@@ -52,7 +52,7 @@ namespace earsBEEF
 
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            string key = GridView1.DataKeys[e.NewSelectedIndex].Value.ToString();
+            string key = EventView.DataKeys[e.NewSelectedIndex].Value.ToString();
             Response.Redirect("ViewEventStud.aspx?eid=" + key);
         }
     }
