@@ -26,19 +26,22 @@ namespace EARS
                     }
                     else
                     {
+                        
                         Session["Login"] = s;
                         Session["LoginType"] = "Student";
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     }
                     if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("Home.aspx");
+                        //Response.Redirect("Home.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("Home.aspx"); //home.aspx
-                        //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
+                        string s1 = s.AdminNo;
+                        Response.Redirect("Home.aspx?login= " + s1); //home.aspx
+                        FormsAuthentication.RedirectFromLoginPage(s.Name, true);
+                        
                     }
                 }
             }
@@ -62,13 +65,14 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false).Equals("default.aspx"))
                     {
-                        Response.Redirect("Home.aspx");
+                        //Response.Redirect("Home.aspx");
 
                     }
                     else
                     {
                         Response.Redirect("Home.aspx");
-                        //FormsAuthentication.RedirectFromLoginPage(s.Name, false);
+                        FormsAuthentication.RedirectFromLoginPage(st.Name, true);
+                        
                     }
                 }
                 
