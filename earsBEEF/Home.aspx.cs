@@ -95,11 +95,6 @@ namespace earsBEEF
             Response.Redirect("ViewEventStud.aspx?eid=" + key);
         }
 
-        protected void gvStudentRegistered_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-        {
-
-        }
-
         protected void gvStaffOrganized_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             string key = gvStaffOrganized.DataKeys[e.NewSelectedIndex].Value.ToString();
