@@ -38,6 +38,31 @@ namespace earsBEEF
                 }
                     lbQuota.Text = Convert.ToString(EARS.DBManager.GetQuotaOfEvent(a.EventID));
             }
+            else if (Session["LoginType"].Equals("Staff"))
+            {
+                s = Convert.ToInt32(Request.QueryString["eid"]);
+
+                // check event 
+                EARS.Event a = EARS.DBManager.RetrieveEvent(s);
+                EARS.DBManager.GetQuotaOfEvent(s);
+
+                if (a != null)
+                {
+
+
+                    lbName.Text = a.Name;
+                    lbPlace.Text = a.Venue;
+                    lbStartDate.Text = a.EventDate;
+                    lbRegStart.Text = Convert.ToDateTime(a.RegistrationStart).ToString();
+                    lbRegEnd.Text = Convert.ToDateTime(a.RegistrationEnd).ToString();
+                    lbCost.Text = "$" + Convert.ToDouble(a.RegistrationCost).ToString() + ".00";
+                    lbMax.Text = Convert.ToString(a.Quota).ToString();
+                    tbxDes.Text = a.Descrip;
+                }
+                lbQuota.Text = Convert.ToString(EARS.DBManager.GetQuotaOfEvent(a.EventID));
+
+                btnReg.Visible = false;
+            }
         }
             protected void btnReg_Click(object sender, EventArgs e)
             {

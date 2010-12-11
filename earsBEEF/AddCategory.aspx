@@ -18,9 +18,7 @@
     <table style="width:100%;">
         <tr>
             <td align="left" class="style2">
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="style3" __designer:mapid="5f"><strong __designer:mapid="60">Category</strong></span><br />
-    </br>
-    </br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="style3" __designer:mapid="5f"><strong __designer:mapid="60">Category</strong></span></br>
     <asp:GridView ID="GridView1" runat="server" BackColor="White" 
         BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" 
         ForeColor="Black" GridLines="Horizontal" Width="452px" 
@@ -40,11 +38,7 @@
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
             </td>
-            <td class="style4" colspan="2">
-                    </br>
-                    </br>
-                    &nbsp;&nbsp;&nbsp;
-                    </br>
+            <td class="style4" align="left">
                     <asp:TextBox ID="tbxCat" runat="server" Width="293px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                         ControlToValidate="tbxCat" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -73,18 +67,11 @@
                 <asp:Button ID="Cancel" runat="server" Text="Back" 
                     Width="80px" onclick="Button2_Click" CausesValidation="False" />
                 </td>
-            <td>
-                
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
         </tr>
         <tr>
             <td class="style2">
                 &nbsp;</td>
             <td class="style4">
-                &nbsp;</td>
-            <td align="left">
                 &nbsp;</td>
         </tr>
     </table>
