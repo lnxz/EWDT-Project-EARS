@@ -63,8 +63,7 @@
 
             <asp:GridView ID="gvStudentRegistered" runat="server" AutoGenerateColumns="False" 
             CellPadding="2" ForeColor="#333333" GridLines="None" Height="150px" 
-            Width="850px" DataKeyNames="EventID" 
-                    onselectedindexchanging="gvStudentRegistered_SelectedIndexChanging">
+            Width="850px" DataKeyNames="EventID">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="eventDate" HeaderText="Event Dates" />
@@ -140,7 +139,8 @@
             <asp:GridView ID="gvStaffOrganized" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" Height="150px" 
             Width="850px"
-            onselectedindexchanging="gvStaffOrganized_SelectedIndexChanging">
+            onselectedindexchanging="gvStaffOrganized_SelectedIndexChanging" 
+                    DataKeyNames="EventID">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="registrationEnd" HeaderText="Registration Ends" />
