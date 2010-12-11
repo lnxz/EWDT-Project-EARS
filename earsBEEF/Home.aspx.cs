@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
@@ -12,7 +13,17 @@ namespace earsBEEF
     {
         protected void Page_PreInit()
         {
+            
+
+            //string x = Request.QueryString["login"].ToString();
+
+            //if (x == null)
+            //{
+            //    FormsAuthentication.RedirectToLoginPage("LoginPage.aspx");
+            //}
             this.MasterPageFile = Session["MyPage_Master"].ToString();
+
+            
         }
         protected void Page_Load(object sender, EventArgs e)
         {
