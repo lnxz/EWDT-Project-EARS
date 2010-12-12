@@ -128,8 +128,6 @@
                             </asp:DropDownList>
                               <span class="style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               </span>
-                              <asp:Button ID="Button1" runat="server" Text="Add Category" 
-                                CausesValidation="False" />
                         </td>
                     </tr>
                     <tr>
