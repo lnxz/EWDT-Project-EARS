@@ -55,6 +55,8 @@
     <Content Include="Admin Forms\SearchStaff.aspx" />
     <Content Include="Admin Forms\SearchStudent.aspx" />
     <Content Include="Admin Student Forms\AddBulkEvent.aspx" />
+    <Content Include="Images\Stub14.png" />
+    <Content Include="Images\Stub15.png" />
     <Content Include="ViewPastEventInfo.aspx" />
     <Content Include="SuccessPage.aspx" />
     <Content Include="ViewOrganizedEventInfo.aspx" />
