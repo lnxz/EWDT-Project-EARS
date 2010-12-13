@@ -45,7 +45,7 @@ namespace EARS
 
                     earsBEEF.SendEmail.sendingEmail(email, "Password for EARs System", "Here is your email Password for ur account :" + p);
                     mv.ActiveViewIndex = 1;
-                    // working.. ^^^^^
+                    // working. ^^^^^
 
                 }
                 else

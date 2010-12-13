@@ -46,17 +46,17 @@
             <td class="style3">
                 Date Post:</td>
             <td>
-        <a href="../LoginPage.aspx">
+        <a href="./LoginPage.aspx">
                 <asp:DropDownList ID="ddlMonth" runat="server" AutoPostBack="True" 
                     Height="16px" onselectedindexchanged="ddlMonth_SelectedIndexChanged" 
                     Width="75px">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
-                </a>/<a href="../LoginPage.aspx"><asp:DropDownList ID="ddlDay" runat="server" 
+                </a>/<a href="./LoginPage.aspx"><asp:DropDownList ID="ddlDay" runat="server" 
                     Height="16px" Width="54px">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
-                </a>/<a href="../LoginPage.aspx"><asp:DropDownList ID="ddlYear" runat="server" 
+                </a>/<a href="./LoginPage.aspx"><asp:DropDownList ID="ddlYear" runat="server" 
                     Height="16px" Width="54px">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList>

@@ -40,12 +40,12 @@ namespace earsBEEF.Admin_Forms
             if (ddlSearchType.SelectedIndex == 0)
             {
                 staffID = EARS.DBManager.GetStaffIDfromName(lbStaffs.SelectedValue);
-                Response.Redirect("../EditStaffProfile.aspx?ID=" + staffID);
+                Response.Redirect("./EditStaffProfile.aspx?ID=" + staffID);
             }
             else
             {
                 staffID = EARS.DBManager.GetStaffIDfromEmail(lbStaffs.SelectedValue);
-                Response.Redirect("../EditStaffProfile.aspx?ID=" + staffID);
+                Response.Redirect("./EditStaffProfile.aspx?ID=" + staffID);
             }
         }
         protected void Page_PreInit()

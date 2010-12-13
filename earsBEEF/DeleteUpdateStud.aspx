@@ -146,7 +146,7 @@
             <td class="style37">
                 School:</td>
             <td class="style40" align="left">
-        <a href="../LoginPage.aspx">
+        <a href="./LoginPage.aspx">
                 <asp:DropDownList ID="ddlSchool" runat="server" AutoPostBack="True" 
                     Height="16px" onselectedindexchanged="ddlSchool_SelectedIndexChanged" 
                     Width="181px">
@@ -242,10 +242,10 @@
                     <asp:ListItem>2010</asp:ListItem>
                 </asp:DropDownList>
             &nbsp;</td>
-            <a href="../LoginPage.aspx">
+            <a href="./LoginPage.aspx">
             <td class="style7">
                 </td>
-            <a href="../LoginPage.aspx" class="style2">
+            <a href="./LoginPage.aspx" class="style2">
             <td align="left">
                 </td>
         </tr>
@@ -286,7 +286,7 @@
                 </td>
             <td class="style40" align="left">
                 </td>
-        <a href="../LoginPage.aspx">
+        <a href="./LoginPage.aspx">
             <td class="style5">
                 </td>
             <td align="left">
@@ -304,7 +304,7 @@
                     runat="server" ControlToValidate="tbxContact" ErrorMessage="Invaild Contact" 
                     ForeColor="Red" ValidationExpression="\d{8}"></asp:RegularExpressionValidator>
                 </td>
-        <a href="../LoginPage.aspx">
+        <a href="./LoginPage.aspx">
             <td class="style7">
                 </td>
             <td class="style7" align="left">
@@ -323,7 +323,7 @@
                     runat="server" ControlToValidate="tbxEmergContact" ErrorMessage="Invaild Contact" 
                     ForeColor="Red" ValidationExpression="\d{8}"></asp:RegularExpressionValidator>
                 </td>
-        <a href="../LoginPage.aspx">
+        <a href="./LoginPage.aspx">
             <td class="style30">
                 </td>
             <td class="style30" align="left">

@@ -53,12 +53,12 @@ namespace earsBEEF.Admin_Forms
             if (ddlSearchType.SelectedIndex == 0)
             {
                 studID = EARS.DBManager.GetStudentIDfromAdmin(lbStudents.SelectedValue);
-                Response.Redirect("../EditStudProfile.aspx?id="+studID);
+                Response.Redirect("./EditStudProfile.aspx?id="+studID);
             }
             else
             {
                 studID = EARS.DBManager.GetStudentIDfromName(lbStudents.SelectedValue);
-                Response.Redirect("../EditStudProfile.aspx?id="+studID);
+                Response.Redirect("./EditStudProfile.aspx?id="+studID);
             }
         }
     }

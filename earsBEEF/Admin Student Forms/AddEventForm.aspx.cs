@@ -244,7 +244,7 @@ namespace earsBEEF
                     tbxDol.Text = "";
                     tbxQuota.Text = "";
                     string successAdd = "Successfully added an event";
-                    Response.Redirect("../SuccessPage.aspx?successAdd=" + successAdd);
+                    Response.Redirect("./SuccessPage.aspx?successAdd=" + successAdd);
                 }
             }
 
@@ -445,7 +445,7 @@ namespace earsBEEF
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../AddCategory.aspx");
+            Response.Redirect("./AddCategory.aspx");
         }
 
     }
