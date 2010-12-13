@@ -18,6 +18,15 @@
             width: 99px;
             height: 26px;
         }
+        .style6
+        {
+            width: 99px;
+            height: 36px;
+        }
+        .style7
+        {
+            height: 36px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -43,21 +52,21 @@
             </td>
         </tr>
         <tr>
-            <td class="style3">
+            <td class="style6">
                 Date Post:</td>
-            <td>
+            <td class="style7">
         <a href="./LoginPage.aspx">
                 <asp:DropDownList ID="ddlMonth" runat="server" AutoPostBack="True" 
-                    Height="16px" onselectedindexchanged="ddlMonth_SelectedIndexChanged" 
+                    Height="20px" onselectedindexchanged="ddlMonth_SelectedIndexChanged" 
                     Width="75px">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
                 </a>/<a href="./LoginPage.aspx"><asp:DropDownList ID="ddlDay" runat="server" 
-                    Height="16px" Width="54px">
+                    Height="20px" Width="54px">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
                 </a>/<a href="./LoginPage.aspx"><asp:DropDownList ID="ddlYear" runat="server" 
-                    Height="16px" Width="54px">
+                    Height="20px" Width="54px">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList>
             </td>
