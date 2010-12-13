@@ -84,6 +84,10 @@ namespace EARS
         {
             Label2.Visible = false;
             tbxLoginId.Focus();
+            Session["Login"] = "";
+            Session["LoginType"] = "";
+            Session["MyPage_Master"] = "";
+
         }
     }
 }
