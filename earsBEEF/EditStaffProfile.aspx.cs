@@ -48,7 +48,7 @@ namespace earsBEEF
                     DdlSch.SelectedIndex = 5;
                 }
 
-            lbDOB.Text = Convert.ToString(s.DateOfBirth);
+            lbDOB.Text = s.DateOfBirth.ToShortDateString();
             lbEmail.Text = s.StaffEmail;
             lbGender.Text = Convert.ToString(s.Gender);
             lbName.Text = s.Name;
