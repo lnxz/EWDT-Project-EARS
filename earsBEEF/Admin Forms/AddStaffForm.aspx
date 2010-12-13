@@ -20,6 +20,15 @@
             color: #000000;
         }
 
+        .style6
+        {
+            width: 85px;
+        }
+        .style7
+        {
+            width: 322px;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -242,12 +251,17 @@
         </table>
     <table style="width:100%;">
         <tr>
-            <td style="text-align: right">
+            <td style="text-align: right" class="style7">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
+            <td class="style7">
+                <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
+                    PostBackUrl="~/Admin Forms/AddBulkStaff.aspx" Text="Add Bulk Staff" 
+                    Width="129px" />
+            </td>
             <td style="text-align: right">
                 <asp:Button ID="btnConfirm" runat="server" 
                     Text="Confirm" onclick="btnConfirm_Click" />
