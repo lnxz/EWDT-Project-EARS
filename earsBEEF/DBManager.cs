@@ -2092,7 +2092,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddAnnouncement(string title, string content, DateTime dateCreated, int createStaffID, int createStudID, DateTime dateOfAnn)
+        public static int AddAnnouncement(string title, string content, DateTime dateCreated, int createStaffID,  DateTime dateOfAnn)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
@@ -2103,13 +2103,48 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Announcement(Title,AContent,DateCreated,CreateStaffID,CreateStudentID,dateOfAnnouncement) VALUES(@b,@c,@d,@e,@f,@g)";
+                comm.CommandText = "INSERT INTO Announcement(Title,AContent,DateCreated,CreateStaffID,dateOfAnnouncement) VALUES(@b,@c,@d,@e,@g)";
 
                 comm.Parameters.AddWithValue("@b", title);
                 comm.Parameters.AddWithValue("@c", content);
                 comm.Parameters.AddWithValue("@d", dateCreated);
                 comm.Parameters.AddWithValue("@e", createStaffID);
-                comm.Parameters.AddWithValue("@f", createStudID);
+               // comm.Parameters.AddWithValue("@f", createStudID);
+                comm.Parameters.AddWithValue("@g", dateOfAnn);
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return rowsAdded;
+        }
+        public static int AddAnnouncementstud(string title, string content, DateTime dateCreated, int createStudID, DateTime dateOfAnn)
+        {
+            int rowsAdded = -1;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Announcement(Title,AContent,DateCreated,CreateStudentID,dateOfAnnouncement) VALUES(@b,@c,@d,@f,@g)";
+
+                comm.Parameters.AddWithValue("@b", title);
+                comm.Parameters.AddWithValue("@c", content);
+                comm.Parameters.AddWithValue("@d", dateCreated);
+              //  comm.Parameters.AddWithValue("@e", createStaffID);
+                 comm.Parameters.AddWithValue("@f", createStudID);
                 comm.Parameters.AddWithValue("@g", dateOfAnn);
 
                 comm.Connection = conn;

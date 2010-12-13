@@ -79,17 +79,17 @@ namespace earsBEEF
             }
         }
 
-        //protected void Page_PreInit()
-        //{
-        //    this.MasterPageFile = Session["MyPage_Master"].ToString();
-        //}
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string forwho = ddlFor.Text;
             string title = tbxTitle.Text;
             string content = tbxCon.Text;
-            int day = Convert.ToInt32(ddlDay.Text);
+            int day = Convert.ToInt32(ddlDay.SelectedValue);
             string fmonth = ddlMonth.SelectedValue;
             int month = 0;
             int year = Convert.ToInt32(ddlYear.Text);
@@ -149,13 +149,34 @@ namespace earsBEEF
             // indicate staff or student who post the announcemnet
 
             //EARS.Student b = EARS.DBManager.GetAllStudentAnnouncement(Session["LoginType"].Equals(Student));
-            
-            EARS.Staff p = (EARS.Staff)(Session["login"]);
-            EARS.Student s = (EARS.Student)(Session["Login"]);
-            int a= Convert.ToInt32(p.StaffID);
-            int b=Convert.ToInt32(s.StudentID);
 
-            EARS.DBManager.AddAnnouncement(title, content,datecreate,a,b,annDate);
+            
+            
+            
+            
+            //if (p != null)
+            //{
+            //    EARS.DBManager.AddAnnouncement(title, content, datecreate, a, annDate);
+            //}
+            //else
+            //{
+            //    EARS.DBManager.AddAnnouncementstud(title, content, datecreate, b, annDate);
+            //}
+
+            try
+            {
+                EARS.Student s = (EARS.Student)(Session["Login"]);
+                int b = Convert.ToInt32(s.StudentID);
+                EARS.DBManager.AddAnnouncementstud(title, content, datecreate, b, annDate);
+            }
+            catch
+            {
+                EARS.Staff p = (EARS.Staff)(Session["login"]);
+                int a = Convert.ToInt32(p.StaffID);
+                EARS.DBManager.AddAnnouncement(title, content, datecreate, a, annDate);
+            }
+            
+            Response.Redirect("AddAnnouncement.aspx");
         }
 
         protected void ddlMonth_SelectedIndexChanged(object sender, EventArgs e)
