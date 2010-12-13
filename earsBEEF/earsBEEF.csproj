@@ -51,10 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddCategory.aspx" />
-    <Content Include="Admin Forms\AddBulkStaff.aspx" />
-    <Content Include="Admin Forms\SearchStaff.aspx" />
-    <Content Include="Admin Forms\SearchStudent.aspx" />
-    <Content Include="Admin Student Forms\AddBulkEvent.aspx" />
+    <Content Include="AddBulkStaff.aspx" />
+    <Content Include="SearchStaff.aspx" />
+    <Content Include="SearchStudent.aspx" />
+    <Content Include="AddBulkEvent.aspx" />
     <Content Include="Images\Stub14.png" />
     <Content Include="Images\Stub15.png" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -65,12 +65,12 @@
     <Content Include="ViewOrganizedEventInfo.aspx" />
     <Content Include="ViewOrganizedEvents.aspx" />
     <Content Include="UpdateEventForm.aspx" />
-    <Content Include="Admin Forms\AddBulkStudent.aspx" />
+    <Content Include="AddBulkStudent.aspx" />
     <Content Include="ViewAnnouncement.aspx" />
-    <Content Include="Admin Student Forms\AddEventForm.aspx" />
-    <Content Include="Admin Forms\AddStaffForm.aspx" />
-    <Content Include="Admin Forms\AddStudentForm.aspx" />
-    <Content Include="Admin Student Forms\AddAnnouncement.aspx" />
+    <Content Include="AddEventForm.aspx" />
+    <Content Include="AddStaffForm.aspx" />
+    <Content Include="AddStudentForm.aspx" />
+    <Content Include="AddAnnouncement.aspx" />
     <Content Include="DeleteUpdateStaff.aspx" />
     <Content Include="DeleteUpdateStud.aspx" />
     <Content Include="EditStaffProfile.aspx" />
@@ -128,32 +128,32 @@
     <Compile Include="AddCategory.aspx.designer.cs">
       <DependentUpon>AddCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Forms\AddBulkStaff.aspx.cs">
+    <Compile Include="AddBulkStaff.aspx.cs">
       <DependentUpon>AddBulkStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Forms\AddBulkStaff.aspx.designer.cs">
+    <Compile Include="AddBulkStaff.aspx.designer.cs">
       <DependentUpon>AddBulkStaff.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Forms\SearchStaff.aspx.cs">
+    <Compile Include="SearchStaff.aspx.cs">
       <DependentUpon>SearchStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Forms\SearchStaff.aspx.designer.cs">
+    <Compile Include="SearchStaff.aspx.designer.cs">
       <DependentUpon>SearchStaff.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Forms\SearchStudent.aspx.cs">
+    <Compile Include="SearchStudent.aspx.cs">
       <DependentUpon>SearchStudent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Forms\SearchStudent.aspx.designer.cs">
+    <Compile Include="SearchStudent.aspx.designer.cs">
       <DependentUpon>SearchStudent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Student Forms\AddBulkEvent.aspx.cs">
+    <Compile Include="AddBulkEvent.aspx.cs">
       <DependentUpon>AddBulkEvent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Student Forms\AddBulkEvent.aspx.designer.cs">
+    <Compile Include="AddBulkEvent.aspx.designer.cs">
       <DependentUpon>AddBulkEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="orgEvent.cs" />
@@ -193,11 +193,11 @@
     <Compile Include="UpdateEventForm.aspx.designer.cs">
       <DependentUpon>UpdateEventForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Forms\AddBulkStudent.aspx.cs">
+    <Compile Include="AddBulkStudent.aspx.cs">
       <DependentUpon>AddBulkStudent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Forms\AddBulkStudent.aspx.designer.cs">
+    <Compile Include="AddBulkStudent.aspx.designer.cs">
       <DependentUpon>AddBulkStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewAnnouncement.aspx.cs">
@@ -207,32 +207,32 @@
     <Compile Include="ViewAnnouncement.aspx.designer.cs">
       <DependentUpon>ViewAnnouncement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Student Forms\AddEventForm.aspx.cs">
+    <Compile Include="AddEventForm.aspx.cs">
       <DependentUpon>AddEventForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Student Forms\AddEventForm.aspx.designer.cs">
+    <Compile Include="AddEventForm.aspx.designer.cs">
       <DependentUpon>AddEventForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Forms\AddStaffForm.aspx.cs">
+    <Compile Include="AddStaffForm.aspx.cs">
       <DependentUpon>AddStaffForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Forms\AddStaffForm.aspx.designer.cs">
+    <Compile Include="AddStaffForm.aspx.designer.cs">
       <DependentUpon>AddStaffForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Forms\AddStudentForm.aspx.cs">
+    <Compile Include="AddStudentForm.aspx.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Forms\AddStudentForm.aspx.designer.cs">
+    <Compile Include="AddStudentForm.aspx.designer.cs">
       <DependentUpon>AddStudentForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin Student Forms\AddAnnouncement.aspx.cs">
+    <Compile Include="AddAnnouncement.aspx.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin Student Forms\AddAnnouncement.aspx.designer.cs">
+    <Compile Include="AddAnnouncement.aspx.designer.cs">
       <DependentUpon>AddAnnouncement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Announcement.cs" />
@@ -400,6 +400,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin Forms\" />
+    <Folder Include="Admin Student Forms\" />
     <Folder Include="App_Data\" />
     <Folder Include="Default Forms\" />
     <Folder Include="temp\" />

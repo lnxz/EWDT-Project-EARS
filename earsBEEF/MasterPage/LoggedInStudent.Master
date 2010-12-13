@@ -44,6 +44,8 @@
     <div class="contentBox">
         <div class="innerBox">
             <div class="contentTitle">
+                Logged In as 
+                <asp:Label ID="Name" runat="server" Text="Label"></asp:Label>
             </div>
             <div class="contentText">
                 <form id="form1" runat="server" align="center">

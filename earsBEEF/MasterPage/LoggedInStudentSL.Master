@@ -32,7 +32,7 @@
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <a href="./ViewEvents.aspx"><img src="./Images/Stub1.png" /></a>
-        <a href="./Admin Student Forms/AddEventForm.aspx"><img src="./Images/Stub2.png" /></a>
+        <a href="./AddEventForm.aspx"><img src="./Images/Stub2.png" /></a>
         <a href="./ViewOrganizedEvents.aspx"><img src="./Images/Stub3.png" /></a>
         <a href="./RegisteredEventStud.aspx"><img src="./Images/Stub4.png" /></a>
         <a href="./ViewPastEventStud.aspx"><img src="./Images/Stub5.png" /></a>
@@ -48,7 +48,9 @@
     </div>
     <div class="contentBox">
         <div class="innerBox">
-            <div class="contentTitle">
+       <div class="contentTitle">
+                Logged In as 
+                <asp:Label ID="Name" runat="server" Text="Label"></asp:Label>
             </div>
             <div class="contentText">
                 <form id="form1" runat="server" align="center">

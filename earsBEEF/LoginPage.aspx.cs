@@ -22,6 +22,7 @@ namespace EARS
                     {
                         Session["Login"] = s;
                         Session["LoginType"] = "Student";
+                        Session["Name"] = s.Name;
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStudentSL.Master";
                     }
                     else
@@ -29,6 +30,7 @@ namespace EARS
                         
                         Session["Login"] = s;
                         Session["LoginType"] = "Student";
+                        Session["Name"] = s.Name;
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStudent.Master";
                     }
                     if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
@@ -55,12 +57,14 @@ namespace EARS
                     {
                         Session["Login"] = st;
                         Session["LoginType"] = "Staff";
+                        Session["Name"] = st.Name;
                         Session["MyPage_Master"] = "~/MasterPage/LoggedIn.Master";
                     }
                     else
                     {
                         Session["Login"] = st;
                         Session["LoginType"] = "Staff";
+                        Session["Name"] = st.Name;
                         Session["MyPage_Master"] = "~/MasterPage/LoggedInStaff.Master";
                     }
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false).Equals("default.aspx"))
