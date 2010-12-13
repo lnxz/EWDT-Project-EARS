@@ -20,8 +20,10 @@ namespace earsBEEF
         //}
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack)
+            { }
          
-            if (!IsPostBack)
+            else
             {
                 string a = DateTime.Today.ToShortDateString();
                 string[] r = a.Split('/');
@@ -98,6 +100,21 @@ namespace earsBEEF
 
                 GridView1.EditIndex = -1;
                 GridView1.DataBind();
+
+                string a = DateTime.Today.ToShortDateString();
+                string[] r = a.Split('/');
+                DateTime dt = new DateTime(Convert.ToInt32(r[2]), Convert.ToInt32(r[0]) - 1, Convert.ToInt32(r[1]));
+
+
+                ArrayList fk = new ArrayList();
+                foreach (earsBEEF.Announcement x in EARS.DBManager.GetAllAnnouncements())
+                {
+                    fk.Add(x);
+                }
+                GridView1.DataSource = fk;
+                GridView1.DataBind();
+
+                
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -2002,7 +2002,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Announcement SET title=@a, content=@b, dateOfAnn=@c WHERE AnnounceID=@AnnouncementID";
+                comm.CommandText = "UPDATE Announcement SET Title=@a, AContent=@b, dateOfAnnouncement=@c WHERE AnnouncementID=@AnnouncementID";
                 comm.Parameters.AddWithValue("@AnnounceID", AnnounceID);
                 comm.Parameters.AddWithValue("@a", title);
                 comm.Parameters.AddWithValue("@b", content);
