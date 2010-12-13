@@ -53,7 +53,7 @@
         <br />
         Login ID is your admin number (eg. 1234567E)<br />
         <br />
-        <b>For Staff:</b><br /> Login ID is your staff email..</span></asp:Panel>
+        <b>For Staff:</b><br /> Login ID is your staff email.</span></asp:Panel>
     </div>
     <br />
     <br />

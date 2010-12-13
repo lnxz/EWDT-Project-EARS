@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="../MasterPage/LoggedInStudent.Master" AutoEventWireup="true" CodeBehind="AddStudentForm.aspx.cs" Inherits="earsBEEF.AddStudentForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="./MasterPage/LoggedInStudent.Master" AutoEventWireup="true" CodeBehind="AddStudentForm.aspx.cs" Inherits="earsBEEF.AddStudentForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style type="text/css">
         .style2
