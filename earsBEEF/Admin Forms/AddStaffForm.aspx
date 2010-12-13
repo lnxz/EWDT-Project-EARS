@@ -28,6 +28,15 @@
         {
             width: 322px;
         }
+        .style8
+        {
+            width: 322px;
+            height: 28px;
+        }
+        .style9
+        {
+            height: 28px;
+        }
 
     </style>
 </asp:Content>
@@ -251,16 +260,16 @@
         </table>
     <table style="width:100%;">
         <tr>
-            <td style="text-align: right" class="style7">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td style="text-align: right" class="style8">
+                </td>
+            <td class="style9">
+                </td>
         </tr>
         <tr>
             <td class="style7">
                 <asp:Button ID="Button1" runat="server" CausesValidation="False" 
-                    onclick="Button1_Click" PostBackUrl="~/Admin Forms/AddBulkStaff.aspx" 
-                    Text="Add Bulk Staff" Width="129px" />
+                    PostBackUrl="~/Admin Forms/AddBulkStaff.aspx" Text="Add Bulk Staff" 
+                    Width="129px" />
             </td>
             <td style="text-align: right">
                 <asp:Button ID="btnConfirm" runat="server" 
