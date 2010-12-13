@@ -1971,7 +1971,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQl command 
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "SELECT * FROM Announcement WHERE AnnouncementID  = @AnnouncementID";
+                comm.CommandText = "DELETE FROM Announcement WHERE AnnouncementID  = @AnnouncementID";
                 comm.Parameters.AddWithValue("@AnnouncementID", AnnounceID);
                 comm.Connection = conn;
                 //Excute SQL  command 
@@ -2002,7 +2002,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Announcement SET title=@a, content=@b, dateOfAnn=@c WHERE AnnounceID=@AnnounceID";
+                comm.CommandText = "UPDATE Announcement SET title=@a, content=@b, dateOfAnn=@c WHERE AnnounceID=@AnnouncementID";
                 comm.Parameters.AddWithValue("@AnnounceID", AnnounceID);
                 comm.Parameters.AddWithValue("@a", title);
                 comm.Parameters.AddWithValue("@b", content);
