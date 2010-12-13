@@ -14,7 +14,8 @@
             Width="850px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="dateOfAnn" HeaderText="Date " />
+                        <asp:BoundField DataField="dateOfAnn" HeaderText="Date " 
+                            DataFormatString="{0:MM/dd/yyyy}" />
                         <asp:BoundField DataField="title" HeaderText="Title" />
                         <asp:BoundField DataField="content" HeaderText="Content" />
                     </Columns>
@@ -41,7 +42,8 @@
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="eventDate" HeaderText="Event Dates" />
-                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration End" />
+                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration End" 
+                            DataFormatString="{0:MM/dd/yyyy}" />
                         <asp:BoundField DataField="name" HeaderText="Name" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
@@ -93,7 +95,8 @@
             Width="850px">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="dateOfAnn" HeaderText="Date " />
+                        <asp:BoundField DataField="dateOfAnn" HeaderText="Date " 
+                            DataFormatString="{0:MM/dd/yyyy}" />
                         <asp:BoundField DataField="title" HeaderText="Title" />
                         <asp:BoundField DataField="content" HeaderText="Content" />
                     </Columns>
@@ -118,7 +121,8 @@
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="eventDate" HeaderText="Event Dates" />
-                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration End" />
+                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration End" 
+                            DataFormatString="{0:MM/dd/yyyy}" />
                         <asp:BoundField DataField="name" HeaderText="Name" />
                     </Columns>
         <EditRowStyle BackColor="#999999" />
@@ -143,7 +147,8 @@
                     DataKeyNames="EventID">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration Ends" />
+                        <asp:BoundField DataField="registrationEnd" HeaderText="Registration Ends" 
+                            DataFormatString="{0:MM/dd/yyyy}" />
                         <asp:BoundField DataField="name" HeaderText="Name" />
                         <asp:BoundField DataField="registeredNo" HeaderText="Registered" />
                         <asp:BoundField DataField="quota" HeaderText="Quota" />
