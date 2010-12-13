@@ -253,7 +253,7 @@
                 <asp:Button ID="btnUpload" runat="server" CausesValidation="False" 
                     onclick="btnUpload_Click" Text="Upload" Width="75px" />
                 <br class="style25" />
-                <asp:Image ID="lmEvent" runat="server" Height="173px" Width="176px" 
+                <asp:Image ID="lmEvent" runat="server" Height="200px" Width="200px" 
                     CssClass="style25" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br class="style25" />

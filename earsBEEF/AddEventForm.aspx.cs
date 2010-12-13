@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
 using System.IO;
-using System.IO.Path;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -221,7 +220,7 @@ namespace earsBEEF
                 string eventDatesString = "";
                 for (int x = 0; x < lbDate.Items.Count; x++)
                 {
-                    eventDatesString = eventDatesString +";"+ lbDate.Items[x].ToString();
+                    eventDatesString = eventDatesString + ";" + lbDate.Items[x].ToString();
                 }
 
 
@@ -238,7 +237,7 @@ namespace earsBEEF
                     tbxQuota.Text = "";
 
                     string successAdd = "Successfully added an event";
-                    Response.Redirect("SuccessPage.aspx?successAdd="+successAdd);
+                    Response.Redirect("SuccessPage.aspx?successAdd=" + successAdd);
                 }
                 else
                 {
@@ -444,7 +443,7 @@ namespace earsBEEF
             {
                 int x = lbDate.SelectedIndex;
                 lbDate.Items.RemoveAt(x);
-                
+
             }
             catch (Exception)
             {
@@ -460,12 +459,12 @@ namespace earsBEEF
         {
             //if (FileUpload1.PostedFile != null)
             //{
-                //int fileSize = FileUpload1.PostedFile.ContentLength;
-                //byte[] myData = new byte[fileSize];
-                //FileUpload1.PostedFile.InputStream.Read(myData, 0, fileSize);
-                //FileStream newFile = new FileStream(@"C:\ewdt\EventImage",FileMode.Create);
-                //byte[] Buffer;
-                //newFile.Write(Buffer, 0, Buffer.Length);
+            //int fileSize = FileUpload1.PostedFile.ContentLength;
+            //byte[] myData = new byte[fileSize];
+            //FileUpload1.PostedFile.InputStream.Read(myData, 0, fileSize);
+            //FileStream newFile = new FileStream(@"C:\ewdt\EventImage",FileMode.Create);
+            //byte[] Buffer;
+            //newFile.Write(Buffer, 0, Buffer.Length);
             //}
             try
             {
@@ -473,8 +472,8 @@ namespace earsBEEF
                 byte[] imageData = ReadFile(FileUpload1.PostedFile.FileName);
 
                 //Initialize SQL Server Connection
-                SqlConnection CN = new SqlConnection( EARS.DBManager.DBCONNSTR);
- 
+                SqlConnection CN = new SqlConnection(EARS.DBManager.DBCONNSTR);
+
                 //Set insert query
                 string qry = "insert into ImagesStore (OriginalPath,ImageData) values(@OriginalPath, @ImageData)";
 
@@ -488,14 +487,20 @@ namespace earsBEEF
                 //Open connection and execute insert query.
                 CN.Open();
                 SqlCom.ExecuteNonQuery();
+
+                //Set image in picture box
+                lmEvent.ImageUrl = FileUpload1.PostedFile.FileName;
+
+                //Provide file path in txtImagePath text box.
+
                 CN.Close();
 
                 //Close form and return to list or images.
-                
+
             }
             catch (Exception ex)
             {
-             //   MessageBox.Show(ex.ToString());
+                string exception = ex.ToString();
             }
 
         }
