@@ -11,6 +11,7 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnCancel.Attributes.Add("onClick", "javascript:history.back(); return false;");
             if (Page.IsPostBack)
             { }
             else
