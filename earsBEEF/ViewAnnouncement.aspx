@@ -11,7 +11,7 @@
 <br />
 <br />
     <asp:GridView ID="GridView1" Runat="server" AllowPaging="True" 
-        AllowSorting="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" 
+        AllowSorting="True" AutoGenerateColumns="False"  
         CellPadding="4" DataKeyNames="AnnounceID" ForeColor="#333333" GridLines="None" 
         onrowcancelingedit="GridView1_RowCancelingEdit" 
         onrowediting="GridView1_RowEditing" 
@@ -20,13 +20,32 @@
         onrowdeleting="GridView1_RowDeleting">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
-            <asp:TemplateField HeaderText="ID" SortExpression="AnnounceID">
+            <asp:TemplateField ShowHeader="False">
                 <EditItemTemplate>
-                    <asp:Label ID="AnnID" runat="server" Text='<%# Eval("AnnounceID") %>'></asp:Label>
+                    <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                        CommandName="Update" 
+                        onclientclick="return confirm(&quot;Confirm Update?&quot;)" Text="Update"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="CancelButton" runat="server" CausesValidation="False" 
+                        CommandName="Cancel" Text="Cancel"></asp:LinkButton>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("AnnounceID") %>'></asp:Label>
+                    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
+                        CommandName="Edit" Text="Edit"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                        CommandName="Delete" 
+                        onclientclick="return confirm(&quot;Confirm Delete?&quot;)" Text="Delete"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="AnnouncmentDate" SortExpression="DateOfAnn">
+                <EditItemTemplate>
+                    <asp:TextBox ID="anndatetbx" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="title" SortExpression="Title">
@@ -43,16 +62,6 @@
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("Content") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:BoundField DataField="dateCreated" HeaderText="dateCreated" 
-                SortExpression="dateCreated" />
-            <asp:TemplateField HeaderText="AnnouncmentDate" SortExpression="DateOfAnn">
-                <EditItemTemplate>
-                    <asp:TextBox ID="anndatetbx" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
