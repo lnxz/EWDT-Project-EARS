@@ -16,11 +16,11 @@ namespace EARS
         // GWEN LAPTOP
         //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP
-        //public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
+        public const string DBCONNSTR = @"Data Source=LNXZ-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // Joshua LAPTOP
         //public const string DBCONNSTR = @"Data Source=Yuri-PC\;Initial Catalog=EWDTProject;Integrated Security=True";
         // LEVEL 7 LABS
-        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
+        // public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=sa;Password=imsa"; //LEVEL 7 LABS
         //public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=C:\USERS\USER\DESKTOP\EWDTPROJECT.MDF;User ID=sa;Password=imsa";
         #endregion
 
@@ -475,7 +475,6 @@ namespace EARS
             }
             return s;
         }
-        #endregion
 
         public static ArrayList SearchByNameStaff(string nameStaff)
         {
@@ -938,6 +937,7 @@ namespace EARS
             }
             return false;
         }
+        #endregion
 
 
         #region Events&Notifications
@@ -1188,8 +1188,6 @@ namespace EARS
             }
             return a;
         }
-
-
         //get organized events for Students
         public static ArrayList GetAllOrganizedEvents(int orgStudID)
         {
@@ -1419,6 +1417,46 @@ namespace EARS
             }
             return results;
         }
+        public static int GetImageID(string originalPath)
+        {
+
+
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            int i = 0;
+            try
+            {
+
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT ImageID FROM ImagesStore where OriginalPath = @a ;";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@a", originalPath);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+
+
+                while (dr.Read())   //read row by row
+                {
+
+                    i = Convert.ToInt32(dr["ImageID"].ToString());
+                   
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return i;
+        }
         // Overloaded AddEvent method for Staff
         public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID, string status)
         {
@@ -1446,6 +1484,49 @@ namespace EARS
                 comm.Parameters.AddWithValue("@k", CCAID);
                 comm.Parameters.AddWithValue("@n", OrgStaffID);
                 comm.Parameters.AddWithValue("@m", DateCreated);
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return rowsAdded;
+        }
+        // Overloaded AddEvent method for Staff, with Image
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, DateTime DateCreated, int OrgStaffID, string status, int imageID)
+        {
+            int rowsAdded = -1;
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Event(Name,Venue,RegistrationCost,CategoryID,Description,EventDates,RegistrationStart,RegistrationEnd,Quota,CCAID, DateCreated, OrgStaffID, ImageID) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@m,@n,@o)";
+
+                comm.Parameters.AddWithValue("@b", Name);
+                comm.Parameters.AddWithValue("@c", Venue);
+                comm.Parameters.AddWithValue("@d", RegistrationCost);
+                comm.Parameters.AddWithValue("@e", CategoryID);
+                comm.Parameters.AddWithValue("@f", Description);
+                comm.Parameters.AddWithValue("@g", EventDates);
+                comm.Parameters.AddWithValue("@h", RegistrationStart);
+                comm.Parameters.AddWithValue("@i", RegistrationEnd);
+                comm.Parameters.AddWithValue("@j", Quota);
+                comm.Parameters.AddWithValue("@k", CCAID);
+                comm.Parameters.AddWithValue("@n", OrgStaffID);
+                comm.Parameters.AddWithValue("@m", DateCreated);
+                comm.Parameters.AddWithValue("@o", imageID);
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
                 rowsAdded = (int)comm.ExecuteNonQuery();
@@ -1490,6 +1571,51 @@ namespace EARS
                 comm.Parameters.AddWithValue("@n", DateCreated);
                 comm.Parameters.AddWithValue("@o", status);
 
+
+                comm.Connection = conn;
+                // Step 3: Execute the sql command
+                rowsAdded = (int)comm.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return rowsAdded;
+        }
+        // Overloaded AddEvent method for Students, with Image
+        public static int AddEvents(string Name, string Venue, double RegistrationCost, string CategoryID, string Description, string EventDates, DateTime RegistrationStart, DateTime RegistrationEnd, int Quota, int CCAID, int OrgStudentID, DateTime DateCreated, string status, int imageID)
+        {
+            int rowsAdded = -1;
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            try
+            {
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "INSERT INTO Event(Name,Venue,RegistrationCost,CategoryID,Description,EventDates,RegistrationStart,RegistrationEnd,Quota,CCAID,OrgStudentID, DateCreated, Status,imageID) VALUES(@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l,@n,@o,@p)";
+
+                comm.Parameters.AddWithValue("@b", Name);
+                comm.Parameters.AddWithValue("@c", Venue);
+                comm.Parameters.AddWithValue("@d", RegistrationCost);
+                comm.Parameters.AddWithValue("@e", CategoryID);
+                comm.Parameters.AddWithValue("@f", Description);
+                comm.Parameters.AddWithValue("@g", EventDates);
+                comm.Parameters.AddWithValue("@h", RegistrationStart);
+                comm.Parameters.AddWithValue("@i", RegistrationEnd);
+                comm.Parameters.AddWithValue("@j", Quota);
+                comm.Parameters.AddWithValue("@k", CCAID);
+                comm.Parameters.AddWithValue("@l", OrgStudentID);
+                comm.Parameters.AddWithValue("@n", DateCreated);
+                comm.Parameters.AddWithValue("@o", status);
+                comm.Parameters.AddWithValue("@p", imageID);
 
                 comm.Connection = conn;
                 // Step 3: Execute the sql command
@@ -1992,7 +2118,7 @@ namespace EARS
             return successful;
 
         }
-        public static bool UpdateAnnouncment(int AnnounceID, string title , string content, DateTime dateOfAnn)
+        public static bool UpdateAnnouncment(int AnnounceID, string title, string content, DateTime dateOfAnn)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = DBCONNSTR;
@@ -2092,7 +2218,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddAnnouncement(string title, string content, DateTime dateCreated, int createStaffID,  DateTime dateOfAnn)
+        public static int AddAnnouncement(string title, string content, DateTime dateCreated, int createStaffID, DateTime dateOfAnn)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
@@ -2109,7 +2235,7 @@ namespace EARS
                 comm.Parameters.AddWithValue("@c", content);
                 comm.Parameters.AddWithValue("@d", dateCreated);
                 comm.Parameters.AddWithValue("@e", createStaffID);
-               // comm.Parameters.AddWithValue("@f", createStudID);
+                // comm.Parameters.AddWithValue("@f", createStudID);
                 comm.Parameters.AddWithValue("@g", dateOfAnn);
 
                 comm.Connection = conn;
@@ -2143,8 +2269,8 @@ namespace EARS
                 comm.Parameters.AddWithValue("@b", title);
                 comm.Parameters.AddWithValue("@c", content);
                 comm.Parameters.AddWithValue("@d", dateCreated);
-              //  comm.Parameters.AddWithValue("@e", createStaffID);
-                 comm.Parameters.AddWithValue("@f", createStudID);
+                //  comm.Parameters.AddWithValue("@e", createStaffID);
+                comm.Parameters.AddWithValue("@f", createStudID);
                 comm.Parameters.AddWithValue("@g", dateOfAnn);
 
                 comm.Connection = conn;
