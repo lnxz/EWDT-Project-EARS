@@ -2002,7 +2002,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Announcement SET Title='@a', AContent=@b, dateOfAnnouncement=@c WHERE AnnouncementID=@AnnouncementID";
+                comm.CommandText = "UPDATE Announcement SET Title=@a, AContent=@b, dateOfAnnouncement=@c WHERE AnnouncementID=@AnnounceID";
                 comm.Parameters.AddWithValue("@AnnounceID", AnnounceID);
                 comm.Parameters.AddWithValue("@a", title);
                 comm.Parameters.AddWithValue("@b", content);
@@ -2092,7 +2092,7 @@ namespace EARS
             }
             return results;
         }
-        public static int AddAnnouncement(string title, string content, DateTime dateCreate, int createStaffID, int createStudID, DateTime dateOfAnn)
+        public static int AddAnnouncement(string title, string content, DateTime dateCreated, int createStaffID, int createStudID, DateTime dateOfAnn)
         {
             int rowsAdded = -1;
             SqlConnection conn = new SqlConnection();
@@ -2103,11 +2103,11 @@ namespace EARS
                 conn.Open();
                 // Step 2: Prepare the sql command
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "INSERT INTO Announcement(title,content,date,createStaffID,createStudentID,dateOfAnn) VALUES(@b,@c,@d,@e,@f,@g)";
+                comm.CommandText = "INSERT INTO Announcement(Title,AContent,DateCreated,CreateStaffID,CreateStudentID,dateOfAnnouncement) VALUES(@b,@c,@d,@e,@f,@g)";
 
                 comm.Parameters.AddWithValue("@b", title);
                 comm.Parameters.AddWithValue("@c", content);
-                comm.Parameters.AddWithValue("@d", dateCreate);
+                comm.Parameters.AddWithValue("@d", dateCreated);
                 comm.Parameters.AddWithValue("@e", createStaffID);
                 comm.Parameters.AddWithValue("@f", createStudID);
                 comm.Parameters.AddWithValue("@g", dateOfAnn);
