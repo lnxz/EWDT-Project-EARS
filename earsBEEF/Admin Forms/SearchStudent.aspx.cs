@@ -37,7 +37,6 @@ namespace earsBEEF.Admin_Forms
                     lbStudents.Items.Add(s.AdminNo);
                 }
 
-
             }
             else if (ddlSearchType.SelectedIndex == 1)
             {
