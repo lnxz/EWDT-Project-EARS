@@ -5,6 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
+using System.IO;
+using System.IO.Path;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Data.SqlClient;
+
 
 namespace earsBEEF
 {
@@ -14,7 +22,7 @@ namespace earsBEEF
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Boolean imageUploaded = false;
             if (Session["LoginType"].Equals("Staff"))
             {
 
@@ -446,6 +454,70 @@ namespace earsBEEF
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("./AddCategory.aspx");
+        }
+
+        protected void btnUpload_Click(object sender, EventArgs e)
+        {
+            //if (FileUpload1.PostedFile != null)
+            //{
+                //int fileSize = FileUpload1.PostedFile.ContentLength;
+                //byte[] myData = new byte[fileSize];
+                //FileUpload1.PostedFile.InputStream.Read(myData, 0, fileSize);
+                //FileStream newFile = new FileStream(@"C:\ewdt\EventImage",FileMode.Create);
+                //byte[] Buffer;
+                //newFile.Write(Buffer, 0, Buffer.Length);
+            //}
+            try
+            {
+                //Read Image Bytes into a byte array
+                byte[] imageData = ReadFile(FileUpload1.PostedFile.FileName);
+
+                //Initialize SQL Server Connection
+                SqlConnection CN = new SqlConnection( EARS.DBManager.DBCONNSTR);
+ 
+                //Set insert query
+                string qry = "insert into ImagesStore (OriginalPath,ImageData) values(@OriginalPath, @ImageData)";
+
+                //Initialize SqlCommand object for insert.
+                SqlCommand SqlCom = new SqlCommand(qry, CN);
+
+                //We are passing Original Image Path and Image byte data as sql parameters.
+                SqlCom.Parameters.Add(new SqlParameter("@OriginalPath", (object)FileUpload1.PostedFile.FileName));
+                SqlCom.Parameters.Add(new SqlParameter("@ImageData", (object)imageData));
+
+                //Open connection and execute insert query.
+                CN.Open();
+                SqlCom.ExecuteNonQuery();
+                CN.Close();
+
+                //Close form and return to list or images.
+                
+            }
+            catch (Exception ex)
+            {
+             //   MessageBox.Show(ex.ToString());
+            }
+
+        }
+        byte[] ReadFile(string sPath)
+        {
+            //Initialize byte array with a null value initially.
+            byte[] data = null;
+
+            //Use FileInfo object to get file size.
+            FileInfo fInfo = new FileInfo(sPath);
+            long numBytes = fInfo.Length;
+
+            //Open FileStream to read file
+            FileStream fStream = new FileStream(sPath, FileMode.Open, FileAccess.Read);
+
+            //Use BinaryReader to read file stream into byte array.
+            BinaryReader br = new BinaryReader(fStream);
+
+            //When you use BinaryReader, you need to supply number of bytes to read from file.
+            //In this case we want to read entire file. So supplying total number of bytes.
+            data = br.ReadBytes((int)numBytes);
+            return data;
         }
 
     }

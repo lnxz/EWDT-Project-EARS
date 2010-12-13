@@ -249,6 +249,9 @@
             </td>
             <td class="style3" valign="top">
                 <asp:FileUpload ID="FileUpload1" runat="server" Height="27px" Width="253px" />
+                <br />
+                <asp:Button ID="btnUpload" runat="server" CausesValidation="False" 
+                    onclick="btnUpload_Click" Text="Upload" Width="75px" />
                 <br class="style25" />
                 <asp:Image ID="lmEvent" runat="server" Height="173px" Width="176px" 
                     CssClass="style25" />

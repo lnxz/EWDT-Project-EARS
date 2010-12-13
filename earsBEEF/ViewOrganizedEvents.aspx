@@ -31,11 +31,13 @@
             <ItemStyle Width="200px" />
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationStart" HeaderText="RegistrationStart" 
-                SortExpression="RegistrationStart" ReadOnly="True" >
+                SortExpression="RegistrationStart" ReadOnly="True" 
+                DataFormatString="{0:MM/dd/yyyy}" >
             <ControlStyle Width="170px" />
             </asp:BoundField>
             <asp:BoundField DataField="RegistrationEnd" HeaderText="RegistrationEnd" 
-                SortExpression="RegistrationEnd" ReadOnly="True"></asp:BoundField>
+                SortExpression="RegistrationEnd" ReadOnly="True" 
+                DataFormatString="{0:MM/dd/yyyy}"></asp:BoundField>
             <asp:CommandField ButtonType="Button" SelectText="Update" 
                 ShowSelectButton="True" CancelText="" DeleteText="" EditText="" 
                 InsertText="" NewText=""/>
