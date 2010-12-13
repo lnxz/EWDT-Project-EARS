@@ -31,7 +31,7 @@ namespace earsBEEF.Admin_Forms
             else
             {
                 Label1.Text = FileUpload1.PostedFile.FileName;
-                filePath = @"c:\temp\" + Label1.Text;
+                filePath = Label1.Text;
                 FileUpload1.PostedFile.SaveAs(@filePath);
             }
 
