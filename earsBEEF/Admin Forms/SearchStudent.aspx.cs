@@ -14,7 +14,10 @@ namespace earsBEEF.Admin_Forms
         {
 
         }
-
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
 

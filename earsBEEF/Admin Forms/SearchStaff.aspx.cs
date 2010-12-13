@@ -48,5 +48,9 @@ namespace earsBEEF.Admin_Forms
                 Response.Redirect("../EditStaffProfile.aspx?ID=" + staffID);
             }
         }
+        protected void Page_PreInit()
+        {
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
+        }
     }
 }

@@ -33,7 +33,9 @@
         <a href="../ViewAnnouncement.aspx"><img src="../Images/Stub8.png" /></a>
         <img src="../Images/Stub11.png" />
         <a href="../Admin Forms/AddStudentForm.aspx"><img src="../Images/Stub12.png"></a>
+        <a href="../Admin Forms/SearchStudent.aspx"><img src="../Images/Stub14.png"></a>
         <a href="../Admin Forms/AddStaffForm.aspx"><img src="../Images/Stub13.png" /></a>
+        <a href="../Admin Forms/SearchStaff.aspx"><img src="../Images/Stub15.png"></a>
         <a href="../EditStaffProfile.aspx"><img src="../Images/Stub9.png" /></a>
         <a href="../LoginPage.aspx"><img src="../Images/Stub10.png" /></a>
         </div>
