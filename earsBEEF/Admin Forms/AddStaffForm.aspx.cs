@@ -37,7 +37,7 @@ namespace earsBEEF
 
         protected void Page_PreInit()
         {
-            //this.MasterPageFile = Session["MyPage_Master"].ToString();
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void DdlMonth_SelectedIndexChanged(object sender, EventArgs e)
