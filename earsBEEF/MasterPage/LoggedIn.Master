@@ -15,7 +15,7 @@
             height: 99px;
         }
         .announcementBox
-        {	margin-top: -460px;
+        {	margin-top: -560px;
         }
     </style>
 </head>
