@@ -25,7 +25,6 @@ namespace earsBEEF.Admin_Forms
             }
 
             // non staff admin are not allow to access
-
             EARS.Staff sta = (EARS.Staff)(Session["Login"]);
             if (sta.Admin.Equals('Y'))
             {
@@ -34,6 +33,7 @@ namespace earsBEEF.Admin_Forms
             {
                 Response.Redirect("Home.aspx");
             }
+            // end
         }
 
         protected void Page_PreInit()

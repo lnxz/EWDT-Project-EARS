@@ -24,6 +24,7 @@ namespace earsBEEF
             {
                 Response.Redirect("Home.aspx");
             }
+            // end
 
             GridView1.DataSource = EARS.DBManager.GetAllCategory();//populateCategoryTable();
             GridView1.DataBind();

@@ -40,13 +40,17 @@ namespace earsBEEF
                     //initialize CCA dropdown list
                     ddlCCA.Items.Clear();
                     EARS.Student s = (EARS.Student)(Session["Login"]);
-                    if (s.IsStudentLeader.Equals('Y'))
-                    {
-                    }
-                    else
-                    {
-                        Response.Redirect("Home.aspx");
-                    }
+
+                    // for non-student leader not allow to access this page
+                        if (s.IsStudentLeader.Equals('Y'))
+                        {
+                        }
+                        else
+                        {
+                            Response.Redirect("Home.aspx");
+                        }
+                    // end
+
                     ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
                     ddlCCA.DataTextField = "Name";
                     ddlCCA.DataValueField = "CcaID";

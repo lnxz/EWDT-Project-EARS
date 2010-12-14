@@ -12,15 +12,15 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // not student leader and student are not allow to access this page
-            EARS.Student s = (EARS.Student)(Session["Login"]);
-            if (s.IsStudentLeader.Equals('Y'))
-            {
-                Response.Redirect("Home.aspx");
-            }
-            else if (s.IsStudentLeader.Equals('N'))
-            {
-                Response.Redirect("Home.aspx");
-            }
+                EARS.Student s = (EARS.Student)(Session["Login"]);
+                if (s.IsStudentLeader.Equals('Y'))
+                {
+                    Response.Redirect("Home.aspx");
+                }
+                else if (s.IsStudentLeader.Equals('N'))
+                {
+                    Response.Redirect("Home.aspx");
+                }
             // end
 
 
