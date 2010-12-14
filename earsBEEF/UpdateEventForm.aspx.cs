@@ -19,6 +19,7 @@ namespace earsBEEF
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Page.IsPostBack)
             { }
             else
@@ -39,6 +40,13 @@ namespace earsBEEF
                     //initialize CCA dropdown list
                     ddlCCA.Items.Clear();
                     EARS.Student s = (EARS.Student)(Session["Login"]);
+                    if (s.IsStudentLeader.Equals('Y'))
+                    {
+                    }
+                    else
+                    {
+                        Response.Redirect("Home.aspx");
+                    }
                     ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
                     ddlCCA.DataTextField = "Name";
                     ddlCCA.DataValueField = "CcaID";

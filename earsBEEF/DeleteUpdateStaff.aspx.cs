@@ -11,7 +11,15 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            EARS.Student s = (EARS.Student)(Session["Login"]);
 
+            if (s.IsStudentLeader.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
 
         protected void Page_PreInit()

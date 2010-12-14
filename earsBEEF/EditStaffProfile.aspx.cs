@@ -13,6 +13,15 @@ namespace earsBEEF
         Boolean editOthers = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            EARS.Student st = (EARS.Student)(Session["Login"]);
+
+            if (st.IsStudentLeader.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
 
             EARS.Staff s = (EARS.Staff)Session["Login"];
             string text = HttpContext.Current.Request.ServerVariables["HTTP_REFERER"];

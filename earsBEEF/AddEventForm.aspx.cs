@@ -22,6 +22,15 @@ namespace earsBEEF
         string imageFilePath;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //EARS.Student stu = (EARS.Student)(this.Session["Login"]);
+
+            //if (stu.IsStudentLeader.Equals('Y'))
+            //{ 
+            //}
+            //else
+            //{
+            //    Response.Redirect("Home.aspx");
+            //}
             
             if (Session["LoginType"].Equals("Staff"))
             {
@@ -39,6 +48,14 @@ namespace earsBEEF
                 //initialize CCA dropdown list
                 ddlCCA.Items.Clear();
                 EARS.Student s = (EARS.Student)(Session["Login"]);
+
+                if (s.IsStudentLeader.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
                 ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
                 ddlCCA.DataTextField = "Name";
                 ddlCCA.DataValueField = "CcaID";
