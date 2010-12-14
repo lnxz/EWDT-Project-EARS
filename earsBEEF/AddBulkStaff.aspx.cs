@@ -14,9 +14,19 @@ namespace earsBEEF.Admin_Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // staff admin only
             EARS.Student s = (EARS.Student)(Session["Login"]);
-
             if (s.IsStudentLeader.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
+
+            EARS.Staff sta = (EARS.Staff)(Session["Login"]);
+
+            if (sta.Admin.Equals('Y'))
             {
             }
             else
