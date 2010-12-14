@@ -15,6 +15,7 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // only non student leader
             EARS.Student s = (EARS.Student)(Session["Login"]);
 
             if (s.IsStudentLeader.Equals('Y'))
