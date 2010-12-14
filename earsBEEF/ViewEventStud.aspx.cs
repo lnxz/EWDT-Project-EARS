@@ -76,12 +76,19 @@ namespace earsBEEF
                 //Response.Write("<script>window.alert('Registeration Sucessfully')</script>");
                 if (lbWarning.Visible.Equals(false))
                 {
-                    Response.Redirect("ViewEvents.aspx");
+                    string successReg = "Successfully registered for event";
+                    Response.Redirect("./SuccessPage.aspx?successAdd=" + successReg);
+                }
+                else
+                {
+                    string successReg = "Error: Already registed for event";
+                    Response.Redirect("./SuccessPage.aspx?successAdd=" + successReg);
                 }
                 
             }
 
             protected void btnCancel_Click(object sender, EventArgs e)
+
             {
                 Response.Redirect("ViewEvents.aspx");
             }
