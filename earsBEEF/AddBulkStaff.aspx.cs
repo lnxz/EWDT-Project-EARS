@@ -14,7 +14,8 @@ namespace earsBEEF.Admin_Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // staff admin only
+            // only student leader and staff admin are allow to access
+            // non student cannot access
             EARS.Student s = (EARS.Student)(Session["Login"]);
             if (s.IsStudentLeader.Equals('Y'))
             {
@@ -24,8 +25,8 @@ namespace earsBEEF.Admin_Forms
                 Response.Redirect("Home.aspx");
             }
 
+            // non staff admin cannot access
             EARS.Staff sta = (EARS.Staff)(Session["Login"]);
-
             if (sta.Admin.Equals('Y'))
             {
             }
