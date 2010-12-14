@@ -252,6 +252,7 @@
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" 
         onclick="btnSubmit_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+    <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
+        onclick="btnCancel_Click" />
     <br />
 </asp:Content>

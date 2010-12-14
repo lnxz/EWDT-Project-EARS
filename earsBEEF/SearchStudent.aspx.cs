@@ -13,6 +13,8 @@ namespace earsBEEF.Admin_Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             // for non-student leaders
+            if (Session["LoginType"].Equals("Student"))
+            {
                 EARS.Student s = (EARS.Student)(Session["Login"]);
                 if (s.IsStudentLeader.Equals('Y'))
                 {
@@ -21,7 +23,10 @@ namespace earsBEEF.Admin_Forms
                 {
                     Response.Redirect("Home.aspx");
                 }
+            }
             // for non staff admin
+            if (Session["LoginType"].Equals("Staff"))
+            {
                 EARS.Staff st = (EARS.Staff)(Session["Login"]);
                 if (st.Admin.Equals('Y'))
                 {
@@ -30,7 +35,8 @@ namespace earsBEEF.Admin_Forms
                 {
                     Response.Redirect("Home.aspx");
                 }
-            // end ---------
+                // end ---------
+            }
 
         }
         protected void Page_PreInit()

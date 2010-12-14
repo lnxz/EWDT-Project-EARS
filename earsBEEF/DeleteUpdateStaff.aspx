@@ -177,21 +177,8 @@
                 </asp:DropDownList>
                 <span class="style4">&nbsp;/ 
                 </span> 
-                <asp:DropDownList ID="DdlMonth" runat="server" Height="22px" Width="108px" 
-                    AutoPostBack="True" onselectedindexchanged="DdlMonth_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlMonth" runat="server" Height="16px" Width="86px">
                     <asp:ListItem>Month</asp:ListItem>
-                    <asp:ListItem Value="01">January</asp:ListItem>
-                    <asp:ListItem Value="02">February</asp:ListItem>
-                    <asp:ListItem Value="03">March</asp:ListItem>
-                    <asp:ListItem Value="04">April</asp:ListItem>
-                    <asp:ListItem Value="05">May</asp:ListItem>
-                    <asp:ListItem Value="06">June</asp:ListItem>
-                    <asp:ListItem Value="07">July</asp:ListItem>
-                    <asp:ListItem Value="08">August</asp:ListItem>
-                    <asp:ListItem Value="09">September</asp:ListItem>
-                    <asp:ListItem Value="10">October</asp:ListItem>
-                    <asp:ListItem Value="11">November</asp:ListItem>
-                    <asp:ListItem Value="12">December</asp:ListItem>
                 </asp:DropDownList>
                 <span class="style4">&nbsp;/ </span> <asp:DropDownList ID="DdlYear" runat="server" Height="22px" Width="76px">
                     <asp:ListItem>Year</asp:ListItem>
@@ -261,9 +248,9 @@
         <tr>
             <td style="text-align: right" class="style7">
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnUpdate" runat="server" 
-                    Text="Update" onclick="Button1_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
+                    ID="btnUpdate" runat="server" Text="Update" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
