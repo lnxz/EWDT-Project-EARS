@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace earsBEEF
 {
@@ -11,6 +12,9 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           // EARS.Staff s = (EARS.Staff)(this.Session["LoginType"]);
+            
+            //FormsAuthentication.Authenticate();
             btnCancel.Attributes.Add("onClick", "javascript:history.back(); return false;");
             if (Page.IsPostBack)
             { }
@@ -166,6 +170,15 @@ namespace earsBEEF
             try
             {
                 EARS.Student s = (EARS.Student)(Session["Login"]);
+
+                if (s.IsStudentLeader.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+
                 int b = Convert.ToInt32(s.StudentID);
                 EARS.DBManager.AddAnnouncementstud(title, content, datecreate, b, annDate);
             }

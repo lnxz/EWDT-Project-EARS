@@ -35,13 +35,13 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(s.Name, false).Equals("default.aspx"))
                     {
-                        //Response.Redirect("Home.aspx");
+                        Response.Redirect("Home.aspx");
 
                     }
                     else
                     {
                         string s1 = s.AdminNo;
-                        Response.Redirect("Home.aspx?login= " + s1); //home.aspx
+                        Response.Redirect("Home.aspx"); 
                         FormsAuthentication.RedirectFromLoginPage(s.Name, true);
                         
                     }
@@ -69,7 +69,7 @@ namespace EARS
                     }
                     if (FormsAuthentication.GetRedirectUrl(st.Name, false).Equals("default.aspx"))
                     {
-                        //Response.Redirect("Home.aspx");
+                        Response.Redirect("Home.aspx"); 
 
                     }
                     else

@@ -16,6 +16,18 @@ namespace earsBEEF
             //{
             //    Response.Redirect("Home.aspx");
             //}
+
+            EARS.Student s = (EARS.Student)(Session["Login"]);
+
+            if (s.IsStudentLeader.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
+
+
             if (Page.IsPostBack)
             { }
             else
