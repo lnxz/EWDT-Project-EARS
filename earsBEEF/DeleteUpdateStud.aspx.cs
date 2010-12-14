@@ -11,15 +11,16 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EARS.Student s = (EARS.Student)(Session["Login"]);
-
-            if (s.IsStudentLeader.Equals('Y'))
+            // only non staff amin are not allow to access this page
+            EARS.Staff s = (EARS.Staff)(Session["Login"]);
+            if (s.Admin.Equals('Y'))
             {
             }
             else
             {
                 Response.Redirect("Home.aspx");
             }
+            // end
         }
 
         protected void Page_PreInit()
