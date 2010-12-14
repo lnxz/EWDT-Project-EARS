@@ -81,15 +81,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <table style="width: 99%; color: #000000;">
         <tr>
             <td class="style50" colspan="2">
