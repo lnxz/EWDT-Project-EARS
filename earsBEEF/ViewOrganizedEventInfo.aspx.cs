@@ -14,6 +14,15 @@ namespace earsBEEF
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // for non-student leaders not to accesss this page
+                EARS.Student stu = (EARS.Student)(Session["Login"]);
+                if (stu.IsStudentLeader.Equals('Y'))
+                {}
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+            // end
 
             if (Session["LoginType"].Equals("Student"))
             {        

@@ -56,6 +56,7 @@ namespace earsBEEF
                 ddlCCA.Items.Clear();
                 EARS.Student s = (EARS.Student)(Session["Login"]);
 
+                // non-student leaders cannot access
                 if (s.IsStudentLeader.Equals('Y'))
                 {
                 }
@@ -63,6 +64,8 @@ namespace earsBEEF
                 {
                     Response.Redirect("Home.aspx");
                 }
+                // end
+
                 ddlCCA.DataSource = EARS.DBManager.GetCCAofStudent(s.StudentID);
                 ddlCCA.DataTextField = "Name";
                 ddlCCA.DataValueField = "CcaID";
