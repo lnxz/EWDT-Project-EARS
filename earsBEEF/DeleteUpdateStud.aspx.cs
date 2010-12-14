@@ -12,6 +12,8 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // only non staff admin are not allow to access this page
+            if (Session["LoginType"].Equals("Staff"))
+            {
                 EARS.Staff s = (EARS.Staff)(Session["Login"]);
                 if (s.Admin.Equals('Y'))
                 {
@@ -20,7 +22,8 @@ namespace earsBEEF
                 {
                     Response.Redirect("Home.aspx");
                 }
-            // end
+                // end
+            }
         }
         
 

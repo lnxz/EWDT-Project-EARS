@@ -38,13 +38,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <table style="width:100%; color: #000000;">
         <tr>
             <td class="style5" colspan="3" align="left">
@@ -258,7 +251,7 @@
             </td>
         </tr>
         </table>
-    <table style="width:100%;">
+    <table style="width:100%; height: 86px;">
         <tr>
             <td style="text-align: right" class="style7">
                 &nbsp;</td>
