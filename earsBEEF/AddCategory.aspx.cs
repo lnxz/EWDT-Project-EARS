@@ -16,15 +16,18 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // only non student leader are not allow to access
-            EARS.Student s = (EARS.Student)(Session["Login"]);
-            if (s.IsStudentLeader.Equals('Y'))
+            if (Session["LoginType"].Equals("Student"))
             {
+                EARS.Student s = (EARS.Student)(Session["Login"]);
+                if (s.IsStudentLeader.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+                // end
             }
-            else
-            {
-                Response.Redirect("Home.aspx");
-            }
-            // end
 
             GridView1.DataSource = EARS.DBManager.GetAllCategory();//populateCategoryTable();
             GridView1.DataBind();

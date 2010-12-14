@@ -16,25 +16,31 @@ namespace earsBEEF.Admin_Forms
         {
             // only student leader and staff admin are allow to access
             // non student cannot access
-            EARS.Student s = (EARS.Student)(Session["Login"]);
-            if (s.IsStudentLeader.Equals('Y'))
+            if (Session["LoginType"].Equals("Student"))
             {
+                EARS.Student s = (EARS.Student)(Session["Login"]);
+                if (s.IsStudentLeader.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
             }
-            else
+            if (Session["LoginType"].Equals("Staff"))
             {
-                Response.Redirect("Home.aspx");
-            }
-
-            // non staff admin cannot access
-            EARS.Staff sta = (EARS.Staff)(Session["Login"]);
-            if (sta.Admin.Equals('Y'))
-            {
-            }
-            else
-            {
-                Response.Redirect("Home.aspx");
+                // non staff admin cannot access
+                EARS.Staff sta = (EARS.Staff)(Session["Login"]);
+                if (sta.Admin.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
             }
             // end
+
         }
         protected void Page_PreInit()
         {
