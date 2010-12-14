@@ -12,7 +12,9 @@ namespace EARS
 
         #region Connection Strings
         // LEVEL 5 LAB
+
         public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
+
         // GWEN LAPTOP
         //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP
@@ -942,6 +944,50 @@ namespace EARS
 
         #region Events&Notifications
 
+        public static int GetImageID(int eID)
+        {
+
+            int ImageID = -1;
+            // Establish connection with database
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = DBCONNSTR;
+            Event e = null;
+            try
+            {
+
+                // Step 1: Open connection
+                conn.Open();
+                // Step 2: Prepare the sql command
+                SqlCommand comm = new SqlCommand();
+                comm.CommandText = "SELECT ImageID FROM Event where EventID = @e ;";
+                comm.Connection = conn;
+                comm.Parameters.AddWithValue("@e", eID);
+                // Step 3: Execute the sql command
+                SqlDataReader dr = comm.ExecuteReader();    // because it is a SELECT statement
+                while (dr.Read())   //read row by row
+                {
+                    if (dr["ImageID"] == DBNull.Value)
+                    {
+                    }
+                    else
+                    {
+
+                        ImageID = Convert.ToInt32(dr["ImageID"].ToString());
+                    }
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                // Step 4: Close connection
+                conn.Close();
+            }
+            return ImageID;
+        }
         public static Event RetrieveEvent(int eID)
         {
 

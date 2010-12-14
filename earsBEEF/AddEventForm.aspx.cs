@@ -18,10 +18,16 @@ namespace earsBEEF
 
     public partial class AddEventForm : System.Web.UI.Page
     {
-        Boolean imageUploaded;
+
         string imageFilePath;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if(!IsPostBack)
+            {
+                Session["Image"] = "no";
+            }
+
             //EARS.Student stu = (EARS.Student)(this.Session["Login"]);
 
             //if (stu.IsStudentLeader.Equals('Y'))
@@ -32,6 +38,7 @@ namespace earsBEEF
             //    Response.Redirect("Home.aspx");
             //}
             
+
             if (Session["LoginType"].Equals("Staff"))
             {
 
@@ -245,10 +252,10 @@ namespace earsBEEF
                 if (Session["LoginType"].ToString().Equals("Staff"))
                 {
                     EARS.Staff tempStaff = (EARS.Staff)(Session["Login"]);
-                    if (imageUploaded== true)
+                    if (Session["Image"].ToString().Equals("Yes"))
                     {
-                        EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available", EARS.DBManager.GetImageID(imageFilePath));
-                        imageUploaded = false;
+                        EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate, Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), DateTime.Today, tempStaff.StaffID, "Available", EARS.DBManager.GetImageID(lbImagePath.Text));
+                        Session["Image"] = "no";
                     }
                     else
                     {
@@ -260,6 +267,7 @@ namespace earsBEEF
                     tbxDes.Text = "";
                     tbxDol.Text = "";
                     tbxQuota.Text = "";
+                    lbImagePath.Text = "Image Path";
 
                     string successAdd = "Successfully added an event";
                     Response.Redirect("SuccessPage.aspx?successAdd=" + successAdd);
@@ -268,11 +276,11 @@ namespace earsBEEF
                 else
                 {
                     EARS.Student tempStudent = (EARS.Student)(Session["Login"]);
-                    if (imageUploaded == true)
+                    if (Session["Image"].ToString().Equals("Yes"))
                     {
                         EARS.DBManager.AddEvents(tbxName.Text, tbxVenue.Text, cost, ddlCate.SelectedValue, tbxDes.Text, eventDatesString, startDate, endDate,
-                           Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), tempStudent.StudentID, DateTime.Today, "Available", EARS.DBManager.GetImageID(imageFilePath));
-                        imageUploaded = false;
+                           Convert.ToInt32(tbxQuota.Text), Convert.ToInt32(ddlCCA.SelectedValue), tempStudent.StudentID, DateTime.Today, "Available", EARS.DBManager.GetImageID(lbImagePath.Text));
+                        Session["Image"] = "no";
                     }
                     else
                     {
@@ -284,6 +292,7 @@ namespace earsBEEF
                     tbxDes.Text = "";
                     tbxDol.Text = "";
                     tbxQuota.Text = "";
+                    lbImagePath.Text = "Image Path";
                     string successAdd = "Successfully added an event";
                     Response.Redirect("./SuccessPage.aspx?successAdd=" + successAdd);
                 }
@@ -500,12 +509,13 @@ namespace earsBEEF
             //byte[] Buffer;
             //newFile.Write(Buffer, 0, Buffer.Length);
             //}
-            imageFilePath = @"C:\temp\Images\" + FileUpload1.PostedFile.FileName;
-            FileUpload1.PostedFile.SaveAs(imageFilePath);
+         
+            lbImagePath.Text= @"C:\temp\Images\" + FileUpload1.PostedFile.FileName;
+            FileUpload1.PostedFile.SaveAs(lbImagePath.Text);
             try
             {
                 //Read Image Bytes into a byte array
-                byte[] imageData = ReadFile(imageFilePath);
+                byte[] imageData = ReadFile(lbImagePath.Text);
 
                 //Initialize SQL Server Connection
                 SqlConnection CN = new SqlConnection(EARS.DBManager.DBCONNSTR);
@@ -517,7 +527,7 @@ namespace earsBEEF
                 SqlCommand SqlCom = new SqlCommand(qry, CN);
 
                 //We are passing Original Image Path and Image byte data as sql parameters.
-                SqlCom.Parameters.Add(new SqlParameter("@OriginalPath", (object)imageFilePath));
+                SqlCom.Parameters.Add(new SqlParameter("@OriginalPath", (object)lbImagePath.Text));
                 SqlCom.Parameters.Add(new SqlParameter("@ImageData", (object)imageData));
 
                 //Open connection and execute insert query.
@@ -525,17 +535,15 @@ namespace earsBEEF
                 int rowsAdded = SqlCom.ExecuteNonQuery();
 
                 //Set image in picture box
-                lmEvent.ImageUrl = imageFilePath;
+                lmEvent.ImageUrl = lbImagePath.Text;
 
                 //Provide file path in txtImagePath text box.
 
                 CN.Close();
                 if (rowsAdded != 0)
                 {
-                    imageUploaded = true;
-                    if (imageUploaded)
-                    {
-                    }
+                    Session["Image"] = "Yes";
+                 
                 }
 
                 //Close form and return to list or images.

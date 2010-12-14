@@ -27,10 +27,7 @@
                 <table style="width:105%; height: 377px;">
                     <tr>
                         <td class="style5">
-                <strong __designer:mapid="177">
-                                <asp:Image ID="lmEvent" runat="server" Height="293px" 
-    Width="168px" />
-                            </strong>
+                            <asp:Image ID="Image2" runat="server" Height="200px" Width="200px" />
                         </td>
                         </strong>
                         <td align="left" valign="top">

@@ -257,6 +257,7 @@
                     CssClass="style25" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br class="style25" />
+                <asp:Label ID="lbImagePath" runat="server" Text="Image Path"></asp:Label>
             </td>
         </tr>
         <tr>
