@@ -61,5 +61,10 @@ namespace earsBEEF.Admin_Forms
         {
             this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SearchStaff.aspx");
+        }
     }
 }

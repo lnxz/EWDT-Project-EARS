@@ -17,5 +17,6 @@
     <br />
     <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Submit" 
         Width="85px" />
-    <asp:Button ID="Button2" runat="server" Text="Back" Width="85px" />
+    <asp:Button ID="Button2" runat="server" Text="Back" Width="85px" 
+        onclick="Button2_Click" />
 </asp:Content>
