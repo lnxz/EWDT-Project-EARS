@@ -268,7 +268,7 @@
         <tr>
             <td class="style7">
                 <asp:Button ID="Button1" runat="server" CausesValidation="False" 
-                    PostBackUrl="~/Admin Forms/AddBulkStaff.aspx" Text="Add Bulk Staff" 
+                    PostBackUrl="~/AddBulkStaff.aspx" Text="Add Bulk Staff" 
                     Width="129px" />
             </td>
             <td style="text-align: right">
