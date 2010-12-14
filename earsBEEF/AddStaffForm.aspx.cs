@@ -13,6 +13,8 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // non student leader and student are not allow to access this page
+            if (Session["LoginType"].Equals("Student"))
+            {
                 EARS.Student s = (EARS.Student)(Session["Login"]);
                 if (s.IsStudentLeader.Equals('Y'))
                 {
@@ -22,8 +24,11 @@ namespace earsBEEF
                 {
                     Response.Redirect("Home.aspx");
                 }
+            }
 
             // non staff admin are not allow to access this page
+            if (Session["LoginType"].Equals("Staff"))
+            {
                 EARS.Staff sta = (EARS.Staff)(Session["Login"]);
                 if (sta.Admin.Equals('Y'))
                 {
@@ -32,7 +37,8 @@ namespace earsBEEF
                 {
                     Response.Redirect("Home.aspx");
                 }
-            // end
+                // end
+            }
 
             if (Page.IsPostBack)
             { }

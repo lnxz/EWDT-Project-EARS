@@ -27,18 +27,7 @@ namespace earsBEEF
             {
                 Session["Image"] = "no";
             }
-
-            //EARS.Student stu = (EARS.Student)(this.Session["Login"]);
-
-            //if (stu.IsStudentLeader.Equals('Y'))
-            //{ 
-            //}
-            //else
-            //{
-            //    Response.Redirect("Home.aspx");
-            //}
             
-
             if (Session["LoginType"].Equals("Staff"))
             {
 
