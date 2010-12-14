@@ -12,9 +12,13 @@ namespace EARS
 
         #region Connection Strings
         // LEVEL 5 LAB
+<<<<<<< .mine
+        public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
+=======
 
         public const string DBCONNSTR = @"Data Source=.\;Initial Catalog=EWDTProject;User ID=ewdt;Password=ewdt";
 
+>>>>>>> .r477
         // GWEN LAPTOP
         //public const string DBCONNSTR = @"Data Source=GWEN-PC\COWSQLSERVER;Initial Catalog=EWDTProject;Integrated Security=True"; //GWEN NOOB
         // SHAUN LAPTOP

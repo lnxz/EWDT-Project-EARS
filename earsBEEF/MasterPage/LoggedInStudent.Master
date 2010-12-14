@@ -33,7 +33,7 @@
         <a href = "./RegisteredEventStud.aspx"><asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Stub4.png" /></a>
         <a href = "./ViewOrganizedEvents.aspx"><img src="./Images/Stub5.png" /></a>
         <img src="./Images/Stub6.png" />
-        <a href="./ViewAnnouncement.aspx"><img src="./Images/Stub8.png" /></a>
+        <a href="./ViewAnnouncementStud.aspx"><img src="./Images/Stub8.png" /></a>
         <a href="./EditStudProfile.aspx"><img src="./Images/Stub9.png" /></a>
         <a href="./LoginPage.aspx"><img src="./Images/Stub10.png" /></a>
     </div>

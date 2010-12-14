@@ -13,11 +13,6 @@
         {
             height: 26px;
         }
-        .style5
-        {
-            width: 99px;
-            height: 26px;
-        }
         .style6
         {
             width: 99px;
@@ -38,17 +33,6 @@
         </tr>
         <tr>
             <td class="style2" colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td class="style5">
-                For:</td>
-            <td class="style4">
-                <asp:DropDownList ID="ddlFor" runat="server">
-                    <asp:ListItem>Student</asp:ListItem>
-                    <asp:ListItem>Staff</asp:ListItem>
-                    <asp:ListItem>Staff &amp; Student</asp:ListItem>
-                </asp:DropDownList>
             </td>
         </tr>
         <tr>

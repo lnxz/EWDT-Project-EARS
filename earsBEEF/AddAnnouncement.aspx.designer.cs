@@ -13,15 +13,6 @@ namespace earsBEEF {
     public partial class AllAnnouncement {
         
         /// <summary>
-        /// ddlFor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFor;
-        
-        /// <summary>
         /// ddlMonth control.
         /// </summary>
         /// <remarks>
