@@ -12,6 +12,17 @@ namespace earsBEEF
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            EARS.Student s = (EARS.Student)(Session["Login"]);
+
+            if (s.IsStudentLeader.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
+
            // EARS.Staff s = (EARS.Staff)(this.Session["LoginType"]);
             
             //FormsAuthentication.Authenticate();
@@ -169,16 +180,8 @@ namespace earsBEEF
 
             try
             {
+
                 EARS.Student s = (EARS.Student)(Session["Login"]);
-
-                if (s.IsStudentLeader.Equals('Y'))
-                {
-                }
-                else
-                {
-                    Response.Redirect("Home.aspx");
-                }
-
                 int b = Convert.ToInt32(s.StudentID);
                 EARS.DBManager.AddAnnouncementstud(title, content, datecreate, b, annDate);
             }

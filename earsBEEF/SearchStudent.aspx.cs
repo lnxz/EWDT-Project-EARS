@@ -21,6 +21,15 @@ namespace earsBEEF.Admin_Forms
             {
                 Response.Redirect("Home.aspx");
             }
+
+            EARS.Staff st = (EARS.Staff)(Session["Login"]);
+            if (st.Admin.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
         protected void Page_PreInit()
         {
