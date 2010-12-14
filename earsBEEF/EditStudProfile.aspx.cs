@@ -12,6 +12,17 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // staff non admin
+            EARS.Staff sta = (EARS.Staff)(Session["Login"]);
+
+            if (sta.Admin.Equals('Y'))
+            {
+            }
+            else
+            {
+                Response.Redirect("Home.aspx");
+            }
+
+
             if (IsPostBack)
             {
             }
