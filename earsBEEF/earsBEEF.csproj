@@ -60,6 +60,8 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="viewAnnouncementStaff.aspx" />
+    <Content Include="ViewAnnouncementStud.aspx" />
     <Content Include="ViewPastEventInfo.aspx" />
     <Content Include="SuccessPage.aspx" />
     <Content Include="ViewOrganizedEventInfo.aspx" />
@@ -157,6 +159,20 @@
       <DependentUpon>AddBulkEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="orgEvent.cs" />
+    <Compile Include="viewAnnouncementStaff.aspx.cs">
+      <DependentUpon>viewAnnouncementStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewAnnouncementStaff.aspx.designer.cs">
+      <DependentUpon>viewAnnouncementStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAnnouncementStud.aspx.cs">
+      <DependentUpon>ViewAnnouncementStud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAnnouncementStud.aspx.designer.cs">
+      <DependentUpon>ViewAnnouncementStud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewPastEventInfo.aspx.cs">
       <DependentUpon>ViewPastEventInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
