@@ -43,8 +43,7 @@ namespace earsBEEF
 
                     // for non-student leader not allow to access this page
                         if (s.IsStudentLeader.Equals('Y'))
-                        {
-                        }
+                        {}
                         else
                         {
                             Response.Redirect("Home.aspx");

@@ -14,8 +14,6 @@ namespace earsBEEF
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             if (Session["LoginType"].Equals("Student"))
             {        
                 s =  Convert.ToInt32(Request.QueryString["eid"]);
@@ -26,8 +24,6 @@ namespace earsBEEF
 
                 if (a != null)
                 {
-                    
-
                     lbName.Text = a.Name;
                     lbPlace.Text = a.Venue;
                     lbStartDate.Text = a.EventDate;
