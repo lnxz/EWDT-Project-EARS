@@ -12,9 +12,8 @@ namespace earsBEEF.Admin_Student_Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // non student leader
+            // only non student leader are not allows to access this page
             EARS.Student s = (EARS.Student)(Session["Login"]);
-
             if (s.IsStudentLeader.Equals('Y'))
             {
             }
@@ -22,6 +21,7 @@ namespace earsBEEF.Admin_Student_Forms
             {
                 Response.Redirect("Home.aspx");
             }
+
         }
         protected void Page_PreInit()
         {
