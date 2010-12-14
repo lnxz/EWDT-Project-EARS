@@ -98,7 +98,7 @@ namespace earsBEEF
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string forwho = ddlFor.Text;
+            //string forwho = ddlFor.Text;
             string title = tbxTitle.Text;
             string content = tbxCon.Text;
             int day = Convert.ToInt32(ddlDay.SelectedValue);

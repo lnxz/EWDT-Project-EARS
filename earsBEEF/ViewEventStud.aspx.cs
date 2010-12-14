@@ -8,7 +8,8 @@ using System.Collections;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
-using System.Drawing.Image;
+//using System.Drawing.Image;
+using System.Drawing.Imaging;
 
 namespace earsBEEF
 {
