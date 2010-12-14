@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
+using System.Data.SqlClient;
+using System.Data;
+using System.IO;
+using System.Drawing.Image;
 
 namespace earsBEEF
 {
@@ -37,6 +41,43 @@ namespace earsBEEF
                     lbCost.Text = "$" + Convert.ToDouble(a.RegistrationCost).ToString() + ".00";
                     lbMax.Text = Convert.ToString(a.Quota).ToString();
                     tbxDes.Text = a.Descrip;
+                    if (EARS.DBManager.GetImageID(a.EventID) != -1)
+                    {
+                        //Insert get image code.
+                        try
+                        {
+                            //Initialize SQL Server connection.
+                            SqlConnection CN = new SqlConnection(EARS.DBManager.DBCONNSTR);
+
+                            //Initialize SQL adapter.
+                            SqlDataAdapter ADAP = new SqlDataAdapter();
+                            ADAP.SelectCommand = new SqlCommand("Select * from ImagesStore where ImageID = (Select ImageID from Event where EventID = @a", CN);
+                            ADAP.SelectCommand.Parameters.AddWithValue("@a", a.EventID);
+
+                            //Initialize Dataset.
+                            DataSet DS = new DataSet();
+
+                           // //Fill dataset with ImagesStore table.
+                           // ADAP.Fill(DS, "ImagesStore");
+                           // byte[] imageData = (byte[])DS.Tables["ImagesStore"].Rows[0]["ImageData"].ToString();
+                           // //Fill Grid with dataset.
+                           // //Initialize image variable
+                           // System.Drawing.Image newImage;
+                           // //Read image data into a memory stream
+                           // using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                           // {
+                           //     ms.Write(imageData, 0, imageData.Length);
+
+                           //     //Set image variable value using memory stream.
+                           //     newImage = System.Drawing.Image.FromStream(ms, true);
+                           // }
+                           // //set picture
+                           //// .Image = newImage;
+                        }
+                        catch (Exception ex)
+                        {
+                        }
+                    }
 
                 }
                     lbQuota.Text = Convert.ToString(c);
