@@ -38,7 +38,7 @@ namespace earsBEEF.Admin_Forms
 
         protected void Page_PreInit()
         {
-            this.MasterPageFile = Session["MyPage_Master"].ToString();
+            //this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
