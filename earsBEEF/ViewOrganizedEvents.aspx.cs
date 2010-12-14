@@ -26,20 +26,18 @@ namespace earsBEEF
 
             if(this.Session["LoginType"].Equals("Student"))
             {
-            EARS.Student s = (EARS.Student)(this.Session["Login"]);
-            GridView1.DataSource = EARS.DBManager.GetAllOrganizedEvents(s.StudentID);//populateEventTable();
-            GridView1.DataBind();
-                   if(GridView1.Rows.Count ==0)
-                {
-                }
+                EARS.Student s = (EARS.Student)(this.Session["Login"]);
+                GridView1.DataSource = EARS.DBManager.GetAllOrganizedEvents(s.StudentID);//populateEventTable();
+                GridView1.DataBind();
+                if(GridView1.Rows.Count ==0)
+                {}
             }
             else{
-            EARS.Staff st = (EARS.Staff)(this.Session["Login"]);
+                EARS.Staff st = (EARS.Staff)(this.Session["Login"]);
                 GridView1.DataSource = EARS.DBManager.GetAllOrganizedEventStaff(st.StaffID);
                 GridView1.DataBind();
                 if(GridView1.Rows.Count ==0)
-                {
-                }
+                {}
             }
             lblNoPast.Visible = false;
             if (GridView1.Rows.Count == 0)

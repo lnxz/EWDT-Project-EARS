@@ -14,28 +14,25 @@ namespace earsBEEF
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // for non-student leaders not to accesss this page
+            if (Session["LoginType"].Equals("Student"))
+            {        
+                // for non-student leaders not to accesss this page
                 EARS.Student stu = (EARS.Student)(Session["Login"]);
                 if (stu.IsStudentLeader.Equals('Y'))
-                {}
+                { }
                 else
                 {
                     Response.Redirect("Home.aspx");
                 }
-            // end
+                // end
 
-            if (Session["LoginType"].Equals("Student"))
-            {        
                 s =  Convert.ToInt32(Request.QueryString["eid"]);
-
                 // check event 
                 EARS.Event a = EARS.DBManager.RetrieveEvent(s);
                 EARS.DBManager.GetQuotaOfEvent(s);
 
                 if (a != null)
                 {
-                    
-
                     lbName.Text = a.Name;
                     lbPlace.Text = a.Venue;
                     lbStartDate.Text = a.EventDate;
