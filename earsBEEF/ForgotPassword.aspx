@@ -119,7 +119,7 @@
                                 </tr>
                             </table>
                         <br />
-                            <asp:Label ID="Label5" runat="server" CssClass="style4"></asp:Label>
+                            <asp:Label ID="Label5" runat="server" CssClass="style4" ForeColor="Red"></asp:Label>
                             <br />
                             <br />
                             <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
