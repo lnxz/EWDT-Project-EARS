@@ -13,7 +13,6 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // non-student leader are not allows to access this page
-<<<<<<< .mine
             //EARS.Student s = (EARS.Student)(Session["Login"]);
             //if (s.IsStudentLeader.Equals('Y'))
             //{
@@ -23,7 +22,6 @@ namespace earsBEEF
             //    Response.Redirect("Home.aspx");
             //}
             // end
-=======
             if (Session["LoginType"].Equals("Student"))
             {
                 EARS.Student s = (EARS.Student)(Session["Login"]);
@@ -36,7 +34,7 @@ namespace earsBEEF
                 }
                 // end
             }
->>>>>>> .r500
+
 
             btnCancel.Attributes.Add("onClick", "javascript:history.back(); return false;");
             if (Page.IsPostBack)
