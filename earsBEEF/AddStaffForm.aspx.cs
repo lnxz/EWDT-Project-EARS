@@ -136,6 +136,8 @@ namespace earsBEEF
 
                     EARS.DBManager.AddStaff(name, staffEmail, password, gender, school, Mobile,
                                                 perEmail, position, admin, offContact, dateOfBirth);
+                    string successAdd = "Successfully added staff";
+                    Response.Redirect("SuccessPage.aspx?successAdd=" + successAdd);
                 }
             
             

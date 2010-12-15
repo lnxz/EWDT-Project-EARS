@@ -865,7 +865,7 @@ namespace EARS
                 conn.Open();
                 //prepare SQL Commmand
                 SqlCommand comm = new SqlCommand();
-                comm.CommandText = "UPDATE Student SET School=@School, Course=@course, ContactNo=@c, EmergencyContact=@d, TShirtSize=@e WHERE StudentID=@studentID";
+                comm.CommandText = "UPDATE Student SET School=@School, CourseCode=@course, ContactNo=@c, EmergencyContact=@d, TShirtSize=@e WHERE StudentID=@studentID";
                 comm.Parameters.AddWithValue("@studentID", studentID);
                 comm.Parameters.AddWithValue("@school", school);
                 comm.Parameters.AddWithValue("@course", course);

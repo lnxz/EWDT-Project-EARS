@@ -112,6 +112,8 @@ namespace earsBEEF
 
             EARS.DBManager.AddStudent(name, adminNo, password, gender, school, course,
                                 contract, emgContract, email, leader, size, studType, dateOfBirth);
+            string successAdd = "Successfully added Student";
+            Response.Redirect("SuccessPage.aspx?successAdd=" + successAdd);
 
         }
 
