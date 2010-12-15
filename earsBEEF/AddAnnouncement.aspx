@@ -5,22 +5,27 @@
         {
             height: 22px;
         }
-        .style3
-        {
-            width: 99px;
-        }
         .style4
         {
             height: 26px;
         }
         .style6
         {
-            width: 99px;
+            width: 139px;
             height: 36px;
         }
         .style7
         {
             height: 36px;
+            width: 83%;
+        }
+        .style10
+        {
+            width: 139px;
+        }
+        .style11
+        {
+            width: 83%;
         }
     </style>
 </asp:Content>
@@ -37,45 +42,51 @@
         </tr>
         <tr>
             <td class="style6">
-                Date Post:</td>
+                Date Of Announcement:</td>
             <td class="style7">
         <a href="./LoginPage.aspx">
                 <asp:DropDownList ID="ddlMonth" runat="server" AutoPostBack="True" 
                     Height="20px" onselectedindexchanged="ddlMonth_SelectedIndexChanged" 
-                    Width="75px">
+                    Width="75px" ValidationGroup="1">
                     <asp:ListItem>Month</asp:ListItem>
                 </asp:DropDownList>
                 </a>/<a href="./LoginPage.aspx"><asp:DropDownList ID="ddlDay" runat="server" 
-                    Height="20px" Width="54px">
+                    Height="20px" Width="54px" ValidationGroup="1">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
                 </a>/<a href="./LoginPage.aspx"><asp:DropDownList ID="ddlYear" runat="server" 
-                    Height="20px" Width="54px">
+                    Height="20px" Width="54px" ValidationGroup="1">
                     <asp:ListItem>Year</asp:ListItem>
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="ddlMonth" ErrorMessage="Select An Announcement Date" 
+                    ForeColor="Red" ValidationGroup="1"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="style3">
+            <td class="style10">
                 Title:</td>
-            <td>
-                <asp:TextBox ID="tbxTitle" runat="server" Width="317px"></asp:TextBox>
+            <td class="style11">
+                <asp:TextBox ID="tbxTitle" runat="server" Width="317px" CausesValidation="True"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="tbxTitle" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="style3" valign="top">
+            <td class="style10" valign="top">
                 Content:</td>
-            <td valign="top">
+            <td valign="top" class="style11">
                 <asp:TextBox ID="tbxCon" runat="server" Height="173px" TextMode="MultiLine" 
-                    Width="597px"></asp:TextBox>
-&nbsp;</td>
+                    Width="597px" CausesValidation="True" ValidationGroup="2"></asp:TextBox>
+&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="tbxCon" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+            </td>
         </tr>
     </table>
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" 
-        onclick="btnSubmit_Click" 
-        onclientclick="return confirm(&quot;Confirm submission?&quot;)" />
+        onclick="btnSubmit_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnCancel" runat="server" Text="Cancel" 
         onclick="btnCancel_Click" />
