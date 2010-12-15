@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<br />
+    <br />
     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
         Text="View All Announcements"></asp:Label>
 <br />
@@ -14,7 +14,8 @@
         onrowediting="GridView1_RowEditing" 
         onpageindexchanging="GridView1_PageIndexChanging" 
         onrowupdating="GridView1_RowUpdating" 
-        onrowdeleting="GridView1_RowDeleting">
+        onrowdeleting="GridView1_RowDeleting" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged" Width="351px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:TemplateField ShowHeader="False">
@@ -37,14 +38,6 @@
                         onclientclick="return confirm(&quot;Confirm Delete?&quot;)" Text="Delete"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="AnnouncmentDate" SortExpression="DateOfAnn">
-                <EditItemTemplate>
-                    <asp:TextBox ID="anndatetbx" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
             <asp:TemplateField HeaderText="title" SortExpression="Title">
                 <EditItemTemplate>
                     <asp:TextBox ID="titletbx" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
@@ -61,6 +54,8 @@
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("Content") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+            <asp:BoundField DataField="dateOfAnn" 
+                DataFormatString="&quot;{0:MMMM d,yyyy}&quot;" HeaderText="AnnouncementDate" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

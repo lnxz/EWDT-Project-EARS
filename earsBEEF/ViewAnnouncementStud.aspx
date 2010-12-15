@@ -13,17 +13,11 @@
         GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:TemplateField HeaderText="AnnouncmentDate" SortExpression="DateOfAnn">
-                <EditItemTemplate>
-                    <asp:TextBox ID="anndatetbx" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("DateOfAnn") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
             <asp:TemplateField HeaderText="title" SortExpression="Title">
                 <EditItemTemplate>
                     <asp:TextBox ID="titletbx" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="titletbx" ErrorMessage="Enter Title" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("Title") %>'></asp:Label>
@@ -32,9 +26,22 @@
             <asp:TemplateField HeaderText="Content" SortExpression="Content">
                 <EditItemTemplate>
                     <asp:TextBox ID="contenttbx" runat="server" Text='<%# Bind("Content") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="contenttbx" ErrorMessage="Enter Content" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("Content") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Announcement Date">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("dateOfAnn") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        ErrorMessage="Enter Announcement Date" ForeColor="Red"></asp:RequiredFieldValidator>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" 
+                        Text='<%# Bind("dateOfAnn", "{0:MMMM d,yyyy}") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

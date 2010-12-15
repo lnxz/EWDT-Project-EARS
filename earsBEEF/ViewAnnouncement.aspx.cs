@@ -107,7 +107,8 @@ namespace earsBEEF
 
                 TextBox ContentBox = (TextBox)GridView1.Rows[e.RowIndex].FindControl("contenttbx");
 
-                TextBox dateOfAnn = (TextBox)GridView1.Rows[e.RowIndex].FindControl("annDatetbx");
+                TextBox dateOfAnn = (TextBox)GridView1.Rows[e.RowIndex].FindControl("textbox1");
+                
 
                 //int a = Convert.ToInt32(IdLbl.Text);
                 //     string b = Titlebox.Text;
