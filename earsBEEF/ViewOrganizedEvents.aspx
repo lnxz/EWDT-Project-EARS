@@ -5,9 +5,11 @@
         
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
 
-    <asp:Label ID="Label1" runat="server" Font-Size="16pt" Text="Organized Events"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Font-Size="12pt" Text="Organized Events" 
+            Font-Bold="True"></asp:Label>
         <br />
-    <asp:Label ID="lblNoPast" runat="server" Text=" No Organized Events found"></asp:Label>
+    <asp:Label ID="lblNoPast" runat="server" Text=" No Organized Events found" 
+            Font-Size="8pt"></asp:Label>
         <br />
         <br />
 

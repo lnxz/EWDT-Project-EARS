@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
 <br />
- <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
+ <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="12pt" 
         Text="Registered Events"></asp:Label>
 <br />
     <asp:Label ID="lbEvent" runat="server" Text="Label" Visible="False"></asp:Label>
