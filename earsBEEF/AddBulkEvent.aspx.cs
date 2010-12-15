@@ -13,15 +13,18 @@ namespace earsBEEF.Admin_Student_Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             // only non student leader are not allows to access this page
-            EARS.Student s = (EARS.Student)(Session["Login"]);
-            if (s.IsStudentLeader.Equals('Y'))
+            if (Session["LoginType"].Equals("Student"))
             {
+                EARS.Student s = (EARS.Student)(Session["Login"]);
+                if (s.IsStudentLeader.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+                // end
             }
-            else
-            {
-                Response.Redirect("Home.aspx");
-            }
-            // end
 
         }
         protected void Page_PreInit()

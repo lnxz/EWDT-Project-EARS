@@ -67,7 +67,7 @@ namespace earsBEEF
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Admin Student Forms/AddEventForm.aspx");
+            Response.Redirect("AddEventForm.aspx");
         }
 
         protected void Page_PreInit()
