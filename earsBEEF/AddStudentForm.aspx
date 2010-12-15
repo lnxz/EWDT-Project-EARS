@@ -288,10 +288,6 @@
             &nbsp;
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                     ControlToValidate="tbxEmail" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator5" 
-                    runat="server" ControlToValidate="tbxEmail" ErrorMessage="Invaild Email" 
-                    ForeColor="#CC0000" 
-                    ValidationExpression="\w+([-+.']\w+)*@student.tp.edu.sg*"></asp:RegularExpressionValidator>
             </td>
             <td class="style2">
                 </td>

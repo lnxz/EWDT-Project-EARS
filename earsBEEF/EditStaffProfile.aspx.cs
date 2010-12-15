@@ -33,8 +33,12 @@ namespace earsBEEF
             text = text.ToLower();
             if (text.EndsWith("searchstaff.aspx"))
             {
-                editOthers = true;
+                Session["editOthers"] = "true";
                 s = EARS.DBManager.GetStaff(Convert.ToInt32(Request.QueryString["ID"]));
+            }
+            else
+            {
+                Session["editOthers"] ="false";
             }
             if (!IsPostBack)
             {
@@ -99,7 +103,7 @@ namespace earsBEEF
             string contactNo = tbxMoblie.Text;
             string officeNo = tbxOffic.Text;
             string personalEmail = tbxPersonalEmail.Text;
-            if (!editOthers)
+            if (Session["editOthers"].Equals("true"))
             {
                 EARS.Staff tempStaff = (EARS.Staff)this.Session["Login"];
                 EARS.DBManager.UpdateStaff(tempStaff.StaffID, school, position, contactNo, officeNo, personalEmail);
