@@ -12,6 +12,8 @@ namespace earsBEEF.Admin_Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             // for non-student leaderss
+            if (Session["LoginType"].Equals("Student"))
+            {
                 EARS.Student s = (EARS.Student)(Session["Login"]);
                 if (s.IsStudentLeader.Equals('Y'))
                 {
@@ -20,7 +22,8 @@ namespace earsBEEF.Admin_Forms
                 {
                     Response.Redirect("Home.aspx");
                 }
-            // end
+                // end
+            }
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
