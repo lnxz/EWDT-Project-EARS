@@ -86,47 +86,59 @@ namespace earsBEEF
         }
             protected void btnReg_Click(object sender, EventArgs e)
             {
-                int x = 0;
-                int y = 0;
-                EARS.Student stu = (EARS.Student)(this.Session["Login"]);
 
-                //check student registered for the event 
-                ArrayList sr = new ArrayList();
-                sr = EARS.DBManager.GetStudentWithEvent(stu.StudentID);
 
-                foreach (EARS.Event er in sr)
+                if (lbQuota.Text.Equals(lbMax.Text))
                 {
-                    if (er.EventID.Equals(s))
-                    {
-                        lbWarning.Visible = true;
-                        lbWarning.Text = "You have been Registered for this Event";
-                        x--;
-                    }
-                }
-
-                if (x == 0)
-                {
-                    // add the student to the event and send a mail to the student
-                    EARS.DBManager.AddStudentRegisterEvent(stu.StudentID, s);
-
-                    string emailadd = stu.Email;
-                    string name = stu.Name;
-
-                    SendEmail.sendingEmail(emailadd, "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
-                }
-                // add a message box
-                //Response.Write("<script>window.alert('Registeration Sucessfully')</script>");
-                if (lbWarning.Visible.Equals(false))
-                {
-                    string successReg = "Successfully registered for event";
-                    Response.Redirect("./SuccessPage.aspx?successAdd=" + successReg);
+                    lbWarning.Visible = true;
+                    lbWarning.Text = "Sorry this Event is full.";
                 }
                 else
                 {
-                    string successReg = "Error: Already registed for event";
-                    Response.Redirect("./SuccessPage.aspx?successAdd=" + successReg);
+                    int x = 0;
+                    int y = 0;
+                    EARS.Student stu = (EARS.Student)(this.Session["Login"]);
+
+                    //check student registered for the event 
+                    ArrayList sr = new ArrayList();
+                    sr = EARS.DBManager.GetStudentWithEvent(stu.StudentID);
+
+                    foreach (EARS.Event er in sr)
+                    {
+                        if (er.EventID.Equals(s))
+                        {
+                            lbWarning.Visible = true;
+                            lbWarning.Text = "You have been Registered for this Event";
+                            x--;
+                        }
+                    }
+
+                    if (x == 0)
+                    {
+                        // add the student to the event and send a mail to the student
+                        EARS.DBManager.AddStudentRegisterEvent(stu.StudentID, s);
+
+                        string emailadd = stu.Email;
+                        string name = stu.Name;
+
+                        SendEmail.sendingEmail(emailadd, "You have Registered " + lbName.Text, "Dear " + name + "<br/>" + "Thank You for Registering " + "<br/>" + "Name Of Event : " + lbName.Text + "<br/>" + " Located at " + lbPlace.Text + "<br/>" + " Hope to see you there");
+                    }
+                    // add a message box
+                    //Response.Write("<script>window.alert('Registeration Sucessfully')</script>");
+                    if (lbWarning.Visible.Equals(false))
+                    {
+                        string successReg = "Successfully registered for event";
+                        Response.Redirect("./SuccessPage.aspx?successAdd=" + successReg);
+                    }
+                    else
+                    {
+                        string successReg = "Error: Already registed for event";
+                        Response.Redirect("./SuccessPage.aspx?successAdd=" + successReg);
+                    }
                 }
-                
+
+
+
             }
 
             protected void btnCancel_Click(object sender, EventArgs e)
