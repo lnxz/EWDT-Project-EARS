@@ -69,7 +69,8 @@
             <td class="style11">
                 <asp:TextBox ID="tbxTitle" runat="server" Width="317px" CausesValidation="True"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                    ControlToValidate="tbxTitle" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                    ControlToValidate="tbxTitle" ErrorMessage="Enter An Announcement Title" 
+                    ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -79,7 +80,7 @@
                 <asp:TextBox ID="tbxCon" runat="server" Height="173px" TextMode="MultiLine" 
                     Width="597px" CausesValidation="True" ValidationGroup="2"></asp:TextBox>
 &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                    ControlToValidate="tbxCon" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                    ControlToValidate="tbxCon" ErrorMessage="Enter Content" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
