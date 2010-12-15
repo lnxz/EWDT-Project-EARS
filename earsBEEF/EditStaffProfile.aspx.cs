@@ -36,7 +36,8 @@ namespace earsBEEF
                 editOthers = true;
                 s = EARS.DBManager.GetStaff(Convert.ToInt32(Request.QueryString["ID"]));
             }
-            else
+            if (!IsPostBack)
+            {
                 if (s.School.Equals("AS "))
                 {
                     DdlSch.SelectedIndex = 0;
@@ -62,31 +63,32 @@ namespace earsBEEF
                     DdlSch.SelectedIndex = 5;
                 }
 
-            lbDOB.Text = s.DateOfBirth.ToShortDateString();
-            lbEmail.Text = s.StaffEmail;
-            lbGender.Text = Convert.ToString(s.Gender);
-            lbName.Text = s.Name;
-            DdlPosit.Text = s.Position;
-            lbAdmin.Text = Convert.ToString(s.Admin);
-            tbxMoblie.Text = s.ContactNo;
-            tbxOffic.Text = s.OfficeNo;
-            tbxPersonalEmail.Text = s.PersonalEmail;
+                lbDOB.Text = s.DateOfBirth.ToShortDateString();
+                lbEmail.Text = s.StaffEmail;
+                lbGender.Text = Convert.ToString(s.Gender);
+                lbName.Text = s.Name;
+                DdlPosit.Text = s.Position;
+                lbAdmin.Text = Convert.ToString(s.Admin);
+                tbxMoblie.Text = s.ContactNo;
+                tbxOffic.Text = s.OfficeNo;
+                tbxPersonalEmail.Text = s.PersonalEmail;
 
-            if (s.Position.Equals("Course Manager"))
-            {
-                DdlPosit.SelectedIndex = 0;
-            }
-            else if (s.Position.Equals("Lecturer"))
-            {
-                DdlPosit.SelectedIndex = 1;
-            }
-            else if (s.Position.Equals("part-time lecturer"))
-            {
-                DdlPosit.SelectedIndex = 2;
-            }
-            else if (s.Position.Equals("Subject Head"))
-            {
-                DdlPosit.SelectedIndex = 3;
+                if (s.Position.Equals("Course Manager"))
+                {
+                    DdlPosit.SelectedIndex = 0;
+                }
+                else if (s.Position.Equals("Lecturer"))
+                {
+                    DdlPosit.SelectedIndex = 1;
+                }
+                else if (s.Position.Equals("part-time lecturer"))
+                {
+                    DdlPosit.SelectedIndex = 2;
+                }
+                else if (s.Position.Equals("Subject Head"))
+                {
+                    DdlPosit.SelectedIndex = 3;
+                }
             }
         }
 
@@ -97,7 +99,7 @@ namespace earsBEEF
             string contactNo = tbxMoblie.Text;
             string officeNo = tbxOffic.Text;
             string personalEmail = tbxPersonalEmail.Text;
-            if (editOthers == false)
+            if (!editOthers)
             {
                 EARS.Staff tempStaff = (EARS.Staff)this.Session["Login"];
                 EARS.DBManager.UpdateStaff(tempStaff.StaffID, school, position, contactNo, officeNo, personalEmail);
