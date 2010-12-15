@@ -15,29 +15,29 @@
             height: 99px;
         }
         .announcementBox
-        {	margin-top: -560px;
+        {	margin-top: -520px;
         }
     </style>
 </head>
 <body>
     <div id="mainPicture">
         <div class="picture" align="center">
-            <a href="./Home.aspx"><img alt="" class="style1" src="./MasterPage/BannerTransparent.png" /></a></div>
+            <a href="./Home.aspx"><img alt="" class="style1" src="./MasterPage/BannerTransparent.png"  border="0"/></a></div>
     </div>
     <div id="sideMenu" style="position: relative; top: 180px; width: 150px; right: 531px;">
         <img src="./Images/Stub1.png" />
-        <a href="./AddEventForm.aspx"><img src="./Images/Stub2.png" /></a> 
-        <a href="./ViewOrganizedEvents.aspx"><img src="./Images/Stub3.png" /></a>
+        <a href="./AddEventForm.aspx"><img src="./Images/Stub2.png"  border="0"/></a> 
+        <a href="./ViewOrganizedEvents.aspx"><img src="./Images/Stub3.png"  border="0"/></a>
         <img src="./Images/Stub6.png" />
-        <a href="./AddAnnouncement.aspx"><img src="./Images/Stub7.png" /></a>
-        <a href="./ViewAnnouncement.aspx"><img src="./Images/Stub8.png" /></a>
+        <a href="./AddAnnouncement.aspx"><img src="./Images/Stub7.png"  border="0"/></a>
+        <a href="./ViewAnnouncement.aspx"><img src="./Images/Stub8.png" border="0" /></a>
         <img src="./Images/Stub11.png" />
-        <a href="./AddStudentForm.aspx"><img src="./Images/Stub12.png"></a>
-        <a href="./SearchStudent.aspx"><img src="./Images/Stub14.png"></a>
-        <a href="./AddStaffForm.aspx"><img src="./Images/Stub13.png" /></a>
-        <a href="./SearchStaff.aspx"><img src="./Images/Stub15.png"></a>
-        <a href="./EditStaffProfile.aspx"><img src="./Images/Stub9.png" /></a>
-        <a href="./LoginPage.aspx"><img src="./Images/Stub10.png" /></a>
+        <a href="./AddStudentForm.aspx"><img src="./Images/Stub12.png" border="0"></a>
+        <a href="./SearchStudent.aspx"><img src="./Images/Stub14.png" border="0"></a>
+        <a href="./AddStaffForm.aspx"><img src="./Images/Stub13.png"  border="0"/></a>
+        <a href="./SearchStaff.aspx"><img src="./Images/Stub15.png" border="0"></a>
+        <a href="./EditStaffProfile.aspx"><img src="./Images/Stub9.png"  border="0"/></a>
+        <a href="./LoginPage.aspx"><img src="./Images/Stub10.png" border="0" /></a>
         </div>
     <div class="announcementBox">
         <div class="innerBox">
