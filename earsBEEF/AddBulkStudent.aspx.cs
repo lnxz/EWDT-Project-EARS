@@ -45,7 +45,7 @@ namespace earsBEEF.Admin_Forms
 
         protected void Page_PreInit()
         {
-            //this.MasterPageFile = Session["MyPage_Master"].ToString();
+            this.MasterPageFile = Session["MyPage_Master"].ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace earsBEEF.Admin_Forms
             {
                 Label1.Text = FileUpload1.PostedFile.FileName;
                 filePath = Label1.Text;
-                FileUpload1.PostedFile.SaveAs(@filePath);
+                FileUpload1.PostedFile.SaveAs(@"C:/Temp/"+filePath);
             }
 
            int rowsAdded = 0;
