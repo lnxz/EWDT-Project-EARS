@@ -217,7 +217,8 @@
                 </asp:DropDownList>
                             <span class="style25">&nbsp;/
                 </span>
-                <asp:DropDownList ID="DdlDay1" runat="server" Height="22px" Width="76px">
+                <asp:DropDownList ID="DdlDay1" runat="server" Height="22px" Width="76px" 
+                                onselectedindexchanged="DdlDay1_SelectedIndexChanged">
                     <asp:ListItem>Day</asp:ListItem>
                 </asp:DropDownList>
                             <span class="style25">&nbsp;/ 
