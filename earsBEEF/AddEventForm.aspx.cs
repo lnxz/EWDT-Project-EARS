@@ -435,6 +435,20 @@ namespace earsBEEF
                 {
                     DdlYear1.Items.Add(DateTime.Today.Year.ToString());
                 }
+            } 
+            DateTime month1 = DateTime.Today.AddMonths(DdlMonth0.SelectedIndex - 1);
+            int monthStart = month1.Month;
+            DateTime month2 = DateTime.Today.AddMonths(DdlMonth1.SelectedIndex - 1);
+            int monthEnd = month2.Month;
+            DateTime startDate = new DateTime(Convert.ToInt32(DdlYear0.Text), monthStart, DdlDay0.SelectedIndex + 1);
+            DateTime endDate = new DateTime(Convert.ToInt32(DdlYear1.Text), monthEnd, DdlDay1.SelectedIndex + 1);
+            if (endDate < startDate)
+            {
+                lblDateError.Visible = true;
+            }
+            else
+            {
+                lblDateError.Visible = false;
             }
         }
 

@@ -137,6 +137,10 @@
                         <td class="style18" align="left">
                             <asp:TextBox ID="tbxDes" runat="server" Height="112px" TextMode="MultiLine" 
                                 Width="350px" CssClass="style25"></asp:TextBox>
+                            <br />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                ControlToValidate="tbxDes" ErrorMessage="Please input Description" 
+                                ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
