@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="Label1" runat="server" Font-Size="16pt" Text="Past Event "></asp:Label>
+    <asp:Label ID="Label1" runat="server" Font-Size="12pt" Text="Past Event " 
+        Font-Bold="True"></asp:Label>
 <br />
     <asp:Label ID="lblNoPast" runat="server" Text=" No Past Events found" 
-        Visible="False"></asp:Label>
+        Visible="False" Font-Size="8pt"></asp:Label>
 <br />
 <br />
 <br />

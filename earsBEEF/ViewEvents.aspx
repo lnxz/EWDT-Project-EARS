@@ -3,11 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         
-        &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="18pt" 
+        &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="12pt" 
             Text="View All Events"></asp:Label>
         <br />
         <asp:Label ID="Label2" runat="server" 
-            Text="There are currently no events open for registration" Visible="False"></asp:Label>
+            Text="There are currently no events open for registration" Visible="False" 
+            Font-Bold="True" Font-Size="8pt"></asp:Label>
         <br />
         <br />
         <asp:GridView ID="EventView" runat="server" AutoGenerateColumns="False" 
