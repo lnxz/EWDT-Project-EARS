@@ -15,7 +15,7 @@ namespace earsBEEF
         public static ArrayList massStudentImport(string filePath)
         {
             
-           //connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+filePath+";Extended Properties=\"Excel 8.0;HDR=Yes\"";
+           connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source="+filePath+";Extended Properties=\"Excel 8.0;HDR=Yes\"";
             ArrayList errorList = new ArrayList();
             OleDbCommand myCommand = new OleDbCommand("Select * from [Student$];");
             OleDbConnection myConnection = new OleDbConnection(connectionString);

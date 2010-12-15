@@ -57,8 +57,8 @@ namespace earsBEEF.Admin_Forms
             else
             {
                 Label1.Text = FileUpload1.PostedFile.FileName;
-                filePath = Label1.Text;
-                FileUpload1.PostedFile.SaveAs(@"C:\Temp\" + filePath);
+                filePath = @"C:\Temp\" + Label1.Text;
+                FileUpload1.PostedFile.SaveAs(filePath);
             }
 
             int rowsAdded = 0;

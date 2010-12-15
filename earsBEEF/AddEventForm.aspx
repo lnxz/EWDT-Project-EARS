@@ -183,8 +183,8 @@
                                 ControlToValidate="tbxQuota" ErrorMessage="Please input Quota" 
                                 ForeColor="Red" CssClass="style25"></asp:RequiredFieldValidator>
                             <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                                ControlToValidate="tbxQuota" ErrorMessage="Invalid Range (1-2000)" 
-                                ForeColor="Red" MaximumValue="1" MinimumValue="2000"></asp:RangeValidator>
+                                ControlToValidate="tbxQuota" ErrorMessage="Invalid Range (1-999)" 
+                                ForeColor="Red" MaximumValue="999" MinimumValue="1"></asp:RangeValidator>
                         </td>
                     </tr>
                     <tr>
