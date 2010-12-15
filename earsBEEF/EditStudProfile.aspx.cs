@@ -12,15 +12,18 @@ namespace earsBEEF
         protected void Page_Load(object sender, EventArgs e)
         {
             // non staff admin not allow to access this page
-            EARS.Staff sta = (EARS.Staff)(Session["Login"]);
-            if (sta.Admin.Equals('Y'))
+            if (Session["LoginType"].Equals("Staff"))
             {
+                EARS.Staff sta = (EARS.Staff)(Session["Login"]);
+                if (sta.Admin.Equals('Y'))
+                {
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+                // end-----------------------------
             }
-            else
-            {
-                Response.Redirect("Home.aspx");
-            }
-            // end-----------------------------
 
             if (IsPostBack)
             {
